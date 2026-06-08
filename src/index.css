@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+/* An Thai red & white theme - shadcn-style tokens */
+@theme {
+  --color-primary: #b91c1c;
+  --color-primary-foreground: #ffffff;
+  --color-primary-hover: #991b1b;
+  --color-destructive: #dc2626;
+  --color-muted: #f5f5f5;
+  --color-muted-foreground: #737373;
+  --color-border: #e5e5e5;
+  --color-input: #e5e5e5;
+  --color-ring: #b91c1c;
+  --color-background: #ffffff;
+  --color-foreground: #171717;
+  --color-card: #ffffff;
+  --color-card-foreground: #171717;
+  --color-accent: #fef2f2;
+  --color-accent-foreground: #b91c1c;
+  --font-sans: 'Be Vietnam Pro', ui-sans-serif, system-ui, sans-serif, "Segoe UI", "Noto Sans", "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Custom utilities */
+body {
+  font-family: var(--font-sans);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #b91c1c 0%, #991b1b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.card-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+}
+
+.stat-number {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Press strip infinite scroll */
+@keyframes press-strip {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-press-strip {
+  animation: press-strip 35s linear infinite;
+}
+
+/* Scroll indicator bounce */
+.scroll-indicator {
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
+  40% { transform: translateY(-10px) translateX(-50%); }
+  60% { transform: translateY(-5px) translateX(-50%); }
+}
