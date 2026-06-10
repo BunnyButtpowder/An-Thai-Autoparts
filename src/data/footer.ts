@@ -15,13 +15,12 @@ export const homeFooterCompanyLinks: FooterLink[] = [
   { label: 'Hệ thống đại lý', href: '#lien-he' },
   { label: 'Tuyển dụng', href: '#tuyen-dung' },
   { label: 'Liên hệ', href: '#lien-he' },
-  { label: 'E-Catalogue', href: '#' },
 ]
 
 export const homeFooterSocialLinks: FooterLink[] = [
-  { label: 'Liên hệ', href: '#lien-he' },
   { label: 'Facebook', href: '#' },
   { label: 'LinkedIn', href: '#' },
+  { label: 'Zalo', href: '#' },
   { label: 'YouTube', href: '#' },
 ]
 

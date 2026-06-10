@@ -2,7 +2,6 @@ import { Link } from 'react-router'
 import {
   homeFooterCompanyLinks,
   homeFooterSocialLinks,
-  supportPhones,
 } from '../../data/footer'
 
 export default function HomeFooter() {
@@ -60,9 +59,6 @@ export default function HomeFooter() {
                 </li>
               ))}
             </ul>
-            <p className="footer-map-label text-white/70 text-xs mt-4">
-              Google Maps — 288 Trần Thái Tông, Thái Bình, Hưng Yên
-            </p>
           </div>
         </div>
 
