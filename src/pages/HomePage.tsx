@@ -71,13 +71,13 @@ export default function HomePage() {
       <main>
         <HeroSection />
         <AboutSection />
-        <ProductShowcase />
+        {/* <ProductShowcase /> */}
         <VideoStrip />
         <OfferSection />
-        <FactorySection />
+        {/* <FactorySection /> */}
         <FeaturedProduct />
-        <PressSection />
-        <NeedHelpCTA />
+        {/* <PressSection /> */}
+        {/* <NeedHelpCTA /> */}
         <NewsSection />
       </main>
       <HomeFooter />

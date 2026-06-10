@@ -2,8 +2,8 @@ import { useEffect } from 'react'
 import { Link, useLocation } from 'react-router'
 import useMobileMenu from '../hooks/useMobileMenu'
 import Header from '../components/header/Header'
-import SimpleDesktopNav from '../components/header/SimpleDesktopNav'
-import SimpleMobileMenu from '../components/header/SimpleMobileMenu'
+import HomeDesktopNav from '../components/header/HomeDesktopNav'
+import HomeMobileMenu from '../components/header/HomeMobileMenu'
 import AboutFooter from '../components/footer/AboutFooter'
 import AboutHero from '../components/about/AboutHero'
 import OverviewSection from '../components/about/OverviewSection'
@@ -47,8 +47,8 @@ export default function AboutPage() {
   return (
     <>
       <Header
-        desktopNav={<SimpleDesktopNav />}
-        mobileMenu={<SimpleMobileMenu isOpen={isOpen} onClose={close} />}
+        desktopNav={<HomeDesktopNav />}
+        mobileMenu={<HomeMobileMenu isOpen={isOpen} onClose={close} />}
         isMobileMenuOpen={isOpen}
         onMobileMenuToggle={toggle}
         ctaButton={

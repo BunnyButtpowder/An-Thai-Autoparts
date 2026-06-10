@@ -45,13 +45,6 @@ export default function HomeMobileMenu({ isOpen, onClose }: HomeMobileMenuProps)
         ))}
         <a
           href="#lien-he"
-          className="mobile-menu-link block py-3 text-foreground font-medium cursor-pointer"
-          onClick={onClose}
-        >
-          Liên hệ
-        </a>
-        <a
-          href="#lien-he"
           className="request-quote-button-mobile mt-4 flex items-center justify-center px-4 py-3 text-sm font-semibold text-primary-foreground bg-primary rounded-md cursor-pointer"
           onClick={onClose}
         >

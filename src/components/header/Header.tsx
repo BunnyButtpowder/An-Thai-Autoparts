@@ -30,7 +30,7 @@ export default function Header({
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <nav className="flex items-center justify-between h-16 lg:h-20" aria-label="Main navigation">
           <Link to="/" className="logo-link flex items-center gap-2 cursor-pointer">
-            <span className="text-xl lg:text-2xl font-bold tracking-tight text-primary">AN THAI</span>
+            <img src="/icons/icon-horizontal.png" alt="An Thai" className="w-auto h-8 hover:scale-105 transition-transform" />
           </Link>
 
           {desktopNav}

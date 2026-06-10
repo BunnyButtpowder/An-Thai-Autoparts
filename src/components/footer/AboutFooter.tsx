@@ -1,5 +1,5 @@
 import { Link } from 'react-router'
-import { aboutFooterCompanyLinks, aboutFooterProductLinks, aboutFooterContactPhones } from '../../data/footer'
+import { aboutFooterCompanyLinks, aboutFooterContactPhones } from '../../data/footer'
 
 export default function AboutFooter() {
   return (
@@ -38,22 +38,6 @@ export default function AboutFooter() {
                       {link.label}
                     </a>
                   )}
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Products column */}
-          <div className="footer-column">
-            <h4 className="footer-column-title text-xs font-semibold uppercase tracking-wider text-white/50 mb-4">
-              Sản phẩm
-            </h4>
-            <ul className="footer-links-list space-y-3 text-sm text-white/70">
-              {aboutFooterProductLinks.map((link) => (
-                <li key={link.label}>
-                  <Link to={link.href} className="hover:text-primary cursor-pointer transition-colors">
-                    {link.label}
-                  </Link>
                 </li>
               ))}
             </ul>

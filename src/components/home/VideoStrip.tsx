@@ -1,24 +1,93 @@
+import { useEffect, useRef, useState } from 'react'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+
+gsap.registerPlugin(ScrollTrigger)
+
+const YOUTUBE_VIDEO_ID = 'cEbOYRmYBKc'
+
+function buildAutoplayEmbedSrc() {
+  const params = new URLSearchParams({
+    autoplay: '1',
+    mute: '1',
+    playsinline: '1',
+    rel: '0',
+    modestbranding: '1',
+    enablejsapi: '1',
+  })
+  return `https://www.youtube.com/embed/${YOUTUBE_VIDEO_ID}?${params.toString()}`
+}
+
 export default function VideoStrip() {
+  const sectionRef = useRef<HTMLElement>(null)
+  const [embedSrc, setEmbedSrc] = useState<string | null>(null)
+
+  useEffect(() => {
+    if (!sectionRef.current) return
+
+    const ctx = gsap.context(() => {
+      gsap.from('.video-strip-header', {
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: 'top 85%',
+          toggleActions: 'play none none none',
+        },
+        duration: 0.6,
+        y: 30,
+        opacity: 0,
+        ease: 'power2.out',
+      })
+
+      gsap.from('.video-strip-player', {
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: 'top 85%',
+          toggleActions: 'play none none none',
+        },
+        duration: 0.6,
+        y: 30,
+        opacity: 0,
+        delay: 0.15,
+        ease: 'power2.out',
+      })
+
+      ScrollTrigger.create({
+        trigger: sectionRef.current,
+        start: 'top 75%',
+        once: true,
+        onEnter: () => setEmbedSrc(buildAutoplayEmbedSrc()),
+      })
+    }, sectionRef)
+
+    return () => ctx.revert()
+  }, [])
+
   return (
-    <section className="video-strip-section relative py-0 overflow-hidden" id="video-strip">
-      <a href="#bao-chi" className="video-strip-link block cursor-pointer group">
-        <div className="video-strip-background absolute inset-0 z-0">
-          <img
-            src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=1920&h=600&fit=crop"
-            alt=""
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-primary/80 group-hover:bg-primary/85 transition-colors" />
+    <section
+      ref={sectionRef}
+      className="video-strip-section pb-16 lg:pb-24 bg-background"
+      id="video-strip"
+    >
+      <div className="video-strip-container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="video-strip-player relative aspect-video w-full overflow-hidden rounded-xl bg-muted">
+          {embedSrc ? (
+            <iframe
+              className="video-strip-iframe absolute inset-0 h-full w-full"
+              src={embedSrc}
+              title="Phóng sự VTV3 — Sản xuất tăm bua An Thái"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+            />
+          ) : (
+            <img
+              src={`https://img.youtube.com/vi/${YOUTUBE_VIDEO_ID}/maxresdefault.jpg`}
+              alt="Phóng sự VTV3 — Sản xuất tăm bua An Thái"
+              className="video-strip-poster h-full w-full object-cover"
+            />
+          )}
         </div>
-        <div className="video-strip-content relative z-10 py-20 lg:py-28 text-center text-primary-foreground">
-          <h2 className="video-strip-title text-2xl sm:text-3xl lg:text-4xl font-bold uppercase tracking-widest">
-            Sản xuất tăm bua — Lĩnh vực tiên phong
-          </h2>
-          <p className="video-strip-subtitle mt-2 text-white/90 text-sm sm:text-base uppercase tracking-wider">
-            Xem phóng sự VTV3
-          </p>
-        </div>
-      </a>
+      </div>
     </section>
   )
 }

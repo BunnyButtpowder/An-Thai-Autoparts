@@ -18,14 +18,6 @@ export const homeFooterCompanyLinks: FooterLink[] = [
   { label: 'E-Catalogue', href: '#' },
 ]
 
-export const homeFooterProductLinks: FooterLink[] = [
-  { label: 'Phụ tùng máy', href: '#linh-vuc-tien-phong' },
-  { label: 'Phụ tùng gầm', href: '#linh-vuc-tien-phong' },
-  { label: 'Phụ tùng điện - thân vỏ', href: '#linh-vuc-tien-phong' },
-  { label: 'Phụ tùng khác', href: '#linh-vuc-tien-phong' },
-  { label: 'Tăm bua', href: '#tam-bua' },
-]
-
 export const homeFooterSocialLinks: FooterLink[] = [
   { label: 'Liên hệ', href: '#lien-he' },
   { label: 'Facebook', href: '#' },
@@ -46,13 +38,6 @@ export const aboutFooterCompanyLinks: FooterLink[] = [
   { label: 'Nhà máy', href: '/#nha-may' },
   { label: 'Tin tức', href: '/#tin-tuc' },
   { label: 'Liên hệ', href: '/#lien-he' },
-]
-
-export const aboutFooterProductLinks: FooterLink[] = [
-  { label: 'Tăm bua', href: '/#san-pham' },
-  { label: 'Phụ tùng máy', href: '/#linh-vuc-tien-phong' },
-  { label: 'Phụ tùng gầm', href: '/#linh-vuc-tien-phong' },
-  { label: 'Phụ tùng điện', href: '/#linh-vuc-tien-phong' },
 ]
 
 export const aboutFooterContactPhones: FooterSupportItem[] = [
