@@ -5,11 +5,11 @@ import ArrowRight from '../icons/ArrowRight'
 
 gsap.registerPlugin(ScrollTrigger)
 
-const highlights = [
-  { value: '7.000+', label: 'tấn/năm công suất' },
-  { value: '30+', label: 'quốc gia xuất khẩu' },
-  { value: 'OEM', label: 'tiêu chuẩn sản xuất' },
-]
+// const highlights = [
+//   { value: '7.000+', label: 'tấn/năm công suất' },
+//   { value: '30+', label: 'quốc gia xuất khẩu' },
+//   { value: 'OEM', label: 'tiêu chuẩn sản xuất' },
+// ]
 
 export default function FeaturedProduct() {
   const sectionRef = useRef<HTMLElement>(null)
@@ -58,18 +58,18 @@ export default function FeaturedProduct() {
       <div className="featured-product-container relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="featured-product-grid grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
           <div className="featured-product-content lg:col-span-7">
-            <p className="featured-product-eyebrow text-sm font-semibold uppercase tracking-widest text-primary-foreground/80 mb-4">
+            <p className="featured-product-eyebrow inline-flex items-center px-3 py-1 rounded-full bg-primary-foreground/15 text-primary-foreground text-sm font-semibold uppercase tracking-widest mb-5">
               Sản phẩm chủ lực
             </p>
             <h2 className="featured-product-title text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-5">
               Trải nghiệm tăm bua chất lượng quốc tế
             </h2>
-            <p className="featured-product-description text-primary-foreground/90 text-lg leading-relaxed mb-8 max-w-2xl">
+            {/* <p className="featured-product-description text-primary-foreground/90 text-lg leading-relaxed mb-8 max-w-2xl">
               Tang trống phanh được sản xuất trên dây chuyền đúc tự động và gia công CNC, đáp ứng tiêu chuẩn xuất
               khẩu cho các dòng xe tải Mỹ, Nhật Bản và Trung Quốc.
-            </p>
+            </p> */}
 
-            <ul className="featured-product-highlights grid grid-cols-3 gap-4 sm:gap-6 mb-10">
+            {/* <ul className="featured-product-highlights grid grid-cols-3 gap-4 sm:gap-6 mb-10">
               {highlights.map((item) => (
                 <li
                   key={item.label}
@@ -81,7 +81,7 @@ export default function FeaturedProduct() {
                   </p>
                 </li>
               ))}
-            </ul>
+            </ul> */}
 
             <div className="featured-product-actions flex flex-col sm:flex-row gap-4">
               <a
@@ -104,15 +104,15 @@ export default function FeaturedProduct() {
           <div className="featured-product-visual lg:col-span-5">
             <div className="featured-product-image-card relative overflow-hidden rounded-2xl border border-primary-foreground/20 bg-primary-foreground/10 shadow-2xl">
               <img
-                src="https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=900&h=700&fit=crop"
+                src="/home/hammer.jpg"
                 alt="Tăm bua An Thái trên dây chuyền sản xuất"
                 loading="lazy"
                 className="featured-product-image h-64 sm:h-80 lg:h-88 w-full object-cover"
               />
-              <div className="featured-product-image-overlay absolute inset-0 bg-linear-to-t from-primary/80 via-primary/20 to-transparent" />
+              {/* <div className="featured-product-image-overlay absolute inset-0 bg-linear-to-t from-primary/80 via-primary/20 to-transparent" />
               <p className="featured-product-badge absolute bottom-5 left-5 right-5 text-sm sm:text-base font-bold uppercase tracking-widest">
                 Made in Vietnam
-              </p>
+              </p> */}
             </div>
           </div>
         </div>

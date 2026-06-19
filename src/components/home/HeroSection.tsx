@@ -21,7 +21,6 @@ export default function HeroSection() {
       className="hero-section relative min-h-[85vh] flex flex-col justify-center text-center text-primary-foreground overflow-hidden"
       id="trang-chu"
     >
-      <div className="hero-background absolute inset-0 bg-linear-to-b from-black/55 to-black/45 z-0" />
       <img
         src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=1920&h=1080&fit=crop"
         alt=""

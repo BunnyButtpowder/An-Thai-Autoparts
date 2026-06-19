@@ -35,7 +35,7 @@ export const supportPhones: FooterSupportItem[] = [
 export const aboutFooterCompanyLinks: FooterLink[] = [
   { label: 'Giới thiệu', href: '/gioi-thieu' },
   { label: 'Nhà máy', href: '/#nha-may' },
-  { label: 'Tin tức', href: '/#tin-tuc' },
+  { label: 'Tin tức', href: '/tin-tuc' },
   { label: 'Liên hệ', href: '/#lien-he' },
 ]
 

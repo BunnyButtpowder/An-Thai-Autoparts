@@ -6,10 +6,9 @@ gsap.registerPlugin(ScrollTrigger)
 
 const YOUTUBE_VIDEO_ID = 'cEbOYRmYBKc'
 
-function buildAutoplayEmbedSrc() {
+function buildEmbedSrc() {
   const params = new URLSearchParams({
     autoplay: '1',
-    mute: '1',
     playsinline: '1',
     rel: '0',
     modestbranding: '1',
@@ -51,12 +50,6 @@ export default function VideoStrip() {
         ease: 'power2.out',
       })
 
-      ScrollTrigger.create({
-        trigger: sectionRef.current,
-        start: 'top 75%',
-        once: true,
-        onEnter: () => setEmbedSrc(buildAutoplayEmbedSrc()),
-      })
     }, sectionRef)
 
     return () => ctx.revert()
@@ -80,11 +73,30 @@ export default function VideoStrip() {
               allowFullScreen
             />
           ) : (
-            <img
-              src={`https://img.youtube.com/vi/${YOUTUBE_VIDEO_ID}/maxresdefault.jpg`}
-              alt="Phóng sự VTV3 — Sản xuất tăm bua An Thái"
-              className="video-strip-poster h-full w-full object-cover"
-            />
+            <button
+              type="button"
+              onClick={() => setEmbedSrc(buildEmbedSrc())}
+              className="video-strip-play-button group absolute inset-0 h-full w-full cursor-pointer"
+              aria-label="Phát video"
+            >
+              <img
+                src={`https://img.youtube.com/vi/${YOUTUBE_VIDEO_ID}/maxresdefault.jpg`}
+                alt="Phóng sự VTV3 — Sản xuất tăm bua An Thái"
+                className="video-strip-poster h-full w-full object-cover"
+              />
+              <span className="video-strip-play-overlay absolute inset-0 flex items-center justify-center bg-black/30 transition-colors group-hover:bg-black/40">
+                <span className="video-strip-play-icon flex h-16 w-16 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-lg transition-transform duration-300 group-hover:scale-110">
+                  <svg
+                    className="video-strip-play-glyph h-7 w-7 translate-x-0.5"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                </span>
+              </span>
+            </button>
           )}
         </div>
       </div>

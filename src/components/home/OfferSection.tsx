@@ -6,6 +6,9 @@ import { offers, offerIntro } from '../../data/offers'
 
 gsap.registerPlugin(ScrollTrigger)
 
+const featuredOffers = offers.slice(0, 2)
+const secondaryOffers = offers.slice(2)
+
 export default function OfferSection() {
   const sectionRef = useRef<HTMLElement>(null)
 
@@ -35,38 +38,66 @@ export default function OfferSection() {
           </h2>
         </div>
 
-        <div className="masonry-grid-items grid sm:grid-cols-2 gap-6 lg:gap-8">
-          {offers.map((offer, index) => {
-            const isFullWidth = offers.length % 2 === 1 && index === offers.length - 1
-            return (
+        <div className="masonry-grid-featured grid sm:grid-cols-2 gap-6 lg:gap-8 w-full mb-6 lg:mb-8">
+          {featuredOffers.map((offer) => (
             <a
               key={offer.title}
               href={offer.ctaHref}
-              className={`masonry-grid-item group flex flex-col bg-card rounded-xl overflow-hidden border border-border hover:border-primary transition-all duration-300 cursor-pointer ${isFullWidth ? 'sm:col-span-2' : ''}`}
+              className="masonry-grid-item offer-featured-card group relative flex flex-col bg-card rounded-2xl overflow-hidden shadow-md ring-1 ring-border hover:shadow-xs hover:ring-primary transition-all duration-300 cursor-pointer"
             >
-              <div className="masonry-grid-item-image aspect-3/2 overflow-hidden bg-muted">
+              <div className="offer-featured-image aspect-video overflow-hidden bg-muted">
                 <img
                   src={offer.image}
                   alt={offer.imageAlt}
                   loading="lazy"
-                  className="masonry-grid-item-img h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="offer-featured-img h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
               </div>
-              <div className="masonry-grid-item-body flex flex-1 flex-col p-6 lg:p-8">
-                <h3 className="masonry-grid-item-title text-xl font-bold text-foreground mb-3">
+              <div className="offer-featured-body flex flex-1 flex-col p-7 lg:p-9">
+                <h3 className="offer-featured-title text-2xl lg:text-3xl font-bold text-foreground mb-3 leading-tight">
                   {offer.title}
                 </h3>
-                <p className="masonry-grid-item-desc text-muted-foreground text-base leading-relaxed mb-6">
+                <p className="offer-featured-desc text-muted-foreground text-base lg:text-lg leading-relaxed mb-6">
                   {offer.description}
                 </p>
-                <span className="masonry-grid-item-cta mt-auto inline-flex items-center gap-2 text-primary font-semibold group-hover:gap-3 transition-all">
+                <span className="offer-featured-cta mt-auto inline-flex items-center gap-2 text-primary font-semibold group-hover:gap-3 transition-all">
                   {offer.ctaLabel}
                   <ArrowRight />
                 </span>
               </div>
             </a>
-            )
-          })}
+          ))}
+        </div>
+
+        <div className="masonry-grid-secondary grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 w-full">
+          {secondaryOffers.map((offer) => (
+            <a
+              key={offer.title}
+              href={offer.ctaHref}
+              className="masonry-grid-item offer-secondary-card group flex flex-col bg-card rounded-xl overflow-hidden border border-border hover:border-primary transition-all duration-300 cursor-pointer"
+            >
+              <div className="offer-secondary-image aspect-3/2 overflow-hidden bg-muted">
+                <img
+                  src={offer.image}
+                  alt={offer.imageAlt}
+                  loading="lazy"
+                  className="offer-secondary-img h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+              </div>
+              <div className="offer-secondary-body flex flex-1 flex-col p-6">
+                <h3 className="offer-secondary-title text-lg font-bold text-foreground mb-2">
+                  {offer.title}
+                </h3>
+                <p className="offer-secondary-desc text-muted-foreground text-sm leading-relaxed mb-5">
+                  {offer.description}
+                </p>
+                <span className="offer-secondary-cta mt-auto inline-flex items-center gap-2 text-primary font-semibold text-sm group-hover:gap-3 transition-all">
+                  {offer.ctaLabel}
+                  <ArrowRight />
+                </span>
+              </div>
+            </a>
+          ))}
         </div>
       </div>
     </section>

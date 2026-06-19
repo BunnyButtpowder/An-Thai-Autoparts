@@ -20,7 +20,7 @@ export default function DropdownMenu({ label, items }: DropdownMenuProps) {
         <ChevronDown className="w-4 h-4 transition-transform group-hover:rotate-180" />
       </button>
       <ul
-        className="nav-dropdown absolute top-full left-0 mt-1 w-56 bg-card border border-border rounded-lg shadow-lg py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all"
+        className="nav-dropdown absolute top-full left-0 mt-7 w-62 bg-card border border-border rounded-lg shadow-lg py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all"
         role="menu"
       >
         {items.map((item) => (

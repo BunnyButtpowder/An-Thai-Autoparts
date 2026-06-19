@@ -7,13 +7,12 @@ import { featuredNews, newsArticles } from '../../data/news'
 
 gsap.registerPlugin(ScrollTrigger)
 
-const LIST_LIMIT = 3
+const LIST_LIMIT = 5
 const FEATURED_VIDEO_ID = featuredNews.youtubeVideoId
 
-function buildAutoplayEmbedSrc(videoId: string) {
+function buildEmbedSrc(videoId: string) {
   const params = new URLSearchParams({
     autoplay: '1',
-    mute: '1',
     playsinline: '1',
     rel: '0',
     modestbranding: '1',
@@ -96,13 +95,6 @@ export default function NewsSection() {
           ease: 'power2.out',
         })
       })
-
-      ScrollTrigger.create({
-        trigger: '.news-featured-player',
-        start: 'top 80%',
-        once: true,
-        onEnter: () => setEmbedSrc(buildAutoplayEmbedSrc(FEATURED_VIDEO_ID)),
-      })
     }, sectionRef)
 
     return () => ctx.revert()
@@ -117,13 +109,13 @@ export default function NewsSection() {
               Tin tức &amp; Báo chí
             </h2>
           </div>
-          <a
-            href="#tin-tuc"
+          <Link
+            to="/tin-tuc"
             className="news-view-all-link shrink-0 inline-flex items-center gap-2 text-primary font-semibold hover:underline cursor-pointer uppercase tracking-wider text-sm"
           >
             Xem tất cả
             <ArrowRight />
-          </a>
+          </Link>
         </div>
 
         <div className="news-layout grid lg:grid-cols-2 gap-10 lg:gap-12 items-stretch">
@@ -140,11 +132,30 @@ export default function NewsSection() {
                     allowFullScreen
                   />
                 ) : (
-                  <img
-                    src={`https://img.youtube.com/vi/${FEATURED_VIDEO_ID}/maxresdefault.jpg`}
-                    alt={featuredNews.title}
-                    className="news-featured-poster h-full w-full object-cover"
-                  />
+                  <button
+                    type="button"
+                    onClick={() => setEmbedSrc(buildEmbedSrc(FEATURED_VIDEO_ID))}
+                    className="news-featured-play-button group/play absolute inset-0 h-full w-full cursor-pointer"
+                    aria-label="Phát video"
+                  >
+                    <img
+                      src={`https://img.youtube.com/vi/${FEATURED_VIDEO_ID}/maxresdefault.jpg`}
+                      alt={featuredNews.title}
+                      className="news-featured-poster h-full w-full object-cover"
+                    />
+                    <span className="news-featured-play-overlay absolute inset-0 flex items-center justify-center bg-black/30 transition-colors group-hover/play:bg-black/40">
+                      <span className="news-featured-play-icon flex h-14 w-14 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-lg transition-transform duration-300 group-hover/play:scale-110">
+                        <svg
+                          className="news-featured-play-glyph h-6 w-6 translate-x-0.5"
+                          viewBox="0 0 24 24"
+                          fill="currentColor"
+                          aria-hidden="true"
+                        >
+                          <path d="M8 5v14l11-7z" />
+                        </svg>
+                      </span>
+                    </span>
+                  </button>
                 )}
               </div>
 
@@ -188,7 +199,7 @@ export default function NewsSection() {
                     <h4 className="news-list-title mt-1.5 text-base font-bold text-foreground leading-snug group-hover:text-primary transition-colors">
                       {article.title}
                     </h4>
-                    <p className="news-list-excerpt mt-1.5 text-sm text-muted-foreground leading-relaxed line-clamp-2">
+                    <p className="news-list-excerpt mt-1.5 text-sm text-muted-foreground leading-relaxed line-clamp-1">
                       {article.excerpt}
                     </p>
                   </Link>

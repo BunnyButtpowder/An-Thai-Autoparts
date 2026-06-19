@@ -21,7 +21,7 @@ export default function HomeFooter() {
 
           {/* Company column */}
           <div className="footer-column">
-            <h3 className="footer-column-title text-xs font-semibold uppercase tracking-wider text-white/70 mb-4">
+            <h3 className="footer-column-title text-base font-bold uppercase tracking-wider text-white mb-4">
               Công ty
             </h3>
             <ul className="footer-links-list space-y-2.5 text-sm text-white/90">
@@ -43,7 +43,7 @@ export default function HomeFooter() {
 
           {/* Social column */}
           <div className="footer-column">
-            <h3 className="footer-column-title text-xs font-semibold uppercase tracking-wider text-white/70 mb-4">
+            <h3 className="footer-column-title text-base font-bold uppercase tracking-wider text-white mb-4">
               Kết nối
             </h3>
             <ul className="footer-links-list space-y-2.5 text-sm text-white/90">
@@ -64,11 +64,11 @@ export default function HomeFooter() {
 
         <div className="footer-bottom border-t border-white/20 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-white/80">
           <p>&copy; 2026 AN THAI AUTO PARTS. ALL RIGHTS RESERVED.</p>
-          <div className="footer-legal flex flex-wrap items-center justify-center gap-4">
+          {/* <div className="footer-legal flex flex-wrap items-center justify-center gap-4">
             <a href="#" className="hover:text-primary cursor-pointer transition-colors">Chính sách bảo mật</a>
             <a href="#" className="hover:text-primary cursor-pointer transition-colors">Điều khoản</a>
             <a href="#" className="hover:text-primary cursor-pointer transition-colors">Cookie</a>
-          </div>
+          </div> */}
         </div>
       </div>
     </footer>
