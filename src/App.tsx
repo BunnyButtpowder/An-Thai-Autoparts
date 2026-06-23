@@ -3,6 +3,8 @@ import HomePage from './pages/HomePage'
 import AboutPage from './pages/AboutPage'
 import ContactPage from './pages/ContactPage'
 import NewsPage from './pages/NewsPage'
+import RecruitmentPage from './pages/RecruitmentPage'
+import RecruitmentDetailPage from './pages/RecruitmentDetailPage'
 
 export default function App() {
   return (
@@ -11,6 +13,8 @@ export default function App() {
       <Route path="gioi-thieu" element={<AboutPage />} />
       <Route path="tin-tuc" element={<NewsPage />} />
       <Route path="lien-he" element={<ContactPage />} />
+      <Route path="tuyen-dung" element={<RecruitmentPage />} />
+      <Route path="tuyen-dung/:id" element={<RecruitmentDetailPage />} />
     </Routes>
   )
 }
