@@ -35,7 +35,7 @@ export const contactLocations: ContactLocation[] = [
     mapQuery: 'Số 288 Trần Thái Tông, Thái Bình',
   },
   {
-    name: 'Nhà máy sản xuất An Thái',
+    name: 'Nhà máy An Thái',
     phone: '0904 086 999',
     phoneHref: 'tel:0084086999',
     email: CONTACT_EMAIL,

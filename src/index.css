@@ -44,6 +44,27 @@ body {
   font-variant-numeric: tabular-nums;
 }
 
+/* Home V2 — fluid hero headline (Cummins-style confident scaling) */
+.hero-title-fluid {
+  font-size: clamp(2.25rem, 4.8vw, 4rem);
+  line-height: 1.04;
+}
+
+/* Home V2 — branded hero card silhouette: rounded TL/BR + angled cuts at
+   bottom-left and upper-right. clipPathUnits=objectBoundingBox in the inline
+   SVG keeps it responsive; the background image shows through the cuts. */
+.hero-card-clip {
+  clip-path: url(#hero-card-clip);
+}
+
+/* Home V2 — safety net: honor OS-level reduced-motion even without the UI toggle */
+@media (prefers-reduced-motion: reduce) {
+  .animate-press-strip,
+  .scroll-indicator {
+    animation: none !important;
+  }
+}
+
 /* Press strip infinite scroll */
 @keyframes press-strip {
   0% { transform: translateX(0); }

@@ -1,27 +1,24 @@
 import { useEffect } from 'react'
 import { useLocation } from 'react-router'
 import useMobileMenu from '../hooks/useMobileMenu'
+import { MotionPreferenceProvider } from '../context/MotionPreferenceContext'
 import Header from '../components/header/Header'
 import HomeDesktopNav from '../components/header/HomeDesktopNav'
 import HomeMobileMenu from '../components/header/HomeMobileMenu'
 import HomeFooter from '../components/footer/HomeFooter'
-// import HeroSection from '../components/home/HeroSection'
-import AboutSection from '../components/home/AboutSection'
-import VideoStrip from '../components/home/VideoStrip'
-// import OfferSection from '../components/home/OfferSection'
-// import FeaturedProduct from '../components/home/FeaturedProduct'
-// import NewsSection from '../components/home/NewsSection'
+import MotionToggle from '../components/common/MotionToggle'
 import HeroV2 from '../components/home-v2/HeroV2'
+import AboutV2 from '../components/home-v2/AboutV2'
+import VideoV2 from '../components/home-v2/VideoV2'
+import OffersEditorial from '../components/home-v2/OffersEditorial'
 import FeaturedV2 from '../components/home-v2/FeaturedV2'
 import NewsV2 from '../components/home-v2/NewsV2'
-import OffersEditorial from '../components/home-v2/OffersEditorial'
-import ChevronDown from '../components/icons/ChevronDown'
 
-export default function HomePage() {
+export default function HomePageV2() {
   const { isOpen, toggle, close } = useMobileMenu()
   const location = useLocation()
 
-  // Handle hash scrolling on page load and navigation
+  // Scroll to a hash target on load / navigation.
   useEffect(() => {
     if (location.hash) {
       const el = document.querySelector(location.hash)
@@ -31,7 +28,7 @@ export default function HomePage() {
     }
   }, [location.hash])
 
-  // Smooth scroll for same-page anchor clicks
+  // Smooth scroll for same-page anchor clicks.
   useEffect(() => {
     function handleClick(e: MouseEvent) {
       const target = (e.target as Element).closest('a[href^="#"]')
@@ -49,38 +46,29 @@ export default function HomePage() {
   }, [])
 
   return (
-    <>
+    <MotionPreferenceProvider>
+      <a
+        href="#main-content"
+        className="skip-to-content sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-60 focus:rounded-md focus:bg-primary focus:px-4 focus:py-2 focus:text-primary-foreground"
+      >
+        Chuyển đến nội dung chính
+      </a>
       <Header
         desktopNav={<HomeDesktopNav />}
         mobileMenu={<HomeMobileMenu isOpen={isOpen} onClose={close} />}
         isMobileMenuOpen={isOpen}
         onMobileMenuToggle={toggle}
-        ctaButton={
-          <div className="lang-selector-wrapper relative hidden sm:block">
-            <button
-              type="button"
-              className="lang-selector-button flex items-center gap-1.5 px-3 py-2 text-sm text-muted-foreground hover:text-foreground cursor-pointer rounded-md border border-border bg-transparent"
-              aria-label="Chọn ngôn ngữ"
-            >
-              <span>Tiếng Việt</span>
-              <ChevronDown />
-            </button>
-          </div>
-        }
+        ctaButton={<MotionToggle />}
       />
-      <main>
+      <main id="main-content">
         <HeroV2 />
-        <AboutSection />
-        {/* <ProductShowcase /> */}
-        <VideoStrip />
+        <AboutV2 />
+        <VideoV2 />
         <OffersEditorial />
-        {/* <FactorySection /> */}
-        {/* <PressSection /> */}
-        {/* <NeedHelpCTA /> */}
         <FeaturedV2 />
         <NewsV2 />
       </main>
       <HomeFooter />
-    </>
+    </MotionPreferenceProvider>
   )
 }
