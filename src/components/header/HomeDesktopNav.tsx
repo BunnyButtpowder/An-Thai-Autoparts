@@ -1,5 +1,6 @@
 import { homeDesktopNav, isDropdown } from '../../data/navigation'
 import DropdownMenu from './DropdownMenu'
+import CenterUnderline from "@/components/fancy/text/underline-center"
 
 export default function HomeDesktopNav() {
   return (
@@ -11,9 +12,9 @@ export default function HomeDesktopNav() {
           <li key={item.label}>
             <a
               href={item.href}
-              className="nav-link px-4 py-2 text-sm font-medium text-foreground hover:text-primary transition-colors cursor-pointer rounded-md"
+              className="nav-link px-4 py-2 text-base font-medium text-foreground hover:text-primary transition-colors cursor-pointer rounded-md"
             >
-              {item.label}
+              <CenterUnderline>{item.label}</CenterUnderline>
             </a>
           </li>
         )

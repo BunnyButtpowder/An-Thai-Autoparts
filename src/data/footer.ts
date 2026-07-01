@@ -11,8 +11,8 @@ export interface FooterSupportItem {
 
 export const homeFooterCompanyLinks: FooterLink[] = [
   { label: 'Giới thiệu', href: '/gioi-thieu' },
-  { label: 'Nhà máy', href: '#nha-may' },
-  { label: 'Hệ thống đại lý', href: '#lien-he' },
+  { label: 'Sản phẩm', href: '/#san-pham' },
+  { label: 'Tin tức', href: '/tin-tuc' },
   { label: 'Tuyển dụng', href: '#tuyen-dung' },
   { label: 'Liên hệ', href: '#lien-he' },
 ]

@@ -81,13 +81,13 @@ export default function NewsV2() {
               )}
             </div>
             <Link to={featuredNews.href} target="_blank" className="flex flex-1 flex-col p-5 transition-colors hover:bg-muted/30 sm:p-6 cursor-pointer">
-              <p className="mb-2.5 text-[11px] font-semibold uppercase tracking-wider text-primary">
+              <p className="mb-2.5 text-xs font-semibold uppercase tracking-wider text-primary sm:text-sm">
                 {featuredNews.category} · {featuredNews.postedDate}
               </p>
-              <h3 className="mb-2.5 text-xl font-bold leading-snug text-foreground transition-colors group-hover:text-primary sm:text-2xl">
+              <h3 className="mb-2.5 text-xl font-bold leading-snug text-foreground transition-colors group-hover:text-primary sm:text-xl 2xl:text-2xl">
                 {featuredNews.title}
               </h3>
-              <p className="mb-5 line-clamp-3 text-sm leading-relaxed text-muted-foreground">{featuredNews.excerpt}</p>
+              <p className="mb-5 line-clamp-3 text-base leading-relaxed text-muted-foreground lg:text-lg">{featuredNews.excerpt}</p>
               <span className="mt-auto inline-flex items-center gap-1.5 text-sm font-semibold text-primary">
                 Đọc bài viết
                 <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
@@ -104,13 +104,13 @@ export default function NewsV2() {
                   target="_blank"
                   className="group/item flex w-full flex-col justify-center p-4 transition-colors hover:bg-muted/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-inset sm:p-5 cursor-pointer"
                 >
-                  <time dateTime={article.postedDate} className="text-[11px] font-medium uppercase tracking-wider text-muted-foreground">
+                  <time dateTime={article.postedDate} className="text-xs font-medium uppercase tracking-wider text-muted-foreground sm:text-sm">
                     {article.postedDate}
                   </time>
-                  <h4 className="mt-1.5 text-base font-bold leading-snug text-foreground transition-colors group-hover/item:text-primary">
+                  <h4 className="mt-1.5 text-base font-bold leading-snug text-foreground transition-colors group-hover/item:text-primary lg:text-lg 2xl:text-xl">
                     {article.title}
                   </h4>
-                  <p className="mt-1.5 line-clamp-1 text-sm leading-relaxed text-muted-foreground">{article.excerpt}</p>
+                  <p className="mt-1.5 line-clamp-1 text-sm leading-relaxed text-muted-foreground lg:text-base">{article.excerpt}</p>
                 </Link>
               </li>
             ))}

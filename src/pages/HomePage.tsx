@@ -1,13 +1,13 @@
 import { useEffect } from 'react'
 import { useLocation } from 'react-router'
 import useMobileMenu from '../hooks/useMobileMenu'
+import useOverscrollOverlap from '../hooks/useOverscrollOverlap'
 import Header from '../components/header/Header'
 import HomeDesktopNav from '../components/header/HomeDesktopNav'
 import HomeMobileMenu from '../components/header/HomeMobileMenu'
 import HomeFooter from '../components/footer/HomeFooter'
 // import HeroSection from '../components/home/HeroSection'
-import AboutSection from '../components/home/AboutSection'
-import VideoStrip from '../components/home/VideoStrip'
+import AboutV2 from '../components/home-v2/AboutV2'
 // import OfferSection from '../components/home/OfferSection'
 // import FeaturedProduct from '../components/home/FeaturedProduct'
 // import NewsSection from '../components/home/NewsSection'
@@ -20,6 +20,8 @@ import ChevronDown from '../components/icons/ChevronDown'
 export default function HomePage() {
   const { isOpen, toggle, close } = useMobileMenu()
   const location = useLocation()
+
+  useOverscrollOverlap()
 
   // Handle hash scrolling on page load and navigation
   useEffect(() => {
@@ -70,15 +72,20 @@ export default function HomePage() {
       />
       <main>
         <HeroV2 />
-        <AboutSection />
+        <AboutV2 />
         {/* <ProductShowcase /> */}
-        <VideoStrip />
-        <OffersEditorial />
-        {/* <FactorySection /> */}
-        {/* <PressSection /> */}
-        {/* <NeedHelpCTA /> */}
-        <FeaturedV2 />
-        <NewsV2 />
+        <div className="overscroll-section js-overscroll-section">
+          <div className="overscroll-section__sticky-content js-overscroll-section__sticky-content">
+            <OffersEditorial />
+          </div>
+          {/* <FactorySection /> */}
+          {/* <PressSection /> */}
+          {/* <NeedHelpCTA /> */}
+          <div className="overscroll-section__scroll-content js-overscroll-section__scroll-content">
+            <FeaturedV2 />
+            <NewsV2 />
+          </div>
+        </div>
       </main>
       <HomeFooter />
     </>

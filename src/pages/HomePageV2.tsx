@@ -9,7 +9,6 @@ import HomeFooter from '../components/footer/HomeFooter'
 import MotionToggle from '../components/common/MotionToggle'
 import HeroV2 from '../components/home-v2/HeroV2'
 import AboutV2 from '../components/home-v2/AboutV2'
-import VideoV2 from '../components/home-v2/VideoV2'
 import OffersEditorial from '../components/home-v2/OffersEditorial'
 import FeaturedV2 from '../components/home-v2/FeaturedV2'
 import NewsV2 from '../components/home-v2/NewsV2'
@@ -63,7 +62,6 @@ export default function HomePageV2() {
       <main id="main-content">
         <HeroV2 />
         <AboutV2 />
-        <VideoV2 />
         <OffersEditorial />
         <FeaturedV2 />
         <NewsV2 />

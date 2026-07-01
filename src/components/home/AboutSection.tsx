@@ -34,14 +34,11 @@ export default function AboutSection() {
               Đối tác đồng hành tin cậy
             </h2>
             <div className="about-text-content-wrapper text-justify">
-              <p className="about-paragraph text-muted-foreground text-lg leading-relaxed">
+              <p className="about-paragraph text-black text-lg leading-relaxed">
                 Là đơn vị tiên phong trong lĩnh vực phụ tùng xe thương mại tại Việt Nam, An Thái không ngừng đầu tư vào năng lực sản xuất và hệ thống phân phối nhằm mang đến những giải pháp phụ tùng toàn diện cho khách hàng.
               </p>
-              <p className="about-paragraph text-muted-foreground text-lg leading-relaxed mt-4">
+              <p className="about-paragraph text-black text-lg leading-relaxed mt-4">
                 Nhà máy sản xuất tăm bua (tang trống phanh) của chúng tôi tại Khu công nghiệp Liên Hà Thái được vận hành theo quy trình hiện đại, đáp ứng các tiêu chuẩn xuất khẩu quốc tế. Hiện nay, sản phẩm của An Thái đã có mặt tại thị trường Mỹ và nhiều quốc gia trên thế giới, với cam kết nhất quán về chất lượng, độ bền và hiệu quả chi phí.
-              </p>
-              <p className="about-paragraph text-muted-foreground text-lg leading-relaxed mt-4">
-                Song song với hoạt động sản xuất, An Thái hiện phân phối hơn 30.000 mã phụ tùng cho các dòng xe thương mại Trung Quốc, Mỹ và Nhật Bản, đáp ứng nhu cầu của các doanh nghiệp vận tải, gara và trung tâm sửa chữa ô tô trên toàn quốc.
               </p>
             </div>
             <Link
