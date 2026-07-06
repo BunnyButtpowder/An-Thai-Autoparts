@@ -58,7 +58,7 @@ export default function FeaturedV2() {
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
           <div className="featured-v2-content lg:col-span-6">
-            <p className="featured-product-eyebrow featured-v2-reveal inline-flex items-center px-3 py-1 rounded-full bg-primary-foreground/15 text-primary-foreground text-sm font-semibold uppercase tracking-widest mb-5">
+            <p className="featured-product-eyebrow featured-v2-reveal inline-flex items-center px-3 py-1 rounded-full bg-primary-foreground/15 text-primary-foreground text-base font-semibold uppercase tracking-widest mb-5">
               Sản phẩm chủ lực
             </p>
             <h2 id="featured-v2-heading" className="featured-v2-reveal mt-5 text-balance text-3xl font-bold leading-tight tracking-tight sm:text-4xl lg:text-5xl">

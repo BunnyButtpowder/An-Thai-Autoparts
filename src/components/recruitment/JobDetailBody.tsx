@@ -34,7 +34,7 @@ export default function JobDetailBody({ job }: { job: JobListing }) {
 
   return (
     <section ref={sectionRef} className="job-detail-body-section bg-background pb-8" id="noi-dung-cong-viec">
-      <div className="job-detail-body-container max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-10">
+      <div className="job-detail-body-container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-10">
         <p className="job-detail-block job-detail-summary text-lg text-muted-foreground leading-relaxed">
           {job.summary}
         </p>

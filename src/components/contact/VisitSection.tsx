@@ -39,12 +39,12 @@ export default function VisitSection() {
         </div>
 
         <div className="visit-layout grid lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
-          <div className="visit-image overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
+          <div className="visit-image relative aspect-[4/3] lg:aspect-auto overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
             <img
               src="/contact/2.jpg"
               alt="Hình ảnh công ty An Thái"
               onLoad={() => ScrollTrigger.refresh()}
-              className="visit-image-photo h-full w-full object-cover"
+              className="visit-image-photo absolute inset-0 h-full w-full object-cover"
             />
           </div>
 
@@ -52,7 +52,7 @@ export default function VisitSection() {
             {visitOffices.map((office) => (
               <li
                 key={office.name}
-                className="visit-office-item group flex items-start gap-4 rounded-2xl border border-border bg-card p-5 lg:p-6 shadow-sm transition-all duration-300 hover:border-primary/50 hover:shadow-md"
+                className="visit-office-item group flex items-start gap-4 rounded-2xl border border-border bg-card p-5 lg:p-6 transition-all duration-300 hover:border-primary/50 hover:shadow-md"
               >
                 <span className="visit-office-badge flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-accent text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-primary-foreground">
                   <MapPinIcon className="visit-office-icon w-5 h-5" />

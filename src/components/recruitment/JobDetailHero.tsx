@@ -32,7 +32,7 @@ export default function JobDetailHero({ job }: { job: JobListing }) {
       className="job-detail-hero-section relative bg-background pt-32 pb-10 lg:pt-40 lg:pb-12"
       id="vi-tri"
     >
-      <div className="job-detail-hero-container max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="job-detail-hero-container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <Link
           to="/tuyen-dung"
           className="job-detail-breadcrumb inline-flex items-center gap-1.5 text-sm font-medium text-muted-foreground hover:text-primary transition-colors cursor-pointer mb-6"

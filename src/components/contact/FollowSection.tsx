@@ -43,7 +43,7 @@ export default function FollowSection() {
   }, [])
 
   return (
-    <section ref={sectionRef} className="follow-section py-20 lg:py-28 bg-foreground text-primary-foreground" id="theo-doi-chung-toi">
+    <section ref={sectionRef} className="follow-section py-20 lg:py-28 text-primary-foreground bg-foreground bg-[radial-gradient(125%_125%_at_50%_100%,color-mix(in_oklab,var(--color-primary)_22%,transparent)_0%,transparent_60%)]" id="theo-doi-chung-toi">
       <div className="follow-container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <p className="follow-label inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 text-white text-xs sm:text-sm font-semibold uppercase tracking-widest mb-6">
           <span className="follow-label-dot h-1.5 w-1.5 rounded-full bg-primary" />

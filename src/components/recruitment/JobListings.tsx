@@ -45,7 +45,7 @@ export default function JobListings() {
       className="job-listings-section bg-muted py-16 lg:py-24"
       id="danh-muc-viec-lam"
     >
-      <div className="job-listings-container max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="job-listings-container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="job-listings-heading text-2xl sm:text-3xl font-bold text-foreground mb-8 lg:mb-10">
           {jobsIntro.title}
         </h2>

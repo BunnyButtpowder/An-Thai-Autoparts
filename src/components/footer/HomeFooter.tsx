@@ -8,9 +8,9 @@ import { TextHoverEffect } from '@/components/ui/text-hover-effect'
 export default function HomeFooter() {
   return (
     <footer className="footer-container bg-foreground text-primary-foreground" id="footer">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-8">
+      <div className="max-w-7xl lg:max-w-430 mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-8">
 
-        <div className="footer-grid grid sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-40 mb-12">
+        <div className="footer-grid grid sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-30 mb-12">
           {/* Brand column */}
           <div className="footer-brand-column sm:col-span-2">
             <img src="/icons/white-horizontal.png" alt="An Thai" className="w-100 h-auto" />

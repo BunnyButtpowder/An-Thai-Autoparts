@@ -32,7 +32,9 @@ export default function OffersEditorial() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section intro */}
         <div className="offers-intro max-w-2xl">
-          <p className="about-label inline-flex items-center px-3 py-1 rounded-full border border-red-500 text-primary text-sm font-semibold uppercase tracking-wider">Hệ sinh thái An Thái</p>
+          <p className="about-label inline-flex items-center px-3 py-1 rounded-full border-2 border-primary text-primary text-base font-bold uppercase tracking-wider">
+            Hệ sinh thái An Thái
+          </p>
           <h2 id="offers-heading" className="mt-4 text-3xl font-bold uppercase leading-tight text-white sm:text-4xl">
             Lĩnh vực tiên phong
           </h2>

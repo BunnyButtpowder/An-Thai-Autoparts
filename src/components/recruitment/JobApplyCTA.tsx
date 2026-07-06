@@ -24,8 +24,8 @@ export default function JobApplyCTA({ job }: { job: JobListing }) {
   }, [])
 
   return (
-    <section ref={sectionRef} className="job-apply-section bg-background py-12 lg:py-16" id="ung-tuyen">
-      <div className="job-apply-container max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section ref={sectionRef} className="job-apply-section bg-background pt-12 lg:pt-16" id="ung-tuyen">
+      <div className="job-apply-container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="job-apply-inner rounded-2xl border border-border bg-card p-8 sm:p-10 text-center shadow-sm">
           <h2 className="job-apply-title text-2xl sm:text-3xl font-bold text-foreground mb-4">
             Bạn đã sẵn sàng cho bước tiến mới trong sự nghiệp?

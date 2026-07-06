@@ -31,7 +31,7 @@ export const newsCategories: NewsCategory[] = [
 
 export const NEWS_IMAGES = [
   '/home/manufacture.jpg',
-  '/home/hammer.jpg',
+  '/home/hammer-transparent.png',
   '/home/distribution.jpg',
   '/home/about.jpg',
   '/home/fix.jpg',
@@ -73,7 +73,7 @@ export const newsArticles: NewsArticle[] = [
     publishedAt: '2026-06-02',
     category: 'san-pham',
     categoryLabel: 'Sản phẩm',
-    image: '/home/hammer.jpg',
+    image: '/home/hammer-transparent.png',
     href: '/tin-tuc/tam-bua-oem-moi',
   },
   {
@@ -106,7 +106,7 @@ export const newsArticles: NewsArticle[] = [
     publishedAt: '2026-05-12',
     category: 'san-pham',
     categoryLabel: 'Sản phẩm',
-    image: '/home/hammer.jpg',
+    image: '/home/hammer-transparent.png',
     href: '/tin-tuc/thong-tin-san-pham',
   },
   {
@@ -194,7 +194,7 @@ export const newsArticles: NewsArticle[] = [
     publishedAt: '2026-03-18',
     category: 'kien-thuc',
     categoryLabel: 'Kiến thức',
-    image: '/home/hammer.jpg',
+    image: '/home/hammer-transparent.png',
     href: '/tin-tuc/oem-vs-aftermarket',
   },
   {
@@ -238,7 +238,7 @@ export const newsArticles: NewsArticle[] = [
     publishedAt: '2026-02-17',
     category: 'san-pham',
     categoryLabel: 'Sản phẩm',
-    image: '/home/hammer.jpg',
+    image: '/home/hammer-transparent.png',
     href: '/tin-tuc/tam-bua-fmvss',
   },
   {
@@ -260,7 +260,7 @@ export const newsArticles: NewsArticle[] = [
     publishedAt: '2026-02-03',
     category: 'san-pham',
     categoryLabel: 'Sản phẩm',
-    image: '/home/hammer.jpg',
+    image: '/home/hammer-transparent.png',
     href: '/tin-tuc/gang-xam-sae',
   },
   {
@@ -293,3 +293,24 @@ export const allNewsArticles: NewsArticle[] = [featuredNews, ...newsArticles].so
 )
 
 export const ARTICLES_PER_PAGE = 18
+
+/** Trích slug từ đường dẫn bài viết dạng "/tin-tuc/<slug>". */
+export function articleSlug(article: NewsArticle): string {
+  return article.href.replace(/^\/tin-tuc\//, '')
+}
+
+/** Tra cứu bài viết theo slug trên URL. */
+export function getArticleBySlug(slug: string): NewsArticle | undefined {
+  return allNewsArticles.find((article) => articleSlug(article) === slug)
+}
+
+/** Các bài viết liên quan cùng danh mục, loại trừ bài hiện tại. */
+export function getRelatedArticles(current: NewsArticle, limit = 3): NewsArticle[] {
+  const sameCategory = allNewsArticles.filter(
+    (article) => article.id !== current.id && article.category === current.category,
+  )
+  const fillers = allNewsArticles.filter(
+    (article) => article.id !== current.id && article.category !== current.category,
+  )
+  return [...sameCategory, ...fillers].slice(0, limit)
+}

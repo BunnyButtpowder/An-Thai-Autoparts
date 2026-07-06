@@ -24,10 +24,10 @@ export default function Header({
   return (
     <header
       ref={headerRef}
-      className="header-container fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur border-b border-border transition-shadow"
+      className="header-container fixed top-0 left-0 right-0 z-50 bg-background/70 backdrop-blur-xl border-border transition-shadow"
       id="header"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl lg:max-w-430 mx-auto px-4 sm:px-6 lg:px-8">
         <nav className="flex items-center justify-between h-16 lg:h-20" aria-label="Main navigation">
           <Link to="/" className="logo-link flex items-center gap-2 cursor-pointer">
             <img src="/icons/icon-horizontal.png" alt="An Thai" className="w-auto h-8 hover:scale-105 transition-transform" />

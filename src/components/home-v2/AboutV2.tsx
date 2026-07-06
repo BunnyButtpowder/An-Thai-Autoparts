@@ -53,7 +53,7 @@ export default function AboutV2() {
     <section ref={ref} id="gioi-thieu" aria-labelledby="about-v2-heading" className="about-v2-section border-t border-border bg-background py-16 lg:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="about-v2-intro mx-auto max-w-3xl text-center">
-          <p className="about-label inline-flex items-center px-3 py-1 rounded-full bg-accent text-primary text-sm font-semibold uppercase tracking-wider">Về chúng tôi</p>
+          <p className="about-label inline-flex items-center px-3 py-1 rounded-full bg-accent text-primary text-base font-semibold uppercase tracking-wider">Về chúng tôi</p>
 
           <h2 id="about-v2-heading" className="mt-5 text-3xl font-bold uppercase leading-tight text-foreground sm:text-4xl">
             Đối tác đồng hành tin cậy
@@ -113,7 +113,7 @@ export default function AboutV2() {
         <div className="mt-12 flex justify-center">
           <Link
             to="/gioi-thieu"
-            className="group inline-flex items-center gap-2 text-base font-semibold text-primary transition-colors hover:text-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background cursor-pointer"
+            className="group inline-flex items-center gap-2 text-xl font-semibold text-primary transition-colors hover:text-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background cursor-pointer"
           >
             Khám phá thêm
             <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />

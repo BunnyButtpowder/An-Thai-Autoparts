@@ -40,19 +40,21 @@ export default function HeroV2() {
       <div className="hero-v2-grid absolute inset-0 -z-10" aria-hidden="true" />
 
       <div className="mx-auto w-full max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-24">
-        {/* Measurement-frame wrapper — left-aligned to the page margin, room for the dimension annotations. */}
-        <div className="hero-v2-frame-wrap relative max-w-3xl">
+        {/* Measurement-frame wrapper — pulled left by the frame's own padding so the inner
+            eyebrow/heading/CTAs sit flush on the page (logo) margin; the frame border and
+            dimension ticks slide into the left gutter. */}
+        <div className="hero-v2-frame-wrap relative max-w-6xl -ml-8 sm:-ml-12 lg:-ml-16">
           {/* Top dimension line — width callout. */}
-          <div className="hero-v2-dim absolute -top-9 right-0 left-0 hidden items-center sm:flex" aria-hidden="true">
+          {/* <div className="hero-v2-dim absolute -top-9 right-0 left-0 hidden items-center sm:flex" aria-hidden="true">
             <span className="h-3 w-px bg-white/40" />
             <span className="h-px flex-1 bg-white/30" />
             <span className="mx-2 font-mono text-[11px] tracking-wider text-white/55">1240 mm</span>
             <span className="h-px flex-1 bg-white/30" />
             <span className="h-3 w-px bg-white/40" />
-          </div>
+          </div> */}
 
           {/* Left dimension line — height callout. */}
-          <div className="hero-v2-dim absolute top-0 -left-9 bottom-0 hidden flex-col items-center sm:flex" aria-hidden="true">
+          {/* <div className="hero-v2-dim absolute top-0 -left-9 bottom-0 hidden flex-col items-center sm:flex" aria-hidden="true">
             <span className="h-px w-3 bg-white/40" />
             <span className="w-px flex-1 bg-white/30" />
             <span className="my-2 font-mono text-[11px] tracking-wider text-white/55 [writing-mode:vertical-rl] rotate-180">
@@ -60,14 +62,14 @@ export default function HeroV2() {
             </span>
             <span className="w-px flex-1 bg-white/30" />
             <span className="h-px w-3 bg-white/40" />
-          </div>
+          </div> */}
 
           {/* The measured frame with machined caliper corners. */}
-          <div className="hero-v2-frame relative border border-white/15 px-8 py-10 sm:px-12 sm:py-14 lg:px-16 lg:py-16">
-            <span className="hero-v2-corner absolute -top-px -left-px h-7 w-7 border-t-2 border-l-2 border-primary" aria-hidden="true" />
+          <div className="hero-v2-frame relative  px-8 py-10 sm:px-12 sm:py-14 lg:px-16 lg:py-16">
+            {/* <span className="hero-v2-corner absolute -top-px -left-px h-7 w-7 border-t-2 border-l-2 border-primary" aria-hidden="true" />
             <span className="hero-v2-corner absolute -top-px -right-px h-7 w-7 border-t-2 border-r-2 border-primary" aria-hidden="true" />
             <span className="hero-v2-corner absolute -bottom-px -left-px h-7 w-7 border-b-2 border-l-2 border-primary" aria-hidden="true" />
-            <span className="hero-v2-corner absolute -right-px -bottom-px h-7 w-7 border-r-2 border-b-2 border-primary" aria-hidden="true" />
+            <span className="hero-v2-corner absolute -right-px -bottom-px h-7 w-7 border-r-2 border-b-2 border-primary" aria-hidden="true" /> */}
 
             <p className="hero-v2-eyebrow font-mono text-xs font-medium uppercase tracking-[0.25em] text-white sm:text-sm">
               <span className="text-white/40">//</span> Nhà sản xuất phụ tùng ô tô
@@ -75,13 +77,13 @@ export default function HeroV2() {
 
             <h1
               id="hero-v2-heading"
-              className="hero-v2-heading mt-6 font-extrabold tracking-tight text-white"
+              className="hero-v2-heading mt-6 font-extrabold tracking-tight text-white text-balance"
             >
               <span className="block overflow-hidden pb-1">
-                <span className="hero-v2-line hero-title-fluid block">Vì chiếc xe luôn lăn bánh.</span>
+                <span className="hero-v2-line hero-title-fluid block">Vì chiếc xe luôn lăn bánh</span>
               </span>
               <span className="block overflow-hidden pb-1">
-                <span className="hero-v2-line hero-title-fluid block">Vì doanh nghiệp luôn phát triển.</span>
+                <span className="hero-v2-line hero-title-fluid block">Vì doanh nghiệp luôn phát triển</span>
               </span>
             </h1>
 
