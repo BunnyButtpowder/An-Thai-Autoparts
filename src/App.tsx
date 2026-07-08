@@ -1,6 +1,7 @@
 import { Routes, Route } from 'react-router'
 import HomePage from './pages/HomePage'
 import AboutPage from './pages/AboutPage'
+import ProductPage from './pages/ProductPage'
 import ContactPage from './pages/ContactPage'
 import NewsPage from './pages/NewsPage'
 import ArticleDetailPage from './pages/ArticleDetailPage'
@@ -12,6 +13,7 @@ export default function App() {
     <Routes>
       <Route index element={<HomePage />} />
       <Route path="gioi-thieu" element={<AboutPage />} />
+      <Route path="san-pham" element={<ProductPage />} />
       <Route path="tin-tuc" element={<NewsPage />} />
       <Route path="tin-tuc/:slug" element={<ArticleDetailPage />} />
       <Route path="lien-he" element={<ContactPage />} />

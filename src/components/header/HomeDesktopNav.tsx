@@ -7,7 +7,7 @@ export default function HomeDesktopNav() {
     <ul className="nav-links-desktop hidden lg:flex items-center gap-1" role="menubar">
       {homeDesktopNav.map((item) =>
         isDropdown(item) ? (
-          <DropdownMenu key={item.label} label={item.label} items={item.items} />
+          <DropdownMenu key={item.label} label={item.label} items={item.items} href={item.label === 'Sản phẩm' ? '/san-pham' : ''} />
         ) : (
           <li key={item.label}>
             <a

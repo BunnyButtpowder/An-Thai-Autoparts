@@ -6,20 +6,23 @@ import CenterUnderline from "@/components/fancy/text/underline-center"
 interface DropdownMenuProps {
   label: string
   items: NavLink[]
+  href: string
 }
 
-export default function DropdownMenu({ label, items }: DropdownMenuProps) {
+export default function DropdownMenu({ label, items, href }: DropdownMenuProps) {
   return (
     <li className="relative group">
-      <button
-        type="button"
-        className="nav-dropdown-trigger px-4 py-2 text-base font-medium text-foreground hover:text-primary transition-colors cursor-pointer rounded-md flex items-center gap-1"
-        aria-expanded="false"
-        aria-haspopup="true"
-      >
-        <CenterUnderline>{label}</CenterUnderline>
-        <ChevronDown className="w-4 h-4 transition-transform group-hover:rotate-180" />
-      </button>
+      <a href={href}>
+        <button
+          type="button"
+          className="nav-dropdown-trigger px-4 py-2 text-base font-medium text-foreground hover:text-primary transition-colors cursor-pointer rounded-md flex items-center gap-1"
+          aria-expanded="false"
+          aria-haspopup="true"
+        >
+          <CenterUnderline>{label}</CenterUnderline>
+          <ChevronDown className="w-4 h-4 transition-transform group-hover:rotate-180" />
+        </button>
+      </a>
       <ul
         className="nav-dropdown absolute top-full left-0 mt-2 w-62 bg-card border border-border rounded-lg shadow-lg py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all"
         role="menu"

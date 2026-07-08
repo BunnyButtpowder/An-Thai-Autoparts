@@ -113,10 +113,16 @@ export default function AboutV2() {
         <div className="mt-12 flex justify-center">
           <Link
             to="/gioi-thieu"
-            className="group inline-flex items-center gap-2 text-xl font-semibold text-primary transition-colors hover:text-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background cursor-pointer"
+            className="explore-more-button group relative w-60 cursor-pointer overflow-hidden rounded-lg border border-primary bg-background p-4 text-center text-xl font-semibold text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
           >
-            Khám phá thêm
-            <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+            <span className="explore-more-label inline-block translate-x-1 transition-all duration-300 group-hover:translate-x-72 group-hover:opacity-0">
+              Khám phá thêm
+            </span>
+            <span className="explore-more-reveal absolute top-0 left-0 z-10 flex h-full w-full translate-x-full items-center justify-center gap-2 text-primary-foreground opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100">
+              Khám phá thêm
+              <ArrowRight className="h-5 w-5" />
+            </span>
+            <span className="explore-more-dot absolute left-[12%] top-[40%] h-2 w-2 scale-100 rounded-full bg-primary transition-all duration-300 group-hover:left-0 group-hover:top-0 group-hover:h-full group-hover:w-full group-hover:scale-150 group-hover:rounded-full"></span>
           </Link>
         </div>
       </div>
