@@ -94,9 +94,6 @@ export default function FeaturedProducts() {
     >
       <div className="featured-products-container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <header className="featured-products-header">
-          <p className="featured-products-eyebrow font-mono text-sm font-semibold uppercase tracking-[0.25em] text-black sm:text-base">
-            <span className="text-primary">//</span> Sản phẩm tiêu biểu
-          </p>
           <h2
             id="featured-products-heading"
             className="featured-products-title mt-4 text-3xl font-extrabold tracking-tight text-primary uppercase text-balance sm:text-4xl lg:text-5xl"

@@ -9,7 +9,9 @@ import ProductHero from '../components/product/ProductHero'
 import FeaturedProducts from '../components/product/FeaturedProducts'
 import ChevronDown from '../components/icons/ChevronDown'
 import ExploreFactory from '../components/product/ExploreFactory'
+import ProductCatalog from '../components/product/ProductCatalog'
 import BrandLogos from '../components/product/BrandLogos'
+import ContactCTA from '../components/product/ContactCTA'
 
 export default function ProductPage() {
   const { isOpen, toggle, close } = useMobileMenu()
@@ -68,7 +70,9 @@ export default function ProductPage() {
         <ProductHero />
         <FeaturedProducts />
         <ExploreFactory />
+        <ProductCatalog />
         <BrandLogos />
+        <ContactCTA />
       </main>
       <HomeFooter />
     </>

@@ -25,14 +25,11 @@ export default function BrandLogos() {
     <section
       ref={sectionRef}
       id="thuong-hieu"
-      className="brand-logos-section relative w-full bg-white py-20 lg:py-28"
+      className="brand-logos-section relative w-full bg-white pb-20 lg:pb-28"
       aria-labelledby="brand-logos-heading"
     >
       <div className="brand-logos-container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <header className="brand-logos-header max-w-7xl">
-          <p className="brand-logos-eyebrow brand-logos-reveal font-mono text-sm font-semibold uppercase tracking-[0.25em] text-black sm:text-base">
-            <span className="text-primary">//</span> Thương hiệu
-          </p>
           <h2
             id="brand-logos-heading"
             className="brand-logos-title brand-logos-reveal mt-4 text-3xl font-extrabold tracking-tight text-primary uppercase text-balance sm:text-4xl lg:text-5xl"
@@ -66,7 +63,7 @@ export default function BrandLogos() {
                 src={brand.logo}
                 alt={`Logo thương hiệu ${brand.name}`}
                 loading="lazy"
-                className="brand-logos-image h-12 w-auto object-contain opacity-70 grayscale transition duration-300 hover:opacity-100 hover:grayscale-0 sm:h-14 lg:h-16"
+                className="brand-logos-image h-12 w-auto object-contain opacity-70 transition duration-300 hover:opacity-100 sm:h-14 lg:h-16"
               />
             </div>
           ))}

@@ -49,15 +49,11 @@ export default function ExploreFactory() {
 
       <div className="explore-factory-container relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-12 lg:grid lg:grid-cols-3 lg:items-center lg:gap-16">
         <div className="explore-factory-text-column contents lg:col-span-2 lg:flex lg:flex-col lg:gap-7">
-          <span className="explore-factory-eyebrow explore-factory-reveal order-1 lg:order-0 mx-auto lg:mx-0 inline-flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.2em] text-white">
-            <span className="explore-factory-eyebrow-line h-px w-8 bg-white" aria-hidden="true" />
-            Nhà máy An Thái
-          </span>
           <h2 className="explore-factory-heading explore-factory-reveal order-2 lg:order-0 text-center lg:text-left text-3xl sm:text-4xl lg:text-5xl font-bold text-white uppercase tracking-tight leading-[1.1]">
             Khám phá nhà máy sản xuất{' '}
             <span className="explore-factory-heading-accent text-white/90">tăm bua An Thái</span>
           </h2>
-          <p className="explore-factory-text explore-factory-reveal order-3 lg:order-0 max-w-xl mx-auto lg:mx-0 text-lg leading-relaxed text-white/85 text-center lg:text-left">
+          <p className="explore-factory-text explore-factory-reveal order-3 lg:order-0 mx-auto lg:mx-0 text-lg leading-relaxed text-white/85 text-center lg:text-left">
             Tìm hiểu quy trình sản xuất, hệ thống máy móc và năng lực tạo nên những sản phẩm bền bỉ, chất lượng của An Thái.
           </p>
           <a
@@ -66,7 +62,7 @@ export default function ExploreFactory() {
             rel="noopener noreferrer"
             className="explore-factory-catalogue explore-factory-reveal group order-5 lg:order-0 mx-auto lg:mx-0 inline-flex items-center justify-center gap-2.5 rounded-xl bg-white px-8 py-4 text-base font-semibold text-primary transition-all duration-300 hover:-translate-y-0.5 cursor-pointer"
           >
-            E - Catalogue
+            Khám phá thêm
             <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
           </a>
         </div>
