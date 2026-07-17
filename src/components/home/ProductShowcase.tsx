@@ -20,7 +20,7 @@ export default function ProductShowcase() {
                 Interchangeable with the 3600AX, 3922X, 66864B and more.
               </p>
               <a
-                href="#lien-he"
+                href="lien-he"
                 className="product-showcase-cta inline-flex items-center justify-center px-6 py-3 text-sm font-semibold text-primary-foreground bg-primary hover:bg-primary-hover rounded-full transition-colors cursor-pointer"
               >
                 Chi tiết

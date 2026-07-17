@@ -4,13 +4,17 @@ import useMobileMenu from '../hooks/useMobileMenu'
 import Header from '../components/header/Header'
 import HomeDesktopNav from '../components/header/HomeDesktopNav'
 import HomeMobileMenu from '../components/header/HomeMobileMenu'
-import AboutFooter from '../components/footer/AboutFooter'
 import AboutHero from '../components/about/AboutHero'
-import EcosystemSection from '../components/about/EcosystemSection'
-import ValuesSection from '../components/about/ValuesSection'
-import AboutCTA from '../components/about/AboutCTA'
 import ChevronDown from '../components/icons/ChevronDown'
-import AboutSection from '../components/home/AboutSection'
+import AboutSection from '../components/about/AboutSection'
+import VisionMissionSection from '../components/about/VisionMissionSection'
+import SustainabilitySection from '../components/about/SustainabilitySection'
+import { TracingBeam } from '@/components/ui/tracing-beam'
+import Footer from '@/components/footer/Footer'
+import OffersEditorial from '@/components/home-v2/OffersEditorial'
+import LearnMoreSection from '../components/recruitment/LearnMoreSection'
+import JoinUsSection from '../components/about/JoinUsSection'
+import AboutNewsSection from '../components/about/AboutNewsSection'
 
 export default function AboutPage() {
   const { isOpen, toggle, close } = useMobileMenu()
@@ -66,13 +70,20 @@ export default function AboutPage() {
         }
       />
       <main>
-        <AboutHero />
-        <AboutSection />
-        <EcosystemSection />
-        <ValuesSection />
-        <AboutCTA />
+        {/* Beam threads the hero into the story so the two chapters read as one
+            continuous narrative rather than two sections split by a gap. */}
+        <TracingBeam>
+          <AboutHero />
+          <AboutSection />
+        </TracingBeam>
+        <VisionMissionSection />
+        <OffersEditorial />
+        <SustainabilitySection />
+        <LearnMoreSection />
+        <JoinUsSection />
+        <AboutNewsSection />
       </main>
-      <AboutFooter />
+      <Footer />
     </>
   )
 }

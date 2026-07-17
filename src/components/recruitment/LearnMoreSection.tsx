@@ -24,7 +24,7 @@ export default function LearnMoreSection() {
   return (
     <section
       ref={sectionRef}
-      className="learn-more-section bg-background py-20 lg:py-28"
+      className="learn-more-section bg-background py-20"
       id="tim-hieu-them"
     >
       <div className="learn-more-container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-8 lg:grid lg:grid-cols-3 lg:items-center lg:gap-0">

@@ -5,7 +5,7 @@ import {
 } from '../../data/footer'
 import { TextHoverEffect } from '@/components/ui/text-hover-effect'
 
-export default function HomeFooter() {
+export default function Footer() {
   return (
     <footer className="footer-container bg-foreground text-primary-foreground" id="footer">
       <div className="max-w-7xl lg:max-w-430 mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-8">

@@ -73,7 +73,7 @@ export default function FeaturedV2() {
                 <ArrowRight className="featured-product-cta-icon w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
               </a>
               <a
-                href="#lien-he"
+                href="lien-he"
                 className="featured-product-cta-secondary group inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-semibold text-primary-foreground border-2 border-primary-foreground/40 bg-transparent rounded-lg transition-all duration-300 cursor-pointer hover:bg-primary-foreground hover:text-primary hover:border-primary-foreground hover:-translate-y-0.5 hover:shadow-lg"
               >
                 Liên hệ / Báo giá

@@ -84,8 +84,8 @@ export function TextReveal({ paragraphs, className }: TextRevealProps) {
       ref={targetRef}
       className={cn('relative h-[160vh] md:h-[200vh]', className)}
     >
-      <div className="sticky top-0 flex h-screen items-center">
-        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+      <div className="sticky top-0 flex h-screen md:h-[80vh] items-center">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 mt-20">
           {wordParagraphs.map((words, paragraphIndex) => {
             const paragraph = (
               <p

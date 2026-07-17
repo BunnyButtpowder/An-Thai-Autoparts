@@ -105,9 +105,9 @@ export default function HeroV2() {
           </div>
 
           {/* CAD-style part stamp under the frame. */}
-          <p className="hero-v2-dim mt-5 text-center font-mono text-[11px] uppercase tracking-[0.3em] text-white/40" aria-hidden="true">
+          {/* <p className="hero-v2-dim mt-5 text-center font-mono text-[11px] uppercase tracking-[0.3em] text-white/40" aria-hidden="true">
             PN ATA·2026 — REV.A — SCALE 1:1
-          </p>
+          </p> */}
         </div>
       </div>
     </section>

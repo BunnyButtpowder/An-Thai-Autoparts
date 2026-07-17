@@ -40,7 +40,7 @@ export const offers: OfferCard[] = [
       '/home/fix.jpg',
     imageAlt: 'Trung tâm sửa chữa và đại tu ô tô',
     ctaLabel: 'Xem thêm',
-    ctaHref: '#lien-he',
+    ctaHref: 'lien-he',
   },
   {
     title: 'Trung tâm đăng kiểm xe cơ giới',
@@ -50,7 +50,7 @@ export const offers: OfferCard[] = [
       '/home/vehicle-inspection.jpg',
     imageAlt: 'Trung tâm đăng kiểm xe cơ giới',
     ctaLabel: 'Xem thêm',
-    ctaHref: '#lien-he',
+    ctaHref: 'lien-he',
   },
   {
     title: 'Dịch vụ thương mại',
@@ -60,6 +60,6 @@ export const offers: OfferCard[] = [
       '/home/hotel.jpg',
     imageAlt: 'Tổ hợp dịch vụ khách sạn và nhà hàng',
     ctaLabel: 'Xem thêm',
-    ctaHref: '#lien-he',
+    ctaHref: 'lien-he',
   },
 ]

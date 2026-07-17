@@ -11,10 +11,10 @@ export interface FooterSupportItem {
 
 export const homeFooterCompanyLinks: FooterLink[] = [
   { label: 'Giới thiệu', href: '/gioi-thieu' },
-  { label: 'Sản phẩm', href: '/#san-pham' },
+  { label: 'Sản phẩm', href: '/san-pham' },
   { label: 'Tin tức', href: '/tin-tuc' },
-  { label: 'Tuyển dụng', href: '#tuyen-dung' },
-  { label: 'Liên hệ', href: '#lien-he' },
+  { label: 'Tuyển dụng', href: 'tuyen-dung' },
+  { label: 'Liên hệ', href: 'lien-he' },
 ]
 
 export const homeFooterSocialLinks: FooterLink[] = [
@@ -36,7 +36,7 @@ export const aboutFooterCompanyLinks: FooterLink[] = [
   { label: 'Giới thiệu', href: '/gioi-thieu' },
   { label: 'Nhà máy', href: '/#nha-may' },
   { label: 'Tin tức', href: '/tin-tuc' },
-  { label: 'Liên hệ', href: '/#lien-he' },
+  { label: 'Liên hệ', href: '/lien-he' },
 ]
 
 export const aboutFooterContactPhones: FooterSupportItem[] = [
