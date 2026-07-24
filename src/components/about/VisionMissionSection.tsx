@@ -160,7 +160,7 @@ export default function VisionMissionSection() {
                 className="vms-pillar group relative overflow-hidden rounded-[18px] border border-border bg-card p-8 shadow-[0_10px_30px_-18px_rgba(23,23,23,0.25)] transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-primary"
               >
                 {/* Gradient accent rail — industrial edge marker down the left side. */}
-                <span className="vms-pillar-rail absolute left-0 top-0 h-full w-[5px] bg-linear-to-b from-primary to-primary-hover" />
+                <span className="vms-pillar-rail absolute left-0 top-0 h-full w-1.25 bg-linear-to-b from-primary to-primary-hover" />
                 {/* Ghost index — oversized watermark numeral behind the content. */}
                 <span
                   aria-hidden="true"
@@ -170,9 +170,9 @@ export default function VisionMissionSection() {
                 </span>
 
                 <div className="vms-pillar-body relative">
-                  <div className="vms-pillar-head mb-[18px] flex items-center gap-3.5">
+                  <div className="vms-pillar-head mb-4.5 flex items-center gap-3.5">
                     <span className="vms-pillar-icon flex h-13 w-13 items-center justify-center rounded-[14px] bg-primary text-primary-foreground shadow-[0_6px_14px_-4px_rgba(185,28,28,0.55)]">
-                      <svg className="h-[26px] w-[26px]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="h-6.5 w-6.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         {pillar.svgPaths.map((d, i) => (
                           <path key={i} strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.7} d={d} />
                         ))}
@@ -191,15 +191,8 @@ export default function VisionMissionSection() {
 
           {/* Right — Core values petal diagram. */}
           <div className="vms-values">
-            {/* Anchored title — bold heading with an underline bar, not a caption. */}
-            <div className="vms-values-caption mb-[30px] text-center lg:text-left">
-              <h3 className="vms-values-title text-3xl font-extrabold tracking-[-0.01em] text-foreground">
-                Giá trị cốt lõi
-              </h3>
-              <div className="vms-values-underline mx-auto mt-3 h-1 w-14 rounded-full bg-primary lg:mx-0" />
-            </div>
 
-            <div className="vms-diagram relative mx-auto aspect-square w-full max-w-[460px]">
+            <div className="vms-diagram relative mx-auto aspect-square w-full max-w-115">
               {/* Spokes + concentric rings — the drafting armature behind the petals. */}
               <svg
                 aria-hidden="true"

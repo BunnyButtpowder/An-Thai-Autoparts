@@ -20,7 +20,7 @@ export const offers: OfferCard[] = [
       '/home/manufacture.jpg',
     imageAlt: 'Dây chuyền sản xuất tăm bua An Thái',
     ctaLabel: 'Xem thêm',
-    ctaHref: '#san-pham',
+    ctaHref: 'san-xuat-phu-tung',
   },
   {
     title: 'Nhập khẩu và phân phối phụ tùng ô tô',
@@ -30,7 +30,7 @@ export const offers: OfferCard[] = [
       '/home/distribution.jpg',
     imageAlt: 'Kho phân phối phụ tùng ô tô',
     ctaLabel: 'Xem thêm',
-    ctaHref: '#san-pham-categories',
+    ctaHref: 'nhap-khau-phan-phoi',
   },
   {
     title: 'Trung tâm sửa chữa và đại tu ô tô',
@@ -40,7 +40,7 @@ export const offers: OfferCard[] = [
       '/home/fix.jpg',
     imageAlt: 'Trung tâm sửa chữa và đại tu ô tô',
     ctaLabel: 'Xem thêm',
-    ctaHref: 'lien-he',
+    ctaHref: 'sua-chua-dai-tu',
   },
   {
     title: 'Trung tâm đăng kiểm xe cơ giới',
@@ -50,7 +50,7 @@ export const offers: OfferCard[] = [
       '/home/vehicle-inspection.jpg',
     imageAlt: 'Trung tâm đăng kiểm xe cơ giới',
     ctaLabel: 'Xem thêm',
-    ctaHref: 'lien-he',
+    ctaHref: 'dang-kiem-xe',
   },
   {
     title: 'Dịch vụ thương mại',
@@ -60,6 +60,6 @@ export const offers: OfferCard[] = [
       '/home/hotel.jpg',
     imageAlt: 'Tổ hợp dịch vụ khách sạn và nhà hàng',
     ctaLabel: 'Xem thêm',
-    ctaHref: 'lien-he',
+    ctaHref: 'dich-vu-thuong-mai',
   },
 ]

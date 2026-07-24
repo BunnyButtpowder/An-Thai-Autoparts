@@ -96,7 +96,7 @@ export default function FeaturedProducts() {
         <header className="featured-products-header">
           <h2
             id="featured-products-heading"
-            className="featured-products-title mt-4 text-3xl font-extrabold tracking-tight text-primary uppercase text-balance sm:text-4xl lg:text-5xl"
+            className="featured-products-title mt-4 text-3xl font-extrabold tracking-normal text-primary uppercase text-balance sm:text-4xl lg:text-5xl"
           >
             Tăm bua An Thái
           </h2>

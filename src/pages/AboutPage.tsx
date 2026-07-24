@@ -60,7 +60,7 @@ export default function AboutPage() {
           <div className="lang-selector-wrapper relative hidden sm:block">
             <button
               type="button"
-              className="lang-selector-button flex items-center gap-1.5 px-3 py-2 text-sm text-muted-foreground hover:text-foreground cursor-pointer rounded-md border border-border bg-transparent"
+              className="lang-selector-button flex items-center gap-1.5 px-3 py-2 text-sm text-white hover:text-primary hover:bg-primary/10 hover:border-primary cursor-pointer rounded-md border border-border bg-transparent"
               aria-label="Chọn ngôn ngữ"
             >
               <span>Tiếng Việt</span>

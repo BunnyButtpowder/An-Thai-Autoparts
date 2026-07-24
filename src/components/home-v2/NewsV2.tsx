@@ -133,7 +133,7 @@ export default function NewsV2() {
         <div className="news-v2-header mb-10 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between lg:mb-12">
           <div>
             <p className="inline-flex items-center px-3 py-1 rounded-full bg-accent text-primary text-base font-semibold uppercase tracking-wider">Cập nhật</p>
-            <h2 id="news-v2-heading" className="mt-4 text-3xl font-bold leading-tight text-foreground sm:text-4xl">Tin tức &amp; Báo chí</h2>
+            <h2 id="news-v2-heading" className="mt-4 text-3xl font-bold leading-tight uppercase tracking-tight text-foreground sm:text-4xl lg:text-5xl">Tin tức &amp; Báo chí</h2>
           </div>
           <Link
             to="/tin-tuc"

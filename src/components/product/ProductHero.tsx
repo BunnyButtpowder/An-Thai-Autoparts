@@ -110,7 +110,7 @@ export default function ProductHero() {
 
         <motion.h1
           id="product-hero-heading"
-          className="product-hero-title mt-6 text-4xl font-extrabold leading-[1.1] tracking-tight text-black text-balance sm:text-5xl lg:text-6xl"
+          className="product-hero-title mt-6 text-4xl font-extrabold leading-[1.1] tracking-normal text-black text-balance sm:text-5xl lg:text-6xl"
           variants={{
             hidden: { opacity: 0, y: 24 },
             visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: 'easeOut' } },

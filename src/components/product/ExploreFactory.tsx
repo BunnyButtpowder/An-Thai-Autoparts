@@ -49,7 +49,7 @@ export default function ExploreFactory() {
 
       <div className="explore-factory-container relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-12 lg:grid lg:grid-cols-3 lg:items-center lg:gap-16">
         <div className="explore-factory-text-column contents lg:col-span-2 lg:flex lg:flex-col lg:gap-7">
-          <h2 className="explore-factory-heading explore-factory-reveal order-2 lg:order-0 text-center lg:text-left text-3xl sm:text-4xl lg:text-5xl font-bold text-white uppercase tracking-tight leading-[1.1]">
+          <h2 className="explore-factory-heading explore-factory-reveal order-2 lg:order-0 text-center lg:text-left text-3xl sm:text-4xl lg:text-5xl font-bold text-white uppercase tracking-normal leading-15">
             Khám phá nhà máy sản xuất{' '}
             <span className="explore-factory-heading-accent text-white/90">tăm bua An Thái</span>
           </h2>

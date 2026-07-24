@@ -61,12 +61,12 @@ export default function FeaturedV2() {
             <p className="featured-product-eyebrow featured-v2-reveal inline-flex items-center px-3 py-1 rounded-full bg-primary-foreground/15 text-primary-foreground text-base font-semibold uppercase tracking-widest mb-5">
               Sản phẩm chủ lực
             </p>
-            <h2 id="featured-v2-heading" className="featured-v2-reveal mt-5 text-balance text-3xl font-bold leading-tight tracking-tight sm:text-4xl lg:text-5xl">
+            <h2 id="featured-v2-heading" className="featured-v2-reveal mt-5 text-balance text-3xl font-bold uppercase leading-tight tracking-tight sm:text-4xl lg:text-5xl">
               Trải nghiệm tăm bua chất lượng quốc tế
             </h2>
             <div className="featured-v2-reveal mt-9 featured-product-actions flex flex-col sm:flex-row gap-4">
               <a
-                href="#san-pham"
+                href="/san-pham"
                 className="featured-product-cta-primary group inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-semibold text-primary bg-background rounded-lg transition-all duration-300 cursor-pointer hover:bg-accent hover:text-accent-foreground hover:-translate-y-0.5 hover:shadow-lg"
               >
                 Xem thêm

@@ -43,7 +43,7 @@ export default function ContactCTA() {
       <div className="contact-cta-container relative mx-auto flex max-w-4xl flex-col items-center px-4 text-center sm:px-6 lg:px-8">
         <h2
           id="contact-cta-heading"
-          className="contact-cta-heading contact-cta-reveal text-3xl font-extrabold uppercase tracking-tight text-white text-balance sm:text-4xl lg:text-5xl"
+          className="contact-cta-heading contact-cta-reveal text-3xl font-extrabold uppercase tracking-wide leading-15 text-white text-balance sm:text-4xl lg:text-5xl"
         >
           An Thái - Hệ sinh thái phụ tùng toàn diện
         </h2>

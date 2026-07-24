@@ -15,7 +15,7 @@ export default function DropdownMenu({ label, items, href }: DropdownMenuProps) 
       <a href={href}>
         <button
           type="button"
-          className="nav-dropdown-trigger px-4 py-2 text-base font-medium text-foreground hover:text-primary transition-colors cursor-pointer rounded-md flex items-center gap-1"
+          className="nav-dropdown-trigger px-4 py-2 text-base font-medium text-white hover:text-primary transition-colors cursor-pointer rounded-md flex items-center gap-1"
           aria-expanded="false"
           aria-haspopup="true"
         >

@@ -24,13 +24,13 @@ export default function Header({
   return (
     <header
       ref={headerRef}
-      className="header-container fixed top-0 left-0 right-0 z-50 bg-background/70 backdrop-blur-xl border-border transition-shadow"
+      className="header-container fixed top-0 left-0 right-0 z-50 bg-foreground/90 backdrop-blur-xl border-border transition-shadow"
       id="header"
     >
       <div className="max-w-7xl lg:max-w-430 mx-auto px-4 sm:px-6 lg:px-8">
         <nav className="flex items-center justify-between h-16 lg:h-20" aria-label="Main navigation">
           <Link to="/" className="logo-link flex items-center gap-2 cursor-pointer">
-            <img src="/icons/icon-horizontal.png" alt="An Thai" className="w-auto h-8 hover:scale-105 transition-transform" />
+            <img src="/icons/white-horizontal.png" alt="An Thai" className="w-auto h-8 hover:scale-105 transition-transform" />
           </Link>
 
           {desktopNav}
@@ -39,7 +39,7 @@ export default function Header({
             {ctaButton}
             <button
               type="button"
-              className="mobile-menu-button lg:hidden p-2 rounded-md text-foreground hover:bg-muted cursor-pointer"
+              className="mobile-menu-button lg:hidden p-2 rounded-md text-white hover:bg-muted cursor-pointer"
               aria-label="Mở menu"
               onClick={onMobileMenuToggle}
             >

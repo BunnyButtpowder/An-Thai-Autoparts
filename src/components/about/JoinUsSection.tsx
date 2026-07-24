@@ -20,7 +20,7 @@ export default function JoinUsSection() {
       to={RECRUITMENT_HREF}
       id="gia-nhap-an-thai"
       aria-label="Gia nhập An Thái"
-      className="join-us-section group relative flex h-[440px] items-center overflow-hidden bg-foreground sm:h-[480px] lg:h-[520px] cursor-pointer"
+      className="join-us-section group relative flex h-110 items-center overflow-hidden bg-foreground sm:h-120 lg:h-130 cursor-pointer"
     >
       <img
         src={JOIN_US_IMAGE}

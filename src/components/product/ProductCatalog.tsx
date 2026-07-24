@@ -134,7 +134,7 @@ export default function ProductCatalog() {
       <div className="product-catalog-container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header + intro — brief sections 8 & 9 */}
         <header className="product-catalog-header">
-          <h2 className="product-catalog-title text-3xl font-extrabold tracking-tight text-primary uppercase text-balance sm:text-4xl lg:text-5xl">
+          <h2 className="product-catalog-title text-3xl font-extrabold tracking-normal text-primary uppercase text-balance sm:text-4xl lg:text-5xl">
             Danh mục phụ tùng
           </h2>
           <p className="product-catalog-subtitle mt-4 text-base leading-relaxed text-black sm:text-lg">

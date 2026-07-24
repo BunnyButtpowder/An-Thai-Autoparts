@@ -77,6 +77,10 @@ export function TextReveal({ paragraphs, className }: TextRevealProps) {
   }
 
   const totalWords = wordParagraphs.reduce((sum, words) => sum + words.length, 0)
+  // Finish the reveal before the scroll ends so skimmed-through text settles at
+  // full opacity while the block is still pinned, instead of only lighting up as
+  // it scrolls out of view.
+  const revealEnd = 0.85
   let wordOffset = 0
 
   return (
@@ -96,8 +100,8 @@ export function TextReveal({ paragraphs, className }: TextRevealProps) {
                 )}
               >
                 {words.map((word, i) => {
-                  const start = (wordOffset + i) / totalWords
-                  const end = start + 1 / totalWords
+                  const start = (revealEnd * (wordOffset + i)) / totalWords
+                  const end = start + revealEnd / totalWords
                   return (
                     <RevealWord
                       key={i}

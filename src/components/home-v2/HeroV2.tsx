@@ -96,7 +96,7 @@ export default function HeroV2() {
                 <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
               </Link>
               <a
-                href="#linh-vuc-tien-phong"
+                href="/san-pham"
                 className="hero-v2-cta-secondary inline-flex items-center justify-center gap-2 rounded-md border border-white/25 px-7 py-3.5 text-base font-semibold text-white transition-colors duration-300 hover:border-white hover:bg-white/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-[#0a0b0d] cursor-pointer"
               >
                 Xem thêm sản phẩm

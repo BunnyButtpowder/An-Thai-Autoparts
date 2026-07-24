@@ -58,7 +58,8 @@ export const homeMobileNav: MobileNavGroup[] = [
   {
     group: 'Sản phẩm',
     links: [
-      { label: 'Tăm bua', href: '/#san-pham' },
+      { label: 'Sản xuất phụ tùng', href: '/san-xuat-phu-tung' },
+      { label: 'Tăm bua', href: '/tam-bua' },
       { label: 'Động cơ tổng thành & Phụ kiện', href: '/san-pham?danh-muc=dong-co#danh-muc-phu-tung' },
       { label: 'Hệ thống khung gầm', href: '/san-pham?danh-muc=khung-gam#danh-muc-phu-tung' },
       { label: 'Hệ thống phanh', href: '/san-pham?danh-muc=phanh#danh-muc-phu-tung' },
