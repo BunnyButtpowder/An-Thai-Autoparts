@@ -15,8 +15,6 @@ import HeroV2 from '../components/home-v2/HeroV2'
 import FeaturedV2 from '../components/home-v2/FeaturedV2'
 import NewsV2 from '../components/home-v2/NewsV2'
 import OffersEditorial from '../components/home-v2/OffersEditorial'
-import ChevronDown from '../components/icons/ChevronDown'
-
 export default function HomePage() {
   const { isOpen, toggle, close } = useMobileMenu()
   const location = useLocation()
@@ -57,18 +55,6 @@ export default function HomePage() {
         mobileMenu={<HomeMobileMenu isOpen={isOpen} onClose={close} />}
         isMobileMenuOpen={isOpen}
         onMobileMenuToggle={toggle}
-        ctaButton={
-          <div className="lang-selector-wrapper relative hidden sm:block">
-            <button
-              type="button"
-              className="lang-selector-button flex items-center gap-1.5 px-3 py-2 text-sm text-white hover:text-primary hover:bg-primary/10 hover:border-primary cursor-pointer rounded-md border border-border bg-transparent"
-              aria-label="Chọn ngôn ngữ"
-            >
-              <span>Tiếng Việt</span>
-              <ChevronDown />
-            </button>
-          </div>
-        }
       />
       <main>
         <HeroV2 />

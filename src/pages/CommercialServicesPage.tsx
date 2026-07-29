@@ -4,14 +4,17 @@ import useMobileMenu from '../hooks/useMobileMenu'
 import Header from '../components/header/Header'
 import HomeDesktopNav from '../components/header/HomeDesktopNav'
 import HomeMobileMenu from '../components/header/HomeMobileMenu'
-import HomeFooter from '../components/footer/Footer'
-import RecruitmentPageHero from '../components/recruitment/RecruitmentPageHero'
-import JobListings from '../components/recruitment/JobListings'
-import LearnMoreSection from '../components/recruitment/LearnMoreSection'
-export default function RecruitmentPage() {
+import Footer from '../components/footer/Footer'
+import CommercialServicesHero from '../components/commercial-services/CommercialServicesHero'
+import HotelIntro from '../components/commercial-services/HotelIntro'
+import ServiceSpaces from '../components/commercial-services/ServiceSpaces'
+import CommercialServicesCTA from '../components/commercial-services/CommercialServicesCTA'
+
+export default function CommercialServicesPage() {
   const { isOpen, toggle, close } = useMobileMenu()
   const location = useLocation()
 
+  // Handle hash scrolling on page load and navigation
   useEffect(() => {
     if (location.hash) {
       const el = document.querySelector(location.hash)
@@ -23,6 +26,7 @@ export default function RecruitmentPage() {
     }
   }, [location.hash])
 
+  // Smooth scroll for same-page anchor clicks
   useEffect(() => {
     function handleClick(e: MouseEvent) {
       const target = (e.target as Element).closest('a[href^="#"]')
@@ -47,12 +51,13 @@ export default function RecruitmentPage() {
         isMobileMenuOpen={isOpen}
         onMobileMenuToggle={toggle}
       />
-      <main>
-        <RecruitmentPageHero />
-        <JobListings />
-        <LearnMoreSection />
+      <main className="commercial-services-main bg-[#0b0c0d]">
+        <CommercialServicesHero />
+        <HotelIntro />
+        <ServiceSpaces />
+        <CommercialServicesCTA />
       </main>
-      <HomeFooter />
+      <Footer />
     </>
   )
 }

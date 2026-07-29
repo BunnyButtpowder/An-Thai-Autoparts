@@ -10,8 +10,6 @@ import NewsCategoryFilter from '../components/news/NewsCategoryFilter'
 import NewsArticleGrid from '../components/news/NewsArticleGrid'
 import FollowSection from '../components/contact/FollowSection'
 import type { NewsCategory } from '../data/news'
-import ChevronDown from '../components/icons/ChevronDown'
-
 export default function NewsPage() {
   const { isOpen, toggle, close } = useMobileMenu()
   const location = useLocation()
@@ -51,18 +49,6 @@ export default function NewsPage() {
         mobileMenu={<HomeMobileMenu isOpen={isOpen} onClose={close} />}
         isMobileMenuOpen={isOpen}
         onMobileMenuToggle={toggle}
-        ctaButton={
-          <div className="lang-selector-wrapper relative hidden sm:block">
-            <button
-              type="button"
-              className="lang-selector-button flex items-center gap-1.5 px-3 py-2 text-sm text-white hover:text-primary hover:bg-primary/10 hover:border-primary cursor-pointer rounded-md border border-border bg-transparent"
-              aria-label="Chọn ngôn ngữ"
-            >
-              <span>Tiếng Việt</span>
-              <ChevronDown />
-            </button>
-          </div>
-        }
       />
       <main>
         <NewsPageHero />

@@ -7,7 +7,6 @@ import HomeMobileMenu from '../components/header/HomeMobileMenu'
 import HomeFooter from '../components/footer/Footer'
 import ProductHero from '../components/product/ProductHero'
 import FeaturedProducts from '../components/product/FeaturedProducts'
-import ChevronDown from '../components/icons/ChevronDown'
 import ExploreFactory from '../components/product/ExploreFactory'
 import ProductCatalog from '../components/product/ProductCatalog'
 import BrandLogos from '../components/product/BrandLogos'
@@ -53,18 +52,6 @@ export default function ProductPage() {
         mobileMenu={<HomeMobileMenu isOpen={isOpen} onClose={close} />}
         isMobileMenuOpen={isOpen}
         onMobileMenuToggle={toggle}
-        ctaButton={
-          <div className="lang-selector-wrapper relative hidden sm:block">
-            <button
-              type="button"
-              className="lang-selector-button flex items-center gap-1.5 px-3 py-2 text-sm text-white hover:text-primary hover:bg-primary/10 hover:border-primary cursor-pointer rounded-md border border-border bg-transparent"
-              aria-label="Chọn ngôn ngữ"
-            >
-              <span>Tiếng Việt</span>
-              <ChevronDown />
-            </button>
-          </div>
-        }
       />
       <main>
         <ProductHero />

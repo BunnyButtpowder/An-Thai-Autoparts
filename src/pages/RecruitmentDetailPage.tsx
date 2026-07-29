@@ -9,7 +9,6 @@ import JobDetailHero from '../components/recruitment/JobDetailHero'
 import JobDetailBody from '../components/recruitment/JobDetailBody'
 import JobApplyCTA from '../components/recruitment/JobApplyCTA'
 import LearnMoreSection from '../components/recruitment/LearnMoreSection'
-import ChevronDown from '../components/icons/ChevronDown'
 import { getJobById } from '../data/jobs'
 
 export default function RecruitmentDetailPage() {
@@ -28,18 +27,6 @@ export default function RecruitmentDetailPage() {
         mobileMenu={<HomeMobileMenu isOpen={isOpen} onClose={close} />}
         isMobileMenuOpen={isOpen}
         onMobileMenuToggle={toggle}
-        ctaButton={
-          <div className="lang-selector-wrapper relative hidden sm:block">
-            <button
-              type="button"
-              className="lang-selector-button flex items-center gap-1.5 px-3 py-2 text-sm text-white hover:text-primary hover:bg-primary/10 hover:border-primary cursor-pointer rounded-md border border-border bg-transparent"
-              aria-label="Chọn ngôn ngữ"
-            >
-              <span>Tiếng Việt</span>
-              <ChevronDown />
-            </button>
-          </div>
-        }
       />
       <main>
         {job ? (

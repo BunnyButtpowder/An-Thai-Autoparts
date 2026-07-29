@@ -41,7 +41,7 @@ export default function PartnerBrands() {
                 Thương hiệu đối tác
               </h2>
               <a
-                href="#chung-nhan"
+                href="/san-pham"
                 className="partner-brands-all-link whitespace-nowrap text-sm sm:text-base font-semibold text-red-400 transition-colors hover:text-primary cursor-pointer"
               >
                 Xem tất cả sản phẩm ↗
