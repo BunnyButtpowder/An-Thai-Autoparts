@@ -86,14 +86,11 @@ export default function ServiceSpaces() {
             </p>
             <h2
               id="service-spaces-heading"
-              className="service-spaces-title service-spaces-reveal max-w-[20ch] text-3xl font-extrabold leading-[1.06] text-white sm:text-4xl lg:text-5xl"
+              className="service-spaces-title service-spaces-reveal text-3xl font-extrabold leading-[1.06] text-white sm:text-4xl lg:text-5xl"
             >
               Ba không gian, một tiêu chuẩn phục vụ
             </h2>
           </div>
-          <p className="service-spaces-hint service-spaces-reveal font-mono text-xs tracking-[0.12em] text-white/45">
-            CHỌN MỘT MỤC ĐỂ XEM CHI TIẾT
-          </p>
         </div>
 
         <div className="service-spaces-list service-spaces-reveal border-b border-white/14">
