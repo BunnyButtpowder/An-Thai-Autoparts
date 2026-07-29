@@ -5,6 +5,7 @@ import { motion } from "motion/react";
 export const TextHoverEffect = ({
   text,
   duration,
+  automatic = false,
 }: {
   text: string;
   duration?: number;
@@ -16,6 +17,7 @@ export const TextHoverEffect = ({
   const [maskPosition, setMaskPosition] = useState({ cx: "50%", cy: "50%" });
 
   useEffect(() => {
+    if (automatic) return;
     if (svgRef.current && cursor.x !== null && cursor.y !== null) {
       const svgRect = svgRef.current.getBoundingClientRect();
       const cxPercentage = ((cursor.x - svgRect.left) / svgRect.width) * 100;
@@ -25,7 +27,22 @@ export const TextHoverEffect = ({
         cy: `${cyPercentage}%`,
       });
     }
-  }, [cursor]);
+  }, [cursor, automatic]);
+
+  // In automatic mode the glow is always visible and sweeps left-to-right on a loop;
+  // otherwise it follows the cursor and only appears while hovered.
+  const active = automatic || hovered;
+  const maskAnimate = automatic
+    ? { cx: ["-20%", "120%"], cy: "40%" }
+    : maskPosition;
+  const maskTransition = automatic
+    ? {
+        duration: duration ?? 6,
+        ease: "linear" as const,
+        repeat: Infinity,
+        repeatType: "loop" as const,
+      }
+    : { duration: duration ?? 0, ease: "easeOut" as const };
 
   return (
     <svg
@@ -47,7 +64,7 @@ export const TextHoverEffect = ({
           cy="50%"
           r="25%"
         >
-          {hovered && (
+          {active && (
             <>
               <stop offset="0%" stopColor="#f87171" />
               <stop offset="35%" stopColor="#ef4444" />
@@ -62,16 +79,8 @@ export const TextHoverEffect = ({
           gradientUnits="userSpaceOnUse"
           r="20%"
           initial={{ cx: "50%", cy: "50%" }}
-          animate={maskPosition}
-          transition={{ duration: duration ?? 0, ease: "easeOut" }}
-
-          // example for a smoother animation below
-
-          //   transition={{
-          //     type: "spring",
-          //     stiffness: 300,
-          //     damping: 50,
-          //   }}
+          animate={maskAnimate}
+          transition={maskTransition}
         >
           <stop offset="0%" stopColor="white" />
           <stop offset="100%" stopColor="black" />
@@ -93,7 +102,7 @@ export const TextHoverEffect = ({
         dominantBaseline="middle"
         strokeWidth="0.3"
         className="fill-transparent stroke-white/5 font-[helvetica] text-7xl font-bold"
-        style={{ opacity: hovered ? 0.7 : 0 }}
+        style={{ opacity: active ? 0.7 : 0 }}
       >
         {text}
       </text>

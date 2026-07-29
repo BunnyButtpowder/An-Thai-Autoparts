@@ -81,7 +81,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-20 flex items-center justify-center">
-          <TextHoverEffect text="AN THAI" />
+          <TextHoverEffect text="AN THAI" automatic duration={6} />
         </div>
       </div>
     </footer>
