@@ -54,7 +54,7 @@ export default function RepairCommitment() {
                 key={item.number}
                 className="repair-commitment-row flex items-baseline gap-5 border-t border-white/12 py-5.5"
               >
-                <span className="repair-commitment-number min-w-7 font-mono text-sm font-bold text-red-400">
+                <span className="repair-commitment-number min-w-7 font-mono text-sm sm:text-base font-bold text-red-400">
                   {item.number}
                 </span>
                 <h3 className="repair-commitment-step-title text-xl font-bold text-white">

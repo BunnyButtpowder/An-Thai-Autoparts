@@ -58,7 +58,7 @@ export default function WorkshopIntro() {
     >
       <div className="workshop-intro-container mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:gap-16 lg:px-8">
         <div className="workshop-intro-copy">
-          <p className="workshop-intro-eyebrow workshop-intro-reveal mb-4.5 font-mono text-[13px] font-semibold uppercase tracking-[0.24em] text-red-400">
+          <p className="workshop-intro-eyebrow workshop-intro-reveal mb-4.5 font-mono text-sm sm:text-base font-semibold uppercase tracking-[0.24em] text-red-400">
             // Giới thiệu
           </p>
           <h2

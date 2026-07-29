@@ -68,7 +68,7 @@ export default function WorkshopEquipment() {
           >
             Trang thiết bị hiện đại
           </h2>
-          <p className="workshop-equipment-lead workshop-equipment-reveal text-lg leading-[1.7] text-white/80">
+          <p className="workshop-equipment-lead workshop-equipment-reveal text-lg leading-[1.7] text-white">
             Đầu tư đồng bộ hệ thống thiết bị và phần mềm chuyên dụng phục vụ công tác chẩn
             đoán, sửa chữa và phục hồi phương tiện.
           </p>
@@ -86,9 +86,6 @@ export default function WorkshopEquipment() {
                 }`}
               >
                 <div className="workshop-equipment-cell-head mb-4.5 flex items-baseline gap-4">
-                  <span className="workshop-equipment-cell-number font-mono text-sm font-bold text-red-400">
-                    {group.number}
-                  </span>
                   <h3 className="workshop-equipment-cell-title text-2xl font-bold text-white">
                     {group.title}
                   </h3>
@@ -97,7 +94,7 @@ export default function WorkshopEquipment() {
                   {group.items.map((item) => (
                     <li
                       key={item}
-                      className="workshop-equipment-cell-item relative pl-4.5 text-base leading-[1.55] text-white/80"
+                      className="workshop-equipment-cell-item relative pl-4.5 text-base leading-[1.55] text-white"
                     >
                       <span
                         className="workshop-equipment-cell-bullet absolute left-0 top-2 h-1.5 w-1.5 bg-primary"
