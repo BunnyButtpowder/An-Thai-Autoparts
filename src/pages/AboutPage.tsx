@@ -8,7 +8,6 @@ import AboutHero from '../components/about/AboutHero'
 import AboutSection from '../components/about/AboutSection'
 import VisionMissionSection from '../components/about/VisionMissionSection'
 import SustainabilitySection from '../components/about/SustainabilitySection'
-import { TracingBeam } from '@/components/ui/tracing-beam'
 import Footer from '@/components/footer/Footer'
 import OffersEditorial from '@/components/home-v2/OffersEditorial'
 import LearnMoreSection from '../components/recruitment/LearnMoreSection'
@@ -57,12 +56,8 @@ export default function AboutPage() {
         onMobileMenuToggle={toggle}
       />
       <main>
-        {/* Beam threads the hero into the story so the two chapters read as one
-            continuous narrative rather than two sections split by a gap. */}
-        <TracingBeam>
-          <AboutHero />
-          <AboutSection />
-        </TracingBeam>
+        <AboutHero />
+        <AboutSection />
         <VisionMissionSection />
         <OffersEditorial />
         <SustainabilitySection />

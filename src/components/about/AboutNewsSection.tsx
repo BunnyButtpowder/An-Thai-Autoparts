@@ -25,13 +25,8 @@ export default function AboutNewsSection() {
       ref={ref}
       id="tin-tuc"
       aria-labelledby="about-news-heading"
-      className="about-news-section relative overflow-hidden bg-muted py-20 lg:py-28"
+      className="about-news-section relative overflow-hidden py-20 lg:py-28"
     >
-      <div
-        aria-hidden="true"
-        className="about-news-grid-pattern blueprint-grid-light pointer-events-none absolute inset-0"
-      />
-
       <div className="about-news-container relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="about-news-header flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <div>
@@ -54,12 +49,6 @@ export default function AboutNewsSection() {
             <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
           </Link>
         </div>
-
-        {/* Diagonal hazard rule separating header from the card grid. */}
-        <div
-          aria-hidden="true"
-          className="about-news-hazard hazard-rule-light mt-6 h-2 border-y border-primary"
-        />
 
         <div className="about-news-grid mt-11 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {latestArticles.map((article) => (

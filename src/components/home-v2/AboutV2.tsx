@@ -46,7 +46,6 @@ export default function AboutV2() {
 
   const ref = useReveal<HTMLElement>((g, root) => {
     g.from('.about-v2-intro', { scrollTrigger: { trigger: root, start: 'top 80%' }, y: 28, opacity: 0, duration: 0.6, ease: 'power2.out' })
-    g.from('.about-v2-media', { scrollTrigger: { trigger: root, start: 'top 80%' }, y: 28, opacity: 0, duration: 0.6, delay: 0.12, ease: 'power2.out' })
     g.from('.about-v2-paragraph', { scrollTrigger: { trigger: '.about-v2-story', start: 'top 80%' }, y: 24, opacity: 0, duration: 0.6, stagger: 0.15, ease: 'power2.out' })
     // The video is the story's payoff — let it emerge (scale + fade) once the
     // reader scrolls past the narrative, not on the section's first trigger.

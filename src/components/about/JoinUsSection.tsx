@@ -33,11 +33,6 @@ export default function JoinUsSection() {
         aria-hidden="true"
         className="join-us-overlay absolute inset-0 bg-linear-to-r from-foreground/95 via-foreground/70 to-foreground/10"
       />
-      {/* Faint blueprint grid, matching the sustainability split. */}
-      <span
-        aria-hidden="true"
-        className="join-us-grid blueprint-grid-dark pointer-events-none absolute inset-0"
-      />
 
       <div className="join-us-container relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="join-us-copy max-w-xl">

@@ -32,16 +32,7 @@ export default function ArticleDetailHero({ article, readingMinutes }: ArticleDe
       className="article-detail-hero-section relative bg-background"
       id="bai-viet"
     >
-      <div className="article-detail-hero-media pt-16 lg:pt-20 w-full">
-        <div className="article-detail-hero-frame relative w-full h-[52vh] min-h-80 max-h-168 overflow-hidden bg-muted">
-          <img
-            src={article.image}
-            alt={article.title}
-            className="article-detail-hero-image h-full w-full object-cover"
-          />
-        </div>
-      </div>
-      <div className="article-detail-hero-container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 lg:pt-10 flex flex-col items-start">
+      <div className="article-detail-hero-container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 lg:pt-10 mt-15 sm:mt-20 flex flex-col items-start">
         <Link
           to="/tin-tuc"
           className="article-detail-breadcrumb inline-flex items-center gap-1.5 text-sm font-medium text-muted-foreground hover:text-primary transition-colors cursor-pointer mb-6"

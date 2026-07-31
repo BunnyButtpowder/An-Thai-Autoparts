@@ -32,7 +32,7 @@ export default function LearnMoreSection() {
           <h2 className="learn-more-heading order-1 lg:order-0 text-center lg:text-left text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground uppercase tracking-tight">
             Tìm hiểu thêm về chúng tôi
           </h2>
-          <p className="learn-more-text order-2 lg:order-0 text-lg text-muted-foreground leading-relaxed max-w-2xl text-center lg:text-left">
+          <p className="learn-more-text order-2 lg:order-0 text-lg text-black leading-relaxed max-w-2xl text-center lg:text-left">
             Từ những nền tảng vững chắc đến khát vọng vươn xa, hãy cùng khám phá hành trình phát triển và những giá trị đã làm nên thương hiệu An Thái.
           </p>
           <a
@@ -49,7 +49,7 @@ export default function LearnMoreSection() {
           <div className="learn-more-qr-frame rounded-xl border border-border bg-card p-3 shadow-sm">
             <img src="/recruit/qr-catalog.png" alt="Mã QR" className="w-40 h-40 lg:w-48 lg:h-48" />
           </div>
-          <span className="learn-more-qr-label text-sm text-center font-medium text-muted-foreground">Mã QR</span>
+          <span className="learn-more-qr-label text-sm text-center font-medium text-muted-foreground">Quét mã để xem E-Catalogue</span>
         </div>
       </div>
     </section>
