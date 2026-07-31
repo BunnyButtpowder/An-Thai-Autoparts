@@ -39,7 +39,7 @@ export default function VisitSection() {
         </div>
 
         <div className="visit-layout grid lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
-          <div className="visit-image relative aspect-[4/3] lg:aspect-auto overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
+          <div className="visit-image relative aspect-4/3 lg:aspect-auto overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
             <img
               src="/contact/2.jpg"
               alt="Hình ảnh công ty An Thái"

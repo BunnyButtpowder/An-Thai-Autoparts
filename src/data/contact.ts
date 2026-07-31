@@ -70,7 +70,7 @@ export const contactLocations: ContactLocation[] = [
 
 export const visitOffices: OfficeLocation[] = [
   {
-    name: 'Trụ sở chính',
+    name: 'Trụ sở Hưng Yên',
     address: 'Số 288 Trần Thái Tông, Phường Thái Bình, Tỉnh Hưng Yên',
     mapQuery: 'Số 288 Trần Thái Tông, Thái Bình',
   },
@@ -80,7 +80,7 @@ export const visitOffices: OfficeLocation[] = [
     mapQuery: 'Sunshine City, Thượng Thanh, Long Biên, Hà Nội',
   },
   {
-    name: 'Chi nhánh miền Nam',
+    name: 'Chi nhánh Hồ Chí Minh',
     address: 'Số 881, đường Mỹ Phước - Tân Vạn, Khu phố Bình Thung 1, Phường Đông Hòa, TP. Hồ Chí Minh',
     mapQuery: 'Hồ Phước - Tân Vạn, Đông Hòa, Dĩ An, Bình Dương',
   },

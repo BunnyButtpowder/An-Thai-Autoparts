@@ -61,8 +61,8 @@ export const NoiseBackground = ({
     "rgb(100, 150, 255)",
     "rgb(255, 200, 100)",
   ],
-  noiseIntensity = 0.2,
-  speed = 0.1,
+  noiseIntensity = 0,
+  speed = 0.5,
   backdropBlur = false,
   animating = true,
 }: NoiseBackgroundProps) => {
@@ -225,7 +225,7 @@ export const NoiseBackground = ({
         <img
           src="https://assets.aceternity.com/noise.webp"
           alt=""
-          className="h-full w-full object-cover opacity-[var(--noise-opacity)]"
+          className="h-full w-full object-cover opacity-(--noise-opacity)"
           style={{ mixBlendMode: "overlay" }}
         />
       </div>

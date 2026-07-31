@@ -97,12 +97,12 @@ export default function SustainabilitySection() {
       aria-labelledby="sustainability-heading"
       className="sustainability-section bg-steel"
     >
-      <div className="sustainability-split lg:grid lg:grid-cols-[1fr_0.625rem_42%]">
+      <div className="sustainability-split lg:grid lg:grid-cols-[1fr_1px_50%]">
         <div className="sustainability-copy relative">
           <div className="sustainability-grid pointer-events-none absolute inset-0" aria-hidden="true" />
           <div className="sustainability-copy-inner relative py-24 lg:py-32">
             <div className="sustainability-intro max-w-xl">
-              <p className="sustainability-eyebrow inline-flex items-center gap-3 text-sm font-bold uppercase tracking-[0.2em] text-primary">
+              <p className="sustainability-eyebrow inline-flex items-center gap-3 text-sm sm:text-base font-bold uppercase tracking-[0.2em] text-primary">
                 <span className="sustainability-eyebrow-dash h-0.5 w-8 bg-primary" />
                 Trách nhiệm An Thái
               </p>
@@ -123,7 +123,7 @@ export default function SustainabilitySection() {
                     ref={(el) => {
                       itemRefs.current[index] = el
                     }}
-                    className="sustainability-pillar flex flex-col border-t border-white/10 py-10 lg:min-h-[80vh] lg:flex-row lg:items-center lg:gap-7 lg:py-0"
+                    className="sustainability-pillar flex flex-col border-t border-white/10 py-10 lg:min-h-[56vh] lg:flex-row lg:items-center lg:gap-7 lg:py-0"
                   >
                     {/* Desktop progress rail: number + bar, lit red when active. */}
                     <div className="sustainability-rail hidden flex-none flex-col items-center gap-3 lg:flex">
@@ -135,7 +135,7 @@ export default function SustainabilitySection() {
                         {pillar.n}
                       </span>
                       <span
-                        className={`sustainability-rail-bar h-16 w-[3px] transition-colors duration-300 ${
+                        className={`sustainability-rail-bar h-16 w-0.75 transition-colors duration-300 ${
                           isActive ? 'bg-primary' : 'bg-white/10'
                         }`}
                       />
@@ -179,8 +179,11 @@ export default function SustainabilitySection() {
           </div>
         </div>
 
-        {/* Vertical hazard divider — desktop only. */}
-        <div className="sustainability-divider hidden lg:block sustainability-hazard" aria-hidden="true" />
+        {/* Vertical hairline divider — desktop only, fades at top and bottom. */}
+        <div
+          className="sustainability-divider hidden lg:block w-px bg-linear-to-b from-transparent via-white/15 to-transparent"
+          aria-hidden="true"
+        />
 
         {/* Full-height sticky image panel — desktop only, cross-fades per pillar. */}
         <div className="sustainability-panel relative hidden lg:block">

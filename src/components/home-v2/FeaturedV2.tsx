@@ -80,6 +80,33 @@ export default function FeaturedV2() {
                 <ArrowRight className="featured-product-cta-icon w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
               </a>
             </div>
+
+            <dl className="featured-v2-reveal featured-product-specs mt-10 grid grid-cols-3 gap-6 border-t border-primary-foreground/15 pt-8">
+              <div className="featured-product-spec">
+                <dt className="featured-product-spec-value text-xl font-bold leading-tight sm:text-2xl">
+                  FMVSS-121
+                </dt>
+                <dd className="featured-product-spec-label mt-1 text-sm font-medium uppercase tracking-wide text-primary-foreground/70">
+                  Tiêu chuẩn phanh
+                </dd>
+              </div>
+              <div className="featured-product-spec">
+                <dt className="featured-product-spec-value text-xl font-bold leading-tight sm:text-2xl">
+                  G3500
+                </dt>
+                <dd className="featured-product-spec-label mt-1 text-sm font-medium uppercase tracking-wide text-primary-foreground/70">
+                  Gang xám
+                </dd>
+              </div>
+              <div className="featured-product-spec">
+                <dt className="featured-product-spec-value text-xl font-bold leading-tight sm:text-2xl">
+                  100%
+                </dt>
+                <dd className="featured-product-spec-label mt-1 text-sm font-medium uppercase tracking-wide text-primary-foreground/70">
+                  Truy xuất nguồn gốc
+                </dd>
+              </div>
+            </dl>
           </div>
 
           <div className="featured-v2-media lg:col-span-6">
@@ -97,13 +124,6 @@ export default function FeaturedV2() {
                     className="featured-v2-shine pointer-events-none absolute inset-y-0 -left-1/4 w-1/3 -skew-x-12 bg-linear-to-r from-transparent via-white/30 to-transparent opacity-0"
                     aria-hidden="true"
                   />
-                  {/* Glassmorphic quality badge */}
-                  <div className="featured-v2-badge absolute bottom-4 left-4 flex items-center gap-2 rounded-full border border-primary-foreground/25 bg-primary-foreground/10 px-4 py-2 backdrop-blur-md">
-                    <svg viewBox="0 0 24 24" fill="none" className="featured-v2-badge-icon h-4 w-4 text-primary-foreground" aria-hidden="true">
-                      <path d="M20 6 9 17l-5-5" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                    <span className="featured-v2-badge-label text-sm font-semibold">Đạt chuẩn quốc tế</span>
-                  </div>
                 </div>
               </Lens>
               {/* Reflection floor for a floating, showroom feel */}

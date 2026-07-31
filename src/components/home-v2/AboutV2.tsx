@@ -2,7 +2,10 @@ import { useState } from 'react'
 import { Link } from 'react-router'
 import useReveal from '../../hooks/useReveal'
 import ArrowRight from '../icons/ArrowRight'
-import { TextReveal, type RevealSegment } from '@/components/ui/text-reveal'
+import { Play } from 'lucide-react'
+
+/** A run of story text; `highlight` renders the phrase in primary red. */
+type StorySegment = string | { text: string; highlight?: boolean }
 
 const YOUTUBE_VIDEO_ID = 'cEbOYRmYBKc'
 
@@ -19,9 +22,9 @@ function buildEmbedSrc() {
 
 /**
  * The long company description, broken into paragraphs and highlighted runs so
- * the scroll reveal can light up key brand phrases in primary red as story beats.
+ * key brand phrases render in primary red.
  */
-const aboutStory: RevealSegment[][] = [
+const aboutStory: StorySegment[][] = [
   [
     'Là đơn vị tiên phong trong lĩnh vực phụ tùng xe thương mại tại Việt Nam,',
     { text: 'An Thái', highlight: true },
@@ -44,6 +47,7 @@ export default function AboutV2() {
   const ref = useReveal<HTMLElement>((g, root) => {
     g.from('.about-v2-intro', { scrollTrigger: { trigger: root, start: 'top 80%' }, y: 28, opacity: 0, duration: 0.6, ease: 'power2.out' })
     g.from('.about-v2-media', { scrollTrigger: { trigger: root, start: 'top 80%' }, y: 28, opacity: 0, duration: 0.6, delay: 0.12, ease: 'power2.out' })
+    g.from('.about-v2-paragraph', { scrollTrigger: { trigger: '.about-v2-story', start: 'top 80%' }, y: 24, opacity: 0, duration: 0.6, stagger: 0.15, ease: 'power2.out' })
     // The video is the story's payoff — let it emerge (scale + fade) once the
     // reader scrolls past the narrative, not on the section's first trigger.
     g.from('.about-v2-video', { scrollTrigger: { trigger: '.about-v2-video', start: 'top 85%' }, y: 32, opacity: 0, scale: 0.97, duration: 0.7, ease: 'power2.out' })
@@ -59,7 +63,7 @@ export default function AboutV2() {
             Đối tác đồng hành tin cậy
           </h2>
         </div>
-
+{/*
         <div className="about-v2-media mx-auto mt-10 max-w-7xl overflow-hidden rounded-2xl border border-border bg-muted">
           <img
             src="/home/about.jpg"
@@ -67,10 +71,25 @@ export default function AboutV2() {
             loading="lazy"
             className="h-72 w-full object-cover sm:h-96 lg:h-128"
           />
-        </div>
+        </div> */}
       </div>
 
-      <TextReveal paragraphs={aboutStory} />
+      <div className="about-v2-story mx-auto mt-10 max-w-6xl px-4 sm:px-6 lg:px-8">
+        {aboutStory.map((paragraph, i) => (
+          <p key={i} className="about-v2-paragraph mt-6 text-lg leading-relaxed text-foreground first:mt-0 sm:text-2xl">
+            {paragraph.map((segment, j) => {
+              const isHighlight = typeof segment !== 'string' && segment.highlight
+              const text = typeof segment === 'string' ? segment : segment.text
+              return (
+                <span key={j} className={isHighlight ? 'font-semibold text-primary' : undefined}>
+                  {j > 0 ? ' ' : ''}
+                  {text}
+                </span>
+              )
+            })}
+          </p>
+        ))}
+      </div>
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Story payoff: the VTV3 feature that proves the factory chapter above. */}
@@ -100,9 +119,7 @@ export default function AboutV2() {
                 />
                 <span className="absolute inset-0 flex items-center justify-center bg-black/30 transition-colors group-hover:bg-black/40">
                   <span className="flex h-16 w-16 items-center justify-center rounded-full bg-primary text-primary-foreground transition-transform duration-300 group-hover:scale-110">
-                    <svg className="h-7 w-7 translate-x-0.5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                      <path d="M8 5v14l11-7z" />
-                    </svg>
+                    <Play className="h-6 w-6" />
                   </span>
                 </span>
               </button>
@@ -113,7 +130,7 @@ export default function AboutV2() {
         <div className="mt-12 flex justify-center">
           <Link
             to="/gioi-thieu"
-            className="explore-more-button group relative w-60 cursor-pointer overflow-hidden rounded-lg border border-primary bg-background p-4 text-center text-xl font-semibold text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+            className="explore-more-button group relative w-60 cursor-pointer overflow-hidden rounded-md border border-primary bg-background p-4 text-center text-lg font-semibold text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
           >
             <span className="explore-more-label inline-block translate-x-1 transition-all duration-300 group-hover:translate-x-72 group-hover:opacity-0">
               Khám phá thêm

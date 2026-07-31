@@ -3,6 +3,15 @@
 @import "shadcn/tailwind.css";
 @import "@fontsource-variable/geist";
 
+/* Decorative display font for the footer TextHoverEffect wordmark */
+@font-face {
+  font-family: 'Dreams';
+  src: url('/font/DREAMS.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 @custom-variant dark (&:is(.dark *));
 
 /* An Thai red & white theme - shadcn-style tokens */
@@ -138,16 +147,6 @@ body {
     linear-gradient(to right, rgba(255, 255, 255, 0.045) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
   background-size: 56px 56px;
-}
-
-.sustainability-hazard {
-  background: repeating-linear-gradient(
-    45deg,
-    var(--color-primary) 0,
-    var(--color-primary) 11px,
-    var(--color-foreground) 11px,
-    var(--color-foreground) 22px
-  );
 }
 
 /* Join Us / About News blueprint accents — same 56px grid + diagonal hazard rule
@@ -324,5 +323,6 @@ body {
   }
   html {
     @apply font-sans;
+    background-color: #000000;
   }
 }
