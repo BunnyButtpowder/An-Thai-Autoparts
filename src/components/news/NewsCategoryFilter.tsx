@@ -12,7 +12,7 @@ export default function NewsCategoryFilter({ activeCategory, onCategoryChange }:
       aria-label="Lọc danh mục tin tức"
     >
       <div className="news-category-filter-container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <ul className="news-category-filter-list flex flex-wrap items-center justify-center gap-x-1 gap-y-2 py-4">
+        <ul className="news-category-filter-list flex flex-wrap items-start justify-start gap-x-1 gap-y-2 py-4">
           {newsCategories.map((category, index) => {
             const isActive = activeCategory === category.slug
             return (

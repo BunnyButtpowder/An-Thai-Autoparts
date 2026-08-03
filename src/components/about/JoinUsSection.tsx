@@ -36,8 +36,7 @@ export default function JoinUsSection() {
 
       <div className="join-us-container relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="join-us-copy max-w-xl">
-          <p className="join-us-eyebrow inline-flex items-center gap-3 text-sm font-bold uppercase tracking-[0.2em] text-primary">
-            <span className="join-us-eyebrow-dash h-0.5 w-8 bg-primary" />
+          <p className="join-us-eyebrow-label inline-flex items-center rounded-full border border-red-400/30 bg-red-400/10 px-3 py-1 text-base font-bold uppercase tracking-wider text-red-400">
             Tuyển dụng
           </p>
           <h2

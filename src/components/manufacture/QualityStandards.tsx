@@ -26,7 +26,7 @@ const standards: Standard[] = [
     code: 'ISO 9001:2015',
     description: 'Quản lý Chất lượng',
     issuer: 'Intertek - Giấy chứng nhận',
-    image: '/about/ISO 9001.jpg',
+    image: '/about/ISO 9001.png',
   },
   {
     code: 'ISO 14001:2015',
@@ -93,8 +93,8 @@ export default function QualityStandards() {
     >
       <div className="quality-standards-container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="quality-standards-header mb-11">
-          <p className="quality-standards-eyebrow quality-standards-reveal mb-4 font-mono text-xs sm:text-sm font-semibold uppercase tracking-[0.24em] text-red-400">
-            // Chứng nhận
+          <p className="quality-standards-eyebrow-label quality-standards-reveal inline-flex items-center rounded-full border border-red-400/30 bg-red-400/10 px-3 py-1 text-base font-bold uppercase tracking-wider text-red-400 mb-3">
+            Chứng nhận
           </p>
           <h2
             id="quality-standards-heading"

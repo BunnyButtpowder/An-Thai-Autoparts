@@ -45,20 +45,18 @@ export default function ContactLocations() {
   return (
     <section ref={sectionRef} className="contact-locations-section py-16 lg:py-24 bg-background " id="he-thong-lien-he">
       <div className="contact-locations-container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="contact-locations-heading-wrapper text-center max-w-2xl mx-auto mb-10 lg:mb-14">
+        <div className="contact-locations-heading-wrapper text-start mb-10 lg:mb-14">
           <p className="contact-locations-label inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-accent text-primary text-xs sm:text-sm font-semibold uppercase tracking-widest mb-6">
-            <span className="contact-locations-label-dot h-1.5 w-1.5 rounded-full bg-primary" />
             Hệ thống liên hệ
           </p>
           <h2 className="contact-locations-title text-3xl sm:text-4xl lg:text-5xl font-extrabold text-foreground leading-tight uppercase tracking-tight">
             Liên hệ với <span className="contact-locations-title-accent text-primary">An Thái</span>
           </h2>
-          <span className="contact-locations-underline mt-5 block h-1 w-20 mx-auto rounded-full bg-primary" />
         </div>
 
         <div className="contact-locations-grid grid lg:grid-cols-5 gap-6 lg:gap-8 items-start">
           {/* Left column — location cards */}
-          <div className="contact-locations-list lg:col-span-2 flex flex-col gap-5 lg:h-[640px] lg:overflow-y-auto lg:pr-3 [&::-webkit-scrollbar]:w-1.5 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-border [&::-webkit-scrollbar-thumb]:rounded-full hover:[&::-webkit-scrollbar-thumb]:bg-muted-foreground/40">
+          <div className="contact-locations-list lg:col-span-2 flex flex-col gap-5 lg:h-160 lg:overflow-y-auto lg:pr-3 [&::-webkit-scrollbar]:w-1.5 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-border [&::-webkit-scrollbar-thumb]:rounded-full hover:[&::-webkit-scrollbar-thumb]:bg-muted-foreground/40">
             {contactLocations.map((location, index) => {
               const isActive = index === activeIndex
               const detailClass = isActive ? 'text-primary-foreground/90' : 'text-muted-foreground'
@@ -70,11 +68,10 @@ export default function ContactLocations() {
                   onFocus={() => setActiveIndex(index)}
                   tabIndex={0}
                   aria-label={`Xem bản đồ ${location.name}`}
-                  className={`contact-location-card shrink-0 rounded-2xl p-6 cursor-pointer transition-all duration-300 outline-none ${
-                    isActive
+                  className={`contact-location-card shrink-0 rounded-2xl p-6 cursor-pointer transition-all duration-300 outline-none ${isActive
                       ? 'bg-primary text-primary-foreground shadow-lg'
                       : 'bg-muted text-foreground hover:bg-muted/70'
-                  }`}
+                    }`}
                 >
                   <h3 className="contact-location-name text-lg font-bold mb-3 leading-snug">{location.name}</h3>
                   <ul className="contact-location-details space-y-2 text-sm">
@@ -112,15 +109,9 @@ export default function ContactLocations() {
           <div className="contact-map-panel lg:col-span-3">
             <div className="contact-map-sticky lg:sticky lg:top-28">
               <div className="contact-map-frame relative overflow-hidden rounded-2xl border border-border shadow-sm bg-muted">
-                <div className="contact-map-caption absolute top-0 left-0 right-0 z-10 flex items-center gap-2 bg-primary/95 px-5 py-3 text-primary-foreground">
-                  <MapPinIcon className="contact-map-caption-icon w-5 h-5 shrink-0" />
-                  <span className="contact-map-caption-text text-sm sm:text-base font-semibold leading-snug">
-                    {activeLocation.name}
-                  </span>
-                </div>
                 <iframe
                   key={activeLocation.name}
-                  className="contact-map-iframe w-full h-[420px] sm:h-[520px] lg:h-[640px] block"
+                  className="contact-map-iframe w-full h-105 sm:h-130 lg:h-160 block"
                   src={buildMapEmbedSrc(activeLocation.mapQuery)}
                   title={`Bản đồ ${activeLocation.name}`}
                   loading="lazy"

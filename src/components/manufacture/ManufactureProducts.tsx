@@ -33,8 +33,8 @@ export default function ManufactureProducts() {
       aria-labelledby="manufacture-products-heading"
     >
       <div className="manufacture-products-container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <p className="manufacture-products-eyebrow manufacture-products-reveal mb-4 font-mono text-xs sm:text-sm font-semibold uppercase tracking-[0.24em] text-red-400">
-          // Danh mục
+        <p className="manufacture-products-eyebrow-label manufacture-products-reveal inline-flex items-center rounded-full border border-red-400/30 bg-red-400/10 px-3 py-1 text-base font-bold uppercase tracking-wider text-red-400 mb-3">
+        Danh mục
         </p>
         <div className="manufacture-products-header manufacture-products-reveal mb-12 flex flex-wrap items-end justify-between gap-6">
           <div>

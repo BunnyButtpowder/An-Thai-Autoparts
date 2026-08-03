@@ -8,7 +8,9 @@ interface StrategicBrand {
 
 const brands: StrategicBrand[] = [
   { name: 'ANTEK', image: '/product/Antek.png' },
+  { name: 'MAT', image: '/product/Mat.png' },
   { name: 'X-POWER.LXĐ', image: '/product/X-Power.png' },
+  { name: 'XCBB.LXĐ', image: '/product/XCBB.png' },
 ]
 
 // Two-up showcase of the exclusive strategic brands. Each card reveals with a
@@ -63,11 +65,6 @@ export default function StrategicBrands() {
                 className="strategic-brands-card-scrim pointer-events-none absolute inset-0 "
                 aria-hidden="true"
               />
-              <div className="strategic-brands-card-body absolute inset-x-0 bottom-0 p-8">
-                <h3 className="strategic-brands-card-name text-3xl font-black text-primary sm:text-4xl">
-                  {brand.name}
-                </h3>
-              </div>
             </div>
           ))}
         </div>

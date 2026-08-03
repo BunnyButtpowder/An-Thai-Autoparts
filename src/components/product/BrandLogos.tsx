@@ -8,6 +8,7 @@ const brands = [
   { name: 'XCBB.LXĐ', logo: '/product/XCBB.png' },
   { name: 'ANTEK', logo: '/product/Antek.png' },
   { name: 'X-POWER.LXĐ', logo: '/product/X-Power.png' },
+  { name: 'MAT', logo: '/product/Mat.png' },
 ]
 
 export default function BrandLogos() {

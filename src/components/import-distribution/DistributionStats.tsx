@@ -79,23 +79,24 @@ export default function DistributionStats() {
         >
           Phân phối phụ tùng toàn quốc
         </h2>
-        <div className="distribution-stats-grid grid grid-cols-2 gap-y-10 lg:grid-cols-4 lg:gap-y-0">
+        <div className="distribution-stats-grid grid grid-cols-2 gap-y-10 lg:flex lg:items-stretch lg:gap-y-0">
           {stats.map((stat, index) => (
-            <div
-              key={stat.label}
-              className={`distribution-stat ${index < stats.length - 1
-                  ? 'lg:border-r lg:border-white/25'
-                  : ''
-                } ${index === 0 ? 'lg:pr-8' : 'lg:px-8'} ${index === stats.length - 1 ? 'lg:pl-8' : ''
-                }`}
-            >
-              <div className="distribution-stat-value text-4xl font-black leading-none tabular-nums text-white sm:text-5xl lg:text-7xl">
-                <span data-count={stat.value}>0</span>
-                {stat.suffix}
+            <div key={stat.label} className="distribution-stat-group contents">
+              <div className="distribution-stat lg:flex-1 lg:px-10">
+                <div className="distribution-stat-value text-4xl font-black leading-none tabular-nums text-white sm:text-5xl lg:text-7xl">
+                  <span data-count={stat.value}>0</span>
+                  {stat.suffix}
+                </div>
+                <div className="distribution-stat-label mt-2.5 font-mono text-sm sm:text-base uppercase tracking-widest text-white">
+                  {stat.label}
+                </div>
               </div>
-              <div className="distribution-stat-label mt-2.5 font-mono text-sm sm:text-base uppercase tracking-widest text-white">
-                {stat.label}
-              </div>
+              {index < stats.length - 1 && (
+                <div
+                  className="distribution-stat-separator hidden w-px self-stretch bg-white/25 lg:block"
+                  aria-hidden="true"
+                />
+              )}
             </div>
           ))}
         </div>

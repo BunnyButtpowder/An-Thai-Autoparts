@@ -32,10 +32,10 @@ export default function OffersEditorial() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section intro */}
         <div className="offers-intro max-w-2xl">
-          <p className="about-label inline-flex items-center px-3 py-1 rounded-full border-2 border-primary text-primary text-base font-bold uppercase tracking-wider">
+          <p className="offers-eyebrow-label inline-flex items-center rounded-full border border-red-400/30 bg-red-400/10 px-3 py-1 text-base font-bold uppercase tracking-wider text-red-400">
             Hệ sinh thái An Thái
           </p>
-          <h2 id="offers-heading" className="mt-4 text-3xl font-bold uppercase leading-tight text-white sm:text-4xl">
+          <h2 id="offers-heading" className="mt-4 text-3xl font-bold uppercase leading-tight text-white sm:text-4xl lg:text-5xl">
             Lĩnh vực tiên phong
           </h2>
         </div>
@@ -77,7 +77,7 @@ export default function OffersEditorial() {
               <div className="flex flex-col justify-center border-t border-white/15 pt-6 transition-colors duration-300 group-hover:border-primary lg:border-t-0 lg:border-l lg:pl-10 lg:pt-0">
                 <h3 className="text-2xl font-bold leading-tight text-white lg:text-3xl">{leadOffer.title}</h3>
                 <p className="mt-4 text-base leading-relaxed text-white/70 lg:text-lg 2xl:text-xl">{leadOffer.description}</p>
-                <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-wider text-primary">
+                <span className="offers-lead-cta-label mt-6 inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-wider text-red-400 transition-colors duration-300 group-hover:text-white">
                   {leadOffer.ctaLabel}
                   <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
                 </span>
@@ -117,7 +117,7 @@ export default function OffersEditorial() {
                 <div className="mt-5 border-t border-white/15 pt-5 transition-colors duration-300 group-hover:border-primary">
                   <h3 className="text-xl lg:text-2xl 2xl:text-3xl font-bold leading-snug text-white">{offer.title}</h3>
                   <p className="mt-2.5 text-base leading-relaxed text-white/70 lg:text-lg 2xl:text-xl">{offer.description}</p>
-                  <span className="mt-4 inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-wider text-primary">
+                  <span className="offers-card-cta-label mt-4 inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-wider text-red-400 transition-colors duration-300 group-hover:text-white">
                     {offer.ctaLabel}
                     <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
                   </span>

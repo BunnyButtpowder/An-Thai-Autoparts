@@ -102,8 +102,7 @@ export default function SustainabilitySection() {
           <div className="sustainability-grid pointer-events-none absolute inset-0" aria-hidden="true" />
           <div className="sustainability-copy-inner relative py-24 lg:py-32">
             <div className="sustainability-intro max-w-xl">
-              <p className="sustainability-eyebrow inline-flex items-center gap-3 text-sm sm:text-base font-bold uppercase tracking-[0.2em] text-primary">
-                <span className="sustainability-eyebrow-dash h-0.5 w-8 bg-primary" />
+              <p className="sustainability-eyebrow-label inline-flex items-center rounded-full border border-red-400/30 bg-red-400/10 px-3 py-1 text-base font-bold uppercase tracking-wider text-red-400 mb-5">
                 Trách nhiệm An Thái
               </p>
               <h2
@@ -128,23 +127,20 @@ export default function SustainabilitySection() {
                     {/* Desktop progress rail: number + bar, lit red when active. */}
                     <div className="sustainability-rail hidden flex-none flex-col items-center gap-3 lg:flex">
                       <span
-                        className={`sustainability-rail-number stat-number text-xl font-black tabular-nums transition-colors duration-300 ${
-                          isActive ? 'text-primary' : 'text-white/15'
-                        }`}
+                        className={`sustainability-rail-number stat-number text-xl font-black tabular-nums transition-colors duration-300 ${isActive ? 'text-primary' : 'text-white/15'
+                          }`}
                       >
                         {pillar.n}
                       </span>
                       <span
-                        className={`sustainability-rail-bar h-16 w-0.75 transition-colors duration-300 ${
-                          isActive ? 'bg-primary' : 'bg-white/10'
-                        }`}
+                        className={`sustainability-rail-bar h-16 w-0.75 transition-colors duration-300 ${isActive ? 'bg-primary' : 'bg-white/10'
+                          }`}
                       />
                     </div>
 
                     <div
-                      className={`sustainability-pillar-body min-w-0 flex-1 transition-opacity duration-300 ${
-                        isActive ? 'opacity-100' : 'opacity-100 lg:opacity-30'
-                      }`}
+                      className={`sustainability-pillar-body min-w-0 flex-1 transition-opacity duration-300 ${isActive ? 'opacity-100' : 'opacity-100 lg:opacity-30'
+                        }`}
                     >
                       {/* Inline image — shown only on mobile, where the sticky panel is hidden. */}
                       <div className="sustainability-pillar-media mb-6 aspect-16/10 overflow-hidden rounded-2xl bg-foreground lg:hidden">

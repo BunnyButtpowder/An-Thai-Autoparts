@@ -30,8 +30,7 @@ export default function AboutNewsSection() {
       <div className="about-news-container relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="about-news-header flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <p className="about-news-eyebrow inline-flex items-center gap-3 text-sm font-bold uppercase tracking-[0.2em] text-primary">
-              <span className="about-news-eyebrow-dash h-0.5 w-8 bg-primary" />
+            <p className="about-news-eyebrow-label inline-flex items-center px-3 py-1 rounded-full bg-accent text-primary text-base font-semibold uppercase tracking-wider">
               Cập nhật
             </p>
             <h2

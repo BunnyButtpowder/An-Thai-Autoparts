@@ -12,34 +12,50 @@ export default function VisitSection() {
   useEffect(() => {
     if (!sectionRef.current) return
     const ctx = gsap.context(() => {
-      gsap.from('.visit-intro', {
+      gsap.set('.visit-intro', { y: 28, opacity: 0 })
+      gsap.to('.visit-intro', {
         scrollTrigger: { trigger: sectionRef.current, start: 'top 85%', toggleActions: 'play none none none' },
-        duration: 0.6, y: 28, opacity: 0, ease: 'power2.out',
+        duration: 0.6, y: 0, opacity: 1, ease: 'power2.out',
       })
-      gsap.from('.visit-image', {
+      gsap.set('.visit-image', { y: 30, opacity: 0 })
+      gsap.to('.visit-image', {
         scrollTrigger: { trigger: '.visit-layout', start: 'top 85%', toggleActions: 'play none none none' },
-        duration: 0.7, y: 30, opacity: 0, ease: 'power2.out',
+        duration: 0.7, y: 0, opacity: 1, ease: 'power2.out',
       })
-      gsap.from('.visit-office-list', {
+      gsap.set('.visit-office-item', { y: 24, opacity: 0 })
+      gsap.to('.visit-office-item', {
         scrollTrigger: { trigger: '.visit-layout', start: 'top 85%', toggleActions: 'play none none none' },
-        duration: 0.6, y: 28, opacity: 0, delay: 0.1, ease: 'power2.out',
+        duration: 0.6, y: 0, opacity: 1, stagger: 0.12, delay: 0.1, ease: 'power2.out',
       })
     }, sectionRef)
     return () => ctx.revert()
   }, [])
 
   return (
-    <section ref={sectionRef} className="visit-section py-16 lg:py-24 bg-muted border-y border-border" id="ghe-tham-chung-toi">
-      <div className="visit-container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="visit-intro text-center max-w-2xl mx-auto mb-12 lg:mb-16">
-          <h2 className="visit-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-primary uppercase leading-tight">
+    <section
+      ref={sectionRef}
+      className="visit-section relative overflow-hidden bg-steel py-16 lg:py-24"
+      id="ghe-tham-chung-toi"
+    >
+      {/* Blueprint grid + red accent glow, matching the site's premium sections */}
+      <div className="visit-grid blueprint-grid-dark pointer-events-none absolute inset-0 z-0" aria-hidden="true" />
+      <div
+        className="visit-glow pointer-events-none absolute -top-32 -right-24 z-0 h-96 w-96 rounded-full bg-primary/25 blur-[120px]"
+        aria-hidden="true"
+      />
+
+      <div className="visit-container relative z-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="visit-intro text-start mb-8 lg:mb-10">
+          <p className="visit-eyebrow-label inline-flex items-center rounded-full border border-red-400/30 bg-red-400/10 px-3 py-1 text-base font-bold uppercase tracking-wider text-red-400 mb-5">
+            Mạng lưới An Thái
+          </p>
+          <h2 className="visit-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-white uppercase leading-tight">
             Ghé thăm chúng tôi
           </h2>
-          <span className="visit-heading-underline mt-5 block h-1 w-20 mx-auto rounded-full bg-primary" />
         </div>
 
         <div className="visit-layout grid lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
-          <div className="visit-image relative aspect-4/3 lg:aspect-auto overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
+          <div className="visit-image relative aspect-4/3 lg:aspect-auto overflow-hidden rounded-2xl ring-1 ring-white/10 shadow-2xl">
             <img
               src="/contact/2.jpg"
               alt="Hình ảnh công ty An Thái"
@@ -48,20 +64,24 @@ export default function VisitSection() {
             />
           </div>
 
-          <ul className="visit-office-list flex flex-col justify-center gap-5 lg:gap-6">
+          <ul className="visit-office-list flex flex-col justify-center gap-4 lg:gap-5">
             {visitOffices.map((office) => (
               <li
                 key={office.name}
-                className="visit-office-item group flex items-start gap-4 rounded-2xl border border-border bg-card p-5 lg:p-6 transition-all duration-300 hover:border-primary/50 hover:shadow-md"
+                className="visit-office-item group relative flex items-start gap-4 overflow-hidden rounded-2xl border border-white/10 bg-white/4 p-5 lg:p-6 backdrop-blur-sm transition-all duration-300 hover:border-primary/60 hover:bg-white/[0.07]"
               >
-                <span className="visit-office-badge flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-accent text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-primary-foreground">
+                <span
+                  className="visit-office-accent pointer-events-none absolute inset-y-0 left-0 w-1 bg-primary opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                  aria-hidden="true"
+                />
+                <span className="visit-office-badge flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-primary/15 text-red-400 transition-colors duration-300 group-hover:bg-primary group-hover:text-primary-foreground">
                   <MapPinIcon className="visit-office-icon w-5 h-5" />
                 </span>
                 <div className="visit-office-content min-w-0">
-                  <h3 className="visit-office-name text-lg sm:text-xl font-bold text-foreground mb-1.5 transition-colors group-hover:text-primary">
+                  <h3 className="visit-office-name text-lg sm:text-xl font-bold text-white mb-1.5 transition-colors group-hover:text-red-400">
                     {office.name}
                   </h3>
-                  <p className="visit-office-address text-sm sm:text-base text-muted-foreground leading-relaxed">
+                  <p className="visit-office-address text-sm sm:text-base text-white leading-relaxed">
                     {office.address}
                   </p>
                 </div>
