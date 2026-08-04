@@ -55,9 +55,15 @@ export default function ImportHero() {
         initial="hidden"
         animate="visible"
       >
+        <motion.p
+          className="import-hero-eyebrow mb-5 font-mono text-xs font-semibold uppercase tracking-[0.3em] text-red-400 sm:text-base"
+          variants={item}
+        >
+          <span className="text-white">//</span> Trung tâm phụ tùng
+        </motion.p>
         <motion.h1
           id="import-hero-heading"
-          className="import-hero-title mb-6 max-w-[16ch] text-4xl font-black uppercase leading-30 tracking-normal text-white sm:text-6xl lg:text-7xl xl:text-8xl"
+          className="import-hero-title max-w-[16ch] text-4xl font-black uppercase leading-35 tracking-normal text-white sm:text-6xl lg:text-7xl xl:text-8xl"
           variants={item}
         >
           Nhập khẩu &amp; phân phối phụ tùng ô tô
@@ -69,6 +75,23 @@ export default function ImportHero() {
           Hệ sinh thái phụ tùng chất lượng cao, đáp ứng toàn diện nhu cầu các dòng
           xe thương mại Trung Quốc, Mỹ và Nhật Bản.
         </motion.p>
+        <motion.div
+          className="import-hero-cta flex flex-wrap gap-3.5"
+          variants={item}
+        >
+          <a
+            href="/lien-he"
+            className="import-hero-cta-primary inline-flex items-center gap-2 rounded-md bg-primary px-7 py-3.5 text-base font-semibold text-primary-foreground transition-colors duration-300 hover:bg-primary-hover cursor-pointer"
+          >
+            Liên hệ
+          </a>
+          <a
+            href="/san-pham"
+            className="import-hero-cta-secondary inline-flex items-center gap-2 rounded-md border border-white/30 px-7 py-3.5 text-base font-semibold text-white transition-colors duration-300 hover:border-white hover:bg-white/10 cursor-pointer"
+          >
+            Khám phá sản phẩm
+          </a>
+        </motion.div>
       </motion.div>
     </section>
   )

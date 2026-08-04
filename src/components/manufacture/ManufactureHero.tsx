@@ -63,13 +63,13 @@ export default function ManufactureHero() {
         </motion.p>
         <motion.h1
           id="manufacture-hero-heading"
-          className="manufacture-hero-title mb-6  text-4xl font-black uppercase leading-30 tracking-normal text-white sm:text-6xl lg:text-7xl xl:text-8xl"
+          className="manufacture-hero-title  text-4xl font-black uppercase leading-30 tracking-normal text-white sm:text-6xl lg:text-7xl xl:text-8xl"
           variants={item}
         >
           Sản xuất phụ tùng ô tô
         </motion.h1>
         <motion.p
-          className="manufacture-hero-subtitle mb-9 max-w-155 text-lg leading-relaxed text-white/80 sm:text-2xl"
+          className="manufacture-hero-subtitle mb-9 max-w-155 text-lg leading-relaxed text-white sm:text-2xl"
           variants={item}
         >
           Tiên phong sản xuất tăm bua xe tải tại Việt Nam

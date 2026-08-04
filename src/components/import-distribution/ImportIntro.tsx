@@ -8,7 +8,7 @@ export default function ImportIntro() {
   const sectionRef = useReveal<HTMLElement>((g, root) => {
     g.set('.import-intro-reveal', { y: 34, opacity: 0 })
     g.timeline({ scrollTrigger: { trigger: root, start: 'top 80%', once: true } })
-      .to('.import-intro-reveal', { duration: 0.85, y: 0, opacity: 1, ease: 'power3.out' })
+      .to('.import-intro-reveal', { duration: 0.85, y: 0, opacity: 1, stagger: 0.14, ease: 'power3.out' })
   })
 
   const transition = { type: "spring", duration: 3, delay: 0.4, bounce: 0 }
@@ -19,7 +19,10 @@ export default function ImportIntro() {
   return (
     <section ref={sectionRef} className="import-intro-section bg-[#0f1113] py-24">
       <div className="import-intro-container mx-auto max-w-245 px-4 sm:px-6 lg:px-8">
-        <p className="import-intro-text import-intro-reveal text-xl font-medium leading-[1.55] text-white sm:text-2xl lg:text-3xl">
+        <h2 className="import-intro-title import-intro-reveal text-center mb-8 text-3xl font-extrabold uppercase leading-[1.1] tracking-tight text-white sm:text-4xl lg:text-5xl">
+          Giải pháp phụ tùng toàn diện cho xe thương mại
+        </h2>
+        <p className="import-intro-text import-intro-reveal text-lg font-medium leading-[1.55] text-white sm:text-2xl lg:text-3xl">
           An Thái là đơn vị nhập khẩu và phân phối phụ tùng ô tô với hệ sinh thái
           thương hiệu đa dạng, đáp ứng nhu cầu cho nhiều dòng xe tải, xe đầu kéo và
           xe thương mại.{' '}
