@@ -24,7 +24,7 @@ export const homeDesktopNav: HomeNavItem[] = [
   {
     label: 'Sản phẩm',
     items: [
-      { label: 'Tăm bua', href: '/#san-pham' },
+      { label: 'Tăm bua', href: '/tam-bua-an-thai' },
       { label: 'Động cơ tổng thành & Phụ kiện', href: '/san-pham?danh-muc=dong-co#danh-muc-phu-tung' },
       { label: 'Hệ thống khung gầm', href: '/san-pham?danh-muc=khung-gam#danh-muc-phu-tung' },
       { label: 'Hệ thống phanh', href: '/san-pham?danh-muc=phanh#danh-muc-phu-tung' },

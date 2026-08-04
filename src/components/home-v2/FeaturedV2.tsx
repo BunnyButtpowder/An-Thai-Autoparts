@@ -66,7 +66,7 @@ export default function FeaturedV2() {
             </h2>
             <div className="featured-v2-reveal mt-9 featured-product-actions flex flex-col sm:flex-row gap-4">
               <a
-                href="/san-pham"
+                href="/tam-bua-an-thai"
                 className="featured-product-cta-primary group inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-semibold text-primary bg-background rounded-lg transition-all duration-300 cursor-pointer hover:bg-accent hover:text-accent-foreground hover:-translate-y-0.5 hover:shadow-lg"
               >
                 Xem thêm

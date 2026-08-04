@@ -253,7 +253,7 @@ export default function FeaturedProducts() {
         {/* Section-level CTA to the full product catalog. */}
         <div className="featured-products-more mt-14 flex justify-center">
           <Link
-            to="/#san-pham"
+            to="/tam-bua-an-thai"
             className="featured-products-more-button group inline-flex items-center gap-2 rounded-md border border-black/15 px-8 py-3.5 text-base font-semibold text-black transition-colors duration-300 hover:border-primary hover:bg-primary hover:text-primary-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 cursor-pointer"
           >
             Xem thêm
