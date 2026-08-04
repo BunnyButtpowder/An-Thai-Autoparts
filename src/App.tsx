@@ -12,6 +12,7 @@ import ImportDistributionPage from './pages/ImportDistributionPage'
 import VehicleInspectionPage from './pages/VehicleInspectionPage'
 import CommercialServicesPage from './pages/CommercialServicesPage'
 import RepairOverhaulPage from './pages/RepairOverhaulPage'
+import BrakeDrumPage from './pages/BrakeDrumPage'
 
 export default function App() {
   return (
@@ -19,6 +20,7 @@ export default function App() {
       <Route index element={<HomePage />} />
       <Route path="gioi-thieu" element={<AboutPage />} />
       <Route path="san-pham" element={<ProductPage />} />
+      <Route path="tam-bua-an-thai" element={<BrakeDrumPage />} />
       <Route path="san-xuat-phu-tung" element={<ManufacturePage />} />
       <Route path="nhap-khau-phan-phoi" element={<ImportDistributionPage />} />
       <Route path="dang-kiem-xe" element={<VehicleInspectionPage />} />
