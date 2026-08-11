@@ -25,6 +25,12 @@ export default function Footer() {
               <li className="footer-address-item">
                 <span className="footer-address-label font-semibold text-white">Chi nhánh Hồ Chí Minh:</span> Số 881, Đường Mỹ Phước - Tân Vạn, Khu phố Bình Thung 1, Phường Đông Hòa, TP. Hồ Chí Minh
               </li>
+              <li className="footer-address-item">
+                <span className="footer-address-label font-semibold text-white">Email liên hệ:</span>{' '}
+                <a href="mailto:contact@anthaiautoparts.com" className="hover:text-primary cursor-pointer transition-colors">
+                  contact@anthaiautoparts.com
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -40,6 +46,15 @@ export default function Footer() {
                     <Link to={link.href} className="hover:text-primary cursor-pointer transition-colors">
                       {link.label}
                     </Link>
+                  ) : link.href.startsWith('http') ? (
+                    <a
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:text-primary cursor-pointer transition-colors"
+                    >
+                      {link.label}
+                    </a>
                   ) : (
                     <a href={link.href} className="hover:text-primary cursor-pointer transition-colors">
                       {link.label}

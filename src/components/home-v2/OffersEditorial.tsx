@@ -1,12 +1,9 @@
-import { useState } from 'react'
-import { AnimatePresence, motion } from 'motion/react'
 import useReveal from '../../hooks/useReveal'
 import ArrowRight from '../icons/ArrowRight'
 import { offers } from '../../data/offers'
 
 export default function OffersEditorial() {
   const [leadOffer, ...gridOffers] = offers
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
 
   const ref = useReveal<HTMLElement>((g, root) => {
     g.from('.offers-intro', { scrollTrigger: { trigger: root, start: 'top 84%' }, y: 26, opacity: 0, duration: 0.6, ease: 'power2.out' })
@@ -32,10 +29,10 @@ export default function OffersEditorial() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section intro */}
         <div className="offers-intro max-w-2xl">
-          <p className="offers-eyebrow-label inline-flex items-center rounded-full border border-red-400/30 bg-red-400/10 px-3 py-1 text-base font-bold uppercase tracking-wider text-red-400">
+          <p className="offers-eyebrow-label inline-flex items-center font-mono text-lg font-bold uppercase tracking-widest text-red-400">
             Hệ sinh thái An Thái
           </p>
-          <h2 id="offers-heading" className="mt-4 text-3xl font-bold uppercase leading-tight text-white sm:text-4xl lg:text-5xl">
+          <h2 id="offers-heading" className="mt-4 text-3xl font-bold leading-tight text-white sm:text-4xl">
             Lĩnh vực tiên phong
           </h2>
         </div>
@@ -45,82 +42,69 @@ export default function OffersEditorial() {
         </p>
 
         <div className="offers-grid mt-12 grid gap-x-8 gap-y-12 lg:grid-cols-2">
-          {/* Lead tile — spans both columns, image-led horizontal on desktop */}
-          <article
-            className="offers-card group relative lg:col-span-2"
-            onMouseEnter={() => setHoveredIndex(-1)}
-            onMouseLeave={() => setHoveredIndex(null)}
-          >
-            <AnimatePresence>
-              {hoveredIndex === -1 && (
-                <motion.span
-                  className="offers-card-hover-bg absolute -inset-4 block rounded-3xl bg-white/6"
-                  layoutId="offersLeadHoverBackground"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1, transition: { duration: 0.15 } }}
-                  exit={{ opacity: 0, transition: { duration: 0.15, delay: 0.2 } }}
-                />
-              )}
-            </AnimatePresence>
+          {/* Lead tile — spans both columns, content overlaid on the image, CTA on hover */}
+          <article className="offers-card group relative lg:col-span-2">
             <a
               href={leadOffer.ctaHref}
-              className="relative z-10 grid items-stretch gap-6 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-4 focus-visible:ring-offset-background lg:grid-cols-2 lg:gap-10 cursor-pointer"
+              className="relative z-10 block overflow-hidden rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-4 focus-visible:ring-offset-background cursor-pointer"
             >
-              <div className="aspect-16/10 overflow-hidden rounded-xl bg-muted">
+              <div className="offers-card-media relative aspect-video overflow-hidden bg-muted lg:aspect-21/9">
                 <img
                   src={leadOffer.image}
                   alt={leadOffer.imageAlt}
                   loading="lazy"
-                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.05]"
                 />
-              </div>
-              <div className="flex flex-col justify-center border-t border-white/15 pt-6 transition-colors duration-300 group-hover:border-primary lg:border-t-0 lg:border-l lg:pl-10 lg:pt-0">
-                <h3 className="text-2xl font-bold leading-tight text-white lg:text-3xl">{leadOffer.title}</h3>
-                <p className="mt-4 text-base leading-relaxed text-white/70 lg:text-lg 2xl:text-xl">{leadOffer.description}</p>
-                <span className="offers-lead-cta-label mt-6 inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-wider text-red-400 transition-colors duration-300 group-hover:text-white">
-                  {leadOffer.ctaLabel}
-                  <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-                </span>
+                {/* Bottom-up gradient for text legibility */}
+                <div className="offers-card-overlay pointer-events-none absolute inset-0 bg-linear-to-t from-black/85 via-black/10 to-transparent" />
+                {/* Bottom-anchored content */}
+                <div className="offers-card-content absolute inset-x-0 bottom-0 max-w-2xl p-6 lg:p-9">
+                  <h3 className="text-2xl font-bold leading-tight text-white lg:text-3xl">{leadOffer.title}</h3>
+                  <p className="mt-3 text-sm text-justify leading-relaxed text-white lg:text-base 2xl:text-lg">{leadOffer.description}</p>
+                  {/* CTA button — revealed only on hover */}
+                  <span className="offers-card-cta grid grid-rows-[0fr] opacity-0 transition-all duration-300 ease-out group-hover:grid-rows-[1fr] group-hover:opacity-100">
+                    <span className="offers-card-cta-clip min-h-0 overflow-hidden">
+                      <span className="offers-card-cta-button mt-4 inline-flex items-center gap-2 rounded-md bg-primary px-5 py-2.5 text-xs font-semibold uppercase tracking-wider text-white transition-colors duration-300 group-hover:bg-primary-hover">
+                        {leadOffer.ctaLabel}
+                        <ArrowRight className="h-4 w-4" />
+                      </span>
+                    </span>
+                  </span>
+                </div>
               </div>
             </a>
           </article>
 
-          {/* Remaining tiles — image-led, 2-up editorial grid */}
-          {gridOffers.map((offer, idx) => (
-            <article
-              key={offer.title}
-              className="offers-card group relative"
-              onMouseEnter={() => setHoveredIndex(idx)}
-              onMouseLeave={() => setHoveredIndex(null)}
-            >
-              {hoveredIndex === idx && (
-                <motion.span
-                  className="offers-card-hover-bg absolute -inset-4 block rounded-3xl bg-white/6"
-                  layoutId="offersHoverBackground"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ opacity: { duration: 0.15 }, layout: { duration: 0.2, ease: 'easeOut' } }}
-                />
-              )}
+          {/* Remaining tiles — content overlaid on the image, CTA on hover */}
+          {gridOffers.map((offer) => (
+            <article key={offer.title} className="offers-card group relative">
               <a
                 href={offer.ctaHref}
-                className="relative z-10 block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-4 focus-visible:ring-offset-background cursor-pointer"
+                className="relative z-10 block overflow-hidden rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-4 focus-visible:ring-offset-background cursor-pointer"
               >
-                <div className="aspect-16/10 overflow-hidden rounded-xl bg-muted">
+                <div className="offers-card-media relative aspect-16/10 overflow-hidden bg-muted">
                   <img
                     src={offer.image}
                     alt={offer.imageAlt}
                     loading="lazy"
-                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.05]"
                   />
-                </div>
-                <div className="mt-5 border-t border-white/15 pt-5 transition-colors duration-300 group-hover:border-primary">
-                  <h3 className="text-xl lg:text-2xl 2xl:text-3xl font-bold leading-snug text-white">{offer.title}</h3>
-                  <p className="mt-2.5 text-base leading-relaxed text-white/70 lg:text-lg 2xl:text-xl">{offer.description}</p>
-                  <span className="offers-card-cta-label mt-4 inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-wider text-red-400 transition-colors duration-300 group-hover:text-white">
-                    {offer.ctaLabel}
-                    <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-                  </span>
+                  {/* Bottom-up gradient for text legibility */}
+                  <div className="offers-card-overlay pointer-events-none absolute inset-0 bg-linear-to-t from-black/85 via-black/30 to-transparent" />
+                  {/* Bottom-anchored content */}
+                  <div className="offers-card-content absolute inset-x-0 bottom-0 p-6 lg:p-7">
+                    <h3 className="text-xl lg:text-2xl font-bold leading-snug text-white">{offer.title}</h3>
+                    <p className="mt-2.5 text-sm text-justify leading-relaxed text-white lg:text-base 2xl:text-lg">{offer.description}</p>
+                    {/* CTA button — revealed only on hover */}
+                    <span className="offers-card-cta grid grid-rows-[0fr] opacity-0 transition-all duration-300 ease-out group-hover:grid-rows-[1fr] group-hover:opacity-100">
+                      <span className="offers-card-cta-clip min-h-0 overflow-hidden">
+                        <span className="offers-card-cta-button mt-4 inline-flex items-center gap-2 rounded-md bg-primary px-5 py-2.5 text-xs font-semibold uppercase tracking-wider text-white transition-colors duration-300 group-hover:bg-primary-hover">
+                          {offer.ctaLabel}
+                          <ArrowRight className="h-4 w-4" />
+                        </span>
+                      </span>
+                    </span>
+                  </div>
                 </div>
               </a>
             </article>

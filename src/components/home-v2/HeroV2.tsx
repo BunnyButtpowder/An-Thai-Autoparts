@@ -23,7 +23,7 @@ export default function HeroV2() {
     <section
       ref={ref}
       id="trang-chu"
-      className="hero-v2-section relative isolate flex min-h-[88vh] items-center overflow-hidden mt-15"
+      className="hero-v2-section relative isolate flex min-h-svh items-end overflow-hidden"
       aria-labelledby="hero-v2-heading"
     >
       {/* Banner photo in its original colour, with a light scrim for headline legibility. */}
@@ -34,30 +34,31 @@ export default function HeroV2() {
         fetchPriority="high"
         className="hero-v2-bg absolute inset-0 -z-20 h-[112%] w-full object-cover"
       />
-      <div className="absolute inset-0 -z-10 bg-[#0a0b0d]/40" aria-hidden="true" />
-      <div className="hero-v2-grid absolute inset-0 -z-10" aria-hidden="true" />
+      <div
+        className="absolute inset-0 -z-10 bg-linear-to-t from-[#0a0b0d] via-[#0a0b0d]/10 to-transparent"
+        aria-hidden="true"
+      />
 
-      <div className="mx-auto w-full max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-24">
+      <div className="mx-auto w-full max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-20">
         <div className="hero-v2-frame-wrap relative max-w-6xl -ml-8 sm:-ml-12 lg:-ml-16">
-          {/* The measured frame with machined caliper corners. */}
           <div className="hero-v2-frame relative  px-8 py-10 sm:px-12 sm:py-14 lg:px-16 lg:py-16">
-            <p className="hero-v2-eyebrow font-mono text-xs font-medium uppercase tracking-[0.25em] text-white sm:text-sm">
-              <span className="text-white/40">//</span> Nhà sản xuất phụ tùng ô tô
+            <p className="hero-v2-eyebrow font-mono text-base font-medium uppercase tracking-normal text-white sm:text-lg">
+               Nhà sản xuất phụ tùng ô tô
             </p>
 
             <h1
               id="hero-v2-heading"
-              className="hero-v2-heading mt-6 font-extrabold tracking-tight text-white text-balance"
+              className="hero-v2-heading mt-6 font-extrabold tracking-relaxed text-white text-balance"
             >
               <span className="block overflow-hidden pb-1">
                 <span className="hero-v2-line hero-title-fluid block">Vì chiếc xe luôn lăn bánh</span>
               </span>
               <span className="block overflow-hidden pb-1">
-                <span className="hero-v2-line hero-title-fluid block">Vì doanh nghiệp luôn phát triển</span>
+                <span className="hero-v2-line hero-title-fluid block">Vì doanh nghiệp phát triển</span>
               </span>
             </h1>
 
-            <div className="hero-v2-cta mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
+            <div className="hero-v2-cta mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
               <Link
                 to="/gioi-thieu"
                 className="hero-v2-cta-primary group inline-flex items-center justify-center gap-2 rounded-md bg-primary px-7 py-3.5 text-base font-semibold text-primary-foreground transition-colors duration-300 hover:bg-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-[#0a0b0d] cursor-pointer"

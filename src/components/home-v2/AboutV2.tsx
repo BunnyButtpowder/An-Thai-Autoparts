@@ -4,8 +4,12 @@ import useReveal from '../../hooks/useReveal'
 import ArrowRight from '../icons/ArrowRight'
 import { Play } from 'lucide-react'
 
-/** A run of story text; `highlight` renders the phrase in primary red. */
-type StorySegment = string | { text: string; highlight?: boolean }
+/**
+ * A run of story text. `emphasis` lifts a phrase out of the body copy:
+ * `brand` paints it primary red (reserved for the "An Thái" name), while
+ * `strong` merely bolds it in the foreground colour.
+ */
+type StorySegment = string | { text: string; emphasis?: 'brand' | 'strong' }
 
 const YOUTUBE_VIDEO_ID = 'cEbOYRmYBKc'
 
@@ -26,20 +30,18 @@ function buildEmbedSrc() {
  */
 const aboutStory: StorySegment[][] = [
   [
-    'Là đơn vị tiên phong trong lĩnh vực phụ tùng xe thương mại tại Việt Nam,',
-    { text: 'An Thái', highlight: true },
-    'không ngừng đầu tư vào năng lực sản xuất và hệ thống phân phối nhằm mang đến những giải pháp phụ tùng toàn diện cho khách hàng.',
+    'Là đơn vị tiên phong trong lĩnh vực phụ tùng xe thương mại tại Việt Nam, An Thái không ngừng đầu tư vào năng lực sản xuất và hệ thống phân phối nhằm mang đến những giải pháp phụ tùng toàn diện cho khách hàng.'
   ],
   [
-    'Nhà máy sản xuất',
-    { text: 'tăm bua', highlight: true },
-    'của chúng tôi được vận hành theo quy trình hiện đại. Hiện nay, sản phẩm của An Thái đã có mặt tại',
-    { text: 'thị trường Mỹ', highlight: true },
-    'và nhiều quốc gia trên thế giới. Bên cạnh đó, ',
-    { text: 'An Thái', highlight: true },
-    'phân phối hơn 30.000 mã phụ tùng cho các dòng xe Trung Quốc, Mỹ và Nhật Bản, đáp ứng nhu cầu của các doanh nghiệp vận tải và trung tâm sửa chữa ô tô tô trên toàn quốc.',
+    'Nhà máy sản xuất tăm bua của chúng tôi được vận hành theo quy trình hiện đại. Hiện nay, sản phẩm của An Thái đã có mặt tại thị trường Mỹ và nhiều quốc gia trên thế giới. Bên cạnh đó, An Thái phân phối hơn 30.000 mã phụ tùng cho các dòng xe Trung Quốc, Mỹ và Nhật Bản, đáp ứng nhu cầu của các doanh nghiệp vận tải và trung tâm sửa chữa ô tô tô trên toàn quốc.',
   ],
 ]
+
+/** Maps a segment's emphasis level onto its text classes. */
+const emphasisClass: Record<'brand' | 'strong', string> = {
+  brand: 'font-semibold text-primary',
+  strong: 'font-semibold text-foreground',
+}
 
 export default function AboutV2() {
   const [embedSrc, setEmbedSrc] = useState<string | null>(null)
@@ -55,91 +57,76 @@ export default function AboutV2() {
   return (
     <section ref={ref} id="gioi-thieu" aria-labelledby="about-v2-heading" className="about-v2-section border-t border-border bg-background py-16 lg:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="about-v2-intro mx-auto max-w-3xl text-center">
-          <p className="about-label inline-flex items-center px-3 py-1 rounded-full bg-accent text-primary text-base font-semibold uppercase tracking-wider">Về chúng tôi</p>
+        <div className="about-v2-grid grid items-stretch gap-10 lg:grid-cols-2 lg:gap-16">
+          {/* Text column — clean heading, then the narrative, then the CTA. */}
+          <div className="about-v2-copy">
+            <div className="about-v2-intro">
+              <h2 id="about-v2-heading" className="text-3xl sm:text-4xl font-bold leading-tight text-foreground">
+                Về chúng tôi
+              </h2>
+            </div>
 
-          <h2 id="about-v2-heading" className="mt-5 text-3xl font-bold uppercase leading-tight text-foreground sm:text-4xl">
-            Đối tác đồng hành tin cậy
-          </h2>
-        </div>
-{/*
-        <div className="about-v2-media mx-auto mt-10 max-w-7xl overflow-hidden rounded-2xl border border-border bg-muted">
-          <img
-            src="/home/about.jpg"
-            alt="Nhà máy sản xuất tăm bua An Thái"
-            loading="lazy"
-            className="h-72 w-full object-cover sm:h-96 lg:h-128"
-          />
-        </div> */}
-      </div>
+            <div className="about-v2-story mt-6 space-y-5">
+              {aboutStory.map((paragraph, i) => (
+                <p key={i} className="about-v2-paragraph text-base leading-relaxed text-foreground sm:text-xl">
+                  {paragraph.map((segment, j) => {
+                    const text = typeof segment === 'string' ? segment : segment.text
+                    const emphasis = typeof segment === 'string' ? undefined : segment.emphasis
+                    return (
+                      <span key={j} className={emphasis ? emphasisClass[emphasis] : undefined}>
+                        {j > 0 ? ' ' : ''}
+                        {text}
+                      </span>
+                    )
+                  })}
+                </p>
+              ))}
+            </div>
 
-      <div className="about-v2-story mx-auto mt-10 max-w-6xl px-4 sm:px-6 lg:px-8">
-        {aboutStory.map((paragraph, i) => (
-          <p key={i} className="about-v2-paragraph mt-6 text-lg leading-relaxed text-foreground first:mt-0 sm:text-2xl">
-            {paragraph.map((segment, j) => {
-              const isHighlight = typeof segment !== 'string' && segment.highlight
-              const text = typeof segment === 'string' ? segment : segment.text
-              return (
-                <span key={j} className={isHighlight ? 'font-semibold text-primary' : undefined}>
-                  {j > 0 ? ' ' : ''}
-                  {text}
-                </span>
-              )
-            })}
-          </p>
-        ))}
-      </div>
-
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        {/* Story payoff: the VTV3 feature that proves the factory chapter above. */}
-        <figure id="video-strip" className="about-v2-video mx-auto max-w-7xl scroll-mt-24">
-
-          <div className="relative mt-8 aspect-video w-full overflow-hidden rounded-2xl border border-border bg-muted">
-            {embedSrc ? (
-              <iframe
-                className="absolute inset-0 h-full w-full"
-                src={embedSrc}
-                title="Phóng sự VTV3 — Sản xuất tăm bua An Thái"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerPolicy="strict-origin-when-cross-origin"
-                allowFullScreen
-              />
-            ) : (
-              <button
-                type="button"
-                onClick={() => setEmbedSrc(buildEmbedSrc())}
-                className="group absolute inset-0 h-full w-full cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-inset"
-                aria-label="Phát video phóng sự sản xuất tăm bua An Thái"
+            <div className="mt-8">
+              <Link
+                to="/gioi-thieu"
+                className="hero-v2-cta-primary group inline-flex items-center justify-center gap-2 rounded-md bg-primary px-7 py-3.5 text-base font-semibold text-primary-foreground transition-colors duration-300 hover:bg-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-[#0a0b0d] cursor-pointer"
               >
-                <img
-                  src={`https://img.youtube.com/vi/${YOUTUBE_VIDEO_ID}/maxresdefault.jpg`}
-                  alt=""
-                  className="h-full w-full object-cover"
-                />
-                <span className="absolute inset-0 flex items-center justify-center bg-black/30 transition-colors group-hover:bg-black/40">
-                  <span className="flex h-16 w-16 items-center justify-center rounded-full bg-primary text-primary-foreground transition-transform duration-300 group-hover:scale-110">
-                    <Play className="h-6 w-6" />
-                  </span>
-                </span>
-              </button>
-            )}
+                Khám phá thêm
+                <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+              </Link>
+            </div>
           </div>
-        </figure>
 
-        <div className="mt-12 flex justify-center">
-          <Link
-            to="/gioi-thieu"
-            className="explore-more-button group relative w-60 cursor-pointer overflow-hidden rounded-md border border-primary bg-background p-4 text-center text-lg font-semibold text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-          >
-            <span className="explore-more-label inline-block translate-x-1 transition-all duration-300 group-hover:translate-x-72 group-hover:opacity-0">
-              Khám phá thêm
-            </span>
-            <span className="explore-more-reveal absolute top-0 left-0 z-10 flex h-full w-full translate-x-full items-center justify-center gap-2 text-primary-foreground opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100">
-              Khám phá thêm
-              <ArrowRight className="h-5 w-5" />
-            </span>
-            <span className="explore-more-dot absolute left-[12%] top-[40%] h-2 w-2 scale-100 rounded-full bg-primary transition-all duration-300 group-hover:left-0 group-hover:top-0 group-hover:h-full group-hover:w-full group-hover:scale-150 group-hover:rounded-full"></span>
-          </Link>
+          {/* Video column — the VTV3 feature, weight-matched to the copy. */}
+          <figure id="video-strip" className="about-v2-video scroll-mt-24 lg:h-full">
+            <div className="relative aspect-video w-full overflow-hidden rounded-2xl border border-border bg-muted lg:aspect-auto lg:h-full">
+              {embedSrc ? (
+                <iframe
+                  className="absolute inset-0 h-full w-full"
+                  src={embedSrc}
+                  title="Phóng sự VTV3 — Sản xuất tăm bua An Thái"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allowFullScreen
+                />
+              ) : (
+                <button
+                  type="button"
+                  onClick={() => setEmbedSrc(buildEmbedSrc())}
+                  className="group absolute inset-0 h-full w-full cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-inset"
+                  aria-label="Phát video phóng sự sản xuất tăm bua An Thái"
+                >
+                  <img
+                    src={`https://img.youtube.com/vi/${YOUTUBE_VIDEO_ID}/maxresdefault.jpg`}
+                    alt=""
+                    className="h-full w-full object-cover"
+                  />
+                  <span className="absolute inset-0 flex items-center justify-center bg-black/30 transition-colors group-hover:bg-black/40">
+                    <span className="flex h-16 w-16 items-center justify-center rounded-full bg-primary text-primary-foreground transition-transform duration-300 group-hover:scale-110">
+                      <Play className="h-6 w-6" />
+                    </span>
+                  </span>
+                </button>
+              )}
+            </div>
+          </figure>
         </div>
       </div>
     </section>

@@ -13,24 +13,28 @@ import VehicleInspectionPage from './pages/VehicleInspectionPage'
 import CommercialServicesPage from './pages/CommercialServicesPage'
 import RepairOverhaulPage from './pages/RepairOverhaulPage'
 import BrakeDrumPage from './pages/BrakeDrumPage'
+import FloatingContact from './components/contact/FloatingContact'
 
 export default function App() {
   return (
-    <Routes>
-      <Route index element={<HomePage />} />
-      <Route path="gioi-thieu" element={<AboutPage />} />
-      <Route path="san-pham" element={<ProductPage />} />
-      <Route path="tam-bua-an-thai" element={<BrakeDrumPage />} />
-      <Route path="san-xuat-phu-tung" element={<ManufacturePage />} />
-      <Route path="nhap-khau-phan-phoi" element={<ImportDistributionPage />} />
-      <Route path="dang-kiem-xe" element={<VehicleInspectionPage />} />
-      <Route path="dich-vu-thuong-mai" element={<CommercialServicesPage />} />
-      <Route path="sua-chua-dai-tu" element={<RepairOverhaulPage />} />
-      <Route path="tin-tuc" element={<NewsPage />} />
-      <Route path="tin-tuc/:slug" element={<ArticleDetailPage />} />
-      <Route path="lien-he" element={<ContactPage />} />
-      <Route path="tuyen-dung" element={<RecruitmentPage />} />
-      <Route path="tuyen-dung/:id" element={<RecruitmentDetailPage />} />
-    </Routes>
+    <>
+      <Routes>
+        <Route index element={<HomePage />} />
+        <Route path="gioi-thieu" element={<AboutPage />} />
+        <Route path="san-pham" element={<ProductPage />} />
+        <Route path="tam-bua-an-thai" element={<BrakeDrumPage />} />
+        <Route path="san-xuat-phu-tung" element={<ManufacturePage />} />
+        <Route path="nhap-khau-phan-phoi" element={<ImportDistributionPage />} />
+        <Route path="dang-kiem-xe" element={<VehicleInspectionPage />} />
+        <Route path="dich-vu-thuong-mai" element={<CommercialServicesPage />} />
+        <Route path="sua-chua-dai-tu" element={<RepairOverhaulPage />} />
+        <Route path="tin-tuc" element={<NewsPage />} />
+        <Route path="tin-tuc/:slug" element={<ArticleDetailPage />} />
+        <Route path="lien-he" element={<ContactPage />} />
+        <Route path="tuyen-dung" element={<RecruitmentPage />} />
+        <Route path="tuyen-dung/:id" element={<RecruitmentDetailPage />} />
+      </Routes>
+      <FloatingContact />
+    </>
   )
 }

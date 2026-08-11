@@ -15,12 +15,16 @@ export default function FeaturedV2() {
       scrollTrigger: { trigger: root, start: 'top 80%' },
       y: 36, opacity: 0, scale: 1.05, duration: 0.95, ease: 'power3.out', delay: 0.1,
     })
-    // One-time shine sweep across the product image.
-    g.fromTo('.featured-v2-shine',
-      { xPercent: -140, opacity: 0 },
-      { xPercent: 240, opacity: 1, duration: 1.2, ease: 'power2.inOut', delay: 0.55,
-        scrollTrigger: { trigger: root, start: 'top 72%' } },
-    )
+    // One-time shine sweep that travels fully across and off the product image.
+    g.set('.featured-v2-shine', { xPercent: -140, opacity: 0 })
+    g.to('.featured-v2-shine', {
+      keyframes: {
+        xPercent: [-140, 320],
+        opacity: [0, 1, 1, 0],
+      },
+      duration: 1.4, ease: 'power2.inOut', delay: 0.55,
+      scrollTrigger: { trigger: root, start: 'top 72%' },
+    })
     // Gentle scroll parallax on the outer media node (no transform conflict with entrance).
     g.to('.featured-v2-media', {
       yPercent: -6, ease: 'none',
@@ -32,33 +36,14 @@ export default function FeaturedV2() {
     <section
       ref={ref}
       id="tam-bua"
-      className="featured-v2-section relative isolate overflow-hidden bg-linear-to-br from-primary via-primary to-primary-hover py-16 text-primary-foreground lg:py-24 rounded-t-3xl"
+      className="featured-v2-section relative isolate overflow-hidden bg-linear-to-br from-[#101114] via-foreground to-neutral-600 py-16 text-white lg:py-24 rounded-t-3xl"
       aria-labelledby="featured-v2-heading"
     >
-      {/* Background depth layers */}
-      <div
-        className="featured-v2-glow pointer-events-none absolute right-[-12%] top-1/2 h-136 w-136 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(248,113,113,0.45),transparent_70%)] blur-2xl"
-        aria-hidden="true"
-      />
-      <div
-        className="featured-v2-grain pointer-events-none absolute inset-0 opacity-[0.12] mix-blend-soft-light"
-        aria-hidden="true"
-        style={{
-          backgroundImage:
-            "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")",
-        }}
-      />
-      <span
-        className="featured-v2-watermark pointer-events-none absolute inset-x-0 -bottom-10 select-none text-center text-[22vw] font-black leading-none tracking-tighter text-primary-foreground/5 lg:text-[13rem]"
-        aria-hidden="true"
-      >
-        AN THÁI
-      </span>
 
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
           <div className="featured-v2-content lg:col-span-6">
-            <p className="featured-product-eyebrow featured-v2-reveal inline-flex items-center px-3 py-1 rounded-full bg-primary-foreground/15 text-primary-foreground text-base font-semibold uppercase tracking-widest mb-5">
+            <p className="featured-product-eyebrow featured-v2-reveal inline-flex font-mono text-red-400 text-lg font-semibold uppercase tracking-widest">
               Sản phẩm chủ lực
             </p>
             <h2 id="featured-v2-heading" className="featured-v2-reveal mt-5 text-balance text-3xl font-bold uppercase leading-tight tracking-tight sm:text-4xl lg:text-5xl">
@@ -67,34 +52,34 @@ export default function FeaturedV2() {
             <div className="featured-v2-reveal mt-9 featured-product-actions flex flex-col sm:flex-row gap-4">
               <a
                 href="/tam-bua-an-thai"
-                className="featured-product-cta-primary group inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-semibold text-primary bg-background rounded-lg transition-all duration-300 cursor-pointer hover:bg-accent hover:text-accent-foreground hover:-translate-y-0.5 hover:shadow-lg"
+                className="featured-product-cta-primary group inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-semibold text-white bg-primary rounded-lg transition-all duration-300 cursor-pointer hover:bg-primary-hover hover:-translate-y-0.5 hover:shadow-lg hover:shadow-primary/30"
               >
                 Xem thêm
                 <ArrowRight className="featured-product-cta-icon w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
               </a>
               <a
                 href="lien-he"
-                className="featured-product-cta-secondary group inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-semibold text-primary-foreground border-2 border-primary-foreground/40 bg-transparent rounded-lg transition-all duration-300 cursor-pointer hover:bg-primary-foreground hover:text-primary hover:border-primary-foreground hover:-translate-y-0.5 hover:shadow-lg"
+                className="featured-product-cta-secondary group inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-semibold text-white border-2 border-white/25 bg-transparent rounded-lg transition-all duration-300 cursor-pointer hover:bg-white hover:text-foreground hover:border-white hover:-translate-y-0.5 hover:shadow-lg"
               >
                 Liên hệ / Báo giá
                 <ArrowRight className="featured-product-cta-icon w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
               </a>
             </div>
 
-            <dl className="featured-v2-reveal featured-product-specs mt-10 grid grid-cols-3 gap-6 border-t border-primary-foreground/15 pt-8">
+            <dl className="featured-v2-reveal featured-product-specs mt-10 grid grid-cols-3 gap-6 border-t border-white/10 pt-8">
               <div className="featured-product-spec">
                 <dt className="featured-product-spec-value text-xl font-bold leading-tight sm:text-2xl">
                   FMVSS-121
                 </dt>
-                <dd className="featured-product-spec-label mt-1 text-sm font-medium uppercase tracking-wide text-primary-foreground/70">
+                <dd className="featured-product-spec-label mt-1 text-sm font-medium uppercase tracking-wide text-white/60">
                   Tiêu chuẩn phanh
                 </dd>
               </div>
-              <div className="featured-product-spec">
+              <div className="featured-product-spec mx-auto">
                 <dt className="featured-product-spec-value text-xl font-bold leading-tight sm:text-2xl">
                   G3500
                 </dt>
-                <dd className="featured-product-spec-label mt-1 text-sm font-medium uppercase tracking-wide text-primary-foreground/70">
+                <dd className="featured-product-spec-label mt-1 text-sm font-medium uppercase tracking-wide text-white/60">
                   Gang xám
                 </dd>
               </div>
@@ -102,7 +87,7 @@ export default function FeaturedV2() {
                 <dt className="featured-product-spec-value text-xl font-bold leading-tight sm:text-2xl">
                   100%
                 </dt>
-                <dd className="featured-product-spec-label mt-1 text-sm font-medium uppercase tracking-wide text-primary-foreground/70">
+                <dd className="featured-product-spec-label mt-1 text-sm font-medium uppercase tracking-wide text-white/60">
                   Truy xuất nguồn gốc
                 </dd>
               </div>
@@ -112,7 +97,7 @@ export default function FeaturedV2() {
           <div className="featured-v2-media lg:col-span-6">
             <div className="featured-v2-media-inner relative">
               <Lens zoomFactor={1.6} lensSize={220}>
-                <div className="featured-v2-image-frame relative overflow-hidden rounded-2xl border border-primary-foreground/15 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.5)] ring-1 ring-primary-foreground/10">
+                <div className="featured-v2-image-frame relative overflow-hidden rounded-md border border-white/10">
                   <img
                     src="/home/hammer-transparent.png"
                     alt="Tăm bua An Thái trên dây chuyền sản xuất"
@@ -126,11 +111,6 @@ export default function FeaturedV2() {
                   />
                 </div>
               </Lens>
-              {/* Reflection floor for a floating, showroom feel */}
-              <div
-                className="featured-v2-floor pointer-events-none absolute -bottom-6 left-1/2 h-12 w-4/5 -translate-x-1/2 rounded-[50%] bg-black/40 blur-2xl"
-                aria-hidden="true"
-              />
             </div>
           </div>
         </div>
