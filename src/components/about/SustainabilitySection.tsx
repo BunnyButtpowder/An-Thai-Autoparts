@@ -102,12 +102,12 @@ export default function SustainabilitySection() {
           <div className="sustainability-grid pointer-events-none absolute inset-0" aria-hidden="true" />
           <div className="sustainability-copy-inner relative py-24 lg:py-32">
             <div className="sustainability-intro max-w-xl">
-              <p className="sustainability-eyebrow-label inline-flex items-center rounded-full border border-red-400/30 bg-red-400/10 px-3 py-1 text-base font-bold uppercase tracking-wider text-red-400 mb-5">
+              <p className="sustainability-eyebrow-label inline-flex items-center font-mono text-lg font-bold uppercase tracking-widest text-red-400">
                 Trách nhiệm An Thái
               </p>
               <h2
                 id="sustainability-heading"
-                className="sustainability-heading mt-4 max-w-xl text-3xl font-extrabold uppercase leading-[1.12] text-white sm:text-4xl lg:text-5xl"
+                className="sustainability-heading mt-4 max-w-xl text-3xl font-extrabold leading-tight text-white sm:text-4xl text-balance"
               >
                 Phát triển bền vững cùng An Thái
               </h2>
@@ -154,15 +154,15 @@ export default function SustainabilitySection() {
                       <span className="sustainability-pillar-number stat-number text-sm font-black tabular-nums text-primary lg:hidden">
                         {pillar.n}
                       </span>
-                      <h3 className="sustainability-pillar-title mt-2 font-bold text-white lg:mt-0 text-xl lg:text-5xl">
+                      <h3 className="sustainability-pillar-title mt-2 font-bold text-white lg:mt-0 text-xl lg:text-3xl">
                         {pillar.title}
                       </h3>
-                      <p className="sustainability-pillar-desc mt-4 text-balance text-base lg:text-xl leading-relaxed text-white">
+                      <p className="sustainability-pillar-desc mt-4 text-balance text-base lg:text-lg leading-relaxed text-white">
                         {pillar.description}
                       </p>
                       <a
                         href={pillar.cta.href}
-                        className="sustainability-pillar-cta group/cta mt-5 inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.12em] text-primary cursor-pointer"
+                        className="sustainability-pillar-cta group/cta mt-5 inline-flex items-center gap-2 text-base font-semibold tracking-widest text-primary cursor-pointer"
                       >
                         {pillar.cta.label}
                         <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover/cta:translate-x-1" />

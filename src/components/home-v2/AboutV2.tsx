@@ -61,14 +61,14 @@ export default function AboutV2() {
           {/* Text column — clean heading, then the narrative, then the CTA. */}
           <div className="about-v2-copy">
             <div className="about-v2-intro">
-              <h2 id="about-v2-heading" className="text-3xl sm:text-4xl font-bold leading-tight text-foreground">
+              <h2 id="about-v2-heading" className="text-3xl sm:text-4xl font-extrabold leading-tight text-foreground">
                 Về chúng tôi
               </h2>
             </div>
 
             <div className="about-v2-story mt-6 space-y-5">
               {aboutStory.map((paragraph, i) => (
-                <p key={i} className="about-v2-paragraph text-base leading-relaxed text-foreground sm:text-xl">
+                <p key={i} className="about-v2-paragraph text-base text-justify leading-relaxed text-foreground sm:text-xl">
                   {paragraph.map((segment, j) => {
                     const text = typeof segment === 'string' ? segment : segment.text
                     const emphasis = typeof segment === 'string' ? undefined : segment.emphasis

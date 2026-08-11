@@ -32,7 +32,7 @@ export default function OffersEditorial() {
           <p className="offers-eyebrow-label inline-flex items-center font-mono text-lg font-bold uppercase tracking-widest text-red-400">
             Hệ sinh thái An Thái
           </p>
-          <h2 id="offers-heading" className="mt-4 text-3xl font-bold leading-tight text-white sm:text-4xl">
+          <h2 id="offers-heading" className="mt-4 text-3xl font-extrabold leading-tight text-white sm:text-4xl">
             Lĩnh vực tiên phong
           </h2>
         </div>

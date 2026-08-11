@@ -21,7 +21,7 @@ const zalo = contactSocials.find((s) => s.label === 'Zalo')
 const actions: FloatingAction[] = [
   facebook && { key: 'Facebook', label: 'Facebook', href: facebook.href, icon: socialIcons.Facebook, external: true },
   zalo && { key: 'Zalo', label: 'Zalo', href: zalo.href, icon: socialIcons.Zalo, external: true },
-  { key: 'Hotline', label: hotline.phone, href: hotline.phoneHref, icon: phoneIcon, pulse: true },
+  hotline && { key: 'Hotline', label: hotline.phone, href: hotline.phoneHref, icon: phoneIcon, pulse: true },
 ].filter(Boolean) as FloatingAction[]
 
 export default function FloatingContact() {
@@ -53,7 +53,7 @@ export default function FloatingContact() {
             {action.label}
           </span>
 
-          <span className="floating-contact-button relative flex h-14 w-14 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-lg shadow-primary/30 transition-all duration-300 group-hover:scale-110 group-hover:bg-primary-hover group-hover:shadow-primary/50 [&_svg]:!h-7 [&_svg]:!w-7">
+          <span className="floating-contact-button relative flex h-14 w-14 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-lg shadow-primary/30 transition-all duration-300 group-hover:scale-110 group-hover:bg-primary-hover group-hover:shadow-primary/50 [&_svg]:h-7! [&_svg]:w-7!">
             {action.pulse && (
               <span className="floating-contact-pulse absolute inset-0 rounded-full bg-primary opacity-70 animate-ping" />
             )}

@@ -148,7 +148,7 @@ export default function NewsV2() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="news-v2-header mb-10 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between lg:mb-12">
             <div>
-              <h2 id="news-v2-heading" className="mt-4 text-3xl font-bold leading-tight tracking-tight text-foreground sm:text-4xl">Tin tức &amp; Báo chí</h2>
+              <h2 id="news-v2-heading" className="mt-4 text-3xl font-extrabold leading-tight tracking-tight text-foreground sm:text-4xl">Tin tức &amp; Báo chí</h2>
             </div>
             <Link
               to="/tin-tuc"
@@ -203,7 +203,7 @@ export default function NewsV2() {
                 aria-label={`Mở bài viết: ${article.title}`}
                 className="news-v2-card group/card flex shrink-0 basis-[86%] snap-start flex-col rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background sm:basis-[calc((100%-1.5rem)/2)] lg:basis-[calc((100%-3rem)/3)] cursor-pointer"
               >
-                <div className="aspect-[16/10] w-full overflow-hidden rounded-xl bg-muted">
+                <div className="aspect-16/10 w-full overflow-hidden rounded-xl bg-muted">
                   <img
                     src={article.image}
                     alt=""
