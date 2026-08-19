@@ -61,17 +61,16 @@ export default function WorkshopEquipment() {
       />
 
       <div className="workshop-equipment-intro mx-auto max-w-7xl px-4 pb-12 pt-24 sm:px-6 lg:px-8">
-        <div className="workshop-equipment-intro-grid grid grid-cols-1 items-end gap-8 lg:grid-cols-2 lg:gap-12">
+        <div className="workshop-equipment-intro">
+          <div className="workshop-equipment-eyebrow workshop-equipment-reveal mb-3 text-lg sm:text-xl font-semibold tracking-wide text-red-400">
+            Trang thiết bị
+          </div>
           <h2
             id="workshop-equipment-heading"
-            className="workshop-equipment-title workshop-equipment-reveal text-3xl font-extrabold leading-[1.1] text-white sm:text-4xl lg:text-5xl"
+            className="workshop-equipment-title workshop-equipment-reveal text-3xl font-extrabold leading-tight uppercase tracking-wide text-white sm:text-4xl"
           >
-            Trang thiết bị hiện đại
+            NỀN TẢNG CHO CHẤT LƯỢNG VƯỢT TRỘI
           </h2>
-          <p className="workshop-equipment-lead workshop-equipment-reveal text-lg leading-[1.7] text-white">
-            Đầu tư đồng bộ hệ thống thiết bị và phần mềm chuyên dụng phục vụ công tác chẩn
-            đoán, sửa chữa và phục hồi phương tiện.
-          </p>
         </div>
       </div>
 
@@ -86,7 +85,7 @@ export default function WorkshopEquipment() {
                 }`}
               >
                 <div className="workshop-equipment-cell-head mb-4.5 flex items-baseline gap-4">
-                  <h3 className="workshop-equipment-cell-title text-2xl font-bold text-white">
+                  <h3 className="workshop-equipment-cell-title text-2xl font-semibold text-white sm:text-3xl">
                     {group.title}
                   </h3>
                 </div>
@@ -94,7 +93,7 @@ export default function WorkshopEquipment() {
                   {group.items.map((item) => (
                     <li
                       key={item}
-                      className="workshop-equipment-cell-item relative pl-4.5 text-base leading-[1.55] text-white"
+                      className="workshop-equipment-cell-item relative pl-4.5 text-lg sm:text-xl leading-[1.55] text-white"
                     >
                       <span
                         className="workshop-equipment-cell-bullet absolute left-0 top-2 h-1.5 w-1.5 bg-primary"

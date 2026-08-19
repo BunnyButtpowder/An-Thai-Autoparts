@@ -42,10 +42,6 @@ export default function HeroV2() {
       <div className="mx-auto w-full max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-20">
         <div className="hero-v2-frame-wrap relative max-w-6xl -ml-8 sm:-ml-12 lg:-ml-16">
           <div className="hero-v2-frame relative  px-8 py-10 sm:px-12 sm:py-14 lg:px-16 lg:py-16">
-            <p className="hero-v2-eyebrow font-mono text-base font-medium uppercase tracking-normal text-white sm:text-lg">
-               Nhà sản xuất phụ tùng ô tô
-            </p>
-
             <h1
               id="hero-v2-heading"
               className="hero-v2-heading mt-6 font-extrabold tracking-relaxed text-white text-balance"

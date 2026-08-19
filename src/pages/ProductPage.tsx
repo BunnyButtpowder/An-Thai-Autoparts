@@ -53,7 +53,7 @@ export default function ProductPage() {
         isMobileMenuOpen={isOpen}
         onMobileMenuToggle={toggle}
       />
-      <main>
+      <main className="product-main bg-[#0b0c0d]">
         <ProductHero />
         <FeaturedProducts />
         <ExploreFactory />

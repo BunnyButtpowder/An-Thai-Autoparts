@@ -1,144 +1,86 @@
-import { motion } from 'motion/react'
-import Floating, { FloatingElement } from '../fancy/image/parallax-floating'
+import { useRef } from 'react'
+import { motion, useScroll, useTransform } from 'motion/react'
+import { useMotionPreference } from '../../context/MotionPreferenceContext'
 import ArrowRight from '../icons/ArrowRight'
 
-// Product photos scattered around the headline. `depth` drives the parallax
-// strength (higher = moves more with the cursor); placement avoids the centre
-// so the title/CTAs stay legible.
-const floatingImages = [
-  {
-    src: '/home/manufacture.jpg',
-    alt: 'Dây chuyền sản xuất phụ tùng An Thái',
-    depth: 0.6,
-    className:
-      'top-[10%] left-[4%] w-40 h-40 md:w-60 md:h-60 -rotate-6',
-  },
-  {
-    src: '/home/about.jpg',
-    alt: 'Nhà máy An Thái',
-    depth: 1,
-    className:
-      'top-[6%] left-[30%] hidden w-44 h-44 rotate-3 md:block',
-  },
-  {
-    src: '/product/AT00012.png',
-    alt: 'Tăm bua ANTEK AT00012',
-    depth: 2,
-    className:
-      'top-[14%] right-[5%] w-40 h-40 md:w-64 md:h-64 rotate-6',
-  },
-  {
-    src: '/product/AT00015-2.jpg',
-    alt: 'Tăm bua ANTEK AT00015',
-    depth: 1.4,
-    className:
-      'top-[44%] left-[2%] hidden w-52 h-52 md:block',
-  },
-  {
-    src: '/home/distribution.jpg',
-    alt: 'Trung tâm phân phối An Thái',
-    depth: 1.6,
-    className:
-      'top-[40%] right-[3%] w-36 h-36 md:w-52 md:h-52 -rotate-3',
-  },
-  {
-    src: '/home/banner.jpg',
-    alt: 'Xe tải vận hành trên hành trình dài',
-    depth: 2.4,
-    className:
-      'bottom-[9%] left-[10%] w-40 h-40 md:w-60 md:h-60 rotate-3',
-  },
-  {
-    src: '/product/AT00012-2.jpg',
-    alt: 'Hệ sinh thái An Thái',
-    depth: 1,
-    className:
-      'bottom-[7%] right-[24%] hidden w-44 h-44 md:block',
-  },
-  {
-    src: '/home/manufacture.jpg',
-    alt: 'Chi tiết phụ tùng chính hãng',
-    depth: 3,
-    className:
-      'bottom-[13%] right-[7%] w-36 h-36 md:w-56 md:h-56 -rotate-6',
-  },
-]
-
+// Dark full-bleed opener for the product page. The background photo drifts
+// gently as the page scrolls (disabled under reduce-motion) while the copy lands
+// in a staggered sequence, matching the entrance language of the manufacture hero.
 export default function ProductHero() {
+  const sectionRef = useRef<HTMLElement>(null)
+  const { reduced } = useMotionPreference()
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ['start start', 'end start'],
+  })
+  const bgY = useTransform(scrollYProgress, [0, 1], reduced ? ['0%', '0%'] : ['-8%', '12%'])
+
+  const container = {
+    hidden: {},
+    visible: { transition: { staggerChildren: 0.14, delayChildren: 0.1 } },
+  }
+  const item = {
+    hidden: { opacity: 0, y: 22 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: 'easeOut' as const } },
+  }
+
   return (
     <section
+      ref={sectionRef}
       id="san-pham-hero"
-      className="product-hero-section relative flex min-h-screen w-full items-center justify-center overflow-hidden bg-white"
+      className="product-hero-section relative flex min-h-screen items-end overflow-hidden bg-[#0b0c0d]"
       aria-labelledby="product-hero-heading"
     >
-      {/* Parallax layer — reacts to cursor / touch movement across the section. */}
-      <Floating sensitivity={-1} className="product-hero-floating">
-        {floatingImages.map((image, index) => (
-          <FloatingElement
-            key={`${image.src}-${index}`}
-            depth={image.depth}
-            className={image.className}
-          >
-            <img
-              src={image.src}
-              alt={image.alt}
-              loading="lazy"
-              className="product-hero-floating-image h-full w-full rounded-2xl object-cover "
-            />
-          </FloatingElement>
-        ))}
-      </Floating>
+      {/* Parallax photo layer */}
+      <motion.div
+        className="product-hero-bg absolute inset-x-0 inset-y-[-12%] z-0"
+        style={{ y: bgY }}
+        aria-hidden="true"
+      >
+        <img
+          src="/product/AT00012.png"
+          alt=""
+          className="product-hero-bg-image h-full w-full object-cover"
+        />
+      </motion.div>
+
+      {/* Legibility gradient */}
+      <div
+        className="product-hero-overlay pointer-events-none absolute inset-0 z-1 bg-linear-to-t from-[#0b0c0d]/95 via-[#0b0c0d]/50 to-[#0b0c0d]/70"
+        aria-hidden="true"
+      />
 
       <motion.div
-        className="product-hero-content relative z-10 mx-auto flex max-w-4xl flex-col items-center px-4 text-center sm:px-6"
+        className="product-hero-content relative z-2 mx-auto w-full max-w-7xl pb-30 px-4 sm:px-6 lg:px-8"
+        variants={container}
         initial="hidden"
         animate="visible"
-        variants={{
-          hidden: {},
-          visible: { transition: { staggerChildren: 0.15, delayChildren: 0.1 } },
-        }}
       >
-        <motion.p
-          className="product-hero-eyebrow font-mono text-xs font-semibold uppercase tracking-[0.25em] text-black/70 sm:text-base"
-          variants={{
-            hidden: { opacity: 0, y: 16 },
-            visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } },
-          }}
-        >
-          <span className="text-primary">//</span> Danh mục sản phẩm An Thái
-        </motion.p>
-
         <motion.h1
           id="product-hero-heading"
-          className="product-hero-title mt-6 text-4xl font-extrabold leading-[1.1] tracking-normal text-black text-balance sm:text-5xl lg:text-6xl"
-          variants={{
-            hidden: { opacity: 0, y: 24 },
-            visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: 'easeOut' } },
-          }}
+          className="product-hero-title text-4xl font-extrabold leading-normal tracking-normal uppercase text-white sm:text-6xl lg:text-7xl mb-3"
+          variants={item}
         >
-          Phụ tùng chất lượng cao <br /> Bền bỉ cho mọi hành trình
+          Phụ tùng chất lượng cao <br />
+          Bền bỉ cho mọi hành trình
         </motion.h1>
-
         <motion.div
-          className="product-hero-cta mt-10 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-center"
-          variants={{
-            hidden: { opacity: 0, y: 20 },
-            visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } },
-          }}
+          className="product-hero-cta flex flex-wrap gap-3.5"
+          variants={item}
         >
           <a
-            href="/lien-he"
-            className="product-hero-cta-primary group inline-flex items-center justify-center gap-2 rounded-md bg-primary px-7 py-3.5 text-base font-semibold text-primary-foreground transition-colors duration-300 hover:bg-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-[#0a0b0d] cursor-pointer"
+            href="#danh-muc-phu-tung"
+            className="product-hero-cta-primary group inline-flex items-center gap-2 rounded-md bg-primary px-7 py-3.5 text-base font-semibold text-primary-foreground transition-colors duration-300 hover:bg-primary-hover cursor-pointer"
           >
-            Liên hệ tư vấn
+            Khám phá sản phẩm
             <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
           </a>
-          {/* <Link
-            to="/lien-he"
-            className="product-hero-cta-secondary inline-flex items-center justify-center gap-2 rounded-md border border-white/25 px-7 py-3.5 text-base font-semibold text-white transition-colors duration-300 hover:border-white hover:bg-white/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-[#0a0b0d] cursor-pointer"
+          <a
+            href="/lien-he"
+            className="product-hero-cta-secondary inline-flex items-center gap-2 rounded-md border border-white/30 px-7 py-3.5 text-base font-semibold text-white transition-colors duration-300 hover:border-white hover:bg-white/10 cursor-pointer"
           >
             Liên hệ tư vấn
-          </Link> */}
+          </a>
         </motion.div>
       </motion.div>
     </section>

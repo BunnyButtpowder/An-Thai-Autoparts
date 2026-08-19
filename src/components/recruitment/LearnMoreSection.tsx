@@ -29,7 +29,7 @@ export default function LearnMoreSection() {
     >
       <div className="learn-more-container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-8 lg:grid lg:grid-cols-3 lg:items-center lg:gap-0">
         <div className="learn-more-text-column contents lg:col-span-2 lg:flex lg:flex-col lg:gap-8">
-          <h2 className="learn-more-heading order-1 lg:order-0 text-center lg:text-left text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground uppercase tracking-tight">
+          <h2 className="learn-more-heading order-1 lg:order-0 text-center lg:text-left text-3xl sm:text-4xl font-bold text-foreground uppercase tracking-tight">
             Tìm hiểu thêm về chúng tôi
           </h2>
           <p className="learn-more-text order-2 lg:order-0 text-lg text-black leading-relaxed max-w-2xl text-center lg:text-left">

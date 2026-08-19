@@ -38,11 +38,14 @@ export default function InspectionCommitment() {
       aria-labelledby="inspection-commitment-heading"
     >
       <div className="inspection-commitment-header mx-auto max-w-7xl px-4 pb-11 sm:px-6 lg:px-8">
+        <div className="inspection-commitment-eyebrow inspection-commitment-reveal mb-3 text-lg sm:text-xl font-semibold tracking-wide text-red-400">
+          Cam kết
+        </div>
         <h2
           id="inspection-commitment-heading"
-          className="inspection-commitment-title inspection-commitment-reveal max-w-[18ch] text-3xl font-extrabold leading-[1.02] text-white sm:text-4xl lg:text-5xl"
+          className="inspection-commitment-title inspection-commitment-reveal text-3xl font-extrabold leading-normal uppercase tracking-wide text-white sm:text-4xl text-balance"
         >
-          Cam kết chất lượng
+          ĐẶT SỰ MINH BẠCH LÀM NỀN TẢNG
         </h2>
       </div>
 

@@ -33,14 +33,14 @@ export default function HotelIntro() {
     >
       <div className="hotel-intro-container mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:gap-16 lg:px-8">
         <div className="hotel-intro-copy">
-          <p className="hotel-intro-eyebrow-label hotel-intro-reveal inline-flex items-center rounded-full border border-red-400/30 bg-red-400/10 px-3 py-1 text-base font-bold uppercase tracking-wider text-red-400 mb-3">
-            Giới thiệu
+          <p className="hotel-intro-eyebrow-label hotel-intro-reveal text-lg sm:text-xl font-semibold tracking-wide text-red-400 mb-3">
+            Khách sạn An Thái
           </p>
           <h2
             id="hotel-intro-heading"
-            className="hotel-intro-heading hotel-intro-reveal mb-6 text-3xl font-extrabold leading-[1.1] text-white sm:text-4xl lg:text-5xl"
+            className="hotel-intro-heading hotel-intro-reveal mb-6 text-3xl font-extrabold leading-tight uppercase tracking-wide text-white sm:text-4xl lg:text-5xl text-balance"
           >
-            Khách sạn An Thái
+            KHÔNG GIAN LƯU TRÚ, HỘI NGHỊ & ẨM THỰC
           </h2>
           <p className="hotel-intro-text hotel-intro-reveal mb-5 max-w-[56ch] text-lg leading-[1.75] text-white">
             Tọa lạc tại vị trí trung tâm Thành phố Thái Bình, Khách sạn và Nhà hàng An Thái là

@@ -38,9 +38,14 @@ export default function PartnerBrands() {
     <section ref={sectionRef} className="partner-brands-section bg-neutral-950 py-16 sm:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="partner-brands-header partner-brands-reveal flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
-          <h2 className="partner-brands-title text-3xl font-extrabold uppercase tracking-tight leading-[1.06] text-white sm:text-4xl lg:text-5xl">
-            Thương hiệu đối tác
-          </h2>
+          <div className="flex flex-col">
+            <div className="partner-brands-eyebrow partner-brands-reveal mb-3 text-lg sm:text-xl font-semibold tracking-wide text-red-400">
+              Đối tác
+            </div>
+            <h2 className="partner-brands-title text-3xl font-extrabold uppercase leading-normal tracking-wide text-white sm:text-4xl">
+              Đồng hành phát triển
+            </h2>
+          </div>
           <a
             href="/san-pham"
             className="partner-brands-all-link whitespace-nowrap text-sm sm:text-base font-semibold text-red-400 transition-colors hover:text-primary cursor-pointer"
@@ -83,8 +88,8 @@ export default function PartnerBrands() {
         ))}
 
         {/* Soft edge fades keep each row's loop seamless without covering a logo. */}
-        <div className="partner-brands-fade-left hidden sm:block pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-linear-to-r from-neutral-950 to-transparent sm:w-28" />
-        <div className="partner-brands-fade-right hidden sm:block pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-linear-to-l from-neutral-950 to-transparent sm:w-28" />
+        {/* <div className="partner-brands-fade-left hidden sm:block pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-linear-to-r from-neutral-950 to-transparent sm:w-28" />
+        <div className="partner-brands-fade-right hidden sm:block pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-linear-to-l from-neutral-950 to-transparent sm:w-28" /> */}
       </div>
     </section>
   )

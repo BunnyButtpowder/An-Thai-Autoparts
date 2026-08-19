@@ -130,14 +130,14 @@ export default function ProductCatalog() {
   )
 
   return (
-    <section id="danh-muc-phu-tung" className="product-catalog-section relative w-full bg-white py-20 lg:py-28">
+    <section id="danh-muc-phu-tung" className="product-catalog-section relative w-full py-20 lg:py-28">
       <div className="product-catalog-container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header + intro — brief sections 8 & 9 */}
         <header className="product-catalog-header">
-          <h2 className="product-catalog-title text-3xl font-extrabold tracking-normal text-primary uppercase text-balance sm:text-4xl lg:text-5xl">
+          <h2 className="product-catalog-title text-3xl font-extrabold tracking-normal text-white uppercase text-balance sm:text-4xl lg:text-5xl">
             Danh mục phụ tùng
           </h2>
-          <p className="product-catalog-subtitle mt-4 text-base leading-relaxed text-black sm:text-lg">
+          <p className="product-catalog-subtitle mt-4 text-base leading-relaxed text-white/70 sm:text-lg">
             Khám phá danh mục phụ tùng chất lượng cao — nơi hội tụ những sản phẩm bền bỉ, ổn định và
             đáp ứng đa dạng các dòng xe thương mại từ Trung Quốc, Mỹ đến Nhật Bản.
           </p>
@@ -146,7 +146,7 @@ export default function ProductCatalog() {
 
       {/* Sticky category bar — brief section 10. Parks just below the fixed
           header (h-16 lg:h-20 / z-50) and stays above the grid (z-40). */}
-      <div className="product-catalog-nav-sticky sticky top-16 lg:top-20 z-40 mt-8 border-y border-black/10 bg-white/90 backdrop-blur-md">
+      <div className="product-catalog-nav-sticky sticky top-16 lg:top-20 z-40 mt-8 border-y border-white/10 bg-[#0b0c0d]/90 backdrop-blur-md">
         <div className="product-catalog-nav-container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <nav
             className="product-catalog-nav flex items-center gap-2 overflow-x-auto py-3.5 scrollbar-none [&::-webkit-scrollbar]:hidden"
@@ -163,7 +163,7 @@ export default function ProductCatalog() {
                   className={`product-catalog-nav-pill shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-semibold transition-colors duration-300 cursor-pointer ${
                     isActive
                       ? 'bg-primary text-white'
-                      : 'bg-neutral-100 text-black/70 hover:bg-neutral-200 hover:text-black'
+                      : 'bg-white/10 text-white/70 hover:bg-white/20 hover:text-white'
                   }`}
                 >
                   {category}
@@ -190,10 +190,10 @@ export default function ProductCatalog() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.96 }}
                 transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-                className="product-catalog-card group flex flex-col overflow-hidden rounded-2xl border border-black/10 bg-white transition-shadow duration-300 hover:shadow-xl hover:shadow-black/5"
+                className="product-catalog-card group flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/5 transition-shadow duration-300 hover:shadow-xl hover:shadow-black/40"
               >
                 {/* Placeholder image slot — gray box until real photos arrive. */}
-                <div className="product-catalog-card-media flex aspect-square flex-col items-center justify-center gap-2 bg-neutral-100 text-black/30 transition-colors duration-300 group-hover:bg-neutral-200/70">
+                <div className="product-catalog-card-media flex aspect-square flex-col items-center justify-center gap-2 bg-white/5 text-white/30 transition-colors duration-300 group-hover:bg-white/10">
                   <PlaceholderBoxIcon className="product-catalog-card-icon h-12 w-12" />
                   <span className="product-catalog-card-media-label text-xs font-medium uppercase tracking-wide">
                     Ảnh sản phẩm
@@ -201,16 +201,16 @@ export default function ProductCatalog() {
                 </div>
 
                 <div className="product-catalog-card-body flex flex-1 flex-col p-5">
-                  <span className="product-catalog-card-brand text-xs font-semibold uppercase tracking-wider text-primary">
+                  <span className="product-catalog-card-brand text-xs font-semibold uppercase tracking-wider text-red-400">
                     {group.brand}
                   </span>
-                  <h3 className="product-catalog-card-name mt-1.5 text-lg font-bold leading-snug text-black">
+                  <h3 className="product-catalog-card-name mt-1.5 text-lg font-bold leading-snug text-white">
                     {group.name}
                   </h3>
 
                   <a
                     href="#danh-muc-phu-tung"
-                    className="product-catalog-card-cta mt-4 inline-flex items-center gap-2 self-start text-sm font-semibold text-primary transition-colors duration-300 hover:text-primary-hover cursor-pointer"
+                    className="product-catalog-card-cta mt-4 inline-flex items-center gap-2 self-start text-sm font-semibold text-red-400 transition-colors duration-300 hover:text-primary-hover cursor-pointer"
                   >
                     Xem thêm
                     <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />

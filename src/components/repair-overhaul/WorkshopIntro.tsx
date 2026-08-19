@@ -58,16 +58,16 @@ export default function WorkshopIntro() {
     >
       <div className="workshop-intro-container mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:gap-16 lg:px-8">
         <div className="workshop-intro-copy">
-          <p className="workshop-intro-eyebrow-label workshop-intro-reveal inline-flex items-center rounded-full border border-red-400/30 bg-red-400/10 px-3 py-1 text-base font-bold uppercase tracking-wider text-red-400 mb-3">
-            Giới thiệu
+          <p className="workshop-intro-eyebrow-label workshop-intro-reveal text-lg sm:text-xl font-semibold tracking-wide text-red-400 mb-3">
+            Xưởng sửa chữa ô tô An Thái
           </p>
           <h2
             id="workshop-intro-heading"
-            className="workshop-intro-heading workshop-intro-reveal mb-6 text-3xl font-extrabold leading-[1.1] text-white sm:text-4xl lg:text-5xl"
+            className="workshop-intro-heading workshop-intro-reveal mb-6 text-3xl font-extrabold leading-tight uppercase tracking-wide text-white sm:text-4xl"
           >
-            Xưởng sửa chữa ô tô
+            TRUNG TÂM 5S TIÊU CHUẨN
           </h2>
-          <p className="workshop-intro-text workshop-intro-reveal mb-7 max-w-[56ch] text-lg leading-[1.7] text-white/80">
+          <p className="workshop-intro-text workshop-intro-reveal mb-7 max-w-[56ch] text-lg sm:text-xl leading-[1.7] text-white/80">
             Với tổng diện tích <b className="text-red-400">2.500m²</b>, trung tâm được vận
             hành theo tiêu chuẩn 5S cùng quy trình khép kín, đáp ứng đầy đủ các hạng mục sửa
             chữa và đại tu.
@@ -87,7 +87,7 @@ export default function WorkshopIntro() {
               <div className="workshop-intro-stat-value text-3xl font-black leading-none tabular-nums text-white sm:text-4xl lg:text-5xl">
                 <span ref={countRef} data-count="2500">0</span>
               </div>
-              <div className="workshop-intro-stat-label mt-2 font-mono text-xs uppercase tracking-widest text-white/60">
+              <div className="workshop-intro-stat-label mt-2 font-mono text-base uppercase tracking-widest text-white/60">
                 m² tổng diện tích
               </div>
             </div>
@@ -95,7 +95,7 @@ export default function WorkshopIntro() {
               <div className="workshop-intro-stat-value text-3xl font-black leading-none tabular-nums text-white sm:text-4xl lg:text-5xl">
                 5S
               </div>
-              <div className="workshop-intro-stat-label mt-2 font-mono text-xs uppercase tracking-widest text-white/60">
+              <div className="workshop-intro-stat-label mt-2 font-mono text-base uppercase tracking-widest text-white/60">
                 Tiêu chuẩn vận hành
               </div>
             </div>

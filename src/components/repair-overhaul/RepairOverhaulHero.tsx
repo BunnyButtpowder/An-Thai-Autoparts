@@ -48,17 +48,17 @@ export default function RepairOverhaulHero() {
       />
 
       <motion.div
-        className="repair-overhaul-hero-content relative z-2 mx-auto w-full max-w-7xl px-4 pb-24 sm:px-6 lg:px-8"
+        className="repair-overhaul-hero-content relative z-2 mx-auto w-full max-w-7xl px-4 pb-30 sm:px-6 lg:px-8"
         variants={container}
         initial="hidden"
         animate="visible"
       >
         <motion.h1
           id="repair-overhaul-hero-heading"
-          className="repair-overhaul-hero-title mb-6 max-w-[18ch] text-4xl font-black uppercase leading-[1.06] tracking-tight text-white sm:text-6xl lg:text-7xl xl:text-8xl"
+          className="repair-overhaul-hero-title text-4xl font-extrabold uppercase leading-normal tracking-normal text-white sm:text-6xl lg:text-7xl"
           variants={item}
         >
-          Trung tâm sửa chữa &amp; đại tu ô tô
+          Sửa chữa và đại tu ô tô
         </motion.h1>
         <motion.p
           className="repair-overhaul-hero-subtitle max-w-250 text-lg leading-relaxed text-white sm:text-2xl"

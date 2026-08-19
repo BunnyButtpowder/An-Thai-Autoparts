@@ -43,10 +43,10 @@ export default function FeaturedV2() {
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
           <div className="featured-v2-content lg:col-span-6">
-            <p className="featured-product-eyebrow featured-v2-reveal inline-flex font-mono text-red-400 text-lg font-semibold uppercase tracking-widest">
+            <p className="featured-product-eyebrow featured-v2-reveal inline-flex text-red-400 text-lg sm:text-xl font-semibold tracking-wide">
               Sản phẩm chủ lực
             </p>
-            <h2 id="featured-v2-heading" className="featured-v2-reveal mt-5 text-balance text-3xl font-extrabold uppercase leading-tight tracking-tight sm:text-4xl">
+            <h2 id="featured-v2-heading" className="featured-v2-reveal mt-4 text-balance text-3xl font-extrabold uppercase leading-tight tracking-tight sm:text-4xl">
               Trải nghiệm tăm bua chất lượng quốc tế
             </h2>
             <div className="featured-v2-reveal mt-9 featured-product-actions flex flex-col sm:flex-row gap-4">

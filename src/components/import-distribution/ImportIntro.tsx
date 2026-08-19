@@ -19,12 +19,15 @@ export default function ImportIntro() {
   return (
     <section ref={sectionRef} className="import-intro-section bg-[#0f1113] py-24">
       <div className="import-intro-container mx-auto max-w-245 px-4 sm:px-6 lg:px-8">
-        <h2 className="import-intro-title import-intro-reveal text-center mb-8 text-3xl font-extrabold uppercase leading-[1.1] tracking-tight text-white sm:text-4xl lg:text-5xl">
+        <div className="import-intro-eyebrow import-intro-reveal mb-3 text-lg sm:text-xl text-center font-semibold tracking-wide text-red-400">
+          Trung tâm phụ tùng
+        </div>
+        <h2 className="import-intro-title import-intro-reveal text-center mb-8 text-3xl font-extrabold uppercase leading-normal tracking-wide text-white sm:text-4xl">
           Giải pháp phụ tùng toàn diện cho xe thương mại
         </h2>
-        <p className="import-intro-text import-intro-reveal text-lg font-medium leading-[1.55] text-white sm:text-2xl lg:text-3xl">
+        <p className="import-intro-text import-intro-reveal text-lg font-normal leading-[1.55] text-white sm:text-2xl text-justify">
           An Thái là đơn vị nhập khẩu và phân phối phụ tùng ô tô với hệ sinh thái
-          thương hiệu đa dạng, đáp ứng nhu cầu cho nhiều dòng xe tải, xe đầu kéo và
+          thương hiệu đa dạng, đáp ứng nhu cầu cho nhiều dòng
           xe thương mại.{' '}
           <TextHighlighter
             className={highlightClass}

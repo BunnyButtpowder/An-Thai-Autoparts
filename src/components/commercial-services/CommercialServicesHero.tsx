@@ -48,20 +48,20 @@ export default function CommercialServicesHero() {
       />
 
       <motion.div
-        className="commercial-services-hero-content relative z-2 mx-auto w-full max-w-7xl px-4 pb-24 sm:px-6 lg:px-8"
+        className="commercial-services-hero-content relative z-2 mx-auto w-full max-w-7xl px-4 pb-30 sm:px-6 lg:px-8"
         variants={container}
         initial="hidden"
         animate="visible"
       >
         <motion.h1
           id="commercial-services-hero-heading"
-          className="commercial-services-hero-title mb-6 max-w-[16ch] text-4xl font-black uppercase leading-[1.06] tracking-tight text-white sm:text-6xl lg:text-7xl xl:text-8xl"
+          className="commercial-services-hero-title mb-6 max-w-[16ch] text-4xl font-black uppercase leading-[1.06] tracking-tight text-white sm:text-6xl lg:text-7xl"
           variants={item}
         >
           Dịch vụ thương mại
         </motion.h1>
         <motion.p
-          className="commercial-services-hero-subtitle max-w-160 text-lg leading-relaxed text-white sm:text-2xl"
+          className="commercial-services-hero-subtitle text-lg leading-relaxed text-white sm:text-xl"
           variants={item}
         >
           Tổ hợp khách sạn, nhà hàng và hội nghị cao cấp

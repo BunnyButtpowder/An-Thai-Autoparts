@@ -46,10 +46,10 @@ export default function VisitSection() {
 
       <div className="visit-container relative z-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="visit-intro text-start mb-8 lg:mb-10">
-          <p className="visit-eyebrow-label inline-flex items-center rounded-full border border-red-400/30 bg-red-400/10 px-3 py-1 text-base font-bold uppercase tracking-wider text-red-400 mb-5">
-            Mạng lưới An Thái
-          </p>
-          <h2 className="visit-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-white uppercase leading-tight">
+          <div className="visit-eyebrow mb-3 text-lg sm:text-xl font-semibold tracking-wide text-red-400">
+            Quy mô toàn quốc
+          </div>
+          <h2 className="visit-heading text-3xl sm:text-4xl font-bold text-white uppercase leading-tight">
             Ghé thăm chúng tôi
           </h2>
         </div>

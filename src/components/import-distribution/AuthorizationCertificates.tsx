@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from 'react'
 import useReveal from '../../hooks/useReveal'
-import { X, ZoomIn } from 'lucide-react'
+import { ChevronLeft, ChevronRight, X, ZoomIn } from 'lucide-react'
 
 interface Certificate {
   brand: string
@@ -22,9 +22,40 @@ const certificates: Certificate[] = [
 // each card previews the real document, and selecting one opens a full-screen
 // lightbox with keyboard + arrow navigation so visitors can verify every
 // credential first-hand. Exclusive authorizations carry a red mono badge.
+// Number of cards visible in the carousel at each responsive breakpoint.
+function getVisibleCount() {
+  if (typeof window === 'undefined') return 3
+  if (window.innerWidth >= 1024) return 3 // lg
+  if (window.innerWidth >= 640) return 2 // sm
+  return 1
+}
+
 export default function AuthorizationCertificates() {
   const [activeIndex, setActiveIndex] = useState<number | null>(null)
   const isOpen = activeIndex !== null
+
+  // Carousel: track how many cards fit and which is the leftmost visible one.
+  const [visibleCount, setVisibleCount] = useState(getVisibleCount)
+  const [page, setPage] = useState(0)
+  const maxPage = Math.max(0, certificates.length - visibleCount)
+
+  // Keep the visible count in sync with viewport size and clamp the current
+  // page so we never scroll past the last full window of cards.
+  useEffect(() => {
+    const onResize = () => {
+      const next = getVisibleCount()
+      setVisibleCount(next)
+      setPage((p) => Math.min(p, certificates.length - next))
+    }
+    window.addEventListener('resize', onResize)
+    return () => window.removeEventListener('resize', onResize)
+  }, [])
+
+  const goPrev = useCallback(() => setPage((p) => Math.max(0, p - 1)), [])
+  const goNext = useCallback(
+    () => setPage((p) => Math.min(certificates.length - visibleCount, p + 1)),
+    [visibleCount],
+  )
 
   const sectionRef = useReveal<HTMLElement>((g, root) => {
     g.set('.authorization-certificates-reveal', { y: 32, opacity: 0 })
@@ -72,49 +103,105 @@ export default function AuthorizationCertificates() {
     >
       <div className="authorization-certificates-container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="authorization-certificates-header mb-11 max-w-165">
+          <div className="authorization-certificates-eyebrow authorization-certificates-reveal mb-3 text-lg sm:text-xl font-semibold tracking-wide text-red-400">
+            Chứng nhận
+          </div>
           <h2
             id="authorization-certificates-heading"
-            className="authorization-certificates-title authorization-certificates-reveal text-3xl font-extrabold leading-[1.1] uppercase tracking-tight text-white sm:text-4xl lg:text-5xl"
+            className="authorization-certificates-title authorization-certificates-reveal text-3xl font-extrabold leading-normal uppercase tracking-wide text-white sm:text-4xl"
           >
-            Chứng nhận ủy quyền
+            Uỷ quyền phân phối
           </h2>
         </div>
 
-        <div className="authorization-certificates-grid grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {certificates.map((cert, index) => (
-            <button
-              key={cert.brand}
-              type="button"
-              onClick={() => setActiveIndex(index)}
-              className="authorization-certificates-card group flex cursor-pointer flex-col overflow-hidden rounded-lg border border-white/12 bg-[#0b0c0d] text-left transition-colors duration-300 hover:border-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-red-500/70"
-              aria-label={`Xem giấy chứng nhận ${cert.brand}`}
+        <div className="authorization-certificates-carousel authorization-certificates-reveal">
+          <div className="authorization-certificates-viewport overflow-hidden">
+            <div
+              className="authorization-certificates-track flex transition-transform duration-500 ease-out"
+              style={{
+                width: `${(certificates.length / visibleCount) * 100}%`,
+                transform: `translateX(-${page * (100 / certificates.length)}%)`,
+              }}
             >
-              <div className="authorization-certificates-card-media relative flex aspect-3/4 items-center justify-center overflow-hidden bg-[#15181b]">
-                <img
-                  src={cert.image}
-                  alt={`${cert.label} ${cert.brand}`}
-                  loading="lazy"
-                  className="authorization-certificates-card-image h-full w-full object-contain transition-transform duration-300 group-hover:scale-[1.03]"
-                />
-                <div className="authorization-certificates-card-zoom absolute right-3 top-3 flex h-9 w-9 items-center justify-center rounded-full bg-black/55 text-white opacity-0 backdrop-blur-sm transition-all duration-300 group-hover:opacity-100">
-                  <ZoomIn className="h-5 w-5 text-white" />
+              {certificates.map((cert, index) => (
+                <div
+                  key={cert.brand}
+                  className="authorization-certificates-slide shrink-0 px-3"
+                  style={{ width: `${100 / certificates.length}%` }}
+                >
+                  <button
+                    type="button"
+                    onClick={() => setActiveIndex(index)}
+                    className="authorization-certificates-card group flex w-full cursor-pointer flex-col overflow-hidden rounded-lg border border-white/12 bg-[#0b0c0d] text-left transition-colors duration-300 hover:border-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-red-500/70"
+                    aria-label={`Xem giấy chứng nhận ${cert.brand}`}
+                  >
+                    <div className="authorization-certificates-card-media relative flex aspect-3/4 items-center justify-center overflow-hidden bg-[#15181b]">
+                      <img
+                        src={cert.image}
+                        alt={`${cert.label} ${cert.brand}`}
+                        loading="lazy"
+                        className="authorization-certificates-card-image h-full w-full object-contain transition-transform duration-300 group-hover:scale-[1.03]"
+                      />
+                      <div className="authorization-certificates-card-zoom absolute right-3 top-3 flex h-9 w-9 items-center justify-center rounded-full bg-black/55 text-white opacity-0 backdrop-blur-sm transition-all duration-300 group-hover:opacity-100">
+                        <ZoomIn className="h-5 w-5 text-white" />
+                      </div>
+                    </div>
+                    <div className="authorization-certificates-card-body px-5 py-4.5">
+                      <h3 className="authorization-certificates-card-brand mb-1 text-[17px] font-bold text-white">
+                        {cert.brand}
+                        {cert.exclusive && (
+                          <span className="authorization-certificates-card-badge ml-1.5 font-mono text-xs text-red-400">
+                            · ĐỘC QUYỀN
+                          </span>
+                        )}
+                      </h3>
+                      <p className="authorization-certificates-card-label text-sm text-white/55">
+                        {cert.label}
+                      </p>
+                    </div>
+                  </button>
                 </div>
-              </div>
-              <div className="authorization-certificates-card-body px-5 py-4.5">
-                <h3 className="authorization-certificates-card-brand mb-1 text-[17px] font-bold text-white">
-                  {cert.brand}
-                  {cert.exclusive && (
-                    <span className="authorization-certificates-card-badge ml-1.5 font-mono text-xs text-red-400">
-                      · ĐỘC QUYỀN
-                    </span>
-                  )}
-                </h3>
-                <p className="authorization-certificates-card-label text-sm text-white/55">
-                  {cert.label}
-                </p>
-              </div>
-            </button>
-          ))}
+              ))}
+            </div>
+          </div>
+
+          <div className="authorization-certificates-controls mt-8 flex items-center justify-between">
+            <div className="authorization-certificates-dots flex items-center gap-2">
+              {Array.from({ length: maxPage + 1 }).map((_, i) => (
+                <button
+                  key={i}
+                  type="button"
+                  onClick={() => setPage(i)}
+                  aria-label={`Chuyển tới nhóm chứng nhận ${i + 1}`}
+                  aria-current={page === i}
+                  className={`authorization-certificates-dot h-2 cursor-pointer rounded-full transition-all duration-300 ${
+                    page === i ? 'w-6 bg-primary' : 'w-2 bg-white/25 hover:bg-white/40'
+                  }`}
+                />
+              ))}
+            </div>
+
+            <div className="authorization-certificates-arrows flex items-center gap-3">
+              <button
+                type="button"
+                onClick={goPrev}
+                disabled={page === 0}
+                aria-label="Chứng nhận trước"
+                className="authorization-certificates-arrow flex h-11 w-11 cursor-pointer items-center justify-center rounded-full border border-white/15 text-white transition-colors hover:border-primary hover:bg-primary disabled:cursor-not-allowed disabled:opacity-30 disabled:hover:border-white/15 disabled:hover:bg-transparent"
+              >
+                <ChevronLeft className="h-5 w-5" />
+              </button>
+              <button
+                type="button"
+                onClick={goNext}
+                disabled={page === maxPage}
+                aria-label="Chứng nhận tiếp theo"
+                className="authorization-certificates-arrow flex h-11 w-11 cursor-pointer items-center justify-center rounded-full border border-white/15 text-white transition-colors hover:border-primary hover:bg-primary disabled:cursor-not-allowed disabled:opacity-30 disabled:hover:border-white/15 disabled:hover:bg-transparent"
+              >
+                <ChevronRight className="h-5 w-5" />
+              </button>
+            </div>
+          </div>
         </div>
       </div>
 

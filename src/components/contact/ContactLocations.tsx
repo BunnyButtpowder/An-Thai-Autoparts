@@ -46,14 +46,13 @@ export default function ContactLocations() {
     <section ref={sectionRef} className="contact-locations-section py-16 lg:py-24 bg-background " id="he-thong-lien-he">
       <div className="contact-locations-container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="contact-locations-heading-wrapper text-start mb-10 lg:mb-14">
-          <p className="contact-locations-label inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-accent text-primary text-xs sm:text-sm font-semibold uppercase tracking-widest mb-6">
-            Hệ thống liên hệ
-          </p>
-          <h2 className="contact-locations-title text-3xl sm:text-4xl lg:text-5xl font-extrabold text-foreground leading-tight uppercase tracking-tight">
-            Liên hệ với <span className="contact-locations-title-accent text-primary">An Thái</span>
+          <div className="contact-locations-eyebrow mb-3 text-lg sm:text-xl font-semibold tracking-wide text-primary">
+            Hệ thống
+          </div>
+          <h2 className="contact-locations-title text-3xl sm:text-4xl font-extrabold text-foreground leading-tight uppercase tracking-normal">
+            Mạng lưới dịch vụ An Thái
           </h2>
         </div>
-
         <div className="contact-locations-grid grid lg:grid-cols-5 gap-6 lg:gap-8 items-start">
           {/* Left column — location cards */}
           <div className="contact-locations-list lg:col-span-2 flex flex-col gap-5 lg:h-160 lg:overflow-y-auto lg:pr-3 [&::-webkit-scrollbar]:w-1.5 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-border [&::-webkit-scrollbar-thumb]:rounded-full hover:[&::-webkit-scrollbar-thumb]:bg-muted-foreground/40">

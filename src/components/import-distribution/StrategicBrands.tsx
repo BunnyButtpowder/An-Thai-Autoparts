@@ -32,13 +32,16 @@ export default function StrategicBrands() {
       aria-labelledby="strategic-brands-heading"
     >
       <div className="strategic-brands-container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="strategic-brands-header strategic-brands-reveal mb-11 flex flex-wrap items-end justify-between gap-6">
+        <div className="strategic-brands-header strategic-brands-reveal mb-5 flex flex-wrap items-end justify-between gap-6">
           <div>
+            <div className="strategic-brands-eyebrow strategic-brands-reveal mb-3 text-lg sm:text-xl font-semibold tracking-wide text-red-400">
+              Thương hiệu
+            </div>
             <h2
               id="strategic-brands-heading"
-              className="strategic-brands-title text-3xl font-extrabold leading-[1.04] uppercase tracking-tight text-white sm:text-4xl lg:text-5xl"
+              className="strategic-brands-title text-3xl font-extrabold leading-normal uppercase tracking-wide text-white sm:text-4xl"
             >
-              Thương hiệu chiến lược
+              Chiến lược phát triển
             </h2>
           </div>
           <Link

@@ -50,30 +50,24 @@ export default function ImportHero() {
       />
 
       <motion.div
-        className="import-hero-content relative z-2 mx-auto w-full max-w-7xl px-4 pb-24 sm:px-6 lg:px-8"
+        className="import-hero-content relative z-2 mx-auto w-full max-w-7xl px-4 pb-30 sm:px-6 lg:px-8"
         variants={container}
         initial="hidden"
         animate="visible"
       >
-        <motion.p
-          className="import-hero-eyebrow mb-5 font-mono text-xs font-semibold uppercase tracking-[0.3em] text-red-400 sm:text-base"
-          variants={item}
-        >
-          <span className="text-white">//</span> Trung tâm phụ tùng
-        </motion.p>
         <motion.h1
           id="import-hero-heading"
-          className="import-hero-title max-w-[16ch] text-4xl font-black uppercase leading-35 tracking-normal text-white sm:text-6xl lg:text-7xl xl:text-8xl"
+          className="import-hero-title text-4xl font-extrabold uppercase leading-normal tracking-wide text-white sm:text-6xl lg:text-7xl text-balance"
           variants={item}
         >
           Nhập khẩu &amp; phân phối phụ tùng ô tô
         </motion.h1>
         <motion.p
-          className="import-hero-subtitle mb-9 max-w-250 text-lg leading-relaxed text-white sm:text-2xl"
+          className="import-hero-subtitle mb-9 text-lg sm:text-xl leading-relaxed text-white"
           variants={item}
         >
           Hệ sinh thái phụ tùng chất lượng cao, đáp ứng toàn diện nhu cầu các dòng
-          xe thương mại Trung Quốc, Mỹ và Nhật Bản.
+          xe thương mại Trung Quốc, Mỹ và Nhật Bản
         </motion.p>
         <motion.div
           className="import-hero-cta flex flex-wrap gap-3.5"

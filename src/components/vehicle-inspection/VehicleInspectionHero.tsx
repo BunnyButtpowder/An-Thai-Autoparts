@@ -60,15 +60,6 @@ export default function VehicleInspectionHero() {
         animate="visible"
       >
         <div className="vehicle-inspection-hero-copy">
-          <motion.div
-            className="vehicle-inspection-hero-badge mb-7 inline-flex items-center gap-3 rounded-md border border-white/20 px-3.5 py-2"
-            variants={item}
-          >
-            <span className="vehicle-inspection-hero-badge-dot h-1.75 w-1.75 rounded-full bg-red-400" />
-            <span className="vehicle-inspection-hero-badge-text font-mono text-sm sm:text-base font-semibold uppercase tracking-[0.22em] text-white">
-              Trung tâm đăng kiểm 17-02D
-            </span>
-          </motion.div>
           <motion.h1
             id="vehicle-inspection-hero-heading"
             className="vehicle-inspection-hero-title mb-6 text-4xl font-black uppercase leading-[1.1] tracking-normal text-white sm:text-6xl lg:text-7xl xl:text-8xl"

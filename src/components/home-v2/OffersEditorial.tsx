@@ -29,15 +29,15 @@ export default function OffersEditorial() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section intro */}
         <div className="offers-intro max-w-2xl">
-          <p className="offers-eyebrow-label inline-flex items-center font-mono text-lg font-bold uppercase tracking-widest text-red-400">
-            Hệ sinh thái An Thái
+          <p className="offers-eyebrow-label inline-flex items-center text-lg sm:text-xl font-semibold tracking-wide text-red-400">
+            Lĩnh vực kinh doanh
           </p>
-          <h2 id="offers-heading" className="mt-4 text-3xl font-extrabold leading-tight text-white sm:text-4xl">
-            Lĩnh vực tiên phong
+          <h2 id="offers-heading" className="mt-2 text-3xl uppercase font-extrabold leading-tight text-white sm:text-4xl">
+            HỆ SINH THÁI CHO XE THƯƠNG MẠI
           </h2>
         </div>
         <p className="mt-5 text-base lg:text-lg 2xl:text-xl text-white/70 text-justify">
-          Từ sản xuất và phân phối phụ tùng đến dịch vụ sửa chữa, đăng kiểm và thương mại — một hệ sinh thái toàn
+          Từ sản xuất và phân phối phụ tùng đến dịch vụ sửa chữa, đăng kiểm và thương mại - một hệ sinh thái toàn
           diện phục vụ ngành ô tô thương mại Việt Nam.
         </p>
 

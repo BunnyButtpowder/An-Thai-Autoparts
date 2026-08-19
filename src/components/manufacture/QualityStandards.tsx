@@ -93,12 +93,12 @@ export default function QualityStandards() {
     >
       <div className="quality-standards-container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="quality-standards-header mb-11">
-          <p className="quality-standards-eyebrow-label quality-standards-reveal inline-flex items-center rounded-full border border-red-400/30 bg-red-400/10 px-3 py-1 text-base font-bold uppercase tracking-wider text-red-400 mb-3">
+          <p className="quality-standards-eyebrow-label quality-standards-reveal inline-flex items-center text-lg sm:text-xl font-semibold tracking-wide text-red-400 mb-3">
             Chứng nhận
           </p>
           <h2
             id="quality-standards-heading"
-            className="quality-standards-title quality-standards-reveal text-3xl font-extrabold leading-[1.04] text-white sm:text-4xl lg:text-5xl"
+            className="quality-standards-title quality-standards-reveal text-3xl font-extrabold leading-[1.04] text-white sm:text-4xl lg:text-5xl uppercase"
           >
             Tiêu chuẩn chất lượng
           </h2>

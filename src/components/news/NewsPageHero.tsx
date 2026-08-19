@@ -26,7 +26,7 @@ export default function NewsPageHero() {
         </h1>
         <p className="news-page-hero-intro text-lg sm:text-xl text-muted-foreground leading-relaxed">
           Khám phá những tin tức mới nhất về sản phẩm, hoạt động doanh nghiệp cùng các thông tin hữu ích về ngành phụ
-          tùng và công nghiệp ô tô.
+          tùng và công nghiệp ô tô
         </p>
       </div>
     </section>

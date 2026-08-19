@@ -53,11 +53,14 @@ export default function QualityCommitment() {
       aria-labelledby="quality-commitment-heading"
     >
       <div className="quality-commitment-header mx-auto max-w-7xl px-4 pb-10 pt-24 sm:px-6 lg:px-8">
+        <div className="quality-commitment-eyebrow quality-commitment-reveal mb-3 text-lg sm:text-xl font-semibold tracking-wide text-red-400">
+          Cam kết
+        </div>
         <h2
           id="quality-commitment-heading"
-          className="quality-commitment-title quality-commitment-reveal max-w-[20ch] text-3xl font-extrabold leading-[1.1] uppercase tracking-tight text-white sm:text-4xl lg:text-5xl"
+          className="quality-commitment-title quality-commitment-reveal text-3xl font-extrabold leading-normal uppercase tracking-wide text-white sm:text-4xl"
         >
-          Cam kết chất lượng
+          Chất lượng trong từng chi tiết
         </h2>
       </div>
 
@@ -65,7 +68,7 @@ export default function QualityCommitment() {
         {commitments.map((item) => (
           <div key={item.number} className="quality-commitment-row border-b border-white/10">
             <div className="quality-commitment-row-inner mx-auto grid max-w-7xl grid-cols-1 items-baseline gap-6 px-4 py-9 sm:px-6 lg:grid-cols-[120px_320px_1fr] lg:gap-10 lg:px-8">
-              <div className="quality-commitment-number font-mono text-[15px] font-bold text-red-400">
+              <div className="quality-commitment-number font-mono text-lg sm:text-xl font-bold text-red-400">
                 {item.number}
               </div>
               <h3 className="quality-commitment-step-title text-2xl font-bold text-white">

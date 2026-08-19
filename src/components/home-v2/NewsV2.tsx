@@ -5,7 +5,9 @@ import useReveal from '../../hooks/useReveal'
 import ArrowRight from '../icons/ArrowRight'
 import { allNewsArticles, type NewsArticle } from '../../data/news'
 import { useOutsideClick } from '@/hooks/use-outside-click'
-import LetterSwapForward from '@/components/fancy/text/letter-swap-forward-anim'
+// import LetterSwapForward from '@/components/fancy/text/letter-swap-forward-anim'
+import CenterUnderline from '../fancy/text/underline-center'
+import { X } from 'lucide-react'
 
 const CAROUSEL_LIMIT = 9
 
@@ -111,7 +113,7 @@ export default function NewsV2() {
                   aria-label="Đóng"
                   className="absolute right-3 top-3 z-10 flex h-9 w-9 items-center justify-center rounded-full bg-card/90 text-foreground shadow-md ring-1 ring-border backdrop-blur-sm transition-colors hover:bg-card cursor-pointer"
                 >
-                  <CloseIcon />
+                  <X className="h-4 w-4" />
                 </motion.button>
               </motion.div>
               <div className="flex flex-col overflow-y-auto p-6">
@@ -126,7 +128,7 @@ export default function NewsV2() {
                 </motion.h3>
                 <motion.p
                   layoutId={`news-excerpt-${layoutBaseId}-${activeArticle.id}`}
-                  className="mt-2.5 text-base leading-relaxed text-muted-foreground"
+                  className="mt-2.5 text-base leading-relaxed text-muted-foreground text-justify"
                 >
                   {activeArticle.excerpt}
                 </motion.p>
@@ -147,8 +149,11 @@ export default function NewsV2() {
       <section ref={ref} id="tin-tuc" aria-labelledby="news-v2-heading" className="news-v2-section border-t border-border bg-background py-16 lg:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="news-v2-header mb-10 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between lg:mb-12">
-            <div>
-              <h2 id="news-v2-heading" className="mt-4 text-3xl font-extrabold leading-tight tracking-tight text-foreground sm:text-4xl">Tin tức &amp; Báo chí</h2>
+            <div className="flex flex-col">
+              <p className="news-v2-eyebrow-label text-lg sm:text-xl font-semibold tracking-wide text-primary">
+                Tin tức
+              </p>
+              <h2 id="news-v2-heading" className="mt-2 text-3xl uppercase font-extrabold leading-tight tracking-tight text-foreground sm:text-4xl">CẬP NHẬT MỚI</h2>
             </div>
             <Link
               to="/tin-tuc"
@@ -160,14 +165,14 @@ export default function NewsV2() {
           </div>
         </div>
 
-        {/* Full-viewport-width carousel: cards stay within max-w-7xl, arrows reach the screen edges */}
-        <div className="news-v2-carousel relative w-full">
+        {/* Carousel constrained to max-w-7xl; arrows sit at the container edges, poking out slightly */}
+        <div className="news-v2-carousel relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <button
             type="button"
             onClick={() => scrollByCard(-1)}
             disabled={!canPrev}
             aria-label="Bài viết trước"
-            className="absolute left-2 top-1/2 z-20 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-md border border-border bg-primary text-white shadow-sm transition-colors hover:bg-primary-hover disabled:cursor-not-allowed disabled:opacity-40 sm:left-4 cursor-pointer"
+            className="absolute left-1 top-1/2 z-20 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-md border border-border bg-primary text-white shadow-sm transition-colors hover:bg-primary-hover disabled:cursor-not-allowed disabled:opacity-40 sm:-left-8 cursor-pointer"
           >
             <ChevronLeftIcon />
           </button>
@@ -176,7 +181,7 @@ export default function NewsV2() {
             onClick={() => scrollByCard(1)}
             disabled={!canNext}
             aria-label="Bài viết tiếp theo"
-            className="absolute right-2 top-1/2 z-20 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-md border border-border bg-primary text-white shadow-sm transition-colors hover:bg-primary-hover disabled:cursor-not-allowed disabled:opacity-40 sm:right-4 cursor-pointer"
+            className="absolute right-1 top-1/2 z-20 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-md border border-border bg-primary text-white shadow-sm transition-colors hover:bg-primary-hover disabled:cursor-not-allowed disabled:opacity-40 sm:-right-8 cursor-pointer"
           >
             <ChevronRightIcon />
           </button>
@@ -184,7 +189,7 @@ export default function NewsV2() {
           <div
             ref={trackRef}
             onScroll={updateArrows}
-            className="news-v2-track mx-auto flex snap-x snap-mandatory gap-6 overflow-x-auto scroll-smooth px-4 pb-2 scroll-pl-4 sm:px-6 sm:scroll-pl-6 lg:px-8 lg:scroll-pl-8 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+            className="news-v2-track flex snap-x snap-mandatory gap-6 overflow-x-auto scroll-smooth pb-2 [-ms-overflow-style:none] scrollbar-none [&::-webkit-scrollbar]:hidden"
           >
             {carouselArticles.map((article) => (
               <motion.article
@@ -210,21 +215,20 @@ export default function NewsV2() {
                     className="h-full w-full object-cover transition-transform duration-500 group-hover/card:scale-105"
                   />
                 </div>
-                <p className="mt-4 text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground">
+                <p className="mt-4 text-base font-medium tracking-wide text-muted-foreground">
                   {article.categoryLabel}
                 </p>
                 <motion.h3
                   layoutId={`news-title-${layoutBaseId}-${article.id}`}
                   className="mt-2"
                 >
-                  <LetterSwapForward
-                    label={article.title}
-                    className="text-lg font-bold leading-snug text-foreground transition-colors group-hover/card:text-primary lg:text-xl"
-                  />
+                  <CenterUnderline className="text-lg font-bold leading-snug text-foreground uppercase transition-colors group-hover/card:text-primary lg:text-xl">
+                    {article.title}
+                  </CenterUnderline>
                 </motion.h3>
                 <motion.p
                   layoutId={`news-excerpt-${layoutBaseId}-${article.id}`}
-                  className="mt-2.5 line-clamp-3 text-sm leading-relaxed text-muted-foreground lg:text-base"
+                  className="mt-2.5 line-clamp-3 text-sm leading-relaxed text-muted-foreground lg:text-base text-justify"
                 >
                   {article.excerpt}
                 </motion.p>
@@ -255,27 +259,6 @@ function ChevronRightIcon() {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5" aria-hidden="true">
       <path d="m9 18 6-6-6-6" />
-    </svg>
-  )
-}
-
-function CloseIcon() {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="20"
-      height="20"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className="h-4 w-4"
-      aria-hidden="true"
-    >
-      <path d="M18 6 6 18" />
-      <path d="m6 6 12 12" />
     </svg>
   )
 }

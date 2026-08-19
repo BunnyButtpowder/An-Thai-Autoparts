@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router'
 import useReveal from '../../hooks/useReveal'
 import ArrowRight from '../icons/ArrowRight'
@@ -14,8 +14,11 @@ type StorySegment = string | { text: string; emphasis?: 'brand' | 'strong' }
 const YOUTUBE_VIDEO_ID = 'cEbOYRmYBKc'
 
 function buildEmbedSrc() {
+  // `mute: 1` is required — browsers block autoplay-with-sound, so scroll-into-view
+  // autoplay only fires reliably when the player starts muted.
   const params = new URLSearchParams({
     autoplay: '1',
+    mute: '1',
     playsinline: '1',
     rel: '0',
     modestbranding: '1',
@@ -45,6 +48,25 @@ const emphasisClass: Record<'brand' | 'strong', string> = {
 
 export default function AboutV2() {
   const [embedSrc, setEmbedSrc] = useState<string | null>(null)
+  const videoRef = useRef<HTMLElement>(null)
+
+  // Load + autoplay the embed the first time the video scrolls into view.
+  useEffect(() => {
+    const node = videoRef.current
+    if (!node) return
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((entry) => entry.isIntersecting)) {
+          setEmbedSrc(buildEmbedSrc())
+          observer.disconnect()
+        }
+      },
+      { threshold: 0.4 },
+    )
+    observer.observe(node)
+    return () => observer.disconnect()
+  }, [])
 
   const ref = useReveal<HTMLElement>((g, root) => {
     g.from('.about-v2-intro', { scrollTrigger: { trigger: root, start: 'top 80%' }, y: 28, opacity: 0, duration: 0.6, ease: 'power2.out' })
@@ -61,8 +83,11 @@ export default function AboutV2() {
           {/* Text column — clean heading, then the narrative, then the CTA. */}
           <div className="about-v2-copy">
             <div className="about-v2-intro">
-              <h2 id="about-v2-heading" className="text-3xl sm:text-4xl font-extrabold leading-tight text-foreground">
+              <p className="about-v2-eyebrow-label text-lg sm:text-xl font-semibold tracking-wide text-primary">
                 Về chúng tôi
+              </p>
+              <h2 id="about-v2-heading" className="mt-2 text-3xl sm:text-4xl uppercase font-extrabold leading-normal tracking-tight text-foreground">
+                Kiến tạo hành trình vạn dặm
               </h2>
             </div>
 
@@ -95,7 +120,7 @@ export default function AboutV2() {
           </div>
 
           {/* Video column — the VTV3 feature, weight-matched to the copy. */}
-          <figure id="video-strip" className="about-v2-video scroll-mt-24 lg:h-full">
+          <figure ref={videoRef} id="video-strip" className="about-v2-video scroll-mt-24 lg:h-full">
             <div className="relative aspect-video w-full overflow-hidden rounded-2xl border border-border bg-muted lg:aspect-auto lg:h-full">
               {embedSrc ? (
                 <iframe

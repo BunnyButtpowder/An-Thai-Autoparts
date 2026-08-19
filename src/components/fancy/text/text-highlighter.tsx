@@ -1,4 +1,5 @@
 import {
+  createElement,
   ElementType,
   forwardRef,
   useEffect,
@@ -95,7 +96,7 @@ export const TextHighlighter = forwardRef<
     },
     ref
   ) => {
-    const componentRef = useRef<HTMLDivElement>(null)
+    const componentRef = useRef<HTMLElement>(null)
     const [isAnimating, setIsAnimating] = useState(false)
     const [isHovered, setIsHovered] = useState(false)
     const [currentDirection, setCurrentDirection] =
@@ -179,27 +180,31 @@ export const TextHighlighter = forwardRef<
       WebkitBoxDecorationBreak: "clone",
     } as React.CSSProperties
 
-    return (
-      <ElementTag
-        ref={componentRef}
-        onMouseEnter={() => triggerType === "hover" && setIsHovered(true)}
-        onMouseLeave={() => triggerType === "hover" && setIsHovered(false)}
-        {...props}
+    return createElement(
+      ElementTag,
+      {
+        ref: componentRef,
+        onMouseEnter: () => {
+          if (triggerType === "hover") setIsHovered(true)
+        },
+        onMouseLeave: () => {
+          if (triggerType === "hover") setIsHovered(false)
+        },
+        ...props,
+      },
+      <motion.span
+        className={cn("inline", className)}
+        style={highlightStyle}
+        animate={{
+          backgroundSize: animatedSize,
+        }}
+        initial={{
+          backgroundSize: initialSize,
+        }}
+        transition={transition}
       >
-        <motion.span
-          className={cn("inline", className)}
-          style={highlightStyle}
-          animate={{
-            backgroundSize: animatedSize,
-          }}
-          initial={{
-            backgroundSize: initialSize,
-          }}
-          transition={transition}
-        >
-          {children}
-        </motion.span>
-      </ElementTag>
+        {children}
+      </motion.span>
     )
   }
 )

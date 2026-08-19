@@ -1,74 +1,33 @@
-import { useRef } from 'react'
-import { motion, useScroll, useTransform } from 'motion/react'
-import { useMotionPreference } from '../../context/MotionPreferenceContext'
+import { useEffect, useRef } from 'react'
+import gsap from 'gsap'
 
-// Dark full-bleed opener for the contact page. The background photo drifts
-// gently as the page scrolls (disabled under reduce-motion) while the copy lands
-// in a staggered sequence, matching the entrance language of the manufacture hero.
 export default function ContactHero() {
   const sectionRef = useRef<HTMLElement>(null)
-  const { reduced } = useMotionPreference()
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ['start start', 'end start'],
-  })
-  const bgY = useTransform(scrollYProgress, [0, 1], reduced ? ['0%', '0%'] : ['-8%', '12%'])
 
-  const container = {
-    hidden: {},
-    visible: { transition: { staggerChildren: 0.14, delayChildren: 0.1 } },
-  }
-  const item = {
-    hidden: { opacity: 0, y: 22 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: 'easeOut' as const } },
-  }
+  useEffect(() => {
+    if (!sectionRef.current) return
+    const ctx = gsap.context(() => {
+      const tl = gsap.timeline({ defaults: { ease: 'power3.out' } })
+      tl.from('.contact-hero-title', { duration: 0.8, y: 40, opacity: 0 })
+        .from('.contact-hero-intro', { duration: 0.7, y: 30, opacity: 0 }, '-=0.4')
+    }, sectionRef)
+    return () => ctx.revert()
+  }, [])
 
   return (
     <section
       ref={sectionRef}
+      className="contact-hero-section relative bg-background pt-32 pb-10 lg:pt-40 lg:pb-14"
       id="lien-he"
-      className="contact-hero-section relative flex min-h-screen items-end overflow-hidden bg-[#0b0c0d]"
-      aria-labelledby="contact-hero-heading"
     >
-      {/* Parallax photo layer */}
-      <motion.div
-        className="contact-hero-bg absolute inset-x-0 inset-y-[-12%] z-0 mt-50"
-        style={{ y: bgY }}
-        aria-hidden="true"
-      >
-        <img
-          src="/contact/banner.jpg"
-          alt=""
-          className="contact-hero-bg-image h-full w-full object-cover"
-        />
-      </motion.div>
-
-      {/* Legibility gradient */}
-      <div
-        className="contact-hero-overlay pointer-events-none absolute inset-0 z-1 bg-linear-to-t from-[#0b0c0d]/95 via-[#0b0c0d]/30 to-[#0b0c0d]/70"
-        aria-hidden="true"
-      />
-
-      <motion.div
-        className="contact-hero-content relative z-2 mx-auto w-full max-w-7xl pb-24"
-        variants={container}
-        initial="hidden"
-        animate="visible"
-      >
-        <motion.p
-          className="contact-hero-eyebrow mb-5 font-mono text-xs font-semibold uppercase tracking-[0.3em] text-red-400 sm:text-base"
-          variants={item}
-        >
-          <span className="text-white">//</span> Liên hệ
-        </motion.p>
-        <motion.h1
-          id="contact-hero-heading"
-          className="contact-hero-title mb-6 text-4xl text-balance font-black uppercase leading-30 tracking-normal text-white sm:text-6xl lg:text-7xl xl:text-8xl"
-          variants={item}
-        >
-          CÔNG TY TNHH CƠ KHÍ Ô TÔ AN THÁI
-        </motion.h1>
-      </motion.div>
+      <div className="contact-hero-container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-start">
+        <h1 className="contact-hero-title text-4xl sm:text-5xl lg:text-6xl font-extrabold text-foreground leading-tight uppercase tracking-tight mb-6">
+          Liên hệ với An Thái
+        </h1>
+        <p className="contact-hero-intro text-lg sm:text-xl text-muted-foreground leading-relaxed">
+          Kết nối với An Thái để được tư vấn sản phẩm, giải đáp thắc mắc và hợp tác phát triển
+        </p>
+      </div>
     </section>
   )
 }

@@ -102,12 +102,12 @@ export default function SustainabilitySection() {
           <div className="sustainability-grid pointer-events-none absolute inset-0" aria-hidden="true" />
           <div className="sustainability-copy-inner relative py-24 lg:py-32">
             <div className="sustainability-intro max-w-xl">
-              <p className="sustainability-eyebrow-label inline-flex items-center font-mono text-lg font-bold uppercase tracking-widest text-red-400">
-                Trách nhiệm An Thái
+              <p className="sustainability-eyebrow-label inline-flex items-center text-lg sm:text-xl font-semibold tracking-wide text-red-400">
+                Trách nhiệm xã hội
               </p>
               <h2
                 id="sustainability-heading"
-                className="sustainability-heading mt-4 max-w-xl text-3xl font-extrabold leading-tight text-white sm:text-4xl text-balance"
+                className="sustainability-heading mt-4 text-3xl uppercase font-extrabold leading-tight text-white sm:text-4xl"
               >
                 Phát triển bền vững cùng An Thái
               </h2>
@@ -122,24 +122,25 @@ export default function SustainabilitySection() {
                     ref={(el) => {
                       itemRefs.current[index] = el
                     }}
-                    className="sustainability-pillar flex flex-col border-t border-white/10 py-10 lg:min-h-[56vh] lg:flex-row lg:items-center lg:gap-7 lg:py-0"
+                    className="sustainability-pillar flex flex-col border-t border-white/10 py-10 lg:min-h-[56vh] lg:flex-row lg:items-start lg:gap-8 lg:py-16"
                   >
-                    {/* Desktop progress rail: number + bar, lit red when active. */}
-                    <div className="sustainability-rail hidden flex-none flex-col items-center gap-3 lg:flex">
+                    {/* Desktop progress rail: number sits level with the title,
+                        accent bar grows and lights red when the pillar is active. */}
+                    <div className="sustainability-rail hidden flex-none flex-col items-center gap-4 lg:flex lg:w-14 lg:pt-1.5">
                       <span
-                        className={`sustainability-rail-number stat-number text-xl font-black tabular-nums transition-colors duration-300 ${isActive ? 'text-primary' : 'text-white/15'
+                        className={`sustainability-rail-number stat-number text-2xl font-black tabular-nums leading-none transition-colors duration-300 ${isActive ? 'text-red-400' : 'text-white/20'
                           }`}
                       >
                         {pillar.n}
                       </span>
                       <span
-                        className={`sustainability-rail-bar h-16 w-0.75 transition-colors duration-300 ${isActive ? 'bg-primary' : 'bg-white/10'
+                        className={`sustainability-rail-bar w-px transition-all duration-500 ease-out ${isActive ? 'h-24 bg-red-400' : 'h-12 bg-white/10'
                           }`}
                       />
                     </div>
 
                     <div
-                      className={`sustainability-pillar-body min-w-0 flex-1 transition-opacity duration-300 ${isActive ? 'opacity-100' : 'opacity-100 lg:opacity-30'
+                      className={`sustainability-pillar-body min-w-0 flex-1 lg:max-w-md transition-opacity duration-300 ${isActive ? 'opacity-100' : 'opacity-100 lg:opacity-40'
                         }`}
                     >
                       {/* Inline image — shown only on mobile, where the sticky panel is hidden. */}
@@ -151,18 +152,18 @@ export default function SustainabilitySection() {
                           className="h-full w-full object-cover"
                         />
                       </div>
-                      <span className="sustainability-pillar-number stat-number text-sm font-black tabular-nums text-primary lg:hidden">
+                      <span className="sustainability-pillar-number stat-number text-sm font-black tabular-nums text-red-400 lg:hidden">
                         {pillar.n}
                       </span>
-                      <h3 className="sustainability-pillar-title mt-2 font-bold text-white lg:mt-0 text-xl lg:text-3xl">
+                      <h3 className="sustainability-pillar-title mt-2 font-bold uppercase tracking-tight text-white lg:mt-0 text-xl lg:text-3xl lg:leading-tight">
                         {pillar.title}
                       </h3>
-                      <p className="sustainability-pillar-desc mt-4 text-balance text-base lg:text-lg leading-relaxed text-white">
+                      <p className="sustainability-pillar-desc mt-4 max-w-prose text-base lg:text-lg leading-relaxed text-white/75">
                         {pillar.description}
                       </p>
                       <a
                         href={pillar.cta.href}
-                        className="sustainability-pillar-cta group/cta mt-5 inline-flex items-center gap-2 text-base font-semibold tracking-widest text-primary cursor-pointer"
+                        className="sustainability-pillar-cta group/cta mt-6 inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-widest text-red-400 cursor-pointer"
                       >
                         {pillar.cta.label}
                         <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover/cta:translate-x-1" />

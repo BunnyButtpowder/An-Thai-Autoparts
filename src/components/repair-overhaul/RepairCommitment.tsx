@@ -42,11 +42,14 @@ export default function RepairCommitment() {
         </div>
 
         <div className="repair-commitment-copy">
+          <div className="repair-commitment-eyebrow repair-commitment-reveal mb-3 text-lg sm:text-xl font-semibold tracking-wide text-red-400">
+            Cam kết
+          </div>
           <h2
             id="repair-commitment-heading"
-            className="repair-commitment-title repair-commitment-reveal mb-9 text-3xl font-extrabold leading-[1.1] text-white sm:text-4xl lg:text-5xl"
+            className="repair-commitment-title repair-commitment-reveal mb-5 text-3xl font-extrabold leading-normal uppercase tracking-wide text-white sm:text-4xl text-balance"
           >
-            Cam kết từ An Thái
+            NHẤT QUÁN TỪ CHẤT LƯỢNG ĐẾN DỊCH VỤ
           </h2>
           <div className="repair-commitment-list border-b border-white/12">
             {commitments.map((item) => (
@@ -57,7 +60,7 @@ export default function RepairCommitment() {
                 <span className="repair-commitment-number min-w-7 font-mono text-sm sm:text-base font-bold text-red-400">
                   {item.number}
                 </span>
-                <h3 className="repair-commitment-step-title text-xl font-bold text-white">
+                <h3 className="repair-commitment-step-title text-lg sm:text-xl font-normal text-white">
                   {item.title}
                 </h3>
               </div>

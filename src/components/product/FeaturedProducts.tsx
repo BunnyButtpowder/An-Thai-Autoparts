@@ -89,18 +89,18 @@ export default function FeaturedProducts() {
   return (
     <section
       id="danh-muc-san-pham"
-      className="featured-products-section relative w-full bg-white pb-20 lg:pb-28"
+      className="featured-products-section relative w-full py-20 lg:pb-28"
       aria-labelledby="featured-products-heading"
     >
       <div className="featured-products-container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <header className="featured-products-header">
           <h2
             id="featured-products-heading"
-            className="featured-products-title mt-4 text-3xl font-extrabold tracking-normal text-primary uppercase text-balance sm:text-4xl lg:text-5xl"
+            className="featured-products-title mt-4 text-3xl font-extrabold tracking-normal text-white uppercase text-balance sm:text-4xl lg:text-5xl"
           >
             Tăm bua An Thái
           </h2>
-          <p className="featured-products-subtitle mt-4 text-base leading-relaxed text-black sm:text-lg">
+          <p className="featured-products-subtitle mt-4 text-base leading-relaxed text-white/70 sm:text-lg">
             100% sản xuất tại Việt Nam — chọn từng dòng tăm bua để xem hình ảnh chi tiết,
             mỗi sản phẩm được thiết kế riêng cho từng dòng xe tải.
           </p>
@@ -110,7 +110,7 @@ export default function FeaturedProducts() {
           {/* Illustration carousel — auto-rotates and crossfades to the selected product. */}
           <div className="featured-products-stage flex">
             <div
-              className="featured-products-frame relative aspect-4/5 w-full overflow-hidden rounded-3xl bg-neutral-100 ring-1 ring-black/5 sm:aspect-square lg:aspect-auto lg:h-full lg:min-h-128"
+              className="featured-products-frame relative aspect-4/5 w-full overflow-hidden rounded-3xl bg-white/5 ring-1 ring-white/10 sm:aspect-square lg:aspect-auto lg:h-full lg:min-h-128"
               onMouseEnter={() => setIsPaused(true)}
               onMouseLeave={() => setIsPaused(false)}
             >
@@ -138,7 +138,7 @@ export default function FeaturedProducts() {
                 className="featured-products-scrim pointer-events-none absolute inset-0 z-55"
                 aria-hidden="true"
               />
-              <span className="featured-products-index absolute right-5 top-5 z-60 font-mono text-base font-semibold tracking-widest text-black/80">
+              <span className="featured-products-index absolute right-5 top-5 z-60 font-mono text-base font-semibold tracking-widest text-white/80">
                 {String(activeIndex + 1).padStart(2, '0')} / {String(featuredProducts.length).padStart(2, '0')}
               </span>
 
@@ -154,7 +154,7 @@ export default function FeaturedProducts() {
                       aria-label={`Xem ảnh ${dotIndex + 1} của ${active?.name}`}
                       aria-current={isCurrent}
                       className={`featured-products-dot h-2 rounded-full transition-all duration-300 cursor-pointer ${
-                        isCurrent ? 'w-6 bg-black' : 'w-2 bg-black/50 hover:bg-black/80'
+                        isCurrent ? 'w-6 bg-white' : 'w-2 bg-white/50 hover:bg-white/80'
                       }`}
                     />
                   )
@@ -163,14 +163,14 @@ export default function FeaturedProducts() {
 
               <div className="featured-products-caption absolute inset-x-5 bottom-5 z-60 flex items-end justify-between gap-4">
                 <div>
-                  <p className="featured-products-caption-code font-mono text-base font-semibold uppercase tracking-wider text-primary">
+                  <p className="featured-products-caption-code font-mono text-base font-semibold uppercase tracking-wider text-red-400">
                     {active?.code}
                   </p>
-                  <p className="featured-products-caption-name mt-1 text-lg sm:text-xl 2xl:text-2xl font-bold text-black">
+                  <p className="featured-products-caption-name mt-1 text-lg sm:text-xl 2xl:text-2xl font-bold text-white">
                     {active?.name}
                   </p>
                 </div>
-                <span className="featured-products-caption-weight shrink-0 rounded-full bg-black/15 px-3 py-1 font-mono text-base font-semibold text-black backdrop-blur-sm">
+                <span className="featured-products-caption-weight shrink-0 rounded-full bg-white/15 px-3 py-1 font-mono text-base font-semibold text-white backdrop-blur-sm">
                   {active?.weight}
                 </span>
               </div>
@@ -178,11 +178,11 @@ export default function FeaturedProducts() {
           </div>
 
           {/* Selectable list of products. */}
-          <ul className="featured-products-list flex flex-col border-t border-black/10">
+          <ul className="featured-products-list flex flex-col border-t border-white/10">
             {featuredProducts.map((product, index) => {
               const isActive = index === activeIndex
               return (
-                <li key={product.code} className="featured-products-item border-b border-black/10">
+                <li key={product.code} className="featured-products-item border-b border-white/10">
                   <button
                     type="button"
                     onClick={() => setActiveIndex(index)}
@@ -191,7 +191,7 @@ export default function FeaturedProducts() {
                   >
                     <span
                       className={`featured-products-number mt-1 font-mono text-base font-semibold tabular-nums transition-colors duration-300 ${
-                        isActive ? 'text-primary' : 'text-black/30 group-hover:text-black/50'
+                        isActive ? 'text-red-400' : 'text-white/30 group-hover:text-white/50'
                       }`}
                     >
                       {String(index + 1).padStart(2, '0')}
@@ -209,17 +209,17 @@ export default function FeaturedProducts() {
                       <span className="featured-products-item-head flex items-baseline justify-between gap-3">
                         <span
                           className={`featured-products-name text-xl font-bold tracking-tight transition-colors duration-300 sm:text-2xl ${
-                            isActive ? 'text-black' : 'text-black/50 group-hover:text-black/80'
+                            isActive ? 'text-white' : 'text-white/50 group-hover:text-white/80'
                           }`}
                         >
                           {product.name}
                         </span>
-                        <span className="featured-products-code shrink-0 font-mono text-base font-semibold uppercase tracking-wider text-primary">
+                        <span className="featured-products-code shrink-0 font-mono text-base font-semibold uppercase tracking-wider text-red-400">
                           {product.code}
                         </span>
                       </span>
 
-                      <span className="featured-products-meta mt-1.5 block font-mono text-base uppercase tracking-wide text-black/50">
+                      <span className="featured-products-meta mt-1.5 block font-mono text-base uppercase tracking-wide text-white/50">
                         {product.vehicle} · {product.weight}
                       </span>
 
@@ -232,10 +232,10 @@ export default function FeaturedProducts() {
                             exit={{ height: 0, opacity: 0 }}
                             transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
                           >
-                            <span className="featured-products-desc mt-3 block max-w-md text-base leading-relaxed text-black">
+                            <span className="featured-products-desc mt-3 block max-w-md text-base leading-relaxed text-white">
                               {product.description}
                             </span>
-                            <span className="featured-products-cta mt-4 inline-flex items-center gap-2 text-base font-semibold text-primary">
+                            <span className="featured-products-cta mt-4 inline-flex items-center gap-2 text-base font-semibold text-red-400">
                               Chi tiết sản phẩm
                               <ArrowRight className="h-4 w-4" />
                             </span>
@@ -254,7 +254,7 @@ export default function FeaturedProducts() {
         <div className="featured-products-more mt-14 flex justify-center">
           <Link
             to="/tam-bua-an-thai"
-            className="featured-products-more-button group inline-flex items-center gap-2 rounded-md border border-black/15 px-8 py-3.5 text-base font-semibold text-black transition-colors duration-300 hover:border-primary hover:bg-primary hover:text-primary-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 cursor-pointer"
+            className="featured-products-more-button group inline-flex items-center gap-2 rounded-md border border-white/15 px-8 py-3.5 text-base font-semibold text-white transition-colors duration-300 hover:border-primary hover:bg-primary hover:text-primary-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 cursor-pointer"
           >
             Xem thêm
             <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />

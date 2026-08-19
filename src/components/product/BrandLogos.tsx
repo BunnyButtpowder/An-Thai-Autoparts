@@ -26,18 +26,18 @@ export default function BrandLogos() {
     <section
       ref={sectionRef}
       id="thuong-hieu"
-      className="brand-logos-section relative w-full bg-white pb-20 lg:pb-28"
+      className="brand-logos-section relative w-full py-20 lg:pb-28 bg-[#0f1113]"
       aria-labelledby="brand-logos-heading"
     >
       <div className="brand-logos-container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <header className="brand-logos-header max-w-7xl">
           <h2
             id="brand-logos-heading"
-            className="brand-logos-title brand-logos-reveal mt-4 text-3xl font-extrabold tracking-normal text-primary uppercase text-balance sm:text-4xl lg:text-5xl"
+            className="brand-logos-title brand-logos-reveal mt-4 text-3xl font-extrabold tracking-normal text-white uppercase text-balance sm:text-4xl lg:text-5xl"
           >
             Thương hiệu
           </h2>
-          <p className="brand-logos-text brand-logos-reveal mt-4 text-base leading-relaxed text-black sm:text-lg">
+          <p className="brand-logos-text brand-logos-reveal mt-4 text-base leading-relaxed text-white/70 sm:text-lg">
             Khám phá hệ thống thương hiệu với đa dạng dòng sản phẩm, cùng cam kết
             về chất lượng và độ bền trong từng chi tiết
           </p>
@@ -46,33 +46,27 @@ export default function BrandLogos() {
 
       {/* Full-bleed logo marquee — pauses on hover, fades at both edges. */}
       <div className="brand-logos-marquee-wrapper brand-logos-reveal relative mt-14 [--fade:6rem]">
-        <div
-          className="brand-logos-fade-left pointer-events-none absolute inset-y-0 left-0 z-10 w-(--fade) bg-linear-to-r from-white to-transparent"
-          aria-hidden="true"
-        />
-        <div
-          className="brand-logos-fade-right pointer-events-none absolute inset-y-0 right-0 z-10 w-(--fade) bg-linear-to-l from-white to-transparent"
-          aria-hidden="true"
-        />
         <Marquee gradient={false} speed={45} pauseOnHover autoFill className="brand-logos-marquee">
           {brands.map((brand) => (
             <div
               key={brand.name}
-              className="brand-logos-item mx-10 flex h-24 shrink-0 items-center sm:mx-16 lg:mx-20"
+              className="brand-logos-item mx-3 flex shrink-0 items-center sm:mx-4"
             >
-              <img
-                src={brand.logo}
-                alt={`Logo thương hiệu ${brand.name}`}
-                loading="lazy"
-                className="brand-logos-image h-12 w-auto object-contain opacity-70 transition duration-300 hover:opacity-100 sm:h-14 lg:h-16"
-              />
+              <div className="brand-logos-chip flex h-24 w-48 items-center justify-center rounded-md border border-white/10 bg-white px-6 opacity-90 shadow-lg shadow-black/20 transition duration-300 hover:opacity-100 sm:h-28 sm:w-56 md:h-32 md:w-64 md:px-8">
+                <img
+                  src={brand.logo}
+                  alt={`Logo thương hiệu ${brand.name}`}
+                  loading="lazy"
+                  className="brand-logos-image max-h-16 w-auto max-w-full object-contain sm:max-h-20"
+                />
+              </div>
             </div>
           ))}
         </Marquee>
       </div>
 
       <div className="brand-logos-container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="brand-logos-footer brand-logos-reveal mt-14 flex flex-col items-start gap-4 border-t border-black/10 pt-8 sm:flex-row sm:items-center sm:justify-between">
+        <div className="brand-logos-footer brand-logos-reveal mt-14 flex flex-col items-start gap-4 border-t border-white/10 pt-8 sm:flex-row sm:items-center sm:justify-between">
         </div>
       </div>
     </section>

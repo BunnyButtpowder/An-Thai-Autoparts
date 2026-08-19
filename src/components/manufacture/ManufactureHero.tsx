@@ -50,30 +50,18 @@ export default function ManufactureHero() {
       />
 
       <motion.div
-        className="manufacture-hero-content relative z-2 mx-auto w-full max-w-7xl pb-24"
+        className="manufacture-hero-content relative z-2 mx-auto w-full max-w-7xl pb-30"
         variants={container}
         initial="hidden"
         animate="visible"
       >
-        <motion.p
-          className="manufacture-hero-eyebrow mb-5 font-mono text-xs font-semibold uppercase tracking-[0.3em] text-red-400 sm:text-base"
-          variants={item}
-        >
-          <span className="text-white">//</span> Nhà máy An Thái
-        </motion.p>
         <motion.h1
           id="manufacture-hero-heading"
-          className="manufacture-hero-title  text-4xl font-black uppercase leading-30 tracking-normal text-white sm:text-6xl lg:text-7xl xl:text-8xl"
+          className="manufacture-hero-title text-4xl font-extrabold leading-30 tracking-normal uppercase text-white sm:text-6xl lg:text-7xl"
           variants={item}
         >
           Sản xuất phụ tùng ô tô
         </motion.h1>
-        <motion.p
-          className="manufacture-hero-subtitle mb-9 max-w-155 text-lg leading-relaxed text-white sm:text-2xl"
-          variants={item}
-        >
-          Tiên phong sản xuất tăm bua xe tải tại Việt Nam
-        </motion.p>
         <motion.div
           className="manufacture-hero-cta flex flex-wrap gap-3.5"
           variants={item}
