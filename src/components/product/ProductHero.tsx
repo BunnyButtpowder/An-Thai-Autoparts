@@ -69,17 +69,11 @@ export default function ProductHero() {
           variants={item}
         >
           <a
-            href="#danh-muc-phu-tung"
+            href="/lien-he"
             className="product-hero-cta-primary group inline-flex items-center gap-2 rounded-md bg-primary px-7 py-3.5 text-base font-semibold text-primary-foreground transition-colors duration-300 hover:bg-primary-hover cursor-pointer"
           >
-            Khám phá sản phẩm
-            <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-          </a>
-          <a
-            href="/lien-he"
-            className="product-hero-cta-secondary inline-flex items-center gap-2 rounded-md border border-white/30 px-7 py-3.5 text-base font-semibold text-white transition-colors duration-300 hover:border-white hover:bg-white/10 cursor-pointer"
-          >
             Liên hệ tư vấn
+            <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
           </a>
         </motion.div>
       </motion.div>

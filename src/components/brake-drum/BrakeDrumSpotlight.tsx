@@ -23,7 +23,7 @@ export default function BrakeDrumSpotlight() {
       <div className="brake-spotlight-inner mx-auto grid max-w-380 grid-cols-1 border border-[#ece7e0]/14 lg:grid-cols-[1.15fr_1fr]">
         <div className="brake-spotlight-media relative min-h-90 overflow-hidden bg-black lg:min-h-130">
           <img
-            src="/product/AT00012-2.jpg"
+            src="/product/AT00012-2.png"
             alt="Chi tiết bề mặt gia công tăm bua ANTEK AT00012"
             loading="lazy"
             className="brake-spotlight-img absolute inset-0 h-full w-full object-cover"

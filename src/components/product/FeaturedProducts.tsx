@@ -8,7 +8,7 @@ import ArrowRight from '../icons/ArrowRight'
 // brief. Selecting a row swaps the carousel on the left; each product carries
 // several illustration images that auto-rotate every 5 seconds.
 // NOTE: the image paths reuse existing factory photos as placeholders — swap
-// them for real tăm bua product shots (e.g. /products/at00012-1.jpg) when ready.
+// them for real tăm bua product shots (e.g. /products/at00012-1.png) when ready.
 const featuredProducts = [
   {
     code: 'AT00012',
@@ -17,7 +17,7 @@ const featuredProducts = [
     weight: '54.5 kg',
     description:
       'Tăm bua thương hiệu ANTEK dành cho dòng xe HOWO Ben đời 2009. Đúc và gia công đạt chuẩn tải nặng, đảm bảo tản nhiệt và độ bền cao trên mọi cung đường.',
-    images: ['/product/AT00012.png', '/product/AT00012-2.jpg', '/product/AT00012-3.jpg', '/product/AT00012-4.jpg'],
+    images: ['/product/AT00012.png', '/product/AT00012-2.png', '/product/AT00012-3.png', '/product/AT00012-4.png'],
     alt: 'Tăm bua ANTEK AT00012 cho xe HOWO Ben',
   },
   {
@@ -27,7 +27,7 @@ const featuredProducts = [
     weight: '30 kg',
     description:
       'Phiên bản ANTEK AT00015 tương thích với xe Đông Phong. Tối ưu cho xe tải trung, cân bằng giữa khối lượng nhẹ và khả năng chịu lực phanh ổn định.',
-    images: ['/product/AT00015.jpg', '/product/AT00015-2.jpg', '/product/AT00015-3.jpg', '/product/AT00015-4.jpg'],
+    images: ['/product/AT00015.png', '/product/AT00015-2.png', '/product/AT00015-3.png', '/product/AT00015-4.png'],
     alt: 'Tăm bua ANTEK AT00015 cho xe Đông Phong',
   },
   {
@@ -37,7 +37,7 @@ const featuredProducts = [
     weight: '49.5 kg',
     description:
       'Dòng cao cấp X-POWER.LXĐ dành cho xe mooc Fuwa 13T. Thiết kế cho tải trọng lớn với vật liệu chịu mài mòn, giữ hiệu suất phanh trên hành trình dài.',
-    images: ['/product/AT00003.jpg', '/product/AT00003-2.jpg', '/product/AT00003-3.jpg', '/product/AT00003-4.jpg', '/product/AT00003-5.jpg'],
+    images: ['/product/AT00003.png', '/product/AT00003-2.png', '/product/AT00003-3.png', '/product/AT00003-4.png', '/product/AT00003-5.png'],
     alt: 'Tăm bua X-POWER.LXĐ AT00003 cho xe mooc Fuwa 13T',
   },
   {
@@ -47,7 +47,7 @@ const featuredProducts = [
     weight: '24.5 kg',
     description:
       'Tăm bua XCBB.LXĐ dành cho xe Isuzu. Nhẹ và bền, phù hợp xe tải nhẹ, gia công chính xác giúp vận hành êm và an toàn.',
-    images: ['/product/AT00006.jpg', '/product/AT00006-2.jpg', '/product/AT00006-3.jpg', '/product/AT00006-4.jpg'],
+    images: ['/product/AT00006.png', '/product/AT00006-2.png', '/product/AT00006-3.png', '/product/AT00006-4.png'],
     alt: 'Tăm bua XCBB.LXĐ AT00006 cho xe Isuzu',
   },
 ]

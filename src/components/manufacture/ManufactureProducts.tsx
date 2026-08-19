@@ -10,8 +10,8 @@ interface FeaturedProduct {
 
 const products: FeaturedProduct[] = [
   { category: 'Tăm bua', name: 'Tăm bua ANTEK', image: '/product/AT00012.png', href: '/san-pham' },
-  { category: 'Tăm bua', name: 'Tăm bua X-POWER.LXĐ', image: '/product/AT00015.jpg', href: '/san-pham' },
-  { category: 'Tăm bua', name: 'Tăm bua XCBB.LXĐ', image: '/product/AT00003.jpg', href: '/san-pham' },
+  { category: 'Tăm bua', name: 'Tăm bua X-POWER.LXĐ', image: '/product/AT00015.png', href: '/san-pham' },
+  { category: 'Tăm bua', name: 'Tăm bua XCBB.LXĐ', image: '/product/AT00003.png', href: '/san-pham' },
 ]
 
 // Three-up showcase of the flagship tăm bua lines, closing the manufacturing

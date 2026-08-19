@@ -14,9 +14,9 @@ interface BrakeProduct {
 
 const PRODUCTS: BrakeProduct[] = [
   { code: 'AT00012', name: 'Tăm bua ANTEK', brand: 'ANTEK', vehicle: 'HOWO Ben 2009', weight: '54.5 kg', market: 'TRUNG QUỐC', img: '/product/AT00012.png', alt: 'Tăm bua ANTEK AT00012 cho xe HOWO Ben' },
-  { code: 'AT00015', name: 'Tăm bua ANTEK', brand: 'ANTEK', vehicle: 'Đông Phong', weight: '30 kg', market: 'TRUNG QUỐC', img: '/product/AT00015-2.jpg', alt: 'Tăm bua ANTEK AT00015 cho xe Đông Phong' },
-  { code: 'AT00003', name: 'Tăm bua X-POWER.LXĐ', brand: 'X-POWER', vehicle: 'Mooc Fuwa 13T', weight: '49.5 kg', market: 'TRUNG QUỐC', img: '/product/AT00003-2.jpg', alt: 'Tăm bua X-POWER.LXĐ AT00003 cho xe mooc Fuwa 13T' },
-  { code: 'AT00006', name: 'Tăm bua XCBB.LXĐ', brand: 'XCBB', vehicle: 'Isuzu', weight: '24.5 kg', market: 'NHẬT BẢN', img: '/product/AT00006-2.jpg', alt: 'Tăm bua XCBB.LXĐ AT00006 cho xe Isuzu' },
+  { code: 'AT00015', name: 'Tăm bua ANTEK', brand: 'ANTEK', vehicle: 'Đông Phong', weight: '30 kg', market: 'TRUNG QUỐC', img: '/product/AT00015-2.png', alt: 'Tăm bua ANTEK AT00015 cho xe Đông Phong' },
+  { code: 'AT00003', name: 'Tăm bua X-POWER.LXĐ', brand: 'X-POWER', vehicle: 'Mooc Fuwa 13T', weight: '49.5 kg', market: 'TRUNG QUỐC', img: '/product/AT00003-2.png', alt: 'Tăm bua X-POWER.LXĐ AT00003 cho xe mooc Fuwa 13T' },
+  { code: 'AT00006', name: 'Tăm bua XCBB.LXĐ', brand: 'XCBB', vehicle: 'Isuzu', weight: '24.5 kg', market: 'NHẬT BẢN', img: '/product/AT00006-2.png', alt: 'Tăm bua XCBB.LXĐ AT00006 cho xe Isuzu' },
   { code: 'Chờ dữ liệu', name: 'Tăm bua xe đầu kéo Mỹ', brand: 'X-POWER', vehicle: 'Freightliner', weight: '—', market: 'MỸ' },
   { code: 'Chờ dữ liệu', name: 'Tăm bua trục mooc 16.5"', brand: 'X-POWER', vehicle: 'Trailer axle US', weight: '—', market: 'MỸ' },
   { code: 'Chờ dữ liệu', name: 'Tăm bua xe tải nhẹ', brand: 'XCBB', vehicle: 'Hino', weight: '—', market: 'NHẬT BẢN' },
