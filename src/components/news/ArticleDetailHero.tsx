@@ -29,24 +29,25 @@ export default function ArticleDetailHero({ article, readingMinutes }: ArticleDe
   return (
     <section
       ref={sectionRef}
-      className="article-detail-hero-section relative bg-background"
+      className="article-detail-hero-section relative overflow-hidden bg-foreground text-white"
       id="bai-viet"
     >
-      <div className="article-detail-hero-container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 lg:pt-10 mt-15 sm:mt-20 flex flex-col items-start">
+      <div className="article-detail-hero-glow pointer-events-none absolute inset-0 bg-[radial-gradient(120%_120%_at_50%_0%,color-mix(in_oklab,var(--color-primary)_18%,transparent)_0%,transparent_55%)]" />
+      <div className="article-detail-hero-container relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 lg:pt-10 mt-15 sm:mt-20 flex flex-col items-start">
         <Link
           to="/tin-tuc"
-          className="article-detail-breadcrumb inline-flex items-center gap-1.5 text-sm font-medium text-muted-foreground hover:text-primary transition-colors cursor-pointer mb-6"
+          className="article-detail-breadcrumb inline-flex items-center gap-1.5 text-sm font-medium text-white/60 hover:text-white transition-colors cursor-pointer mb-6"
         >
           <ChevronLeft className="w-4 h-4" />
           Tất cả tin tức
         </Link>
-        <span className="article-detail-category inline-flex self-start px-2.5 py-1 rounded-md bg-accent text-primary text-sm font-semibold uppercase tracking-wider mb-4">
+        <span className="article-detail-category inline-flex self-start px-2.5 py-1 rounded-md bg-primary text-primary-foreground text-sm font-semibold uppercase tracking-wider mb-4">
           {article.categoryLabel}
         </span>
-        <h1 className="article-detail-title text-3xl sm:text-4xl lg:text-5xl font-extrabold text-foreground leading-tight tracking-tight mb-6">
+        <h1 className="article-detail-title text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white leading-tight tracking-tight mb-6">
           {article.title}
         </h1>
-        <div className="article-detail-meta flex flex-wrap items-center gap-x-6 gap-y-3 text-sm text-muted-foreground">
+        <div className="article-detail-meta flex flex-wrap items-center gap-x-6 gap-y-3 text-sm text-white/55">
           <span className="article-detail-meta-date inline-flex items-center gap-1.5">
             <span className="article-detail-meta-dot h-1.5 w-1.5 rounded-full bg-primary" />
             {article.postedDate}

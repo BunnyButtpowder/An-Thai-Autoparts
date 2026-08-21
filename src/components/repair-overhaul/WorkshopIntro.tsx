@@ -56,7 +56,7 @@ export default function WorkshopIntro() {
       className="workshop-intro-section bg-[#0f1113] py-24"
       aria-labelledby="workshop-intro-heading"
     >
-      <div className="workshop-intro-container mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:gap-16 lg:px-8">
+      <div className="workshop-intro-container mx-auto grid max-w-7xl grid-cols-1 items-stretch gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:gap-16 lg:px-8">
         <div className="workshop-intro-copy">
           <p className="workshop-intro-eyebrow-label workshop-intro-reveal text-lg sm:text-xl font-semibold tracking-wide text-red-400 mb-3">
             Xưởng sửa chữa ô tô An Thái
@@ -102,7 +102,7 @@ export default function WorkshopIntro() {
           </div>
         </div>
 
-        <div className="workshop-intro-image relative aspect-4/5 overflow-hidden rounded-lg border border-white/12">
+        <div className="workshop-intro-image relative aspect-4/5 overflow-hidden rounded-lg border border-white/12 lg:aspect-auto lg:h-full">
           <img
             src="/home/fix.jpg"
             alt="Xưởng sửa chữa và đại tu ô tô An Thái"

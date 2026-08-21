@@ -37,9 +37,9 @@ export default function ArticleDetailPage() {
             {body ? (
               <ArticleDetailBody body={body} />
             ) : (
-              <section className="article-detail-fallback-section bg-background py-10 lg:py-14">
+              <section className="article-detail-fallback-section bg-foreground text-white py-10 lg:py-14">
                 <div className="article-detail-fallback-container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                  <p className="article-detail-fallback-text text-lg text-foreground/80 leading-relaxed">
+                  <p className="article-detail-fallback-text text-lg text-white/80 leading-relaxed">
                     {article.excerpt}
                   </p>
                 </div>
@@ -49,12 +49,12 @@ export default function ArticleDetailPage() {
             <FollowSection />
           </>
         ) : (
-          <section className="article-not-found-section min-h-[60vh] flex items-center justify-center pt-32 pb-16">
+          <section className="article-not-found-section min-h-[60vh] flex items-center justify-center bg-foreground text-white pt-32 pb-16">
             <div className="article-not-found-container max-w-md mx-auto px-4 text-center">
-              <h1 className="article-not-found-title text-2xl sm:text-3xl font-bold text-foreground mb-4">
+              <h1 className="article-not-found-title text-2xl sm:text-3xl font-bold text-white mb-4">
                 Không tìm thấy bài viết
               </h1>
-              <p className="article-not-found-text text-muted-foreground mb-8">
+              <p className="article-not-found-text text-white/60 mb-8">
                 Bài viết bạn tìm có thể đã được gỡ hoặc đường dẫn không chính xác.
               </p>
               <Link

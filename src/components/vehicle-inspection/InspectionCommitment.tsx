@@ -34,7 +34,7 @@ export default function InspectionCommitment() {
     <section
       ref={sectionRef}
       id="cam-ket"
-      className="inspection-commitment-section bg-[#0b0c0d] pb-10 pt-24"
+      className="inspection-commitment-section bg-[#0b0c0d] pb-10"
       aria-labelledby="inspection-commitment-heading"
     >
       <div className="inspection-commitment-header mx-auto max-w-7xl px-4 pb-11 sm:px-6 lg:px-8">

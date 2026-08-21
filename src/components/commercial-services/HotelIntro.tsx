@@ -1,5 +1,4 @@
 import useReveal from '../../hooks/useReveal'
-import CornerMarks from '../shared/CornerMarks'
 
 interface HotelStat {
   value: string
@@ -31,7 +30,7 @@ export default function HotelIntro() {
       className="hotel-intro-section bg-[#0f1113] py-24"
       aria-labelledby="hotel-intro-heading"
     >
-      <div className="hotel-intro-container mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:gap-16 lg:px-8">
+      <div className="hotel-intro-container mx-auto grid max-w-7xl grid-cols-1 items-stretch gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:gap-16 lg:px-8">
         <div className="hotel-intro-copy">
           <p className="hotel-intro-eyebrow-label hotel-intro-reveal text-lg sm:text-xl font-semibold tracking-wide text-red-400 mb-3">
             Khách sạn An Thái
@@ -75,12 +74,11 @@ export default function HotelIntro() {
           </div>
         </div>
 
-        <div className="hotel-intro-image relative aspect-4/5 border border-white/16 text-white/50">
-          <CornerMarks />
+        <div className="hotel-intro-image relative aspect-4/5 text-white/50 lg:aspect-auto lg:h-full">
           <img
             src="/home/hotel.jpg"
             alt="Khách sạn An Thái"
-            className="hotel-intro-photo h-full w-full object-cover"
+            className="hotel-intro-photo h-full w-full object-cover rounded-md"
           />
         </div>
       </div>

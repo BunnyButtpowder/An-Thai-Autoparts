@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import { AnimatePresence, motion } from 'motion/react'
 import useReveal from '../../hooks/useReveal'
-import CornerMarks from '../shared/CornerMarks'
 
 interface ServiceSpace {
   number: string
@@ -81,12 +80,12 @@ export default function ServiceSpaces() {
       <div className="service-spaces-container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="service-spaces-header mb-12 flex flex-wrap items-end justify-between gap-6">
           <div>
-            <p className="service-spaces-eyebrow service-spaces-reveal mb-4 font-mono text-sm sm:text-base font-semibold uppercase tracking-[0.24em] text-red-400">
-              // Không gian dịch vụ
+            <p className="service-spaces-eyebrow service-spaces-reveal mb-4 text-lg sm:text-xl font-semibold tracking-wide text-red-400">
+              Không gian dịch vụ
             </p>
             <h2
               id="service-spaces-heading"
-              className="service-spaces-title service-spaces-reveal text-3xl font-extrabold leading-[1.06] text-white sm:text-4xl lg:text-5xl"
+              className="service-spaces-title service-spaces-reveal text-3xl font-extrabold uppercase leading-[1.06] text-white sm:text-4xl lg:text-5xl"
             >
               Ba không gian, một tiêu chuẩn phục vụ
             </h2>
@@ -154,13 +153,12 @@ export default function ServiceSpaces() {
                             ))}
                           </div>
                         </div>
-                        <div className="service-spaces-body-media relative aspect-4/3 border border-white/16 text-white/50">
-                          <CornerMarks />
+                        <div className="service-spaces-body-media relative aspect-4/3">
                           <img
                             src={space.image}
                             alt={space.imageAlt}
                             loading="lazy"
-                            className="service-spaces-body-image h-full w-full object-cover"
+                            className="service-spaces-body-image h-full w-full object-cover rounded-md"
                           />
                         </div>
                       </div>

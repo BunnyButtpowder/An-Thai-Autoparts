@@ -7,7 +7,6 @@ import HomeMobileMenu from '../components/header/HomeMobileMenu'
 import Footer from '../components/footer/Footer'
 import VehicleInspectionHero from '../components/vehicle-inspection/VehicleInspectionHero'
 import VehicleInspectionIntro from '../components/vehicle-inspection/VehicleInspectionIntro'
-import InspectionCapacity from '../components/vehicle-inspection/InspectionCapacity'
 import InspectionCommitment from '../components/vehicle-inspection/InspectionCommitment'
 import VehicleInspectionCTA from '../components/vehicle-inspection/VehicleInspectionCTA'
 
@@ -55,7 +54,6 @@ export default function VehicleInspectionPage() {
       <main className="vehicle-inspection-main bg-[#0b0c0d]">
         <VehicleInspectionHero />
         <VehicleInspectionIntro />
-        <InspectionCapacity />
         <InspectionCommitment />
         <VehicleInspectionCTA />
       </main>

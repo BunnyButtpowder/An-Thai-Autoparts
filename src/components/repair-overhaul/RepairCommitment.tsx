@@ -32,8 +32,8 @@ export default function RepairCommitment() {
       className="repair-commitment-section bg-[#0f1113] py-24"
       aria-labelledby="repair-commitment-heading"
     >
-      <div className="repair-commitment-container mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-4 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16 lg:px-8">
-        <div className="repair-commitment-image relative aspect-4/5 overflow-hidden rounded-lg border border-white/12">
+      <div className="repair-commitment-container mx-auto grid max-w-7xl grid-cols-1 items-stretch gap-12 px-4 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16 lg:px-8">
+        <div className="repair-commitment-image relative aspect-4/5 overflow-hidden rounded-lg border border-white/12 lg:aspect-auto lg:h-full">
           <img
             src="/about/commitment.jpg"
             alt="Cam kết chất lượng dịch vụ sửa chữa của An Thái"
