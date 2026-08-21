@@ -15,6 +15,7 @@ interface LensProps {
   isFocusing?: () => void;
   hovering?: boolean;
   setHovering?: (hovering: boolean) => void;
+  className?: string;
 }
 
 export const Lens: React.FC<LensProps> = ({
@@ -25,6 +26,7 @@ export const Lens: React.FC<LensProps> = ({
   position = { x: 200, y: 150 },
   hovering,
   setHovering,
+  className,
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -46,7 +48,7 @@ export const Lens: React.FC<LensProps> = ({
   return (
     <div
       ref={containerRef}
-      className="relative overflow-hidden rounded-lg z-20"
+      className={`relative overflow-hidden rounded-lg z-20 ${className ?? ""}`}
       onMouseEnter={() => {
         setIsHovering(true);
       }}

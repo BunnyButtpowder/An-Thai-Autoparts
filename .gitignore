@@ -11,6 +11,7 @@ node_modules
 dist
 dist-ssr
 *.local
+public/260717 _ Danh sách sản phẩm An Thái.xlsx
 
 # AI rules
 .cursor/rules/*

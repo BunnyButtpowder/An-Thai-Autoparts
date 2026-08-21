@@ -39,10 +39,6 @@ export default function VisitSection() {
     >
       {/* Blueprint grid + red accent glow, matching the site's premium sections */}
       <div className="visit-grid blueprint-grid-dark pointer-events-none absolute inset-0 z-0" aria-hidden="true" />
-      <div
-        className="visit-glow pointer-events-none absolute -top-32 -right-24 z-0 h-96 w-96 rounded-full bg-primary/25 blur-[120px]"
-        aria-hidden="true"
-      />
 
       <div className="visit-container relative z-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="visit-intro text-start mb-8 lg:mb-10">
