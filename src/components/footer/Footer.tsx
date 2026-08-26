@@ -34,55 +34,70 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Company column */}
-          <div className="footer-column">
-            <h3 className="footer-column-title text-lg font-bold uppercase tracking-wider text-white mb-4">
-              Công ty
-            </h3>
-            <ul className="footer-links-list space-y-2.5 text-base text-white/90">
-              {homeFooterCompanyLinks.map((link) => (
-                <li key={link.label}>
-                  {link.href.startsWith('/') ? (
-                    <Link to={link.href} className="hover:text-primary cursor-pointer transition-colors">
-                      {link.label}
-                    </Link>
-                  ) : link.href.startsWith('http') ? (
-                    <a
-                      href={link.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="hover:text-primary cursor-pointer transition-colors"
-                    >
-                      {link.label}
-                    </a>
-                  ) : (
-                    <a href={link.href} className="hover:text-primary cursor-pointer transition-colors">
-                      {link.label}
-                    </a>
-                  )}
-                </li>
-              ))}
-            </ul>
-          </div>
+          {/* Company + Social columns */}
+          <div className="footer-links-column sm:col-span-2 lg:col-span-2">
+            <div className="footer-links-grid grid grid-cols-2 gap-10">
+              {/* Company column */}
+              <div className="footer-column">
+                <h3 className="footer-column-title text-lg font-bold uppercase tracking-wider text-white mb-4">
+                  Công ty
+                </h3>
+                <ul className="footer-links-list space-y-2.5 text-base text-white/90">
+                  {homeFooterCompanyLinks.map((link) => (
+                    <li key={link.label}>
+                      {link.href.startsWith('/') ? (
+                        <Link to={link.href} className="hover:text-primary cursor-pointer transition-colors">
+                          {link.label}
+                        </Link>
+                      ) : link.href.startsWith('http') ? (
+                        <a
+                          href={link.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="hover:text-primary cursor-pointer transition-colors"
+                        >
+                          {link.label}
+                        </a>
+                      ) : (
+                        <a href={link.href} className="hover:text-primary cursor-pointer transition-colors">
+                          {link.label}
+                        </a>
+                      )}
+                    </li>
+                  ))}
+                </ul>
+              </div>
 
-          {/* Social column */}
-          <div className="footer-column">
-            <h3 className="footer-column-title text-lg font-bold uppercase tracking-wider text-white mb-4">
-              Kết nối
-            </h3>
-            <ul className="footer-links-list space-y-2.5 text-base text-white/90">
-              {homeFooterSocialLinks.map((link) => (
-                <li key={link.label}>
-                  <a
-                    href={link.href}
-                    className="hover:text-primary cursor-pointer transition-colors"
-                    aria-label={link.label}
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
+              {/* Social column */}
+              <div className="footer-column">
+                <h3 className="footer-column-title text-lg font-bold uppercase tracking-wider text-white mb-4">
+                  Kết nối
+                </h3>
+                <ul className="footer-links-list space-y-2.5 text-base text-white/90">
+                  {homeFooterSocialLinks.map((link) => (
+                    <li key={link.label}>
+                      <a
+                        href={link.href}
+                        className="hover:text-primary cursor-pointer transition-colors"
+                        aria-label={link.label}
+                      >
+                        {link.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            {/* E-catalogue standout button */}
+            <a
+              href="https://anthaiautoparts.com/catalogues"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="footer-ecatalogue-button mt-8 flex items-center justify-center gap-2 w-full rounded-md bg-primary hover:bg-primary-hover px-6 py-3.5 text-base font-bold uppercase tracking-wider text-white shadow-lg cursor-pointer transition-colors"
+            >
+              E-catalogue
+            </a>
           </div>
         </div>
 

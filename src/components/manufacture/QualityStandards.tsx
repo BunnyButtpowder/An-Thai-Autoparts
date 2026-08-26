@@ -110,7 +110,7 @@ export default function QualityStandards() {
               <button
                 type="button"
                 onClick={() => setActiveIndex(index)}
-                className="quality-standards-card group flex h-full w-full cursor-pointer flex-col overflow-hidden rounded-xl border border-white/12 bg-white/3 text-left transition-all duration-300 hover:-translate-y-1.5 hover:border-red-500/60 hover:bg-white/6 hover:shadow-[0_20px_45px_-25px_rgba(239,68,68,0.7)] focus:outline-none focus-visible:ring-2 focus-visible:ring-red-500/70"
+                className="quality-standards-card group flex h-full w-full cursor-pointer flex-col overflow-hidden rounded-md border border-white/12 bg-white/3 text-left transition-all duration-300 hover:-translate-y-1.5 hover:border-red-500/60 hover:bg-white/6 hover:shadow-[0_20px_45px_-25px_rgba(239,68,68,0.7)] focus:outline-none focus-visible:ring-2 focus-visible:ring-red-500/70"
                 aria-label={`Xem chứng chỉ ${standard.code}`}
               >
                 <div className="quality-standards-thumb relative aspect-3/4 overflow-hidden bg-white">

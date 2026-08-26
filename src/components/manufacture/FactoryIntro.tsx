@@ -19,7 +19,7 @@ export default function FactoryIntro() {
       aria-labelledby="factory-intro-heading"
     >
       <div className="factory-intro-container mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:gap-18 lg:px-8">
-        <div className="factory-intro-image relative overflow-hidden rounded border border-white/12">
+        <div className="factory-intro-image relative overflow-hidden rounded-md border border-white/12">
           <img
             src="/about/factory.jpg"
             alt="Nhà máy sản xuất tăm bua An Thái tại Hưng Yên"

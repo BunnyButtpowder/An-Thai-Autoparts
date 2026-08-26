@@ -66,10 +66,6 @@ export default function VisitSection() {
                 key={office.name}
                 className="visit-office-item group relative flex items-start gap-4 overflow-hidden rounded-2xl border border-white/10 bg-white/4 p-5 lg:p-6 backdrop-blur-sm transition-all duration-300 hover:border-primary/60 hover:bg-white/[0.07]"
               >
-                <span
-                  className="visit-office-accent pointer-events-none absolute inset-y-0 left-0 w-1 bg-primary opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-                  aria-hidden="true"
-                />
                 <span className="visit-office-badge flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-primary/15 text-red-400 transition-colors duration-300 group-hover:bg-primary group-hover:text-primary-foreground">
                   <MapPinIcon className="visit-office-icon w-5 h-5" />
                 </span>

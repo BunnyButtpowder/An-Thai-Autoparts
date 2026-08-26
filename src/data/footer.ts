@@ -13,7 +13,6 @@ export const homeFooterCompanyLinks: FooterLink[] = [
   { label: 'Giới thiệu', href: '/gioi-thieu' },
   { label: 'Sản phẩm', href: '/san-pham' },
   { label: 'Tin tức', href: '/tin-tuc' },
-  { label: 'E-Catalogue', href: 'https://anthaiautoparts.com/catalogues' },
   { label: 'Tuyển dụng', href: 'tuyen-dung' },
   { label: 'Liên hệ', href: 'lien-he' },
 ]

@@ -1,19 +1,35 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import useReveal from '../../hooks/useReveal'
 
 const VIDEO_ID = 'jyPixAwEbn4'
 
-// A single 16:9 phóng sự (documentary) frame. It shows the YouTube poster until
-// clicked, then swaps in the autoplaying embed — a lightweight alternative to a
-// custom player, keeping the section focused on the content.
 export default function ProductionVideo() {
   const [playing, setPlaying] = useState(false)
+  const frameRef = useRef<HTMLDivElement>(null)
 
   const sectionRef = useReveal<HTMLElement>((g, root) => {
     g.set('.production-video-frame', { y: 34, opacity: 0 })
     g.timeline({ scrollTrigger: { trigger: root, start: 'top 78%', once: true } })
       .to('.production-video-frame', { duration: 0.8, y: 0, opacity: 1, ease: 'power3.out' })
   })
+
+  // Autoplay once the frame is meaningfully in view. Browsers only permit
+  // programmatic autoplay when muted, so the embed URL carries `mute=1`.
+  useEffect(() => {
+    const frame = frameRef.current
+    if (!frame) return
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry!.isIntersecting) {
+          setPlaying(true)
+          observer.disconnect()
+        }
+      },
+      { threshold: 0.5 },
+    )
+    observer.observe(frame)
+    return () => observer.disconnect()
+  }, [])
 
   return (
     <section
@@ -23,11 +39,11 @@ export default function ProductionVideo() {
       aria-label="Phóng sự sản xuất tăm bua An Thái"
     >
       <div className="production-video-container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="production-video-frame relative aspect-video overflow-hidden rounded-md border border-white/10 bg-black">
+        <div ref={frameRef} className="production-video-frame relative aspect-video overflow-hidden rounded-md border border-white/10 bg-black">
           {playing ? (
             <iframe
               className="production-video-iframe absolute inset-0 h-full w-full border-0"
-              src={`https://www.youtube.com/embed/${VIDEO_ID}?autoplay=1&rel=0&modestbranding=1&playsinline=1`}
+              src={`https://www.youtube.com/embed/${VIDEO_ID}?autoplay=1&mute=1&rel=0&modestbranding=1&playsinline=1`}
               title="Phóng sự — Sản xuất tăm bua An Thái"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowFullScreen

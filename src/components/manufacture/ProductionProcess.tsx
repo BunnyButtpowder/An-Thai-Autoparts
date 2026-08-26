@@ -79,7 +79,7 @@ export default function ProductionProcess() {
                   {step.description}
                 </p>
               </div>
-              <div className="production-process-image-wrapper hidden aspect-16/10 w-full overflow-hidden rounded lg:block">
+              <div className="production-process-image-wrapper hidden aspect-16/10 w-full overflow-hidden rounded-md lg:block">
                 <img
                   src={step.image}
                   alt={step.title}
