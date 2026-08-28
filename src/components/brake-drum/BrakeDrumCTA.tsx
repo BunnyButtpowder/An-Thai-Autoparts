@@ -1,51 +1,53 @@
 import { Link } from 'react-router'
 import useReveal from '../../hooks/useReveal'
 
-// Full-bleed closing call-to-action over a darkened factory photo.
+// Closing CTA banner on the saturated brand band with the shared blueprint grid
+// motif, carrying the final contact call to action for the brake drum page.
 export default function BrakeDrumCTA() {
-  const ref = useReveal<HTMLElement>((g) => {
-    g.utils.toArray<HTMLElement>('.brake-reveal').forEach((el) => {
-      g.set(el, { y: 40, opacity: 0 })
-      g.to(el, {
-        y: 0, opacity: 1, duration: 0.9, ease: 'power3.out',
-        scrollTrigger: { trigger: el, start: 'top 88%', once: true },
-      })
-    })
+  const sectionRef = useReveal<HTMLElement>((g, root) => {
+    g.set('.brake-cta-reveal', { y: 32, opacity: 0 })
+    g.timeline({ scrollTrigger: { trigger: root, start: 'top 80%', once: true } })
+      .to('.brake-cta-reveal', { duration: 0.7, y: 0, opacity: 1, stagger: 0.12, ease: 'power3.out' })
   })
 
   return (
     <section
-      ref={ref}
+      ref={sectionRef}
       id="lien-he"
-      className="brake-cta-section relative overflow-hidden border-t border-[#ece7e0]/12"
+      className="brake-cta-section relative isolate overflow-hidden bg-primary py-15"
+      aria-labelledby="brake-cta-heading"
     >
-      <img
-        src="/about/factory.jpg"
-        alt=""
-        aria-hidden="true"
-        className="brake-cta-bg absolute inset-0 h-full w-full object-cover"
-        style={{ filter: 'grayscale(0.9) brightness(0.26)' }}
-      />
       <div
+        className="brake-cta-grid pointer-events-none absolute inset-0 opacity-[0.1]"
+        style={{
+          backgroundImage:
+            'linear-gradient(to right, rgba(255,255,255,0.4) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.4) 1px, transparent 1px)',
+          backgroundSize: '64px 64px',
+        }}
         aria-hidden="true"
-        className="brake-cta-overlay absolute inset-0"
-        style={{ background: 'radial-gradient(70% 90% at 50% 100%, rgba(185,28,28,0.42), transparent 60%)' }}
       />
-      <div className="brake-cta-content relative mx-auto flex max-w-380 flex-col items-center gap-9 px-6 py-32 text-center sm:px-10 lg:py-40">
-        <span className="brake-cta-rule brake-reveal h-px w-16 bg-[#dc2626]" />
+
+      <div className="brake-cta-container relative mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
         <h2
-          className="brake-cta-title brake-reveal m-0 font-extrabold text-3xl sm:text-4xl lg:text-5xl uppercase leading-snug tracking-[-0.015em] text-white"
+          id="brake-cta-heading"
+          className="brake-cta-heading brake-cta-reveal mb-4 text-3xl font-black uppercase leading-normal text-balance text-white sm:text-4xl lg:text-5xl"
         >
-          Lựa chọn bền bỉ
-          <br />
-          cho mọi hành trình
+          Lựa chọn bền bỉ cho mọi hành trình
         </h2>
-        <Link
-          to="/lien-he"
-          className="brake-cta-button brake-reveal inline-flex cursor-pointer items-center gap-3.5 bg-primary px-11 py-5 text-base font-medium uppercase tracking-[0.2em] text-white transition-colors hover:bg-primary/80 hover:text-white"
-        >
-          Liên hệ nhận báo giá →
-        </Link>
+        <div className="brake-cta-actions brake-cta-reveal flex flex-wrap justify-center gap-4">
+          <Link
+            to="/lien-he"
+            className="brake-cta-primary inline-flex items-center gap-2 rounded-lg bg-white px-9 py-4 text-base font-bold text-primary transition-colors duration-300 hover:bg-white/90 cursor-pointer"
+          >
+            Liên hệ nhận báo giá →
+          </Link>
+          <Link
+            to="/gioi-thieu"
+            className="brake-cta-secondary inline-flex items-center gap-2 rounded-lg border-[1.5px] border-white/60 px-9 py-4 text-base font-semibold text-white transition-colors duration-300 hover:border-white hover:bg-white/10 cursor-pointer"
+          >
+            Tìm hiểu thêm về An Thái
+          </Link>
+        </div>
       </div>
     </section>
   )

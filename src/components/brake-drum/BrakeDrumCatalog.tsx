@@ -51,8 +51,8 @@ export default function BrakeDrumCatalog() {
     market === 'Tất cả' ? PRODUCTS : PRODUCTS.filter((p) => p.market === market.toUpperCase())
 
   return (
-    <section ref={ref} id="danh-muc" className="brake-catalog-section bg-[#0b0a09] pt-33">
-      <div className="brake-catalog-inner mx-auto max-w-380 px-6 sm:px-10">
+    <section ref={ref} id="danh-muc" className="brake-catalog-section bg-[#0b0a09] pt-10">
+      <div className="brake-catalog-inner mx-auto max-w-7xl px-6 sm:px-10">
         <h2
           className="brake-catalog-title brake-reveal m-0 font-extrabold text-3xl sm:text-4xl lg:text-5xl uppercase leading-none tracking-[-0.015em] text-white"
         >
@@ -73,9 +73,8 @@ export default function BrakeDrumCatalog() {
                   type="button"
                   onClick={() => setMarket(label)}
                   aria-pressed={on}
-                  className={`brake-catalog-filter cursor-pointer border-b-2 bg-none pb-1.5 font-bold uppercase tracking-[0.01em] transition-colors ${
-                    on ? 'border-[#dc2626] text-[#dc2626]' : 'border-transparent text-white/45 hover:text-white/80'
-                  }`}
+                  className={`brake-catalog-filter cursor-pointer border-b-2 bg-none pb-1.5 font-bold uppercase tracking-[0.01em] transition-colors ${on ? 'border-[#dc2626] text-[#dc2626]' : 'border-transparent text-white/45 hover:text-white/80'
+                    }`}
                   style={{ fontSize: 'clamp(17px,1.4vw,25px)' }}
                 >
                   {label}
@@ -86,67 +85,65 @@ export default function BrakeDrumCatalog() {
         </div>
       </div>
 
-      <div className="brake-catalog-grid-section px-6 pt-14 pb-10 sm:px-10">
-        <div className="mx-auto max-w-380">
-          <ul className="brake-catalog-grid m-0 grid list-none grid-cols-2 gap-px bg-white/14 p-0 lg:grid-cols-4">
-            {visible.map((p) => (
-              <li
-                key={p.code + p.name}
-                className="brake-card group relative flex flex-col gap-5.5 bg-[#0b0a09] p-6.5 transition-colors hover:bg-[#131110]"
-              >
-                <div className="brake-card-meta flex items-baseline justify-between text-xs uppercase tracking-[0.18em]">
-                  <span className="text-[#dc2626]">{p.brand}</span>
-                  <span className="text-white/40">{p.market}</span>
+      <div className="brake-catalog-grid-section px-6 pt-14 pb-10 sm:px-10 mx-auto max-w-7xl">
+        <ul className="brake-catalog-grid m-0 grid list-none grid-cols-2 gap-px bg-white/14 p-0 lg:grid-cols-4">
+          {visible.map((p) => (
+            <li
+              key={p.code + p.name}
+              className="brake-card group relative flex flex-col gap-5.5 bg-[#0b0a09] p-6.5 transition-colors hover:bg-[#131110]"
+            >
+              <div className="brake-card-meta flex items-baseline justify-between text-xs uppercase tracking-[0.18em]">
+                <span className="text-[#dc2626]">{p.brand}</span>
+                <span className="text-white/40">{p.market}</span>
+              </div>
+              <div className="brake-card-media relative aspect-4/5 overflow-hidden bg-[linear-gradient(150deg,#191614,#0e0d0c)]">
+                {p.img ? (
+                  <img
+                    src={p.img}
+                    alt={p.alt}
+                    loading="lazy"
+                    className="h-full w-full object-cover"
+                    style={{ filter: 'grayscale(0.4) contrast(1.12) brightness(0.94)' }}
+                  />
+                ) : (
+                  <div className="brake-card-media-placeholder flex h-full w-full flex-col items-center justify-center gap-2.5 text-white">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="h-10 w-10" aria-hidden="true">
+                      <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z" strokeLinecap="round" strokeLinejoin="round" />
+                      <path d="m3.3 7 8.7 5 8.7-5M12 22V12" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                    <span className="font-['JetBrains_Mono'] text-[10px] uppercase tracking-[0.2em]">Ảnh sản phẩm</span>
+                  </div>
+                )}
+              </div>
+              <h3 className="brake-card-name m-0 font-['Archivo'] text-2xl sm:text-3xl font-extrabold uppercase leading-[1.05] text-white">
+                {p.name}
+              </h3>
+              <dl className="brake-card-specs m-0 flex flex-col gap-2 text-sm font-semibold tracking-[0.08em]">
+                <div className="flex justify-between gap-3 border-b border-white/10 pb-2">
+                  <dt className="text-white/40">MÃ SP</dt>
+                  <dd className="m-0 text-white">{p.code}</dd>
                 </div>
-                <div className="brake-card-media relative aspect-4/5 overflow-hidden bg-[linear-gradient(150deg,#191614,#0e0d0c)]">
-                  {p.img ? (
-                    <img
-                      src={p.img}
-                      alt={p.alt}
-                      loading="lazy"
-                      className="h-full w-full object-cover"
-                      style={{ filter: 'grayscale(0.4) contrast(1.12) brightness(0.94)' }}
-                    />
-                  ) : (
-                    <div className="brake-card-media-placeholder flex h-full w-full flex-col items-center justify-center gap-2.5 text-white">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="h-10 w-10" aria-hidden="true">
-                        <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z" strokeLinecap="round" strokeLinejoin="round" />
-                        <path d="m3.3 7 8.7 5 8.7-5M12 22V12" strokeLinecap="round" strokeLinejoin="round" />
-                      </svg>
-                      <span className="font-['JetBrains_Mono'] text-[10px] uppercase tracking-[0.2em]">Ảnh sản phẩm</span>
-                    </div>
-                  )}
+                <div className="flex justify-between gap-3 border-b border-white/10 pb-2">
+                  <dt className="text-white/40">DÒNG XE</dt>
+                  <dd className="m-0 text-white">{p.vehicle}</dd>
                 </div>
-                <h3 className="brake-card-name m-0 font-['Archivo'] text-2xl sm:text-3xl font-extrabold uppercase leading-[1.05] text-white">
-                  {p.name}
-                </h3>
-                <dl className="brake-card-specs m-0 flex flex-col gap-2 text-sm font-semibold tracking-[0.08em]">
-                  <div className="flex justify-between gap-3 border-b border-white/10 pb-2">
-                    <dt className="text-white/40">MÃ SP</dt>
-                    <dd className="m-0 text-white">{p.code}</dd>
-                  </div>
-                  <div className="flex justify-between gap-3 border-b border-white/10 pb-2">
-                    <dt className="text-white/40">DÒNG XE</dt>
-                    <dd className="m-0 text-white">{p.vehicle}</dd>
-                  </div>
-                  <div className="flex justify-between gap-3">
-                    <dt className="text-white/40">KHỐI LƯỢNG</dt>
-                    <dd className="m-0 text-white">{p.weight}</dd>
-                  </div>
-                </dl>
-              </li>
-            ))}
-          </ul>
+                <div className="flex justify-between gap-3">
+                  <dt className="text-white/40">KHỐI LƯỢNG</dt>
+                  <dd className="m-0 text-white">{p.weight}</dd>
+                </div>
+              </dl>
+            </li>
+          ))}
+        </ul>
 
-          <div className="brake-catalog-pager mt-10 flex items-center justify-between gap-6 text-sm uppercase tracking-[0.18em] text-white/50">
-            <span>TRANG 01 — 03</span>
-            <div className="relative h-px flex-1 bg-white/14">
-              <span className="absolute left-0 top-0 h-px w-1/3 bg-primary" />
-            </div>
-            <a href="#danh-muc" className="cursor-pointer text-white transition-colors hover:text-primary">
-              TRANG SAU →
-            </a>
+        <div className="brake-catalog-pager mt-10 flex items-center justify-between gap-6 text-sm uppercase tracking-[0.18em] text-white/50">
+          <span>TRANG 01 — 03</span>
+          <div className="relative h-px flex-1 bg-white/14">
+            <span className="absolute left-0 top-0 h-px w-1/3 bg-primary" />
           </div>
+          <a href="#danh-muc" className="cursor-pointer text-white transition-colors hover:text-primary">
+            TRANG SAU →
+          </a>
         </div>
       </div>
     </section>

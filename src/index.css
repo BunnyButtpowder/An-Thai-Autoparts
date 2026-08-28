@@ -127,6 +127,16 @@ body {
   animation: press-strip 35s linear infinite;
 }
 
+/* Brake Drum spotlight — re-run on each product switch (keyed remount) */
+@keyframes brake-spotlight-swap {
+  0% { opacity: 0; transform: translateY(14px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.brake-spotlight-swap {
+  animation: brake-spotlight-swap 0.6s ease-out;
+}
+
 /* Scroll indicator bounce */
 .scroll-indicator {
   animation: bounce 2s infinite;

@@ -85,9 +85,9 @@
         // Near-black charcoal backdrop with a faint centre lift, so the grey land
         // and the red-filled markets carry the contrast.
         const ocean = defs.append('radialGradient').attr('id', 'atwm-ocean').attr('cx', '46%').attr('cy', '32%').attr('r', '92%');
-        ocean.append('stop').attr('offset', '0%').attr('stop-color', '#161618');
-        ocean.append('stop').attr('offset', '60%').attr('stop-color', '#0f0f10');
-        ocean.append('stop').attr('offset', '100%').attr('stop-color', '#0a0a0b');
+        ocean.append('stop').attr('offset', '0%').attr('stop-color', '#0b0a09');
+        ocean.append('stop').attr('offset', '60%').attr('stop-color', '#0b0a09');
+        ocean.append('stop').attr('offset', '100%').attr('stop-color', '#0b0a09');
         svg.append('rect').attr('x', 0).attr('y', 0).attr('width', W).attr('height', H).attr('fill', 'url(#atwm-ocean)');
 
         // Served markets fill in brand red; every other country stays neutral grey.

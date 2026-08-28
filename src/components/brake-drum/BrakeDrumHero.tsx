@@ -1,89 +1,84 @@
-import useReveal from '../../hooks/useReveal'
+import { useRef } from 'react'
+import { motion } from 'motion/react'
 
-// Dark editorial opener for the Brake Drum page. Headline lines rise from below,
-// the supporting copy + actions fade up, and the background photo drifts on scroll
-// (all skipped under reduce-motion, which leaves the final state visible).
+// Dark full-bleed opener for the brake drum page. The banner photo drifts gently
+// as the page scrolls (disabled under reduce-motion) while the copy lands in a
+// staggered sequence, matching the import & distribution / product heroes.
 export default function BrakeDrumHero() {
-  const ref = useReveal<HTMLElement>((g, root) => {
-    g.set('.brake-hero-line', { yPercent: 108, opacity: 0 })
-    g.set('.brake-hero-fade', { y: 24, opacity: 0 })
-    g.timeline({ defaults: { ease: 'power4.out' } })
-      .to('.brake-hero-line', { yPercent: 0, opacity: 1, duration: 1.1, stagger: 0.12 })
-      .to('.brake-hero-fade', { y: 0, opacity: 1, duration: 0.8, stagger: 0.12 }, '-=0.6')
+  const sectionRef = useRef<HTMLElement>(null)
 
-    g.to('.brake-hero-img', {
-      yPercent: 8,
-      scale: 1.06,
-      ease: 'none',
-      scrollTrigger: { trigger: root, start: 'top top', end: 'bottom top', scrub: true },
-    })
-  })
+  const container = {
+    hidden: {},
+    visible: { transition: { staggerChildren: 0.14, delayChildren: 0.1 } },
+  }
+  const item = {
+    hidden: { opacity: 0, y: 22 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: 'easeOut' as const } },
+  }
 
   return (
     <section
-      ref={ref}
+      ref={sectionRef}
       id="trang-chu"
-      className="brake-hero-section relative flex min-h-[104vh] flex-col justify-end overflow-hidden"
+      className="brake-hero-section relative flex min-h-screen items-end overflow-hidden bg-[#0b0c0d]"
       aria-labelledby="brake-hero-heading"
     >
-      <img
-        src="/brake-drum/banner.jpg"
-        alt=""
+      {/* Parallax photo layer */}
+      <motion.div
+        className="brake-hero-bg absolute inset-x-0  z-0"
         aria-hidden="true"
-        className="brake-hero-img absolute inset-x-0 h-full w-full object-cover"
-      />
+      >
+        <img
+          src="/brake-drum/banner.jpg"
+          alt=""
+          className="brake-hero-bg-image h-full w-full object-cover"
+        />
+      </motion.div>
+
+      {/* Legibility gradient */}
       <div
+        className="brake-hero-overlay pointer-events-none absolute inset-0 z-1 bg-linear-to-t from-[#0b0c0d]/95 via-[#0b0c0d]/50 to-[#0b0c0d]/70"
         aria-hidden="true"
-        className="brake-hero-overlay absolute inset-0"
-        style={{
-          background:
-            'linear-gradient(180deg, rgba(11,10,9,0.72), rgba(11,10,9,0.45) 40%, #0b0a09 96%)',
-        }}
       />
 
-      <div className="brake-hero-content relative mx-auto w-full max-w-380 px-6 pb-18 sm:px-10 lg:pb-24">
-        <h1
+      <motion.div
+        className="brake-hero-content relative z-2 mx-auto w-full max-w-7xl px-4 pb-30 sm:px-6 lg:px-8"
+        variants={container}
+        initial="hidden"
+        animate="visible"
+      >
+        <motion.h1
           id="brake-hero-heading"
-          className="brake-hero-heading m-0 font-['Archivo'] font-extrabold uppercase leading-none tracking-[-0.02em] text-white"
-          style={{ fontSize: 'clamp(56px,10.4vw,188px)' }}
+          className="brake-hero-title text-4xl font-extrabold uppercase leading-normal tracking-wide text-white sm:text-6xl lg:text-7xl text-balance"
+          variants={item}
         >
-          <span className="brake-hero-line-mask block ">
-            <span className="brake-hero-line block">Tăm bua</span>
-          </span>
-          <span className="brake-hero-line-mask block">
-            <span className="brake-hero-line flex items-baseline gap-[0.22em]">
-              <span className="text-primary">An Thái</span>
-              <span
-                className="brake-hero-heading-tag font-['JetBrains_Mono'] font-normal uppercase tracking-[0.24em] text-white/50"
-                style={{ fontSize: 'clamp(11px,0.85vw,15px)' }}
-              >
-                ANTEK · X-POWER.LXĐ · XCBB.LXĐ
-              </span>
-            </span>
-          </span>
-        </h1>
-
-        <div className="brake-hero-lower mt-13 grid grid-cols-1 items-end gap-10 border-t border-white/14 pt-9 lg:grid-cols-[1.2fr_1fr] lg:gap-16">
-          <p className="brake-hero-lead brake-hero-fade m-0 `max-w-160 text-xl leading-[1.65] text-pretty text-white">
-            <strong className="font-semibold text-white">Sản xuất tại Việt Nam.</strong> Thiết kế
-            tối ưu cho các dòng xe tải Mỹ, Nhật Bản và Trung Quốc với hiệu suất và độ bền vượt trội
-          </p>
-          <div className="brake-hero-actions brake-hero-fade flex flex-wrap gap-3.5 lg:justify-end">
-            <a
-              href="/lien-he"
-              className="brake-hero-cta-primary inline-flex cursor-pointer items-center gap-3 bg-white px-8 py-5 text-xs font-medium uppercase tracking-[0.18em] text-black transition-colors hover:bg-primary hover:text-white"
-            >
-              Liên hệ nhận báo giá
-            </a>
-            <a
-              href="/san-xuat-phu-tung"
-              className="brake-hero-cta-secondary inline-flex cursor-pointer items-center gap-3 border border-white/28 px-8 py-5 text-xs font-medium uppercase tracking-[0.18em] text-white transition-colors hover:border-white hover:bg-white/6"
-            >
-              Xem nhà máy của chúng tôi
-            </a>
-          </div>
-        </div>
-      </div>
+          Tăm bua An Thái
+        </motion.h1>
+        <motion.p
+          className="brake-hero-subtitle mb-9 text-lg sm:text-xl leading-relaxed text-white"
+          variants={item}
+        >
+          Sản xuất tại Việt Nam. Thiết kế tối ưu cho các dòng xe tải Mỹ, Nhật Bản
+          và Trung Quốc với hiệu suất và độ bền vượt trội
+        </motion.p>
+        <motion.div
+          className="brake-hero-cta flex flex-wrap gap-3.5"
+          variants={item}
+        >
+          <a
+            href="/lien-he"
+            className="brake-hero-cta-primary inline-flex items-center gap-2 rounded-md bg-primary px-7 py-3.5 text-base font-semibold text-primary-foreground transition-colors duration-300 hover:bg-primary-hover cursor-pointer"
+          >
+            Liên hệ nhận báo giá
+          </a>
+          <a
+            href="/san-xuat-phu-tung"
+            className="brake-hero-cta-secondary inline-flex items-center gap-2 rounded-md border border-white/30 px-7 py-3.5 text-base font-semibold text-white transition-colors duration-300 hover:border-white hover:bg-white/10 cursor-pointer"
+          >
+            Xem nhà máy của chúng tôi
+          </a>
+        </motion.div>
+      </motion.div>
     </section>
   )
 }
