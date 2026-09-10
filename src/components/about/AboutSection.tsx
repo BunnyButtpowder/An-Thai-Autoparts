@@ -54,9 +54,9 @@ export default function AboutSection() {
     <section ref={ref} id="gioi-thieu" aria-labelledby="about-v2-heading" className="about-v2-section border-t border-border bg-background pt-16 lg:pt-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="about-v2-intro mx-auto max-w-3xl text-center">
-          <p className="about-label inline-flex items-center px-3 py-1 rounded-full bg-accent text-primary text-base font-semibold uppercase tracking-wider">Về chúng tôi</p>
+          <p className="about-label inline-flex items-center px-3 py-1 rounded-full bg-accent text-primary text-lg font-semibold uppercase tracking-wider">Về chúng tôi</p>
 
-          <h2 id="about-v2-heading" className="mt-5 text-3xl font-bold uppercase leading-tight text-foreground sm:text-4xl">
+          <h2 id="about-v2-heading" className="mt-5 text-4xl font-bold uppercase leading-tight text-foreground sm:text-5xl">
             Đối tác đồng hành tin cậy
           </h2>
         </div>
@@ -73,7 +73,7 @@ export default function AboutSection() {
 
       <div className="about-v2-story mx-auto mt-10 max-w-6xl px-4 sm:px-6 lg:px-8">
         {aboutStory.map((paragraph, i) => (
-          <p key={i} className="about-v2-paragraph mt-6 text-lg leading-relaxed text-foreground first:mt-0 sm:text-2xl">
+          <p key={i} className="about-v2-paragraph mt-6 text-xl leading-relaxed text-foreground first:mt-0 sm:text-3xl">
             {paragraph.map((segment, j) => {
               const isHighlight = typeof segment !== 'string' && segment.highlight
               const text = typeof segment === 'string' ? segment : segment.text

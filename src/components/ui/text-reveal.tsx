@@ -61,7 +61,7 @@ export function TextReveal({ paragraphs, className }: TextRevealProps) {
           <p
             key={paragraphIndex}
             className={cn(
-              'text-2xl font-medium leading-relaxed text-foreground sm:text-3xl',
+              'text-3xl font-medium leading-relaxed text-foreground sm:text-4xl',
               paragraphIndex > 0 && 'mt-6',
             )}
           >
@@ -95,7 +95,7 @@ export function TextReveal({ paragraphs, className }: TextRevealProps) {
               <p
                 key={paragraphIndex}
                 className={cn(
-                  'flex flex-wrap gap-x-[0.28em] gap-y-1 text-2xl font-medium leading-relaxed sm:text-3xl',
+                  'flex flex-wrap gap-x-[0.28em] gap-y-1 text-3xl font-medium leading-relaxed sm:text-4xl',
                   paragraphIndex > 0 && 'mt-6',
                 )}
               >

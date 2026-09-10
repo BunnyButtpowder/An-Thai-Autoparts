@@ -33,7 +33,7 @@ export default function OfferSection() {
     <section ref={sectionRef} className="offer-section py-16 lg:py-24 bg-muted" id="linh-vuc-tien-phong">
       <div className="masonry-grid-container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
         <div className="masonry-grid-intro max-w-3xl mb-12 lg:mb-16">
-          <h2 className="masonry-grid-title text-3xl sm:text-4xl lg:text-4xl font-bold text-foreground leading-tight mb-5 uppercase text-center">
+          <h2 className="masonry-grid-title text-4xl sm:text-5xl lg:text-5xl font-bold text-foreground leading-tight mb-5 uppercase text-center">
             {offerIntro.title}
           </h2>
         </div>
@@ -54,10 +54,10 @@ export default function OfferSection() {
                 />
               </div>
               <div className="offer-featured-body flex flex-1 flex-col p-7 lg:p-9">
-                <h3 className="offer-featured-title text-2xl lg:text-3xl font-bold text-foreground mb-3 leading-tight">
+                <h3 className="offer-featured-title text-3xl lg:text-4xl font-bold text-foreground mb-3 leading-tight">
                   {offer.title}
                 </h3>
-                <p className="offer-featured-desc text-muted-foreground text-base lg:text-lg leading-relaxed mb-6">
+                <p className="offer-featured-desc text-muted-foreground text-lg lg:text-xl leading-relaxed mb-6">
                   {offer.description}
                 </p>
                 <span className="offer-featured-cta mt-auto inline-flex items-center gap-2 text-primary font-semibold group-hover:gap-3 transition-all">
@@ -85,13 +85,13 @@ export default function OfferSection() {
                 />
               </div>
               <div className="offer-secondary-body flex flex-1 flex-col p-6">
-                <h3 className="offer-secondary-title text-lg font-bold text-foreground mb-2">
+                <h3 className="offer-secondary-title text-xl font-bold text-foreground mb-2">
                   {offer.title}
                 </h3>
-                <p className="offer-secondary-desc text-muted-foreground text-sm leading-relaxed mb-5">
+                <p className="offer-secondary-desc text-muted-foreground text-base leading-relaxed mb-5">
                   {offer.description}
                 </p>
-                <span className="offer-secondary-cta mt-auto inline-flex items-center gap-2 text-primary font-semibold text-sm group-hover:gap-3 transition-all">
+                <span className="offer-secondary-cta mt-auto inline-flex items-center gap-2 text-primary font-semibold text-base group-hover:gap-3 transition-all">
                   {offer.ctaLabel}
                   <ArrowRight />
                 </span>

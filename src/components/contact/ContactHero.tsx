@@ -21,10 +21,10 @@ export default function ContactHero() {
       id="lien-he"
     >
       <div className="contact-hero-container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-start">
-        <h1 className="contact-hero-title text-4xl sm:text-5xl lg:text-6xl font-extrabold text-foreground leading-tight uppercase tracking-tight mb-6">
+        <h1 className="contact-hero-title text-5xl sm:text-6xl lg:text-7xl font-extrabold text-foreground leading-tight uppercase tracking-tight mb-6">
           Liên hệ với An Thái
         </h1>
-        <p className="contact-hero-intro text-lg sm:text-xl text-muted-foreground leading-relaxed">
+        <p className="contact-hero-intro text-xl sm:text-2xl text-muted-foreground leading-relaxed">
           Kết nối với An Thái để được tư vấn sản phẩm, giải đáp thắc mắc và hợp tác phát triển
         </p>
       </div>

@@ -42,10 +42,10 @@ export default function VisitSection() {
 
       <div className="visit-container relative z-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="visit-intro text-start mb-8 lg:mb-10">
-          <div className="visit-eyebrow mb-3 text-lg sm:text-xl font-semibold tracking-wide text-red-400">
+          <div className="visit-eyebrow mb-3 text-xl sm:text-2xl font-semibold tracking-wide text-red-400">
             Quy mô toàn quốc
           </div>
-          <h2 className="visit-heading text-3xl sm:text-4xl font-bold text-white uppercase leading-tight">
+          <h2 className="visit-heading text-4xl sm:text-5xl font-bold text-white uppercase leading-tight">
             Ghé thăm chúng tôi
           </h2>
         </div>
@@ -70,10 +70,10 @@ export default function VisitSection() {
                   <MapPinIcon className="visit-office-icon w-5 h-5" />
                 </span>
                 <div className="visit-office-content min-w-0">
-                  <h3 className="visit-office-name text-lg sm:text-xl font-bold text-white mb-1.5 transition-colors group-hover:text-red-400">
+                  <h3 className="visit-office-name text-xl sm:text-2xl font-bold text-white mb-1.5 transition-colors group-hover:text-red-400">
                     {office.name}
                   </h3>
-                  <p className="visit-office-address text-sm sm:text-base text-white leading-relaxed">
+                  <p className="visit-office-address text-base sm:text-lg text-white leading-relaxed">
                     {office.address}
                   </p>
                 </div>

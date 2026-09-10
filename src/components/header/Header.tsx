@@ -40,7 +40,7 @@ export default function Header({
             <div className="lang-selector-wrapper hidden items-center gap-1 sm:flex">
               <button
                 type="button"
-                className={`lang-vi-button cursor-pointer rounded-md px-2 py-1 text-sm transition-colors ${
+                className={`lang-vi-button cursor-pointer rounded-md px-2 py-1 text-base transition-colors ${
                   language === 'vi'
                     ? 'font-semibold text-primary'
                     : 'text-white/70 hover:text-white'
@@ -56,7 +56,7 @@ export default function Header({
               </span>
               <button
                 type="button"
-                className={`lang-en-button cursor-pointer rounded-md px-2 py-1 text-sm transition-colors ${
+                className={`lang-en-button cursor-pointer rounded-md px-2 py-1 text-base transition-colors ${
                   language === 'en'
                     ? 'font-semibold text-primary'
                     : 'text-white/70 hover:text-white'

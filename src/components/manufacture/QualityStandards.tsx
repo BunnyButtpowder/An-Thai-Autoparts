@@ -93,12 +93,12 @@ export default function QualityStandards() {
     >
       <div className="quality-standards-container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="quality-standards-header mb-11">
-          <p className="quality-standards-eyebrow-label quality-standards-reveal inline-flex items-center text-lg sm:text-xl font-semibold tracking-wide text-red-400 mb-3">
+          <p className="quality-standards-eyebrow-label quality-standards-reveal inline-flex items-center text-xl sm:text-2xl font-semibold tracking-wide text-red-400 mb-3">
             Chứng nhận
           </p>
           <h2
             id="quality-standards-heading"
-            className="quality-standards-title quality-standards-reveal text-3xl font-extrabold leading-[1.04] text-white sm:text-4xl lg:text-5xl uppercase"
+            className="quality-standards-title quality-standards-reveal text-4xl font-extrabold leading-[1.04] text-white sm:text-5xl lg:text-6xl uppercase"
           >
             Tiêu chuẩn chất lượng
           </h2>
@@ -125,10 +125,10 @@ export default function QualityStandards() {
                   </div>
                 </div>
                 <div className="quality-standards-card-body text-center flex flex-1 flex-col gap-1.5 px-4 py-4">
-                  <span className="quality-standards-code font-mono text-sm font-bold text-white sm:text-lg">
+                  <span className="quality-standards-code font-mono text-base font-bold text-white sm:text-xl">
                     {standard.code}
                   </span>
-                  <span className="quality-standards-desc line-clamp-2 min-h-[2.4em] text-base leading-snug text-white">
+                  <span className="quality-standards-desc line-clamp-2 min-h-[2.4em] text-lg leading-snug text-white">
                     {standard.description}
                   </span>
                 </div>
@@ -193,10 +193,10 @@ export default function QualityStandards() {
               className="quality-standards-lightbox-img max-h-[78vh] w-auto rounded-md object-contain shadow-2xl"
             />
             <figcaption className="quality-standards-lightbox-caption mt-5 text-center">
-              <p className="font-mono text-base font-bold text-white sm:text-xl">{active.code}</p>
-              <p className="mt-1 text-lg text-white">{active.description}</p>
-              <p className="mt-0.5 text-base text-white/70">{active.issuer}</p>
-              <p className="quality-standards-lightbox-counter mt-3 font-mono text-sm tracking-widest text-white/40">
+              <p className="font-mono text-lg font-bold text-white sm:text-2xl">{active.code}</p>
+              <p className="mt-1 text-xl text-white">{active.description}</p>
+              <p className="mt-0.5 text-lg text-white/70">{active.issuer}</p>
+              <p className="quality-standards-lightbox-counter mt-3 font-mono text-base tracking-widest text-white/40">
                 {activeIndex + 1} / {standards.length}
               </p>
             </figcaption>

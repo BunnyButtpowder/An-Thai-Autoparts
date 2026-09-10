@@ -33,24 +33,24 @@ export default function ManufactureProducts() {
       aria-labelledby="manufacture-products-heading"
     >
       <div className="manufacture-products-container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <p className="manufacture-products-eyebrow-label manufacture-products-reveal inline-flex items-center text-lg sm:text-xl font-semibold tracking-wide text-red-400 mb-3">
+        <p className="manufacture-products-eyebrow-label manufacture-products-reveal inline-flex items-center text-xl sm:text-2xl font-semibold tracking-wide text-red-400 mb-3">
           Sản phẩm
         </p>
         <div className="manufacture-products-header manufacture-products-reveal mb-12 flex flex-wrap items-end justify-between gap-6">
           <div>
             <h2
               id="manufacture-products-heading"
-              className="manufacture-products-title mb-3 text-3xl font-extrabold leading-[1.04] text-white sm:text-4xl lg:text-5xl uppercase"
+              className="manufacture-products-title mb-3 text-4xl font-extrabold leading-[1.04] text-white sm:text-5xl lg:text-6xl uppercase"
             >
               Lựa chọn tin cậy
             </h2>
-            <p className="manufacture-products-subtitle text-lg text-white">
+            <p className="manufacture-products-subtitle text-xl text-white">
               Khám phá những sản phẩm được khách hàng đánh giá cao
             </p>
           </div>
           <Link
             to="/san-pham?#danh-muc-phu-tung"
-            className="manufacture-products-catalog-link whitespace-nowrap text-sm sm:text-base font-semibold text-red-400 transition-colors hover:text-primary cursor-pointer"
+            className="manufacture-products-catalog-link whitespace-nowrap text-base sm:text-lg font-semibold text-red-400 transition-colors hover:text-primary cursor-pointer"
           >
             Xem tất cả ↗
           </Link>
@@ -72,10 +72,10 @@ export default function ManufactureProducts() {
                 />
               </div>
               <div className="manufacture-products-card-body p-6">
-                <p className="manufacture-products-card-category mb-2.5 font-mono text-xs uppercase tracking-widest text-red-400">
+                <p className="manufacture-products-card-category mb-2.5 font-mono text-sm uppercase tracking-widest text-red-400">
                   {product.category}
                 </p>
-                <h3 className="manufacture-products-card-name mb-4 text-xl font-bold text-white sm:text-[23px]">
+                <h3 className="manufacture-products-card-name mb-4 text-2xl font-bold text-white sm:text-[23px]">
                   {product.name}
                 </h3>
                 <span className="manufacture-products-card-cta text-[15px] font-semibold text-white transition-colors group-hover:text-red-400">

@@ -27,23 +27,23 @@ export default function JobApplyCTA({ job }: { job: JobListing }) {
     <section ref={sectionRef} className="job-apply-section bg-background pt-12 lg:pt-16" id="ung-tuyen">
       <div className="job-apply-container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="job-apply-inner rounded-2xl border border-border bg-card p-8 sm:p-10 text-center shadow-sm">
-          <h2 className="job-apply-title text-2xl sm:text-3xl font-bold text-foreground mb-4">
+          <h2 className="job-apply-title text-3xl sm:text-4xl font-bold text-foreground mb-4">
             Bạn đã sẵn sàng cho bước tiến mới trong sự nghiệp?
           </h2>
-          <p className="job-apply-text text-base text-muted-foreground leading-relaxed mb-8 max-w-xl mx-auto">
+          <p className="job-apply-text text-lg text-muted-foreground leading-relaxed mb-8 max-w-xl mx-auto">
             Đừng ngần ngại, hãy gửi ngay CV và Portfolio (nếu có) cho chúng tôi. Chúng tôi rất mong nhận được thông tin từ bạn!
           </p>
           <div className="job-apply-contacts flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-8 mb-8">
             <a
               href={applyMailHref}
-              className="job-apply-email inline-flex items-center gap-2 text-base font-medium text-foreground hover:text-primary transition-colors cursor-pointer"
+              className="job-apply-email inline-flex items-center gap-2 text-lg font-medium text-foreground hover:text-primary transition-colors cursor-pointer"
             >
               <MailIcon className="w-5 h-5 text-primary" />
               {hrContact.email}
             </a>
             <a
               href={hrContact.phoneHref}
-              className="job-apply-phone inline-flex items-center gap-2 text-base font-medium text-foreground hover:text-primary transition-colors cursor-pointer"
+              className="job-apply-phone inline-flex items-center gap-2 text-lg font-medium text-foreground hover:text-primary transition-colors cursor-pointer"
             >
               <PhoneIcon className="w-5 h-5 text-primary" />
               {hrContact.phone}
@@ -51,7 +51,7 @@ export default function JobApplyCTA({ job }: { job: JobListing }) {
           </div>
           <a
             href={applyMailHref}
-            className="job-apply-button inline-flex items-center justify-center rounded-lg bg-primary px-8 py-4 text-base font-semibold text-primary-foreground transition-colors hover:bg-primary-hover cursor-pointer"
+            className="job-apply-button inline-flex items-center justify-center rounded-lg bg-foreground px-8 py-4 text-lg font-semibold text-background transition-colors hover:bg-foreground/90 cursor-pointer"
           >
             Ứng tuyển ngay
           </a>

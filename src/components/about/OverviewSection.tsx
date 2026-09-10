@@ -27,13 +27,13 @@ export default function OverviewSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="overview-grid grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           <div className="overview-content">
-            <span className="overview-label inline-block text-xs font-semibold uppercase tracking-widest text-primary mb-4">
+            <span className="overview-label inline-block text-sm font-semibold uppercase tracking-widest text-primary mb-4">
               Tổng quan
             </span>
-            <h2 className="overview-title text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground leading-tight mb-6">
+            <h2 className="overview-title text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-6">
               Doanh nghiệp phụ tùng ô tô giá trị của Việt Nam
             </h2>
-            <div className="overview-text space-y-4 text-muted-foreground text-lg leading-relaxed">
+            <div className="overview-text space-y-4 text-muted-foreground text-xl leading-relaxed">
               <p>
                 <strong className="text-foreground">Công ty TNHH Cơ khí Ô tô An Thái</strong> (An Thai Automotive
                 Engineering Co., Ltd.) là doanh nghiệp có giá trị trong lĩnh vực sản xuất và phân phối phụ tùng ô tô
@@ -48,12 +48,12 @@ export default function OverviewSection() {
               </p>
             </div>
             <div className="partner-logos flex flex-wrap items-center gap-6 mt-8 pt-8 border-t border-border">
-              <span className="text-sm text-muted-foreground">Đối tác chiến lược:</span>
+              <span className="text-base text-muted-foreground">Đối tác chiến lược:</span>
               <div className="flex flex-wrap gap-4">
                 {['Foton', 'Weichai', 'Yuchai', 'Sinotruk', 'Createk'].map((name) => (
                   <span
                     key={name}
-                    className="px-3 py-1.5 bg-background border border-border rounded-md text-sm font-medium text-foreground"
+                    className="px-3 py-1.5 bg-background border border-border rounded-md text-base font-medium text-foreground"
                   >
                     {name}
                   </span>
@@ -82,8 +82,8 @@ export default function OverviewSection() {
                   </svg>
                 </div>
                 <div>
-                  <span className="block text-2xl font-bold text-foreground">30,000+</span>
-                  <span className="text-sm text-muted-foreground">Mã phụ tùng có sẵn</span>
+                  <span className="block text-3xl font-bold text-foreground">30,000+</span>
+                  <span className="text-base text-muted-foreground">Mã phụ tùng có sẵn</span>
                 </div>
               </div>
             </div>

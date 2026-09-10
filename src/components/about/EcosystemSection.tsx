@@ -34,13 +34,13 @@ export default function EcosystemSection() {
     <section ref={sectionRef} className="ecosystem-section py-24 lg:py-32 bg-background" id="he-sinh-thai">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="ecosystem-header text-center max-w-3xl mx-auto mb-16 lg:mb-20">
-          <span className="ecosystem-label inline-block text-xs font-semibold uppercase tracking-widest text-primary mb-4">
+          <span className="ecosystem-label inline-block text-sm font-semibold uppercase tracking-widest text-primary mb-4">
             Hệ sinh thái
           </span>
-          <h2 className="ecosystem-title text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-6">
+          <h2 className="ecosystem-title text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6">
             5 trụ cột kinh doanh
           </h2>
-          <p className="ecosystem-subtitle text-muted-foreground text-lg">
+          <p className="ecosystem-subtitle text-muted-foreground text-xl">
             Một hệ sinh thái hoàn chỉnh, phục vụ toàn bộ vòng đời của phương tiện — từ linh kiện đến dịch vụ hậu mãi.
           </p>
         </div>
@@ -59,8 +59,8 @@ export default function EcosystemSection() {
                     </svg>
                   </div>
                   <div>
-                    <span className="card-number text-xs font-bold text-white/80 mb-2 block">{card.number}</span>
-                    <h3 className="card-title text-xl font-bold text-white mb-3">{card.title}</h3>
+                    <span className="card-number text-sm font-bold text-white/80 mb-2 block">{card.number}</span>
+                    <h3 className="card-title text-2xl font-bold text-white mb-3">{card.title}</h3>
                     <p className="card-text text-white/90 leading-relaxed">{card.description}</p>
                   </div>
                 </div>
@@ -84,8 +84,8 @@ export default function EcosystemSection() {
                     )}
                   </svg>
                 </div>
-                <span className="card-number text-xs font-bold text-primary mb-2 block">{card.number}</span>
-                <h3 className="card-title text-xl font-bold text-foreground mb-3">{card.title}</h3>
+                <span className="card-number text-sm font-bold text-primary mb-2 block">{card.number}</span>
+                <h3 className="card-title text-2xl font-bold text-foreground mb-3">{card.title}</h3>
                 <p className="card-text text-muted-foreground leading-relaxed">{card.description}</p>
               </div>
             )

@@ -58,13 +58,13 @@ export default function FeaturedProduct() {
       <div className="featured-product-container relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="featured-product-grid grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
           <div className="featured-product-content lg:col-span-7">
-            <p className="featured-product-eyebrow inline-flex items-center px-3 py-1 rounded-full bg-primary-foreground/15 text-primary-foreground text-sm font-semibold uppercase tracking-widest mb-5">
+            <p className="featured-product-eyebrow inline-flex items-center px-3 py-1 rounded-full bg-primary-foreground/15 text-primary-foreground text-base font-semibold uppercase tracking-widest mb-5">
               Sản phẩm chủ lực
             </p>
-            <h2 className="featured-product-title text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-5">
+            <h2 className="featured-product-title text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-5">
               Trải nghiệm tăm bua chất lượng quốc tế
             </h2>
-            {/* <p className="featured-product-description text-primary-foreground/90 text-lg leading-relaxed mb-8 max-w-2xl">
+            {/* <p className="featured-product-description text-primary-foreground/90 text-xl leading-relaxed mb-8 max-w-2xl">
               Tang trống phanh được sản xuất trên dây chuyền đúc tự động và gia công CNC, đáp ứng tiêu chuẩn xuất
               khẩu cho các dòng xe tải Mỹ, Nhật Bản và Trung Quốc.
             </p> */}
@@ -75,8 +75,8 @@ export default function FeaturedProduct() {
                   key={item.label}
                   className="featured-product-highlight-item rounded-xl border border-primary-foreground/20 bg-primary-foreground/10 px-3 py-4 sm:px-4 text-center"
                 >
-                  <p className="featured-product-highlight-value text-xl sm:text-2xl font-bold">{item.value}</p>
-                  <p className="featured-product-highlight-label mt-1 text-xs sm:text-sm text-primary-foreground/80 leading-snug">
+                  <p className="featured-product-highlight-value text-2xl sm:text-3xl font-bold">{item.value}</p>
+                  <p className="featured-product-highlight-label mt-1 text-sm sm:text-base text-primary-foreground/80 leading-snug">
                     {item.label}
                   </p>
                 </li>
@@ -86,14 +86,14 @@ export default function FeaturedProduct() {
             <div className="featured-product-actions flex flex-col sm:flex-row gap-4">
               <a
                 href="/tam-bua-an-thai"
-                className="featured-product-cta-primary group inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-semibold text-primary bg-background rounded-lg transition-all duration-300 cursor-pointer hover:bg-accent hover:text-accent-foreground hover:-translate-y-0.5 hover:shadow-lg"
+                className="featured-product-cta-primary group inline-flex items-center justify-center gap-2 px-8 py-4 text-lg font-semibold text-primary bg-background rounded-lg transition-all duration-300 cursor-pointer hover:bg-accent hover:text-accent-foreground hover:-translate-y-0.5 hover:shadow-lg"
               >
                 Xem thêm
                 <ArrowRight className="featured-product-cta-icon w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
               </a>
               <a
                 href="lien-he"
-                className="featured-product-cta-secondary group inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-semibold text-primary-foreground border-2 border-primary-foreground/40 bg-transparent rounded-lg transition-all duration-300 cursor-pointer hover:bg-primary-foreground hover:text-primary hover:border-primary-foreground hover:-translate-y-0.5 hover:shadow-lg"
+                className="featured-product-cta-secondary group inline-flex items-center justify-center gap-2 px-8 py-4 text-lg font-semibold text-primary-foreground border-2 border-primary-foreground/40 bg-transparent rounded-lg transition-all duration-300 cursor-pointer hover:bg-primary-foreground hover:text-primary hover:border-primary-foreground hover:-translate-y-0.5 hover:shadow-lg"
               >
                 Liên hệ / Báo giá
                 <ArrowRight className="featured-product-cta-icon w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
@@ -110,7 +110,7 @@ export default function FeaturedProduct() {
                 className="featured-product-image h-64 sm:h-80 lg:h-88 w-full object-cover"
               />
               {/* <div className="featured-product-image-overlay absolute inset-0 bg-linear-to-t from-primary/80 via-primary/20 to-transparent" />
-              <p className="featured-product-badge absolute bottom-5 left-5 right-5 text-sm sm:text-base font-bold uppercase tracking-widest">
+              <p className="featured-product-badge absolute bottom-5 left-5 right-5 text-base sm:text-lg font-bold uppercase tracking-widest">
                 Made in Vietnam
               </p> */}
             </div>

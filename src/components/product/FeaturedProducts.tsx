@@ -96,11 +96,11 @@ export default function FeaturedProducts() {
         <header className="featured-products-header">
           <h2
             id="featured-products-heading"
-            className="featured-products-title mt-4 text-3xl font-extrabold tracking-normal text-white uppercase text-balance sm:text-4xl lg:text-5xl"
+            className="featured-products-title mt-4 text-4xl font-extrabold tracking-normal text-white uppercase text-balance sm:text-5xl lg:text-6xl"
           >
             Tăm bua An Thái
           </h2>
-          <p className="featured-products-subtitle mt-4 text-base leading-relaxed text-white/70 sm:text-lg">
+          <p className="featured-products-subtitle mt-4 text-lg leading-relaxed text-white/70 sm:text-xl">
             100% sản xuất tại Việt Nam — chọn từng dòng tăm bua để xem hình ảnh chi tiết,
             mỗi sản phẩm được thiết kế riêng cho từng dòng xe tải.
           </p>
@@ -138,7 +138,7 @@ export default function FeaturedProducts() {
                 className="featured-products-scrim pointer-events-none absolute inset-0 z-55"
                 aria-hidden="true"
               />
-              <span className="featured-products-index absolute right-5 top-5 z-60 font-mono text-base font-semibold tracking-widest text-white/80">
+              <span className="featured-products-index absolute right-5 top-5 z-60 font-mono text-lg font-semibold tracking-widest text-white/80">
                 {String(activeIndex + 1).padStart(2, '0')} / {String(featuredProducts.length).padStart(2, '0')}
               </span>
 
@@ -163,14 +163,14 @@ export default function FeaturedProducts() {
 
               <div className="featured-products-caption absolute inset-x-5 bottom-5 z-60 flex items-end justify-between gap-4">
                 <div>
-                  <p className="featured-products-caption-code font-mono text-base font-semibold uppercase tracking-wider text-red-400">
+                  <p className="featured-products-caption-code font-mono text-lg font-semibold uppercase tracking-wider text-red-400">
                     {active?.code}
                   </p>
-                  <p className="featured-products-caption-name mt-1 text-lg sm:text-xl 2xl:text-2xl font-bold text-white">
+                  <p className="featured-products-caption-name mt-1 text-xl sm:text-2xl 2xl:text-3xl font-bold text-white">
                     {active?.name}
                   </p>
                 </div>
-                <span className="featured-products-caption-weight shrink-0 rounded-full bg-white/15 px-3 py-1 font-mono text-base font-semibold text-white backdrop-blur-sm">
+                <span className="featured-products-caption-weight shrink-0 rounded-full bg-white/15 px-3 py-1 font-mono text-lg font-semibold text-white backdrop-blur-sm">
                   {active?.weight}
                 </span>
               </div>
@@ -190,7 +190,7 @@ export default function FeaturedProducts() {
                     className="featured-products-trigger group flex w-full items-start gap-5 py-6 text-left cursor-pointer"
                   >
                     <span
-                      className={`featured-products-number mt-1 font-mono text-base font-semibold tabular-nums transition-colors duration-300 ${
+                      className={`featured-products-number mt-1 font-mono text-lg font-semibold tabular-nums transition-colors duration-300 ${
                         isActive ? 'text-red-400' : 'text-white/30 group-hover:text-white/50'
                       }`}
                     >
@@ -208,18 +208,18 @@ export default function FeaturedProducts() {
                     <span className="featured-products-content min-w-0 flex-1">
                       <span className="featured-products-item-head flex items-baseline justify-between gap-3">
                         <span
-                          className={`featured-products-name text-xl font-bold tracking-tight transition-colors duration-300 sm:text-2xl ${
+                          className={`featured-products-name text-2xl font-bold tracking-tight transition-colors duration-300 sm:text-3xl ${
                             isActive ? 'text-white' : 'text-white/50 group-hover:text-white/80'
                           }`}
                         >
                           {product.name}
                         </span>
-                        <span className="featured-products-code shrink-0 font-mono text-base font-semibold uppercase tracking-wider text-red-400">
+                        <span className="featured-products-code shrink-0 font-mono text-lg font-semibold uppercase tracking-wider text-red-400">
                           {product.code}
                         </span>
                       </span>
 
-                      <span className="featured-products-meta mt-1.5 block font-mono text-base uppercase tracking-wide text-white/50">
+                      <span className="featured-products-meta mt-1.5 block font-mono text-lg uppercase tracking-wide text-white/50">
                         {product.vehicle} · {product.weight}
                       </span>
 
@@ -232,10 +232,10 @@ export default function FeaturedProducts() {
                             exit={{ height: 0, opacity: 0 }}
                             transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
                           >
-                            <span className="featured-products-desc mt-3 block max-w-md text-base leading-relaxed text-white">
+                            <span className="featured-products-desc mt-3 block max-w-md text-lg leading-relaxed text-white">
                               {product.description}
                             </span>
-                            <span className="featured-products-cta mt-4 inline-flex items-center gap-2 text-base font-semibold text-red-400">
+                            <span className="featured-products-cta mt-4 inline-flex items-center gap-2 text-lg font-semibold text-red-400">
                               Chi tiết sản phẩm
                               <ArrowRight className="h-4 w-4" />
                             </span>
@@ -254,7 +254,7 @@ export default function FeaturedProducts() {
         <div className="featured-products-more mt-14 flex justify-center">
           <Link
             to="/tam-bua-an-thai"
-            className="featured-products-more-button group inline-flex items-center gap-2 rounded-md border border-white/15 px-8 py-3.5 text-base font-semibold text-white transition-colors duration-300 hover:border-primary hover:bg-primary hover:text-primary-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 cursor-pointer"
+            className="featured-products-more-button group inline-flex items-center gap-2 rounded-md border border-white/15 px-8 py-3.5 text-lg font-semibold text-white transition-colors duration-300 hover:border-primary hover:bg-primary hover:text-primary-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 cursor-pointer"
           >
             Xem thêm
             <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />

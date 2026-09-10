@@ -85,7 +85,7 @@ export default function ManufactureStats() {
             <div
               className={`manufacture-stat flex flex-col items-center text-center border-white/25 ${cellDividers[index]}`}
             >
-              <div className="manufacture-stat-value text-5xl  leading-none tracking-tight tabular-nums text-white sm:text-6xl lg:text-7xl">
+              <div className="manufacture-stat-value text-6xl  leading-none tracking-tight tabular-nums text-white sm:text-7xl lg:text-8xl">
                 <span data-count={stat.value}>0</span>
                 {stat.suffix && (
                   <span className="manufacture-stat-suffix">{stat.suffix}</span>
@@ -97,7 +97,7 @@ export default function ManufactureStats() {
                   </span>
                 )}
               </div>
-              <div className="manufacture-stat-label mt-2.5 text-lg sm:text-xl tracking-[0.14em] text-white">
+              <div className="manufacture-stat-label mt-2.5 text-xl sm:text-2xl tracking-[0.14em] text-white">
                 {stat.label}
               </div>
             </div>

@@ -58,19 +58,19 @@ export default function FactorySection() {
             </div>
           </div>
           <div className="factory-content order-1 lg:order-2">
-            <h2 className="factory-title text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-6">
+            <h2 className="factory-title text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6">
               Nhà máy của chúng tôi
             </h2>
-            <p className="factory-description text-muted-foreground text-lg leading-relaxed mb-4">
+            <p className="factory-description text-muted-foreground text-xl leading-relaxed mb-4">
               Nhà máy sản xuất tăm bua và Tổ hợp nhà xưởng với diện tích 20.000m², nằm tại vị trí đắc địa gần Hà Nội,
               Hải Phòng, được trang bị công nghệ đúc tự động và máy CNC tiên tiến nhất thế giới với công suất hàng năm
               lên đến hơn 23.000 tấn.
             </p>
-            <p className="factory-description text-muted-foreground text-lg leading-relaxed mb-6">
+            <p className="factory-description text-muted-foreground text-xl leading-relaxed mb-6">
               Sản phẩm tăm bua chủ lực, phục vụ các dòng xe Mỹ, Nhật Bản và Trung Quốc, với công suất lên đến 500.000
               chiếc mỗi năm, đáp ứng nhanh chóng và chính xác các yêu cầu của khách hàng.
             </p>
-            <p className="factory-tagline inline-block px-4 py-2 bg-primary text-primary-foreground text-lg font-bold uppercase tracking-widest rounded-md">
+            <p className="factory-tagline inline-block px-4 py-2 bg-primary text-primary-foreground text-xl font-bold uppercase tracking-widest rounded-md">
               Made in Vietnam
             </p>
           </div>

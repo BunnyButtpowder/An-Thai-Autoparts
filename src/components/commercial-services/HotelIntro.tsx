@@ -32,21 +32,21 @@ export default function HotelIntro() {
     >
       <div className="hotel-intro-container mx-auto grid max-w-7xl grid-cols-1 items-stretch gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:gap-16 lg:px-8">
         <div className="hotel-intro-copy">
-          <p className="hotel-intro-eyebrow-label hotel-intro-reveal text-lg sm:text-xl font-semibold tracking-wide text-red-400 mb-3">
+          <p className="hotel-intro-eyebrow-label hotel-intro-reveal text-xl sm:text-2xl font-semibold tracking-wide text-red-400 mb-3">
             Khách sạn An Thái
           </p>
           <h2
             id="hotel-intro-heading"
-            className="hotel-intro-heading hotel-intro-reveal mb-6 text-3xl font-extrabold leading-tight uppercase tracking-wide text-white sm:text-4xl lg:text-5xl text-balance"
+            className="hotel-intro-heading hotel-intro-reveal mb-6 text-4xl font-extrabold leading-normal uppercase tracking-wide text-white sm:text-5xl text-balance"
           >
             KHÔNG GIAN LƯU TRÚ, HỘI NGHỊ & ẨM THỰC
           </h2>
-          <p className="hotel-intro-text hotel-intro-reveal mb-5 max-w-[56ch] text-lg leading-[1.75] text-white">
+          <p className="hotel-intro-text hotel-intro-reveal mb-5 max-w-[56ch] text-xl leading-[1.75] text-white">
             Tọa lạc tại vị trí trung tâm Thành phố Thái Bình, Khách sạn và Nhà hàng An Thái là
             tổ hợp dịch vụ lưu trú, hội nghị và ẩm thực với quy mô hơn{' '}
-            <b className="text-red-400">5.000m²</b>.
+            5.000m².
           </p>
-          <p className="hotel-intro-text hotel-intro-reveal mb-8 max-w-[56ch] text-lg leading-[1.75] text-white">
+          <p className="hotel-intro-text hotel-intro-reveal mb-8 max-w-[56ch] text-xl leading-[1.75] text-white">
             Không gian được đầu tư đồng bộ cùng chất lượng phục vụ tận tâm, mang đến trải nghiệm
             thuận tiện và thoải mái cho khách hàng trong mọi hành trình công tác, nghỉ dưỡng và tổ
             chức sự kiện.
@@ -58,15 +58,15 @@ export default function HotelIntro() {
                 className={`hotel-intro-stat py-6 ${index < stats.length - 1 ? 'border-r border-white/12 pr-5' : 'pl-5'
                   } ${index > 0 ? 'pl-5' : 'pr-5'}`}
               >
-                <div className="hotel-intro-stat-value text-3xl font-black leading-none tabular-nums text-white sm:text-4xl">
+                <div className="hotel-intro-stat-value text-4xl font-bold leading-none tabular-nums text-white sm:text-3xl">
                   {stat.value}
                   {stat.unit && (
-                    <span className="hotel-intro-stat-unit ml-0.5 text-[0.42em] text-red-400">
+                    <span className="hotel-intro-stat-unit ml-1 text-base">
                       {stat.unit}
                     </span>
                   )}
                 </div>
-                <div className="hotel-intro-stat-label mt-2 font-mono text-[11px] uppercase tracking-widest text-white/60">
+                <div className="hotel-intro-stat-label mt-2 text-base uppercase tracking-wide text-white/60">
                   {stat.label}
                 </div>
               </div>
@@ -76,7 +76,7 @@ export default function HotelIntro() {
 
         <div className="hotel-intro-image relative aspect-4/5 text-white/50 lg:aspect-auto lg:h-full">
           <img
-            src="/home/hotel.jpg"
+            src="/about/hotel-exterior.jpg"
             alt="Khách sạn An Thái"
             className="hotel-intro-photo h-full w-full object-cover rounded-md"
           />

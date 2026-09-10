@@ -34,16 +34,16 @@ export default function InspectionCommitment() {
     <section
       ref={sectionRef}
       id="cam-ket"
-      className="inspection-commitment-section bg-[#0b0c0d] pb-10"
+      className="inspection-commitment-section bg-[#0b0c0d]"
       aria-labelledby="inspection-commitment-heading"
     >
       <div className="inspection-commitment-header mx-auto max-w-7xl px-4 pb-11 sm:px-6 lg:px-8">
-        <div className="inspection-commitment-eyebrow inspection-commitment-reveal mb-3 text-lg sm:text-xl font-semibold tracking-wide text-red-400">
+        <div className="inspection-commitment-eyebrow inspection-commitment-reveal mb-3 text-xl sm:text-2xl font-semibold tracking-wide text-red-400">
           Cam kết
         </div>
         <h2
           id="inspection-commitment-heading"
-          className="inspection-commitment-title inspection-commitment-reveal text-3xl font-extrabold leading-normal uppercase tracking-wide text-white sm:text-4xl text-balance"
+          className="inspection-commitment-title inspection-commitment-reveal text-4xl font-extrabold leading-normal uppercase tracking-wide text-white sm:text-5xl text-balance"
         >
           ĐẶT SỰ MINH BẠCH LÀM NỀN TẢNG
         </h2>
@@ -60,13 +60,13 @@ export default function InspectionCommitment() {
               aria-hidden="true"
             />
             <div className="inspection-commitment-row-inner mx-auto grid max-w-7xl grid-cols-1 items-baseline gap-5 px-4 py-9 transition-[padding] duration-300 group-hover:pl-6 sm:px-6 lg:grid-cols-[96px_340px_1fr] lg:gap-9 lg:px-8">
-              <div className="inspection-commitment-number font-mono text-base font-bold text-red-400">
+              <div className="inspection-commitment-number font-mono text-xl sm:text-2xl font-bold text-red-400">
                 {item.number}
               </div>
-              <h3 className="inspection-commitment-step-title text-2xl font-bold text-white sm:text-[28px]">
+              <h3 className="inspection-commitment-step-title text-3xl font-bold text-white">
                 {item.title}
               </h3>
-              <p className="inspection-commitment-step-text text-[17px] leading-[1.6] text-white">
+              <p className="inspection-commitment-step-text text-xl leading-[1.6] text-white/60">
                 {item.description}
               </p>
             </div>

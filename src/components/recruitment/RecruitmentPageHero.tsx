@@ -21,10 +21,10 @@ export default function RecruitmentPageHero() {
       id="tuyen-dung"
     >
       <div className="recruitment-page-hero-container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-start">
-        <h1 className="recruitment-page-hero-title text-4xl sm:text-5xl lg:text-6xl font-extrabold text-foreground leading-tight uppercase tracking-tight mb-6">
+        <h1 className="recruitment-page-hero-title text-5xl sm:text-6xl lg:text-7xl font-extrabold text-foreground leading-tight uppercase tracking-tight mb-6">
           Tuyển dụng An Thái
         </h1>
-        <p className="recruitment-page-hero-intro text-lg sm:text-xl text-muted-foreground leading-relaxed">
+        <p className="recruitment-page-hero-intro text-xl sm:text-2xl text-muted-foreground leading-relaxed">
           Cùng nhau kiến tạo tương lai. Mỗi cơ hội tại An Thái là một bước tiến để bạn phát triển năng lực, tạo giá trị
           và kiến tạo những thành công lớn hơn
         </p>

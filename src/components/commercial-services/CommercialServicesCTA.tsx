@@ -30,20 +30,23 @@ export default function CommercialServicesCTA() {
       <div className="commercial-services-cta-container relative mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
         <h2
           id="commercial-services-cta-heading"
-          className="commercial-services-cta-heading commercial-services-cta-reveal mb-4 text-3xl font-black uppercase leading-[1.05] text-white sm:text-4xl lg:text-5xl"
+          className="commercial-services-cta-heading commercial-services-cta-reveal mb-4 text-4xl font-black uppercase leading-[1.05] text-white sm:text-5xl lg:text-6xl"
         >
           Liên hệ với chúng tôi
         </h2>
+        <p className="commercial-services-cta-text commercial-services-cta-reveal mb-9 text-2xl text-white/85">
+          An Thái đồng hành cùng doanh nghiệp của bạn với giải pháp phụ tùng toàn diện
+        </p>
         <div className="commercial-services-cta-actions commercial-services-cta-reveal flex flex-wrap justify-center gap-4 mt-10">
           <Link
             to="/lien-he"
-            className="commercial-services-cta-primary inline-flex items-center gap-2 rounded-lg bg-white px-9 py-4 text-base font-bold text-primary transition-colors duration-300 hover:bg-white/90 cursor-pointer"
+            className="commercial-services-cta-primary inline-flex items-center gap-2 rounded-lg bg-white px-9 py-4 text-lg font-bold text-primary transition-colors duration-300 hover:bg-white/90 cursor-pointer"
           >
-            Liên hệ →
+            Liên hệ
           </Link>
           <Link
             to="/gioi-thieu"
-            className="commercial-services-cta-secondary inline-flex items-center gap-2 rounded-lg border-[1.5px] border-white/60 px-9 py-4 text-base font-semibold text-white transition-colors duration-300 hover:border-white hover:bg-white/10 cursor-pointer"
+            className="commercial-services-cta-secondary inline-flex items-center gap-2 rounded-lg border-[1.5px] border-white/60 px-9 py-4 text-lg font-semibold text-white transition-colors duration-300 hover:border-white hover:bg-white/10 cursor-pointer"
           >
             Tìm hiểu thêm về An Thái
           </Link>

@@ -19,7 +19,7 @@ export default function HomeMobileMenu({ isOpen, onClose }: HomeMobileMenuProps)
       <div className="mobile-menu-content overflow-y-auto h-full py-6 px-4">
         {homeMobileNav.map((section) => (
           <div key={section.group} className="mobile-menu-section py-3 border-b border-border">
-            <p className="text-sm font-semibold text-primary mb-2">{section.group}</p>
+            <p className="text-base font-semibold text-primary mb-2">{section.group}</p>
             {section.links.map((link) =>
               link.href.startsWith('/') ? (
                 <Link
@@ -45,7 +45,7 @@ export default function HomeMobileMenu({ isOpen, onClose }: HomeMobileMenuProps)
         ))}
         <a
           href="lien-he"
-          className="request-quote-button-mobile mt-4 flex items-center justify-center px-4 py-3 text-sm font-semibold text-primary-foreground bg-primary rounded-md cursor-pointer"
+          className="request-quote-button-mobile mt-4 flex items-center justify-center px-4 py-3 text-base font-semibold text-background bg-foreground rounded-md cursor-pointer transition-colors hover:bg-foreground/90"
           onClick={onClose}
         >
           Liên hệ / Báo giá

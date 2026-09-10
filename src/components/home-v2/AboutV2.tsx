@@ -46,7 +46,7 @@ const emphasisClass: Record<'brand' | 'strong', string> = {
   strong: 'font-semibold text-foreground',
 }
 
-export default function AboutV2() {
+export default function AboutV2({ hideCta = false }: { hideCta?: boolean } = {}) {
   const [embedSrc, setEmbedSrc] = useState<string | null>(null)
   const videoRef = useRef<HTMLElement>(null)
 
@@ -83,7 +83,7 @@ export default function AboutV2() {
           {/* Text column — clean heading, then the narrative, then the CTA. */}
           <div className="about-v2-copy">
             <div className="about-v2-intro">
-              <p className="about-v2-eyebrow-label text-lg sm:text-xl font-semibold tracking-wide text-primary">
+              <p className="about-v2-eyebrow-label text-xl sm:text-2xl font-semibold tracking-wide text-primary">
                 Về chúng tôi
               </p>
               <h2 id="about-v2-heading" className="mt-2 text-3xl sm:text-4xl uppercase font-extrabold leading-normal tracking-tight text-foreground">
@@ -93,7 +93,7 @@ export default function AboutV2() {
 
             <div className="about-v2-story mt-6 space-y-5">
               {aboutStory.map((paragraph, i) => (
-                <p key={i} className="about-v2-paragraph text-base text-justify leading-relaxed text-foreground sm:text-xl">
+                <p key={i} className="about-v2-paragraph text-lg text-justify leading-relaxed text-foreground sm:text-xl">
                   {paragraph.map((segment, j) => {
                     const text = typeof segment === 'string' ? segment : segment.text
                     const emphasis = typeof segment === 'string' ? undefined : segment.emphasis
@@ -108,15 +108,17 @@ export default function AboutV2() {
               ))}
             </div>
 
-            <div className="mt-8">
-              <Link
-                to="/gioi-thieu"
-                className="hero-v2-cta-primary group inline-flex items-center justify-center gap-2 rounded-md bg-primary px-7 py-3.5 text-base font-semibold text-primary-foreground transition-colors duration-300 hover:bg-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-[#0a0b0d] cursor-pointer"
-              >
-                Khám phá thêm
-                <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-              </Link>
-            </div>
+            {!hideCta && (
+              <div className="mt-8">
+                <Link
+                  to="/gioi-thieu"
+                  className="hero-v2-cta-primary group inline-flex items-center justify-center gap-2 rounded-md bg-foreground px-7 py-3.5 text-lg font-semibold text-background transition-colors duration-300 hover:bg-foreground/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background cursor-pointer"
+                >
+                  Khám phá thêm
+                  <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                </Link>
+              </div>
+            )}
           </div>
 
           {/* Video column — the VTV3 feature, weight-matched to the copy. */}

@@ -75,19 +75,19 @@ export default function DistributionStats() {
       <div className="distribution-stats-container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <h2
           id="distribution-stats-heading"
-          className="distribution-stats-title distribution-stats-reveal mb-9 text-3xl font-extrabold leading-[1.1] uppercase tracking-tight text-white sm:text-4xl lg:text-5xl"
+          className="distribution-stats-title distribution-stats-reveal mb-9 text-4xl font-extrabold leading-[1.1] uppercase tracking-wide text-white sm:text-5xl lg:text-6xl"
         >
           Phân phối phụ tùng toàn quốc
         </h2>
-        <div className="distribution-stats-grid grid grid-cols-2 gap-y-10 lg:flex lg:items-stretch lg:gap-y-0">
+        <div className="distribution-stats-grid grid grid-cols-2 gap-y-10 lg:flex lg:items-stretch lg:justify-between lg:gap-y-0">
           {stats.map((stat, index) => (
             <div key={stat.label} className="distribution-stat-group contents">
-              <div className="distribution-stat lg:flex-1 lg:px-10">
-                <div className="distribution-stat-value text-4xl font-black leading-none tabular-nums text-white sm:text-5xl lg:text-7xl">
+              <div className="distribution-stat">
+                <div className="distribution-stat-value text-5xl font-black leading-none tabular-nums text-white sm:text-6xl lg:text-8xl">
                   <span data-count={stat.value}>0</span>
                   {stat.suffix}
                 </div>
-                <div className="distribution-stat-label mt-2.5 font-mono text-sm sm:text-base uppercase tracking-widest text-white">
+                <div className="distribution-stat-label mt-2.5 text-base sm:text-lg uppercase tracking-widest text-white">
                   {stat.label}
                 </div>
               </div>

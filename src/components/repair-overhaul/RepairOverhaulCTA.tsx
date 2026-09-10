@@ -30,23 +30,23 @@ export default function RepairOverhaulCTA() {
       <div className="repair-overhaul-cta-container relative mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
         <h2
           id="repair-overhaul-cta-heading"
-          className="repair-overhaul-cta-heading repair-overhaul-cta-reveal mb-4 text-3xl font-black uppercase leading-[1.05] text-white sm:text-4xl lg:text-5xl"
+          className="repair-overhaul-cta-heading repair-overhaul-cta-reveal mb-4 text-4xl font-black uppercase leading-[1.05] text-white sm:text-5xl lg:text-6xl"
         >
           Liên hệ với chúng tôi
         </h2>
-        <p className="repair-overhaul-cta-text repair-overhaul-cta-reveal mb-9 text-xl text-white/85">
+        <p className="repair-overhaul-cta-text repair-overhaul-cta-reveal mb-9 text-2xl text-white/85">
           Đội ngũ kỹ thuật An Thái sẵn sàng tư vấn giải pháp sửa chữa và đại tu cho xe của bạn.
         </p>
         <div className="repair-overhaul-cta-actions repair-overhaul-cta-reveal flex flex-wrap justify-center gap-4">
           <Link
             to="/lien-he"
-            className="repair-overhaul-cta-primary inline-flex items-center gap-2 rounded-lg bg-white px-9 py-4 text-base font-bold text-primary transition-colors duration-300 hover:bg-white/90 cursor-pointer"
+            className="repair-overhaul-cta-primary inline-flex items-center gap-2 rounded-lg bg-white px-9 py-4 text-lg font-bold text-primary transition-colors duration-300 hover:bg-white/90 cursor-pointer"
           >
             Liên hệ →
           </Link>
           <Link
             to="/gioi-thieu"
-            className="repair-overhaul-cta-secondary inline-flex items-center gap-2 rounded-lg border-[1.5px] border-white/60 px-9 py-4 text-base font-semibold text-white transition-colors duration-300 hover:border-white hover:bg-white/10 cursor-pointer"
+            className="repair-overhaul-cta-secondary inline-flex items-center gap-2 rounded-lg border-[1.5px] border-white/60 px-9 py-4 text-lg font-semibold text-white transition-colors duration-300 hover:border-white hover:bg-white/10 cursor-pointer"
           >
             Tìm hiểu thêm về An Thái
           </Link>

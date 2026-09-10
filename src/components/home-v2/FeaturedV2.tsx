@@ -43,7 +43,7 @@ export default function FeaturedV2() {
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
           <div className="featured-v2-content lg:col-span-6">
-            <p className="featured-product-eyebrow featured-v2-reveal inline-flex text-red-400 text-lg sm:text-xl font-semibold tracking-wide">
+            <p className="featured-product-eyebrow featured-v2-reveal inline-flex text-red-400 text-xl sm:text-2xl font-semibold tracking-wide">
               Sản phẩm chủ lực
             </p>
             <h2 id="featured-v2-heading" className="featured-v2-reveal mt-4 text-balance text-3xl font-extrabold uppercase leading-tight tracking-tight sm:text-4xl">
@@ -52,42 +52,42 @@ export default function FeaturedV2() {
             <div className="featured-v2-reveal mt-9 featured-product-actions flex flex-col sm:flex-row gap-4">
               <a
                 href="/tam-bua-an-thai"
-                className="featured-product-cta-primary group inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-semibold text-white bg-primary rounded-lg transition-all duration-300 cursor-pointer hover:bg-primary-hover hover:-translate-y-0.5 hover:shadow-lg hover:shadow-primary/30"
+                className="featured-product-cta-primary group inline-flex items-center justify-center gap-2 px-8 py-3 text-lg font-semibold text-foreground bg-background rounded-lg transition-all duration-300 cursor-pointer hover:bg-background/90 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-black/30"
               >
                 Xem thêm
                 <ArrowRight className="featured-product-cta-icon w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
               </a>
               <a
                 href="lien-he"
-                className="featured-product-cta-secondary group inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-semibold text-white border-2 border-white/25 bg-transparent rounded-lg transition-all duration-300 cursor-pointer hover:bg-white hover:text-foreground hover:border-white hover:-translate-y-0.5 hover:shadow-lg"
+                className="featured-product-cta-secondary group inline-flex items-center justify-center gap-2 px-8 py-3 text-lg font-semibold text-white border-2 border-white/25 bg-transparent rounded-lg transition-all duration-300 cursor-pointer hover:bg-white hover:text-foreground hover:border-white hover:-translate-y-0.5 hover:shadow-lg"
               >
                 Liên hệ / Báo giá
                 <ArrowRight className="featured-product-cta-icon w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
               </a>
             </div>
 
-            <dl className="featured-v2-reveal featured-product-specs mt-10 grid grid-cols-3 gap-6 border-t border-white/10 pt-8">
-              <div className="featured-product-spec">
-                <dt className="featured-product-spec-value text-xl font-bold leading-tight sm:text-2xl">
+            <dl className="featured-v2-reveal featured-product-specs mt-10 flex flex-wrap items-start gap-x-23 gap-y-6 border-t border-white/10 pt-8">
+              <div className="featured-product-spec text-left">
+                <dt className="featured-product-spec-value text-2xl font-bold leading-tight sm:text-3xl">
                   FMVSS-121
                 </dt>
-                <dd className="featured-product-spec-label mt-1 text-sm font-medium uppercase tracking-wide text-white/60">
+                <dd className="featured-product-spec-label mt-1 text-base font-medium uppercase tracking-wide text-white/60">
                   Tiêu chuẩn phanh
                 </dd>
               </div>
-              <div className="featured-product-spec mx-auto">
-                <dt className="featured-product-spec-value text-xl font-bold leading-tight sm:text-2xl">
+              <div className="featured-product-spec text-left">
+                <dt className="featured-product-spec-value text-2xl font-bold leading-tight sm:text-3xl">
                   G3500
                 </dt>
-                <dd className="featured-product-spec-label mt-1 text-sm font-medium uppercase tracking-wide text-white/60">
+                <dd className="featured-product-spec-label mt-1 text-base font-medium uppercase tracking-wide text-white/60">
                   Gang xám
                 </dd>
               </div>
-              <div className="featured-product-spec">
-                <dt className="featured-product-spec-value text-xl font-bold leading-tight sm:text-2xl">
+              <div className="featured-product-spec text-left">
+                <dt className="featured-product-spec-value text-2xl font-bold leading-tight sm:text-3xl">
                   100%
                 </dt>
-                <dd className="featured-product-spec-label mt-1 text-sm font-medium uppercase tracking-wide text-white/60">
+                <dd className="featured-product-spec-label mt-1 text-base font-medium uppercase tracking-wide text-white/60">
                   Truy xuất nguồn gốc
                 </dd>
               </div>

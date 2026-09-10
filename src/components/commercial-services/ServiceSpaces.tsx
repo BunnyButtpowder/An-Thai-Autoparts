@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { AnimatePresence, motion } from 'motion/react'
 import useReveal from '../../hooks/useReveal'
 
@@ -19,13 +19,13 @@ const spaces: ServiceSpace[] = [
     description: (
       <>
         Khách sạn được thiết kế theo phong cách kiến trúc châu Âu với{' '}
-        <b className="text-red-400">39 phòng nghỉ</b>, bao gồm <b className="text-red-400">6 phòng VIP</b>.
+        39 phòng nghỉ, bao gồm 6 phòng VIP.
         Không gian sang trọng, sạch sẽ và đầy đủ tiện nghi mang đến trải nghiệm lưu trú thoải mái
         cho khách hàng.
       </>
     ),
     tags: ['39 PHÒNG NGHỈ', '06 PHÒNG VIP', 'KIẾN TRÚC CHÂU ÂU'],
-    image: '/home/hotel.jpg',
+    image: '/about/lobby.jpg',
     imageAlt: 'Sảnh chờ và phòng nghỉ Khách sạn An Thái',
   },
   {
@@ -33,13 +33,13 @@ const spaces: ServiceSpace[] = [
     title: 'Phòng hội nghị',
     description: (
       <>
-        Với sức chứa hơn <b className="text-red-400">300 khách</b>, phòng hội nghị An Thái được trang
+        Với sức chứa hơn 300 khách, phòng hội nghị An Thái được trang
         bị hệ thống âm thanh, ánh sáng hiện đại, đáp ứng nhu cầu tổ chức hội nghị, hội thảo, gặp mặt
         doanh nghiệp và các sự kiện quan trọng.
       </>
     ),
     tags: ['300+ KHÁCH', 'ÂM THANH · ÁNH SÁNG', 'HỘI THẢO · SỰ KIỆN'],
-    image: '/home/hotel.jpg',
+    image: '/about/meeting-room.jpg',
     imageAlt: 'Phòng hội nghị Khách sạn An Thái',
   },
   {
@@ -48,12 +48,12 @@ const spaces: ServiceSpace[] = [
     anchorId: 'nha-hang',
     description: (
       <>
-        Không gian ẩm thực sang trọng với thực đơn đa dạng <b className="text-red-400">Á – Âu</b>,
+        Không gian ẩm thực sang trọng với thực đơn đa dạng Á – Âu,
         phục vụ các buổi gặp gỡ, liên hoan và tiệc chiêu đãi.
       </>
     ),
     tags: ['THỰC ĐƠN Á – ÂU', 'TIỆC CHIÊU ĐÃI', 'LIÊN HOAN'],
-    image: '/home/hotel.jpg',
+    image: '/about/restaurant.jpg',
     imageAlt: 'Nhà hàng An Thái',
   },
 ]
@@ -63,6 +63,15 @@ const spaces: ServiceSpace[] = [
 // others, echoing the interactive "Không gian dịch vụ" panel of the handoff.
 export default function ServiceSpaces() {
   const [openIndex, setOpenIndex] = useState(0)
+
+  // Auto-advance to the next space every 10 seconds. Depending on openIndex means
+  // each manual click also resets the countdown, so the timer never fights the user.
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setOpenIndex((current) => (current + 1) % spaces.length)
+    }, 10000)
+    return () => clearTimeout(timer)
+  }, [openIndex])
 
   const sectionRef = useReveal<HTMLElement>((g, root) => {
     g.set('.service-spaces-reveal', { y: 32, opacity: 0 })
@@ -80,12 +89,12 @@ export default function ServiceSpaces() {
       <div className="service-spaces-container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="service-spaces-header mb-12 flex flex-wrap items-end justify-between gap-6">
           <div>
-            <p className="service-spaces-eyebrow service-spaces-reveal mb-4 text-lg sm:text-xl font-semibold tracking-wide text-red-400">
+            <p className="service-spaces-eyebrow service-spaces-reveal mb-4 text-xl sm:text-2xl font-semibold tracking-wide text-red-400">
               Không gian dịch vụ
             </p>
             <h2
               id="service-spaces-heading"
-              className="service-spaces-title service-spaces-reveal text-3xl font-extrabold uppercase leading-[1.06] text-white sm:text-4xl lg:text-5xl"
+              className="service-spaces-title service-spaces-reveal text-4xl font-extrabold uppercase leading-normal tracking-wide text-white sm:text-5xl"
             >
               Ba không gian, một tiêu chuẩn phục vụ
             </h2>
@@ -106,19 +115,19 @@ export default function ServiceSpaces() {
                   }`}
                 >
                   <span className="service-spaces-summary-label flex items-baseline gap-5">
-                    <span className="service-spaces-summary-number font-mono text-sm sm:text-base font-bold text-red-400">
+                    <span className="service-spaces-summary-number font-mono text-xl sm:text-2xl font-bold text-red-400">
                       {space.number}
                     </span>
                     <span
                       id={space.anchorId}
-                      className="service-spaces-summary-title text-2xl text-white sm:text-3xl font-semibold"
+                      className="service-spaces-summary-title text-3xl text-white font-semibold"
                       style={space.anchorId ? { scrollMarginTop: '120px' } : undefined}
                     >
                       {space.title}
                     </span>
                   </span>
                   <span
-                    className={`service-spaces-plus shrink-0 text-3xl font-light leading-none text-red-400 transition-transform duration-300 ${
+                    className={`service-spaces-plus shrink-0 text-4xl font-light leading-none text-red-400 transition-transform duration-300 ${
                       isOpen ? 'rotate-45' : ''
                     }`}
                     aria-hidden="true"
@@ -137,16 +146,16 @@ export default function ServiceSpaces() {
                       transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
                       className="service-spaces-body-wrapper overflow-hidden"
                     >
-                      <div className="service-spaces-body grid grid-cols-1 items-start gap-11 pb-10 pl-3.5 pt-2 lg:grid-cols-[1fr_0.9fr]">
+                      <div className="service-spaces-body grid grid-cols-1 items-center gap-11 pb-10 pl-3.5 pt-2 lg:grid-cols-[1fr_0.9fr]">
                         <div className="service-spaces-body-copy">
-                          <p className="service-spaces-body-text mb-5.5 max-w-[50ch] text-sm sm:text-lg leading-[1.8] text-white">
+                          <p className="service-spaces-body-text mb-5.5 max-w-[50ch] text-base sm:text-xl leading-[1.8] text-white">
                             {space.description}
                           </p>
                           <div className="service-spaces-tags flex flex-wrap gap-3">
                             {space.tags.map((tag) => (
                               <span
                                 key={tag}
-                                className="service-spaces-tag border border-white/20 px-3.5 py-2 font-mono text-sm sm:text-base font-semibold tracking-[0.08em] text-white"
+                                className="service-spaces-tag border border-white/20 px-3.5 py-2 text-base sm:text-lg font-semibold tracking-[0.08em] text-white"
                               >
                                 {tag}
                               </span>

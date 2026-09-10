@@ -31,23 +31,23 @@ export default function ImportCTA() {
       <div className="import-cta-container relative mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
         <h2
           id="import-cta-heading"
-          className="import-cta-heading import-cta-reveal mb-4 text-3xl font-black uppercase leading-[1.05] text-white sm:text-4xl lg:text-5xl"
+          className="import-cta-heading import-cta-reveal mb-4 text-4xl font-black uppercase leading-[1.05] text-white sm:text-5xl lg:text-6xl tracking-wide"
         >
           Liên hệ với chúng tôi
         </h2>
-        <p className="import-cta-text import-cta-reveal mb-9 text-xl text-white/75">
+        <p className="import-cta-text import-cta-reveal mb-9 text-2xl text-white/75">
           An Thái đồng hành cùng doanh nghiệp của bạn với giải pháp phụ tùng toàn diện.
         </p>
         <div className="import-cta-actions import-cta-reveal flex flex-wrap justify-center gap-4">
           <Link
             to="/lien-he"
-            className="import-cta-primary inline-flex items-center gap-2 rounded-lg bg-primary px-9 py-4 text-base font-bold text-primary-foreground transition-colors duration-300 hover:bg-primary-hover cursor-pointer"
+            className="import-cta-primary inline-flex items-center gap-2 rounded-lg bg-background px-9 py-4 text-lg font-bold text-foreground transition-colors duration-300 hover:bg-background/90 cursor-pointer"
           >
             Liên hệ
           </Link>
           <Link
             to="/gioi-thieu"
-            className="import-cta-secondary inline-flex items-center gap-2 rounded-lg border-[1.5px] border-white/40 px-9 py-4 text-base font-semibold text-white transition-colors duration-300 hover:bg-white/10 cursor-pointer"
+            className="import-cta-secondary inline-flex items-center gap-2 rounded-lg border-[1.5px] border-white/40 px-9 py-4 text-lg font-semibold text-white transition-colors duration-300 hover:bg-white/10 cursor-pointer"
           >
             Tìm hiểu thêm về An Thái
           </Link>

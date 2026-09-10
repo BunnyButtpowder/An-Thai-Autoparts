@@ -110,7 +110,7 @@ export const Card = ({ card }: { card: Card }) => {
     <div className="relative z-10 flex h-80 w-56 flex-col items-start justify-start overflow-hidden rounded-3xl bg-gray-100 md:h-[40rem] md:w-96 dark:bg-neutral-900">
       <div className="pointer-events-none absolute inset-x-0 top-0 z-30 h-full bg-gradient-to-b from-black/50 via-transparent to-transparent" />
       <div className="relative z-40 p-8">
-        <p className="max-w-xs text-left font-sans text-xl font-semibold [text-wrap:balance] text-white md:text-3xl">
+        <p className="max-w-xs text-left font-sans text-2xl font-semibold [text-wrap:balance] text-white md:text-4xl">
           {card.title}
         </p>
       </div>

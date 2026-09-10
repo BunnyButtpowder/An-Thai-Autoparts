@@ -57,7 +57,7 @@ export default function ManufactureHero() {
       >
         <motion.h1
           id="manufacture-hero-heading"
-          className="manufacture-hero-title text-4xl font-extrabold leading-30 tracking-normal uppercase text-white sm:text-6xl lg:text-7xl"
+          className="manufacture-hero-title text-5xl font-extrabold leading-30 tracking-normal uppercase text-white sm:text-7xl lg:text-8xl"
           variants={item}
         >
           Sản xuất phụ tùng ô tô
@@ -68,13 +68,13 @@ export default function ManufactureHero() {
         >
           <a
             href="#nha-may"
-            className="manufacture-hero-cta-primary inline-flex items-center gap-2 rounded-md bg-primary px-7 py-3.5 text-base font-semibold text-primary-foreground transition-colors duration-300 hover:bg-primary-hover cursor-pointer"
+            className="manufacture-hero-cta-primary inline-flex items-center gap-2 rounded-md bg-background px-7 py-3.5 text-lg font-semibold text-foreground transition-colors duration-300 hover:bg-background/90 cursor-pointer"
           >
             Khám phá nhà máy →
           </a>
           <a
             href="#san-pham"
-            className="manufacture-hero-cta-secondary inline-flex items-center gap-2 rounded-md border border-white/30 px-7 py-3.5 text-base font-semibold text-white transition-colors duration-300 hover:border-white hover:bg-white/10 cursor-pointer"
+            className="manufacture-hero-cta-secondary inline-flex items-center gap-2 rounded-md border border-white/30 px-7 py-3.5 text-lg font-semibold text-white transition-colors duration-300 hover:border-white hover:bg-white/10 cursor-pointer"
           >
             Xem sản phẩm
           </a>

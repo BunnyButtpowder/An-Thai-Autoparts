@@ -58,17 +58,17 @@ export default function WorkshopIntro() {
     >
       <div className="workshop-intro-container mx-auto grid max-w-7xl grid-cols-1 items-stretch gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:gap-16 lg:px-8">
         <div className="workshop-intro-copy">
-          <p className="workshop-intro-eyebrow-label workshop-intro-reveal text-lg sm:text-xl font-semibold tracking-wide text-red-400 mb-3">
+          <p className="workshop-intro-eyebrow-label workshop-intro-reveal text-xl sm:text-2xl font-semibold tracking-wide text-red-400 mb-3">
             Xưởng sửa chữa ô tô An Thái
           </p>
           <h2
             id="workshop-intro-heading"
-            className="workshop-intro-heading workshop-intro-reveal mb-6 text-3xl font-extrabold leading-tight uppercase tracking-wide text-white sm:text-4xl"
+            className="workshop-intro-heading workshop-intro-reveal mb-6 text-4xl font-extrabold leading-tight uppercase tracking-wide text-white sm:text-5xl"
           >
             TRUNG TÂM 5S TIÊU CHUẨN
           </h2>
-          <p className="workshop-intro-text workshop-intro-reveal mb-7 max-w-[56ch] text-lg sm:text-xl leading-[1.7] text-white/80">
-            Với tổng diện tích <b className="text-red-400">2.500m²</b>, trung tâm được vận
+          <p className="workshop-intro-text workshop-intro-reveal mb-7 max-w-[56ch] text-xl sm:text-2xl leading-[1.7] text-white/80">
+            Với tổng diện tích 2.500m², trung tâm được vận
             hành theo tiêu chuẩn 5S cùng quy trình khép kín, đáp ứng đầy đủ các hạng mục sửa
             chữa và đại tu.
           </p>
@@ -76,7 +76,7 @@ export default function WorkshopIntro() {
             {tags.map((tag) => (
               <span
                 key={tag}
-                className="workshop-intro-tag rounded-md border border-white/20 px-4 py-2.5 font-mono text-[13px] font-semibold tracking-[0.08em] text-white"
+                className="workshop-intro-tag rounded-md border border-white/20 px-4 py-2.5 text-base font-semibold tracking-widest text-white"
               >
                 {tag}
               </span>
@@ -84,18 +84,18 @@ export default function WorkshopIntro() {
           </div>
           <div className="workshop-intro-stats workshop-intro-reveal grid grid-cols-2 border-t border-white/12">
             <div className="workshop-intro-stat border-r border-white/12 py-6 pr-6">
-              <div className="workshop-intro-stat-value text-3xl font-black leading-none tabular-nums text-white sm:text-4xl lg:text-5xl">
+              <div className="workshop-intro-stat-value text-4xl font-bold leading-none tabular-nums text-white sm:text-3xl">
                 <span ref={countRef} data-count="2500">0</span>
               </div>
-              <div className="workshop-intro-stat-label mt-2 font-mono text-base uppercase tracking-widest text-white/60">
+              <div className="workshop-intro-stat-label mt-2 text-base uppercase tracking-wide text-white/60">
                 m² tổng diện tích
               </div>
             </div>
             <div className="workshop-intro-stat py-6 pl-6">
-              <div className="workshop-intro-stat-value text-3xl font-black leading-none tabular-nums text-white sm:text-4xl lg:text-5xl">
+              <div className="workshop-intro-stat-value text-4xl font-bold leading-none tabular-nums text-white sm:text-3xl">
                 5S
               </div>
-              <div className="workshop-intro-stat-label mt-2 font-mono text-base uppercase tracking-widest text-white/60">
+              <div className="workshop-intro-stat-label mt-2 text-base uppercase tracking-wide text-white/60">
                 Tiêu chuẩn vận hành
               </div>
             </div>

@@ -28,16 +28,16 @@ export default function FactoryIntro() {
         </div>
 
         <div className="factory-intro-copy">
-          <div className="factory-intro-eyebrow factory-intro-reveal mb-3 text-lg sm:text-xl font-semibold tracking-wide text-red-400">
+          <div className="factory-intro-eyebrow factory-intro-reveal mb-3 text-xl sm:text-2xl font-semibold tracking-wide text-red-400">
             Nhà máy An Thái
           </div>
           <h2
             id="factory-intro-heading"
-            className="factory-intro-heading factory-intro-reveal mb-6 text-3xl font-extrabold leading-15 tracking-normal text-white sm:text-4xl lg:text-5xl"
+            className="factory-intro-heading factory-intro-reveal mb-6 text-4xl font-extrabold leading-15 tracking-normal text-white sm:text-5xl lg:text-6xl"
           >
             TIÊN PHONG SẢN XUẤT TĂM BUA XE TẢI
           </h2>
-          <p className="factory-intro-text factory-intro-reveal text-lg leading-[1.75] text-white/70">
+          <p className="factory-intro-text factory-intro-reveal text-xl leading-[1.75] text-white/70">
           Tọa lạc tại vị trí chiến lược kết nối Hà Nội - Hải Phòng, Nhà máy sản xuất tăm bua An Thái được đầu tư đồng bộ về công nghệ, thiết bị và vận hành; đáp ứng nhu cầu thị trường với năng lực sản xuất quy mô lớn, chất lượng ổn định và nguồn cung bền vững.
           </p>
         </div>

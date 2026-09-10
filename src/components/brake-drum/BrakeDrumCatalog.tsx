@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import useReveal from '../../hooks/useReveal'
 
 interface BrakeProduct {
@@ -50,50 +51,62 @@ export default function BrakeDrumCatalog() {
   const visible =
     market === 'Tất cả' ? PRODUCTS : PRODUCTS.filter((p) => p.market === market.toUpperCase())
 
+  // Changing the filter grows/shrinks the grid, which shifts every section
+  // below it. ScrollTrigger caches start/end positions at creation, so those
+  // reveals would otherwise fire (or fail to fire) at stale scroll offsets.
+  // Recompute all trigger positions once the new list has been laid out.
+  useEffect(() => {
+    const raf = requestAnimationFrame(() => ScrollTrigger.refresh())
+    return () => cancelAnimationFrame(raf)
+  }, [market])
+
   return (
     <section ref={ref} id="danh-muc" className="brake-catalog-section bg-[#0b0a09] pt-10">
       <div className="brake-catalog-inner mx-auto max-w-7xl px-6 sm:px-10">
         <h2
-          className="brake-catalog-title brake-reveal m-0 font-extrabold text-3xl sm:text-4xl lg:text-5xl uppercase leading-none tracking-[-0.015em] text-white"
+          className="brake-catalog-title brake-reveal m-0 font-extrabold text-4xl sm:text-5xl lg:text-6xl uppercase leading-none tracking-[-0.015em] text-white"
         >
           Danh mục tăm bua
         </h2>
-        <p className="brake-catalog-lead brake-reveal mt-6 mb-16 max-w-none text-xl leading-[1.7] text-pretty text-white/70">
-          Khám phá danh mục phụ tùng chất lượng cao — nơi hội tụ những sản phẩm bền bỉ, ổn định và
+        <p className="brake-catalog-lead brake-reveal mt-6 mb-16 max-w-none text-2xl leading-[1.7] text-pretty text-white/70">
+          Khám phá danh mục phụ tùng chất lượng cao - nơi hội tụ những sản phẩm bền bỉ, ổn định và
           đáp ứng đa dạng các dòng xe thương mại từ Trung Quốc, Mỹ đến Nhật Bản.
         </p>
 
-        <div className="brake-catalog-filter-bar flex flex-wrap items-baseline justify-between gap-6 border-b border-white/16 pb-5.5">
-          <nav className="brake-catalog-filters flex flex-wrap items-baseline gap-x-9 gap-y-3" aria-label="Lọc theo thị trường">
-            {MARKETS.map((label) => {
-              const on = label === market
-              return (
-                <button
-                  key={label}
-                  type="button"
-                  onClick={() => setMarket(label)}
-                  aria-pressed={on}
-                  className={`brake-catalog-filter cursor-pointer border-b-2 bg-none pb-1.5 font-bold uppercase tracking-[0.01em] transition-colors ${on ? 'border-[#dc2626] text-[#dc2626]' : 'border-transparent text-white/45 hover:text-white/80'
-                    }`}
-                  style={{ fontSize: 'clamp(17px,1.4vw,25px)' }}
-                >
-                  {label}
-                </button>
-              )
-            })}
-          </nav>
-        </div>
+      </div>
+
+      <div className="brake-catalog-filter-bar sticky top-16 lg:top-20 z-30 border-b border-white/16 bg-[#0b0a09]/95 backdrop-blur-sm">
+        <nav
+          className="brake-catalog-filters mx-auto flex max-w-7xl flex-wrap items-baseline gap-x-9 gap-y-3 px-6 py-5.5 sm:px-10"
+          aria-label="Lọc theo thị trường"
+        >
+          {MARKETS.map((label) => {
+            const on = label === market
+            return (
+              <button
+                key={label}
+                type="button"
+                onClick={() => setMarket(label)}
+                aria-pressed={on}
+                className={`brake-catalog-filter cursor-pointer border-b-2 bg-none pb-1.5 font-medium text-xl sm:text-2xl tracking-[0.01em] transition-colors ${on ? 'border-red-400 text-red-400' : 'border-transparent text-white/45 hover:text-white/80'
+                  }`}
+              >
+                {label}
+              </button>
+            )
+          })}
+        </nav>
       </div>
 
       <div className="brake-catalog-grid-section px-6 pt-14 pb-10 sm:px-10 mx-auto max-w-7xl">
-        <ul className="brake-catalog-grid m-0 grid list-none grid-cols-2 gap-px bg-white/14 p-0 lg:grid-cols-4">
+        <ul className="brake-catalog-grid m-0 grid list-none grid-cols-2 border-t border-l border-white/14 p-0 lg:grid-cols-4">
           {visible.map((p) => (
             <li
               key={p.code + p.name}
-              className="brake-card group relative flex flex-col gap-5.5 bg-[#0b0a09] p-6.5 transition-colors hover:bg-[#131110]"
+              className="brake-card group relative flex flex-col gap-5.5 border-b border-r border-white/14 bg-[#0b0a09] p-4 transition-colors hover:bg-[#131110]"
             >
-              <div className="brake-card-meta flex items-baseline justify-between text-xs uppercase tracking-[0.18em]">
-                <span className="text-[#dc2626]">{p.brand}</span>
+              <div className="brake-card-meta flex items-baseline justify-between text-sm uppercase tracking-[0.18em]">
+                <span className="text-red-400">{p.brand}</span>
                 <span className="text-white/40">{p.market}</span>
               </div>
               <div className="brake-card-media relative aspect-4/5 overflow-hidden bg-[linear-gradient(150deg,#191614,#0e0d0c)]">
@@ -115,20 +128,20 @@ export default function BrakeDrumCatalog() {
                   </div>
                 )}
               </div>
-              <h3 className="brake-card-name m-0 font-['Archivo'] text-2xl sm:text-3xl font-extrabold uppercase leading-[1.05] text-white">
+              <h3 className="brake-card-name m-0 font-['Archivo'] text-3xl font-bold leading-normal text-white">
                 {p.name}
               </h3>
-              <dl className="brake-card-specs m-0 flex flex-col gap-2 text-sm font-semibold tracking-[0.08em]">
+              <dl className="brake-card-specs m-0 flex flex-col gap-2 text-base font-medium tracking-[0.08em]">
                 <div className="flex justify-between gap-3 border-b border-white/10 pb-2">
-                  <dt className="text-white/40">MÃ SP</dt>
+                  <dt className="text-white/40">Mã sản phẩm</dt>
                   <dd className="m-0 text-white">{p.code}</dd>
                 </div>
                 <div className="flex justify-between gap-3 border-b border-white/10 pb-2">
-                  <dt className="text-white/40">DÒNG XE</dt>
+                  <dt className="text-white/40">Dòng xe</dt>
                   <dd className="m-0 text-white">{p.vehicle}</dd>
                 </div>
                 <div className="flex justify-between gap-3">
-                  <dt className="text-white/40">KHỐI LƯỢNG</dt>
+                  <dt className="text-white/40">Khối lượng</dt>
                   <dd className="m-0 text-white">{p.weight}</dd>
                 </div>
               </dl>
@@ -136,10 +149,10 @@ export default function BrakeDrumCatalog() {
           ))}
         </ul>
 
-        <div className="brake-catalog-pager mt-10 flex items-center justify-between gap-6 text-sm uppercase tracking-[0.18em] text-white/50">
+        <div className="brake-catalog-pager mt-10 flex items-center justify-between gap-6 text-base uppercase tracking-[0.18em] text-white/50">
           <span>TRANG 01 — 03</span>
           <div className="relative h-px flex-1 bg-white/14">
-            <span className="absolute left-0 top-0 h-px w-1/3 bg-primary" />
+            <span className="absolute left-0 top-0 h-px w-1/3 bg-red-400" />
           </div>
           <a href="#danh-muc" className="cursor-pointer text-white transition-colors hover:text-primary">
             TRANG SAU →

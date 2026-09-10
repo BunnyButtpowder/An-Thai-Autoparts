@@ -3,7 +3,7 @@ export default function AboutHero() {
   return (
     <section
       id="gioi-thieu"
-      className="hero-v2-section relative isolate flex min-h-[60vh] items-center overflow-hidden mt-15"
+      className="hero-v2-section relative isolate flex min-h-screen items-center overflow-hidden mt-15"
       aria-labelledby="hero-v2-heading"
     >
       <img

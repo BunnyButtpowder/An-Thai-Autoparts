@@ -62,7 +62,7 @@ export default function NewsArticleGrid({ activeCategory }: NewsArticleGridProps
     <section ref={sectionRef} className="news-article-grid-section py-12 lg:py-16 bg-background">
       <div className="news-article-grid-container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {paginatedArticles.length === 0 ? (
-          <p className="news-article-empty-message text-center text-muted-foreground text-lg py-16">
+          <p className="news-article-empty-message text-center text-muted-foreground text-xl py-16">
             Chưa có bài viết trong danh mục này.
           </p>
         ) : (
@@ -83,10 +83,10 @@ export default function NewsArticleGrid({ activeCategory }: NewsArticleGridProps
                   <span className="news-article-category inline-flex self-start px-2.5 py-1 rounded-md bg-accent text-primary text-[11px] font-semibold uppercase tracking-wider mb-3">
                     {article.categoryLabel}
                   </span>
-                  <h2 className="news-article-title text-lg sm:text-xl font-bold text-foreground leading-snug mb-3 group-hover:text-primary transition-colors">
+                  <h2 className="news-article-title text-xl sm:text-2xl font-bold text-foreground leading-snug mb-3 group-hover:text-primary transition-colors">
                     {article.title}
                   </h2>
-                  <p className="news-article-excerpt text-sm text-muted-foreground leading-relaxed line-clamp-3">
+                  <p className="news-article-excerpt text-base text-muted-foreground leading-relaxed line-clamp-3">
                     {article.excerpt}
                   </p>
                 </Link>
@@ -102,7 +102,7 @@ export default function NewsArticleGrid({ activeCategory }: NewsArticleGridProps
                 type="button"
                 onClick={() => setCurrentPage((page) => Math.max(1, page - 1))}
                 disabled={currentPage === 1}
-                className="news-pagination-prev-button px-4 py-2 rounded-lg border border-border text-sm font-semibold text-foreground transition-colors cursor-pointer hover:bg-muted disabled:opacity-40 disabled:cursor-not-allowed"
+                className="news-pagination-prev-button px-4 py-2 rounded-lg border border-border text-base font-semibold text-foreground transition-colors cursor-pointer hover:bg-muted disabled:opacity-40 disabled:cursor-not-allowed"
               >
                 Trước
               </button>
@@ -111,7 +111,7 @@ export default function NewsArticleGrid({ activeCategory }: NewsArticleGridProps
                   key={page}
                   type="button"
                   onClick={() => setCurrentPage(page)}
-                  className={`news-pagination-page-button min-w-10 px-3 py-2 rounded-lg text-sm font-semibold transition-colors cursor-pointer ${
+                  className={`news-pagination-page-button min-w-10 px-3 py-2 rounded-lg text-base font-semibold transition-colors cursor-pointer ${
                     currentPage === page
                       ? 'bg-primary text-primary-foreground'
                       : 'border border-border text-foreground hover:bg-muted'
@@ -125,7 +125,7 @@ export default function NewsArticleGrid({ activeCategory }: NewsArticleGridProps
                 type="button"
                 onClick={() => setCurrentPage((page) => Math.min(totalPages, page + 1))}
                 disabled={currentPage === totalPages}
-                className="news-pagination-next-button px-4 py-2 rounded-lg border border-border text-sm font-semibold text-foreground transition-colors cursor-pointer hover:bg-muted disabled:opacity-40 disabled:cursor-not-allowed"
+                className="news-pagination-next-button px-4 py-2 rounded-lg border border-border text-base font-semibold text-foreground transition-colors cursor-pointer hover:bg-muted disabled:opacity-40 disabled:cursor-not-allowed"
               >
                 Sau
               </button>

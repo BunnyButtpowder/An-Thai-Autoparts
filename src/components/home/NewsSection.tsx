@@ -105,13 +105,13 @@ export default function NewsSection() {
       <div className="news-section-container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="news-section-header flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-10 lg:mb-12">
           <div>
-            <h2 className="news-section-heading text-3xl sm:text-4xl font-bold text-foreground mb-2">
+            <h2 className="news-section-heading text-4xl sm:text-5xl font-bold text-foreground mb-2">
               Tin tức &amp; Báo chí
             </h2>
           </div>
           <Link
             to="/tin-tuc"
-            className="news-view-all-link shrink-0 inline-flex items-center gap-2 text-primary font-semibold hover:underline cursor-pointer uppercase tracking-wider text-sm"
+            className="news-view-all-link shrink-0 inline-flex items-center gap-2 text-primary font-semibold hover:underline cursor-pointer uppercase tracking-wider text-base"
           >
             Xem tất cả
             <ArrowRight />
@@ -167,13 +167,13 @@ export default function NewsSection() {
                 <p className="news-featured-meta text-[11px] font-semibold uppercase tracking-wider text-primary mb-2.5">
                   {featuredNews.category} · {featuredNews.postedDate}
                 </p>
-                <h3 className="news-featured-title text-xl sm:text-2xl font-bold text-foreground leading-snug mb-2.5 group-hover:text-primary transition-colors">
+                <h3 className="news-featured-title text-2xl sm:text-3xl font-bold text-foreground leading-snug mb-2.5 group-hover:text-primary transition-colors">
                   {featuredNews.title}
                 </h3>
-                <p className="news-featured-description text-muted-foreground text-sm leading-relaxed mb-5 line-clamp-3">
+                <p className="news-featured-description text-muted-foreground text-base leading-relaxed mb-5 line-clamp-3">
                   {featuredNews.excerpt}
                 </p>
-                <span className="news-featured-cta mt-auto inline-flex items-center gap-1.5 text-primary font-semibold text-sm">
+                <span className="news-featured-cta mt-auto inline-flex items-center gap-1.5 text-primary font-semibold text-base">
                   Đọc bài viết
                   <ArrowRight className="news-featured-cta-icon w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
                 </span>
@@ -196,10 +196,10 @@ export default function NewsSection() {
                     >
                       {article.postedDate}
                     </time>
-                    <h4 className="news-list-title mt-1.5 text-base font-bold text-foreground leading-snug group-hover:text-primary transition-colors">
+                    <h4 className="news-list-title mt-1.5 text-lg font-bold text-foreground leading-snug group-hover:text-primary transition-colors">
                       {article.title}
                     </h4>
-                    <p className="news-list-excerpt mt-1.5 text-sm text-muted-foreground leading-relaxed line-clamp-1">
+                    <p className="news-list-excerpt mt-1.5 text-base text-muted-foreground leading-relaxed line-clamp-1">
                       {article.excerpt}
                     </p>
                   </Link>

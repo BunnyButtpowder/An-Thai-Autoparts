@@ -14,7 +14,6 @@ import OffersEditorial from '@/components/home-v2/OffersEditorial'
 import LearnMoreSection from '../components/recruitment/LearnMoreSection'
 import JoinUsSection from '../components/about/JoinUsSection'
 // import AboutNewsSection from '../components/about/AboutNewsSection'
-import NewsV2 from '@/components/home-v2/NewsV2'
 
 export default function AboutPage() {
   const { isOpen, toggle, close } = useMobileMenu()
@@ -60,14 +59,13 @@ export default function AboutPage() {
       <main>
         <AboutHero />
         {/* <AboutSection /> */}
-        <AboutV2 />
+        <AboutV2 hideCta />
         <VisionMissionSection />
         <OffersEditorial />
         <SustainabilitySection />
         <LearnMoreSection />
         <JoinUsSection />
         {/* <AboutNewsSection /> */}
-        <NewsV2 />
       </main>
       <Footer />
     </>

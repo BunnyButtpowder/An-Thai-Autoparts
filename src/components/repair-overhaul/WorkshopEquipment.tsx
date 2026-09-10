@@ -62,12 +62,12 @@ export default function WorkshopEquipment() {
 
       <div className="workshop-equipment-intro mx-auto max-w-7xl px-4 pb-12 pt-24 sm:px-6 lg:px-8">
         <div className="workshop-equipment-intro">
-          <div className="workshop-equipment-eyebrow workshop-equipment-reveal mb-3 text-lg sm:text-xl font-semibold tracking-wide text-red-400">
+          <div className="workshop-equipment-eyebrow workshop-equipment-reveal mb-3 text-xl sm:text-2xl font-semibold tracking-wide text-red-400">
             Trang thiết bị
           </div>
           <h2
             id="workshop-equipment-heading"
-            className="workshop-equipment-title workshop-equipment-reveal text-3xl font-extrabold leading-tight uppercase tracking-wide text-white sm:text-4xl"
+            className="workshop-equipment-title workshop-equipment-reveal text-4xl font-extrabold leading-tight uppercase tracking-wide text-white sm:text-5xl"
           >
             NỀN TẢNG CHO CHẤT LƯỢNG VƯỢT TRỘI
           </h2>
@@ -85,7 +85,7 @@ export default function WorkshopEquipment() {
                 }`}
               >
                 <div className="workshop-equipment-cell-head mb-4.5 flex items-baseline gap-4">
-                  <h3 className="workshop-equipment-cell-title text-2xl font-semibold text-white sm:text-3xl">
+                  <h3 className="workshop-equipment-cell-title text-3xl font-semibold text-white sm:text-4xl">
                     {group.title}
                   </h3>
                 </div>
@@ -93,7 +93,7 @@ export default function WorkshopEquipment() {
                   {group.items.map((item) => (
                     <li
                       key={item}
-                      className="workshop-equipment-cell-item relative pl-4.5 text-lg sm:text-xl leading-[1.55] text-white"
+                      className="workshop-equipment-cell-item relative pl-4.5 text-xl sm:text-2xl leading-[1.55] text-white"
                     >
                       <span
                         className="workshop-equipment-cell-bullet absolute left-0 top-2 h-1.5 w-1.5 bg-primary"

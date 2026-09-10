@@ -103,19 +103,19 @@ export default function AuthorizationCertificates() {
     >
       <div className="authorization-certificates-container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="authorization-certificates-header mb-11 max-w-165">
-          <div className="authorization-certificates-eyebrow authorization-certificates-reveal mb-3 text-lg sm:text-xl font-semibold tracking-wide text-red-400">
+          <div className="authorization-certificates-eyebrow authorization-certificates-reveal mb-3 text-xl sm:text-2xl font-semibold tracking-wide text-red-400">
             Chứng nhận
           </div>
           <h2
             id="authorization-certificates-heading"
-            className="authorization-certificates-title authorization-certificates-reveal text-3xl font-extrabold leading-normal uppercase tracking-wide text-white sm:text-4xl"
+            className="authorization-certificates-title authorization-certificates-reveal text-4xl font-extrabold leading-normal uppercase tracking-wide text-white sm:text-5xl"
           >
             Uỷ quyền phân phối
           </h2>
         </div>
 
         <div className="authorization-certificates-carousel authorization-certificates-reveal">
-          <div className="authorization-certificates-viewport overflow-hidden">
+          <div className="authorization-certificates-viewport -mx-3 overflow-hidden rounded-md">
             <div
               className="authorization-certificates-track flex transition-transform duration-500 ease-out"
               style={{
@@ -150,12 +150,12 @@ export default function AuthorizationCertificates() {
                       <h3 className="authorization-certificates-card-brand mb-1 text-[17px] font-bold text-white">
                         {cert.brand}
                         {cert.exclusive && (
-                          <span className="authorization-certificates-card-badge ml-1.5 font-mono text-xs text-red-400">
+                          <span className="authorization-certificates-card-badge ml-1.5 font-mono text-sm text-red-400">
                             · ĐỘC QUYỀN
                           </span>
                         )}
                       </h3>
-                      <p className="authorization-certificates-card-label text-sm text-white/55">
+                      <p className="authorization-certificates-card-label text-base text-white/55">
                         {cert.label}
                       </p>
                     </div>
@@ -260,12 +260,12 @@ export default function AuthorizationCertificates() {
               className="authorization-certificates-lightbox-img max-h-[78vh] w-auto rounded-md object-contain shadow-2xl"
             />
             <figcaption className="authorization-certificates-lightbox-caption mt-5 text-center">
-              <p className="font-mono text-base font-bold text-white sm:text-xl">
+              <p className="font-mono text-lg font-bold text-white sm:text-2xl">
                 {active.brand}
                 {active.exclusive && <span className="ml-1.5 text-red-400"> · ĐỘC QUYỀN</span>}
               </p>
-              <p className="mt-1 text-lg text-white">{active.label}</p>
-              <p className="authorization-certificates-lightbox-counter mt-3 font-mono text-sm tracking-widest text-white/40">
+              <p className="mt-1 text-xl text-white">{active.label}</p>
+              <p className="authorization-certificates-lightbox-counter mt-3 font-mono text-base tracking-widest text-white/40">
                 {activeIndex + 1} / {certificates.length}
               </p>
             </figcaption>

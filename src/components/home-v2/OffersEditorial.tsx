@@ -28,15 +28,15 @@ export default function OffersEditorial() {
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section intro */}
-        <div className="offers-intro max-w-2xl">
-          <p className="offers-eyebrow-label inline-flex items-center text-lg sm:text-xl font-semibold tracking-wide text-red-400">
+        <div className="offers-intro">
+          <p className="offers-eyebrow-label inline-flex items-center text-xl sm:text-2xl font-semibold tracking-wide text-red-400">
             Lĩnh vực kinh doanh
           </p>
           <h2 id="offers-heading" className="mt-2 text-3xl uppercase font-extrabold leading-tight text-white sm:text-4xl">
             HỆ SINH THÁI CHO XE THƯƠNG MẠI
           </h2>
         </div>
-        <p className="mt-5 text-base lg:text-lg 2xl:text-xl text-white/70 text-justify">
+        <p className="mt-5 text-lg lg:text-xl text-white/70 text-justify">
           Từ sản xuất và phân phối phụ tùng đến dịch vụ sửa chữa, đăng kiểm và thương mại - một hệ sinh thái toàn
           diện phục vụ ngành ô tô thương mại Việt Nam.
         </p>
@@ -59,12 +59,12 @@ export default function OffersEditorial() {
                 <div className="offers-card-overlay pointer-events-none absolute inset-0 bg-linear-to-t from-black/85 via-black/10 to-transparent" />
                 {/* Bottom-anchored content */}
                 <div className="offers-card-content absolute inset-x-0 bottom-0 max-w-2xl p-6 lg:p-9">
-                  <h3 className="text-2xl font-bold leading-tight text-white lg:text-3xl">{leadOffer.title}</h3>
-                  <p className="mt-3 text-sm text-justify leading-relaxed text-white lg:text-base 2xl:text-lg">{leadOffer.description}</p>
+                  <h3 className="text-3xl font-bold leading-tight text-white lg:text-4xl">{leadOffer.title}</h3>
+                  <p className="mt-3 text-base text-justify leading-relaxed text-white lg:text-lg 2xl:text-xl">{leadOffer.description}</p>
                   {/* CTA button — revealed only on hover */}
                   <span className="offers-card-cta grid grid-rows-[0fr] opacity-0 transition-all duration-300 ease-out group-hover:grid-rows-[1fr] group-hover:opacity-100">
                     <span className="offers-card-cta-clip min-h-0 overflow-hidden">
-                      <span className="offers-card-cta-button mt-4 inline-flex items-center gap-2 rounded-md bg-primary px-5 py-2.5 text-xs font-semibold uppercase tracking-wider text-white transition-colors duration-300 group-hover:bg-primary-hover">
+                      <span className="offers-card-cta-button mt-4 inline-flex items-center gap-2 rounded-md bg-background px-5 py-2.5 text-sm font-semibold uppercase tracking-wider text-foreground transition-colors duration-300 group-hover:bg-background/90">
                         {leadOffer.ctaLabel}
                         <ArrowRight className="h-4 w-4" />
                       </span>
@@ -93,12 +93,12 @@ export default function OffersEditorial() {
                   <div className="offers-card-overlay pointer-events-none absolute inset-0 bg-linear-to-t from-black/85 via-black/30 to-transparent" />
                   {/* Bottom-anchored content */}
                   <div className="offers-card-content absolute inset-x-0 bottom-0 p-6 lg:p-7">
-                    <h3 className="text-xl lg:text-2xl font-bold leading-snug text-white">{offer.title}</h3>
-                    <p className="mt-2.5 text-sm text-justify leading-relaxed text-white lg:text-base 2xl:text-lg">{offer.description}</p>
+                    <h3 className="text-2xl lg:text-3xl font-bold leading-snug text-white">{offer.title}</h3>
+                    <p className="mt-2.5 text-base text-justify leading-relaxed text-white lg:text-lg 2xl:text-xl">{offer.description}</p>
                     {/* CTA button — revealed only on hover */}
                     <span className="offers-card-cta grid grid-rows-[0fr] opacity-0 transition-all duration-300 ease-out group-hover:grid-rows-[1fr] group-hover:opacity-100">
                       <span className="offers-card-cta-clip min-h-0 overflow-hidden">
-                        <span className="offers-card-cta-button mt-4 inline-flex items-center gap-2 rounded-md bg-primary px-5 py-2.5 text-xs font-semibold uppercase tracking-wider text-white transition-colors duration-300 group-hover:bg-primary-hover">
+                        <span className="offers-card-cta-button mt-4 inline-flex items-center gap-2 rounded-md bg-background px-5 py-2.5 text-sm font-semibold uppercase tracking-wider text-foreground transition-colors duration-300 group-hover:bg-background/90">
                           {offer.ctaLabel}
                           <ArrowRight className="h-4 w-4" />
                         </span>

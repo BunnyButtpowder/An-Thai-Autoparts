@@ -39,16 +39,16 @@ export default function PartnerBrands() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="partner-brands-header partner-brands-reveal flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
           <div className="flex flex-col">
-            <div className="partner-brands-eyebrow partner-brands-reveal mb-3 text-lg sm:text-xl font-semibold tracking-wide text-red-400">
+            <div className="partner-brands-eyebrow partner-brands-reveal mb-3 text-xl sm:text-2xl font-semibold tracking-wide text-red-400">
               Đối tác
             </div>
-            <h2 className="partner-brands-title text-3xl font-extrabold uppercase leading-normal tracking-wide text-white sm:text-4xl">
+            <h2 className="partner-brands-title text-4xl font-extrabold uppercase leading-normal tracking-wide text-white sm:text-5xl">
               Đồng hành phát triển
             </h2>
           </div>
           <a
             href="/san-pham"
-            className="partner-brands-all-link whitespace-nowrap text-sm sm:text-base font-semibold text-red-400 transition-colors hover:text-primary cursor-pointer"
+            className="partner-brands-all-link whitespace-nowrap text-base sm:text-lg font-semibold text-red-400 transition-colors hover:text-primary cursor-pointer"
           >
             Xem tất cả sản phẩm ↗
           </a>

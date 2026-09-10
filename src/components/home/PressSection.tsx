@@ -7,10 +7,10 @@ export default function PressSection() {
   return (
     <section className="press-section py-16 lg:py-24 bg-background" id="bao-chi">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="section-heading text-3xl sm:text-4xl font-bold text-foreground mb-2 text-center">
+        <h2 className="section-heading text-4xl sm:text-5xl font-bold text-foreground mb-2 text-center">
           Báo chí nói về An Thái
         </h2>
-        <p className="press-subheading text-muted-foreground text-lg mb-10 text-center">
+        <p className="press-subheading text-muted-foreground text-xl mb-10 text-center">
           Phóng sự VTV3 nói về An Thái
         </p>
 
@@ -23,7 +23,7 @@ export default function PressSection() {
             {allNames.map((name, i) => (
               <span
                 key={`${name}-${i}`}
-                className="press-strip-item shrink-0 text-muted-foreground font-semibold text-lg tracking-tight whitespace-nowrap"
+                className="press-strip-item shrink-0 text-muted-foreground font-semibold text-xl tracking-tight whitespace-nowrap"
               >
                 {name}
               </span>

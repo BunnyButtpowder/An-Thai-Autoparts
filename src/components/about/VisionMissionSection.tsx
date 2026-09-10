@@ -8,25 +8,18 @@ gsap.registerPlugin(ScrollTrigger)
 
 interface Statement {
   label: string
-  /** Statement split around an emphasised fragment rendered in the brand red. */
-  lead: string
-  highlight: string
-  tail: string
+  content: string
 }
 
 /** Vision + Mission — the two directional statements shown beside the globe. */
 const statements: Statement[] = [
   {
     label: 'Tầm nhìn',
-    lead: 'Trở thành tập đoàn phụ tùng ô tô ',
-    highlight: 'hàng đầu Việt Nam',
-    tail: ', có tầm ảnh hưởng quốc tế',
+    content: 'Trở thành tập đoàn phụ tùng ô tô hàng đầu Việt Nam, có tầm ảnh hưởng quốc tế',
   },
   {
     label: 'Sứ mệnh',
-    lead: 'Tiến bước ',
-    highlight: 'vững vàng',
-    tail: ', đồng hành cùng người Việt trên hành trình phát triển bền vững',
+    content: 'Tiến bước vững vàng, đồng hành cùng người Việt trên hành trình phát triển bền vững',
   },
 ]
 
@@ -183,13 +176,11 @@ export default function VisionMissionSection() {
           <div className="vms-statements flex flex-col gap-10 lg:gap-12">
             {statements.map((s) => (
               <article key={s.label} className="vms-statement vms-reveal text-justify">
-                <h3 className="vms-statement-label text-3xl font-bold uppercase tracking-tight text-primary sm:text-4xl">
+                <h3 className="vms-statement-label text-4xl font-bold uppercase tracking-tight text-primary sm:text-5xl">
                   {s.label}
                 </h3>
-                <p className="vms-statement-text mt-4 text-base sm:text-xl leading-relaxed text-foreground text-pretty">
-                  {s.lead}
-                  <span className="font-medium text-primary">{s.highlight}</span>
-                  {s.tail}
+                <p className="vms-statement-text mt-4 text-lg sm:text-2xl leading-relaxed text-foreground text-pretty">
+                  {s.content}
                 </p>
               </article>
             ))}
@@ -198,7 +189,7 @@ export default function VisionMissionSection() {
 
         {/* ── Core values — a single row of six under a hairline rule ── */}
         <div className="vms-values mt-10 border-t border-foreground pt-12 lg:mt-0">
-          <h3 className="vms-values-heading vms-reveal text-center text-3xl sm:text-4xl font-semibold uppercase text-foreground">
+          <h3 className="vms-values-heading vms-reveal text-center text-4xl sm:text-5xl font-semibold uppercase text-foreground">
             Giá trị cốt lõi
           </h3>
 
@@ -212,7 +203,7 @@ export default function VisionMissionSection() {
                   className="vms-value-icon h-12 w-12 text-primary transition-transform duration-300 group-hover:scale-110"
                   strokeWidth={1.5}
                 />
-                <span className="vms-value-title text-base sm:text-xl tracking-tight text-foreground transition-colors duration-300 group-hover:text-primary">
+                <span className="vms-value-title text-lg sm:text-2xl tracking-tight text-foreground transition-colors duration-300 group-hover:text-primary">
                   {value.title}
                 </span>
               </div>

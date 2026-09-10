@@ -27,23 +27,23 @@ export default function BrakeDrumCTA() {
         aria-hidden="true"
       />
 
-      <div className="brake-cta-container relative mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
+      <div className="brake-cta-container relative mx-auto px-4 text-center sm:px-6 lg:px-8">
         <h2
           id="brake-cta-heading"
-          className="brake-cta-heading brake-cta-reveal mb-4 text-3xl font-black uppercase leading-normal text-balance text-white sm:text-4xl lg:text-5xl"
+          className="brake-cta-heading brake-cta-reveal mb-4 text-4xl font-extrabold uppercase leading-normal text-balance text-white sm:text-5xl lg:text-6xl"
         >
           Lựa chọn bền bỉ cho mọi hành trình
         </h2>
         <div className="brake-cta-actions brake-cta-reveal flex flex-wrap justify-center gap-4">
           <Link
             to="/lien-he"
-            className="brake-cta-primary inline-flex items-center gap-2 rounded-lg bg-white px-9 py-4 text-base font-bold text-primary transition-colors duration-300 hover:bg-white/90 cursor-pointer"
+            className="brake-cta-primary inline-flex items-center gap-2 rounded-lg bg-white px-9 py-4 text-lg font-bold text-primary transition-colors duration-300 hover:bg-white/90 cursor-pointer"
           >
-            Liên hệ nhận báo giá →
+            Liên hệ nhận báo giá
           </Link>
           <Link
             to="/gioi-thieu"
-            className="brake-cta-secondary inline-flex items-center gap-2 rounded-lg border-[1.5px] border-white/60 px-9 py-4 text-base font-semibold text-white transition-colors duration-300 hover:border-white hover:bg-white/10 cursor-pointer"
+            className="brake-cta-secondary inline-flex items-center gap-2 rounded-lg border-[1.5px] border-white/60 px-9 py-4 text-lg font-semibold text-white transition-colors duration-300 hover:border-white hover:bg-white/10 cursor-pointer"
           >
             Tìm hiểu thêm về An Thái
           </Link>

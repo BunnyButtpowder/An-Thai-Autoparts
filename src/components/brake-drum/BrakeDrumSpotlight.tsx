@@ -109,33 +109,33 @@ export default function BrakeDrumSpotlight() {
             className="absolute inset-0"
             style={{ background: 'linear-gradient(120deg, rgba(185,28,28,0.22), transparent 55%)' }}
           />
-          <span className="brake-spotlight-tag absolute left-6.5 top-6 text-xs uppercase tracking-[0.24em] text-white/85">
+          <span className="brake-spotlight-tag absolute left-6.5 top-6 text-sm uppercase tracking-[0.24em] text-white/85">
             Spotlight · {pad(active + 1)} / {pad(SPOTLIGHTS.length)}
           </span>
         </div>
         <div className="brake-spotlight-copy flex flex-col justify-center gap-6.5 p-10 lg:p-13">
           <div key={product?.code} className="brake-spotlight-swap flex flex-col gap-6.5">
-            <span className="text-base uppercase tracking-[0.24em] text-primary">
+            <span className="text-lg uppercase tracking-[0.24em] text-red-400">
               {product?.brand} · {product?.code}
             </span>
-            <h3 className="brake-spotlight-title text-3xl sm:text-4xl  m-0 font-extrabold uppercase leading-none text-white">
+            <h3 className="brake-spotlight-title text-4xl sm:text-5xl  m-0 font-extrabold uppercase leading-none text-white">
               {product?.title}
             </h3>
-            <p className="m-0 text-lg leading-[1.7] text-pretty text-white/72">
+            <p className="m-0 text-xl leading-[1.7] text-pretty text-white/72">
               {product?.description}
             </p>
             <dl className="brake-spotlight-specs mt-2 grid grid-cols-3 gap-6 border-t border-[#ece7e0]/14 pt-6.5">
               <div>
-                <dt className="text-xs tracking-[0.2em] text-white/45">DÒNG XE</dt>
-                <dd className="mt-2 mb-0 font-['Archivo'] text-2xl font-extrabold uppercase text-[#ece7e0]">{product?.vehicle}</dd>
+                <dt className="text-sm tracking-[0.2em] text-white/45">DÒNG XE</dt>
+                <dd className="mt-2 mb-0 font-['Archivo'] text-3xl font-extrabold uppercase text-[#ece7e0]">{product?.vehicle}</dd>
               </div>
               <div>
-                <dt className="text-xs tracking-[0.2em] text-white/45">KHỐI LƯỢNG</dt>
-                <dd className="mt-2 mb-0 font-['Archivo'] text-2xl font-extrabold uppercase text-[#ece7e0]">{product?.weight}</dd>
+                <dt className="text-sm tracking-[0.2em] text-white/45">KHỐI LƯỢNG</dt>
+                <dd className="mt-2 mb-0 font-['Archivo'] text-3xl font-extrabold uppercase text-[#ece7e0]">{product?.weight}</dd>
               </div>
               <div>
                 <dt className="font-['JetBrains_Mono'] text-[10px] tracking-[0.2em] text-[#ece7e0]/45">THỊ TRƯỜNG</dt>
-                <dd className="mt-2 mb-0 font-['Archivo'] text-2xl font-extrabold uppercase text-[#ece7e0]">{product?.market}</dd>
+                <dd className="mt-2 mb-0 font-['Archivo'] text-3xl font-extrabold uppercase text-[#ece7e0]">{product?.market}</dd>
               </div>
             </dl>
           </div>
@@ -151,7 +151,7 @@ export default function BrakeDrumSpotlight() {
                   aria-label={`Sản phẩm nổi bật ${pad(i + 1)}`}
                   onClick={() => setActive(i)}
                   className={`brake-spotlight-dot cursor-pointer h-2 rounded-full transition-all ${
-                    i === active ? 'w-8 bg-primary' : 'w-2 bg-white/25 hover:bg-white/50'
+                    i === active ? 'w-8 bg-red-400' : 'w-2 bg-white/25 hover:bg-white/50'
                   }`}
                 />
               ))}
@@ -161,7 +161,7 @@ export default function BrakeDrumSpotlight() {
                 type="button"
                 onClick={() => go(-1)}
                 aria-label="Sản phẩm nổi bật trước"
-                className="brake-spotlight-prev cursor-pointer flex h-11 w-11 items-center justify-center rounded-full border border-[#ece7e0]/22 text-white/80 transition-colors hover:border-primary hover:text-primary"
+                className="brake-spotlight-prev cursor-pointer flex h-11 w-11 items-center justify-center rounded-full border border-[#ece7e0]/22 text-white/80 transition-colors hover:border-primary hover:text-red-400"
               >
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="h-5 w-5" aria-hidden="true">
                   <path d="M15 18l-6-6 6-6" strokeLinecap="round" strokeLinejoin="round" />
@@ -171,7 +171,7 @@ export default function BrakeDrumSpotlight() {
                 type="button"
                 onClick={() => go(1)}
                 aria-label="Sản phẩm nổi bật kế tiếp"
-                className="brake-spotlight-next cursor-pointer flex h-11 w-11 items-center justify-center rounded-full border border-[#ece7e0]/22 text-white/80 transition-colors hover:border-primary hover:text-primary"
+                className="brake-spotlight-next cursor-pointer flex h-11 w-11 items-center justify-center rounded-full border border-[#ece7e0]/22 text-white/80 transition-colors hover:border-primary hover:text-red-400"
               >
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="h-5 w-5" aria-hidden="true">
                   <path d="M9 6l6 6-6 6" strokeLinecap="round" strokeLinejoin="round" />

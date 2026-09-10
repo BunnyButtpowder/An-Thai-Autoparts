@@ -39,7 +39,7 @@ export default function ArticleDetailPage() {
             ) : (
               <section className="article-detail-fallback-section bg-foreground text-white py-10 lg:py-14">
                 <div className="article-detail-fallback-container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                  <p className="article-detail-fallback-text text-lg text-white/80 leading-relaxed">
+                  <p className="article-detail-fallback-text text-xl text-white/80 leading-relaxed">
                     {article.excerpt}
                   </p>
                 </div>
@@ -51,7 +51,7 @@ export default function ArticleDetailPage() {
         ) : (
           <section className="article-not-found-section min-h-[60vh] flex items-center justify-center bg-foreground text-white pt-32 pb-16">
             <div className="article-not-found-container max-w-md mx-auto px-4 text-center">
-              <h1 className="article-not-found-title text-2xl sm:text-3xl font-bold text-white mb-4">
+              <h1 className="article-not-found-title text-3xl sm:text-4xl font-bold text-white mb-4">
                 Không tìm thấy bài viết
               </h1>
               <p className="article-not-found-text text-white/60 mb-8">
@@ -59,7 +59,7 @@ export default function ArticleDetailPage() {
               </p>
               <Link
                 to="/tin-tuc"
-                className="article-not-found-link inline-flex items-center justify-center rounded-lg bg-primary px-6 py-3 text-base font-semibold text-primary-foreground transition-colors hover:bg-primary-hover cursor-pointer"
+                className="article-not-found-link inline-flex items-center justify-center rounded-lg bg-background px-6 py-3 text-lg font-semibold text-foreground transition-colors hover:bg-background/90 cursor-pointer"
               >
                 Xem tất cả tin tức
               </Link>

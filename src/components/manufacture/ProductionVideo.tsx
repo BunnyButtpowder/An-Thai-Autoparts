@@ -67,7 +67,7 @@ export default function ProductionVideo() {
                   </svg>
                 </span>
               </span>
-              <span className="production-video-caption absolute bottom-6 left-6 font-mono text-sm font-semibold text-white">
+              <span className="production-video-caption absolute bottom-6 left-6 font-mono text-base font-semibold text-white">
                 ▶ TVC giới thiệu nhà máy An Thái
 
               </span>

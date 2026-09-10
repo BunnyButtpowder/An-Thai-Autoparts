@@ -11,6 +11,14 @@ import { X } from 'lucide-react'
 
 const CAROUSEL_LIMIT = 9
 
+// Number of cards visible in the carousel at each responsive breakpoint.
+function getVisibleCount() {
+  if (typeof window === 'undefined') return 3
+  if (window.innerWidth >= 1024) return 3 // lg
+  if (window.innerWidth >= 640) return 2 // sm
+  return 1
+}
+
 export default function NewsV2() {
   const [activeArticle, setActiveArticle] = useState<NewsArticle | null>(null)
   const carouselArticles = allNewsArticles.slice(0, CAROUSEL_LIMIT)
@@ -18,32 +26,25 @@ export default function NewsV2() {
   const layoutBaseId = useId()
   const expandedCardRef = useRef<HTMLDivElement>(null)
 
-  // Horizontal scroll track + arrow enable/disable state
-  const trackRef = useRef<HTMLDivElement>(null)
-  const [canPrev, setCanPrev] = useState(false)
-  const [canNext, setCanNext] = useState(true)
+  // Transform-based carousel: a translateX track advances one card per page step.
+  const [visibleCount, setVisibleCount] = useState(getVisibleCount)
+  const [page, setPage] = useState(0)
+  const maxPage = Math.max(0, carouselArticles.length - visibleCount)
 
-  function updateArrows() {
-    const el = trackRef.current
-    if (!el) return
-    setCanPrev(el.scrollLeft > 8)
-    setCanNext(el.scrollLeft + el.clientWidth < el.scrollWidth - 8)
-  }
+  const goPrev = () => setPage((p) => Math.max(0, p - 1))
+  const goNext = () => setPage((p) => Math.min(maxPage, p + 1))
 
-  function scrollByCard(direction: 1 | -1) {
-    const el = trackRef.current
-    if (!el) return
-    const card = el.querySelector<HTMLElement>('[data-news-card]')
-    const gap = 24 // matches gap-6 (1.5rem)
-    const amount = card ? card.offsetWidth + gap : el.clientWidth
-    el.scrollBy({ left: direction * amount, behavior: 'smooth' })
-  }
-
+  // Keep the visible count in sync with viewport size and clamp the current
+  // page so we never translate past the last full window of cards.
   useEffect(() => {
-    updateArrows()
-    window.addEventListener('resize', updateArrows)
-    return () => window.removeEventListener('resize', updateArrows)
-  }, [])
+    const onResize = () => {
+      const next = getVisibleCount()
+      setVisibleCount(next)
+      setPage((p) => Math.min(p, Math.max(0, carouselArticles.length - next)))
+    }
+    window.addEventListener('resize', onResize)
+    return () => window.removeEventListener('resize', onResize)
+  }, [carouselArticles.length])
 
   // Close the expanded card on Escape and lock body scroll while it is open
   useEffect(() => {
@@ -117,25 +118,25 @@ export default function NewsV2() {
                 </motion.button>
               </motion.div>
               <div className="flex flex-col overflow-y-auto p-6">
-                <p className="text-xs font-semibold uppercase tracking-wider text-primary sm:text-sm">
+                <p className="text-sm font-semibold uppercase tracking-wider text-primary sm:text-base">
                   {activeArticle.categoryLabel} · {activeArticle.postedDate}
                 </p>
                 <motion.h3
                   layoutId={`news-title-${layoutBaseId}-${activeArticle.id}`}
-                  className="mt-2 text-xl font-bold leading-snug text-foreground 2xl:text-2xl"
+                  className="mt-2 text-2xl font-bold leading-snug text-foreground 2xl:text-3xl"
                 >
                   {activeArticle.title}
                 </motion.h3>
                 <motion.p
                   layoutId={`news-excerpt-${layoutBaseId}-${activeArticle.id}`}
-                  className="mt-2.5 text-base leading-relaxed text-muted-foreground text-justify"
+                  className="mt-2.5 text-lg leading-relaxed text-muted-foreground text-justify"
                 >
                   {activeArticle.excerpt}
                 </motion.p>
                 <Link
                   to={activeArticle.href}
                   target="_blank"
-                  className="mt-6 inline-flex items-center gap-2 self-start rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background cursor-pointer"
+                  className="mt-6 inline-flex items-center gap-2 self-start rounded-full bg-foreground px-5 py-2.5 text-base font-semibold text-background transition-colors hover:bg-foreground/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background cursor-pointer"
                 >
                   Đọc bài viết
                   <ArrowRight className="h-4 w-4" />
@@ -150,14 +151,14 @@ export default function NewsV2() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="news-v2-header mb-10 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between lg:mb-12">
             <div className="flex flex-col">
-              <p className="news-v2-eyebrow-label text-lg sm:text-xl font-semibold tracking-wide text-primary">
+              <p className="news-v2-eyebrow-label text-xl sm:text-2xl font-semibold tracking-wide text-primary">
                 Tin tức
               </p>
               <h2 id="news-v2-heading" className="mt-2 text-3xl uppercase font-extrabold leading-tight tracking-tight text-foreground sm:text-4xl">CẬP NHẬT MỚI</h2>
             </div>
             <Link
               to="/tin-tuc"
-              className="group inline-flex shrink-0 items-center gap-2 text-sm font-semibold uppercase tracking-wider text-primary transition-colors hover:text-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background cursor-pointer"
+              className="group inline-flex shrink-0 items-center gap-2 text-base font-semibold uppercase tracking-wider text-primary transition-colors hover:text-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background cursor-pointer"
             >
               Xem tất cả
               <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
@@ -165,81 +166,107 @@ export default function NewsV2() {
           </div>
         </div>
 
-        {/* Carousel constrained to max-w-7xl; arrows sit at the container edges, poking out slightly */}
-        <div className="news-v2-carousel relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <button
-            type="button"
-            onClick={() => scrollByCard(-1)}
-            disabled={!canPrev}
-            aria-label="Bài viết trước"
-            className="absolute left-1 top-1/2 z-20 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-md border border-border bg-primary text-white shadow-sm transition-colors hover:bg-primary-hover disabled:cursor-not-allowed disabled:opacity-40 sm:-left-8 cursor-pointer"
-          >
-            <ChevronLeftIcon />
-          </button>
-          <button
-            type="button"
-            onClick={() => scrollByCard(1)}
-            disabled={!canNext}
-            aria-label="Bài viết tiếp theo"
-            className="absolute right-1 top-1/2 z-20 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-md border border-border bg-primary text-white shadow-sm transition-colors hover:bg-primary-hover disabled:cursor-not-allowed disabled:opacity-40 sm:-right-8 cursor-pointer"
-          >
-            <ChevronRightIcon />
-          </button>
-
-          <div
-            ref={trackRef}
-            onScroll={updateArrows}
-            className="news-v2-track flex snap-x snap-mandatory gap-6 overflow-x-auto scroll-smooth pb-2 [-ms-overflow-style:none] scrollbar-none [&::-webkit-scrollbar]:hidden"
-          >
-            {carouselArticles.map((article) => (
-              <motion.article
-                key={article.id}
-                data-news-card
-                layoutId={`news-card-${layoutBaseId}-${article.id}`}
-                onClick={() => setActiveArticle(article)}
-                onKeyDown={(event) => {
-                  if (event.key === 'Enter' || event.key === ' ') {
-                    event.preventDefault()
-                    setActiveArticle(article)
-                  }
-                }}
-                role="button"
-                tabIndex={0}
-                aria-label={`Mở bài viết: ${article.title}`}
-                className="news-v2-card group/card flex shrink-0 basis-[86%] snap-start flex-col rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background sm:basis-[calc((100%-1.5rem)/2)] lg:basis-[calc((100%-3rem)/3)] cursor-pointer"
-              >
-                <div className="aspect-16/10 w-full overflow-hidden rounded-xl bg-muted">
-                  <img
-                    src={article.image}
-                    alt=""
-                    className="h-full w-full object-cover transition-transform duration-500 group-hover/card:scale-105"
-                  />
+        <div className="news-v2-carousel mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="news-v2-viewport -mx-3 overflow-hidden rounded-md">
+            <div
+              className="news-v2-track flex transition-transform duration-500 ease-out"
+              style={{
+                width: `${(carouselArticles.length / visibleCount) * 100}%`,
+                transform: `translateX(-${page * (100 / carouselArticles.length)}%)`,
+              }}
+            >
+              {carouselArticles.map((article) => (
+                <div
+                  key={article.id}
+                  className="news-v2-slide shrink-0 px-3"
+                  style={{ width: `${100 / carouselArticles.length}%` }}
+                >
+                  <motion.article
+                    layoutId={`news-card-${layoutBaseId}-${article.id}`}
+                    onClick={() => setActiveArticle(article)}
+                    onKeyDown={(event) => {
+                      if (event.key === 'Enter' || event.key === ' ') {
+                        event.preventDefault()
+                        setActiveArticle(article)
+                      }
+                    }}
+                    role="button"
+                    tabIndex={0}
+                    aria-label={`Mở bài viết: ${article.title}`}
+                    className="news-v2-card group/card flex w-full flex-col rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background cursor-pointer"
+                  >
+                    <div className="aspect-16/10 w-full overflow-hidden rounded-xl bg-muted">
+                      <img
+                        src={article.image}
+                        alt=""
+                        className="h-full w-full object-cover transition-transform duration-500 group-hover/card:scale-105"
+                      />
+                    </div>
+                    <p className="mt-4 text-lg font-medium tracking-wide text-muted-foreground">
+                      {article.categoryLabel}
+                    </p>
+                    <motion.h3
+                      layoutId={`news-title-${layoutBaseId}-${article.id}`}
+                      className="mt-2"
+                    >
+                      <CenterUnderline className="text-xl font-bold leading-snug text-foreground uppercase transition-colors group-hover/card:text-primary lg:text-2xl">
+                        {article.title}
+                      </CenterUnderline>
+                    </motion.h3>
+                    <motion.p
+                      layoutId={`news-excerpt-${layoutBaseId}-${article.id}`}
+                      className="mt-2.5 line-clamp-3 text-base leading-relaxed text-muted-foreground lg:text-lg text-justify"
+                    >
+                      {article.excerpt}
+                    </motion.p>
+                    <time
+                      dateTime={article.postedDate}
+                      className="mt-4 text-sm font-medium text-muted-foreground sm:text-base"
+                    >
+                      {article.postedDate}
+                    </time>
+                  </motion.article>
                 </div>
-                <p className="mt-4 text-base font-medium tracking-wide text-muted-foreground">
-                  {article.categoryLabel}
-                </p>
-                <motion.h3
-                  layoutId={`news-title-${layoutBaseId}-${article.id}`}
-                  className="mt-2"
-                >
-                  <CenterUnderline className="text-lg font-bold leading-snug text-foreground uppercase transition-colors group-hover/card:text-primary lg:text-xl">
-                    {article.title}
-                  </CenterUnderline>
-                </motion.h3>
-                <motion.p
-                  layoutId={`news-excerpt-${layoutBaseId}-${article.id}`}
-                  className="mt-2.5 line-clamp-3 text-sm leading-relaxed text-muted-foreground lg:text-base text-justify"
-                >
-                  {article.excerpt}
-                </motion.p>
-                <time
-                  dateTime={article.postedDate}
-                  className="mt-4 text-xs font-medium text-muted-foreground sm:text-sm"
-                >
-                  {article.postedDate}
-                </time>
-              </motion.article>
-            ))}
+              ))}
+            </div>
+          </div>
+
+          <div className="news-v2-controls mt-8 flex items-center justify-between">
+            <div className="news-v2-dots flex items-center gap-2">
+              {Array.from({ length: maxPage + 1 }).map((_, i) => (
+                <button
+                  key={i}
+                  type="button"
+                  onClick={() => setPage(i)}
+                  aria-label={`Chuyển tới nhóm bài viết ${i + 1}`}
+                  aria-current={page === i}
+                  className={`news-v2-dot h-2 cursor-pointer rounded-full transition-all duration-300 ${
+                    page === i ? 'w-6 bg-primary' : 'w-2 bg-foreground/20 hover:bg-foreground/40'
+                  }`}
+                />
+              ))}
+            </div>
+
+            <div className="news-v2-arrows flex items-center gap-3">
+              <button
+                type="button"
+                onClick={goPrev}
+                disabled={page === 0}
+                aria-label="Bài viết trước"
+                className="news-v2-arrow flex h-11 w-11 cursor-pointer items-center justify-center rounded-full border border-border text-foreground transition-colors hover:border-primary hover:bg-primary hover:text-white disabled:cursor-not-allowed disabled:opacity-30 disabled:hover:border-border disabled:hover:bg-transparent disabled:hover:text-foreground"
+              >
+                <ChevronLeftIcon />
+              </button>
+              <button
+                type="button"
+                onClick={goNext}
+                disabled={page === maxPage}
+                aria-label="Bài viết tiếp theo"
+                className="news-v2-arrow flex h-11 w-11 cursor-pointer items-center justify-center rounded-full border border-border text-foreground transition-colors hover:border-primary hover:bg-primary hover:text-white disabled:cursor-not-allowed disabled:opacity-30 disabled:hover:border-border disabled:hover:bg-transparent disabled:hover:text-foreground"
+              >
+                <ChevronRightIcon />
+              </button>
+            </div>
           </div>
         </div>
       </section>

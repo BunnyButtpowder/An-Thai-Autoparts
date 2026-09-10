@@ -42,12 +42,12 @@ export default function RepairCommitment() {
         </div>
 
         <div className="repair-commitment-copy">
-          <div className="repair-commitment-eyebrow repair-commitment-reveal mb-3 text-lg sm:text-xl font-semibold tracking-wide text-red-400">
+          <div className="repair-commitment-eyebrow repair-commitment-reveal mb-3 text-xl sm:text-2xl font-semibold tracking-wide text-red-400">
             Cam kết
           </div>
           <h2
             id="repair-commitment-heading"
-            className="repair-commitment-title repair-commitment-reveal mb-5 text-3xl font-extrabold leading-normal uppercase tracking-wide text-white sm:text-4xl text-balance"
+            className="repair-commitment-title repair-commitment-reveal mb-5 text-4xl font-extrabold leading-normal uppercase tracking-wide text-white sm:text-5xl text-balance"
           >
             NHẤT QUÁN TỪ CHẤT LƯỢNG ĐẾN DỊCH VỤ
           </h2>
@@ -57,10 +57,10 @@ export default function RepairCommitment() {
                 key={item.number}
                 className="repair-commitment-row flex items-baseline gap-5 border-t border-white/12 py-5.5"
               >
-                <span className="repair-commitment-number min-w-7 font-mono text-sm sm:text-base font-bold text-red-400">
+                <span className="repair-commitment-number min-w-7 font-mono text-base sm:text-lg font-bold text-red-400">
                   {item.number}
                 </span>
-                <h3 className="repair-commitment-step-title text-lg sm:text-xl font-normal text-white">
+                <h3 className="repair-commitment-step-title text-xl sm:text-2xl font-normal text-white">
                   {item.title}
                 </h3>
               </div>

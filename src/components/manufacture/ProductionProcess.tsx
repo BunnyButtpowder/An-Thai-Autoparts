@@ -68,11 +68,11 @@ export default function ProductionProcess() {
               aria-hidden="true"
             />
             <div className="production-process-row-inner relative z-10 mx-auto grid max-w-7xl grid-cols-1 items-center gap-6 px-4 py-11 sm:px-6 lg:grid-cols-[200px_1fr_320px] lg:gap-10 lg:px-8">
-              <div className="production-process-number font-mono text-6xl font-black leading-[0.8] text-white/10 transition-colors duration-200 group-hover/row:text-primary/70 lg:text-8xl">
+              <div className="production-process-number font-mono text-7xl font-black leading-[0.8] text-white/10 transition-colors duration-200 group-hover/row:text-primary/70 lg:text-9xl">
                 {step.number}
               </div>
               <div className="production-process-body">
-                <h3 className="production-process-step-title mb-3 text-2xl font-bold text-white">
+                <h3 className="production-process-step-title mb-3 text-3xl font-bold text-white">
                   {step.title}
                 </h3>
                 <p className="production-process-step-text max-w-[64ch] text-[17px] leading-[1.7] text-white/65">

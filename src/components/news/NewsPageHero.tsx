@@ -21,10 +21,10 @@ export default function NewsPageHero() {
       id="tin-tuc"
     >
       <div className="news-page-hero-container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-start">
-        <h1 className="news-page-hero-title text-4xl sm:text-5xl lg:text-6xl font-extrabold text-foreground leading-tight uppercase tracking-tight mb-6">
+        <h1 className="news-page-hero-title text-5xl sm:text-6xl lg:text-7xl font-extrabold text-foreground leading-tight uppercase tracking-tight mb-6">
           Tin tức &amp; Tài liệu
         </h1>
-        <p className="news-page-hero-intro text-lg sm:text-xl text-muted-foreground leading-relaxed">
+        <p className="news-page-hero-intro text-xl sm:text-2xl text-muted-foreground leading-relaxed">
           Khám phá những tin tức mới nhất về sản phẩm, hoạt động doanh nghiệp cùng các thông tin hữu ích về ngành phụ
           tùng và công nghiệp ô tô
         </p>

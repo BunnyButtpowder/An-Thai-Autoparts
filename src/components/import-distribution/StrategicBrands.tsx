@@ -34,39 +34,35 @@ export default function StrategicBrands() {
       <div className="strategic-brands-container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="strategic-brands-header strategic-brands-reveal mb-5 flex flex-wrap items-end justify-between gap-6">
           <div>
-            <div className="strategic-brands-eyebrow strategic-brands-reveal mb-3 text-lg sm:text-xl font-semibold tracking-wide text-red-400">
+            <div className="strategic-brands-eyebrow strategic-brands-reveal mb-3 text-xl sm:text-2xl font-semibold tracking-wide text-red-400">
               Thương hiệu
             </div>
             <h2
               id="strategic-brands-heading"
-              className="strategic-brands-title text-3xl font-extrabold leading-normal uppercase tracking-wide text-white sm:text-4xl"
+              className="strategic-brands-title text-4xl font-extrabold leading-normal uppercase tracking-wide text-white sm:text-5xl"
             >
               Chiến lược phát triển
             </h2>
           </div>
           <Link
             to="/san-pham"
-            className="strategic-brands-all-link whitespace-nowrap text-sm sm:text-base font-semibold text-red-400 transition-colors hover:text-primary cursor-pointer"
+            className="strategic-brands-all-link whitespace-nowrap text-base sm:text-lg font-semibold text-red-400 transition-colors hover:text-primary cursor-pointer"
           >
             Xem tất cả sản phẩm ↗
           </Link>
         </div>
 
-        <div className="strategic-brands-grid grid grid-cols-1 gap-6 lg:grid-cols-2">
+        <div className="strategic-brands-grid grid grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-4">
           {brands.map((brand) => (
             <div
               key={brand.name}
-              className="strategic-brands-card group relative flex items-center justify-center aspect-16/10 overflow-hidden rounded-lg border border-white/12 bg-white transition-colors duration-300 hover:border-primary sm:p-5"
+              className="strategic-brands-card group relative flex aspect-square items-center justify-center overflow-hidden rounded-xl border border-white/12 bg-white p-8 transition-colors duration-300 hover:border-primary sm:p-10"
             >
               <img
                 src={brand.image}
                 alt={brand.name}
                 loading="lazy"
-                className="strategic-brands-card-image max-h-full max-w-full object-contain transition-transform duration-500 group-hover:scale-105"
-              />
-              <div
-                className="strategic-brands-card-scrim pointer-events-none absolute inset-0 "
-                aria-hidden="true"
+                className="strategic-brands-card-image max-h-24 w-full object-contain transition-transform duration-500 group-hover:scale-105 sm:max-h-28"
               />
             </div>
           ))}

@@ -31,19 +31,19 @@ export default function VehicleInspectionIntro() {
       className="vehicle-inspection-intro-section bg-[#0b0c0d] py-24"
       aria-labelledby="vehicle-inspection-intro-heading"
     >
-      <div className="vehicle-inspection-intro-container mx-auto grid max-w-7xl grid-cols-1 items-stretch gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:gap-16 lg:px-8">
+      <div className="vehicle-inspection-intro-container mx-auto grid max-w-7xl grid-cols-1 items-stretch gap-12 px-4 sm:px-6 lg:px-8 lg:grid-cols-2 lg:gap-16">
         <div className="vehicle-inspection-intro-copy">
-          <p className="vehicle-inspection-intro-eyebrow-label vehicle-inspection-intro-reveal text-lg sm:text-xl font-semibold tracking-wide text-red-400 mb-3">
+          <p className="vehicle-inspection-intro-eyebrow-label vehicle-inspection-intro-reveal text-xl sm:text-2xl font-semibold tracking-wide text-red-400 mb-3">
             Dịch vụ
           </p>
           <h2
             id="vehicle-inspection-intro-heading"
-            className="vehicle-inspection-intro-heading vehicle-inspection-intro-reveal mb-6 text-3xl font-extrabold leading-tight uppercase tracking-wide text-white sm:text-4xl"
+            className="vehicle-inspection-intro-heading vehicle-inspection-intro-reveal mb-6 text-4xl font-extrabold leading-tight uppercase tracking-wide text-white sm:text-5xl"
           >
             TRUNG TÂM ĐĂNG KIỂM XE CƠ GIỚI 17-02D
           </h2>
-          <p className="vehicle-inspection-intro-text vehicle-inspection-intro-reveal mb-7 max-w-[56ch] text-lg sm:text-xl leading-[1.7] text-white/80">
-            Được đầu tư và phát triển bởi <b className="text-red-400"> An Thái</b> theo
+          <p className="vehicle-inspection-intro-text vehicle-inspection-intro-reveal mb-7 max-w-[56ch] text-xl sm:text-2xl leading-[1.7] text-white/80">
+            Được đầu tư và phát triển bởi An Thái theo
             chủ trương xã hội hóa công tác đăng kiểm của Nhà nước, góp phần nâng cao năng lực kiểm
             định và đáp ứng nhu cầu ngày càng tăng của phương tiện cơ giới.
           </p>
@@ -55,15 +55,15 @@ export default function VehicleInspectionIntro() {
                   index % 2 === 0 ? 'border-r border-white/12 pr-6' : 'pl-6'
                 } ${index >= 2 ? 'border-t border-white/12' : ''}`}
               >
-                <div className="vehicle-inspection-intro-stat-value text-3xl font-light leading-none tabular-nums text-white sm:text-4xl lg:text-5xl">
+                <div className="vehicle-inspection-intro-stat-value text-4xl font-bold leading-none tabular-nums text-white sm:text-3xl">
                   {metric.value}
                   {metric.unit && (
-                    <span className="vehicle-inspection-intro-stat-unit ml-1 text-[0.4em]">
+                    <span className="vehicle-inspection-intro-stat-unit ml-1 text-base">
                       {metric.unit}
                     </span>
                   )}
                 </div>
-                <div className="vehicle-inspection-intro-stat-label mt-2 text-base sm:text-lg font-light text-white/60">
+                <div className="vehicle-inspection-intro-stat-label mt-1 text-base tracking-wide text-white/60 uppercase font-medium">
                   {metric.label}
                 </div>
               </div>

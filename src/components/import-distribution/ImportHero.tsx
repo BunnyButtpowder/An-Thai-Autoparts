@@ -57,13 +57,13 @@ export default function ImportHero() {
       >
         <motion.h1
           id="import-hero-heading"
-          className="import-hero-title text-4xl font-extrabold uppercase leading-normal tracking-wide text-white sm:text-6xl lg:text-7xl text-balance"
+          className="import-hero-title text-5xl font-extrabold uppercase leading-normal tracking-wide text-white sm:text-7xl lg:text-8xl text-balance"
           variants={item}
         >
           Nhập khẩu &amp; phân phối phụ tùng ô tô
         </motion.h1>
         <motion.p
-          className="import-hero-subtitle mb-9 text-lg sm:text-xl leading-relaxed text-white"
+          className="import-hero-subtitle mb-9 text-xl sm:text-2xl leading-relaxed text-white"
           variants={item}
         >
           Hệ sinh thái phụ tùng chất lượng cao, đáp ứng toàn diện nhu cầu các dòng
@@ -75,13 +75,13 @@ export default function ImportHero() {
         >
           <a
             href="/lien-he"
-            className="import-hero-cta-primary inline-flex items-center gap-2 rounded-md bg-primary px-7 py-3.5 text-base font-semibold text-primary-foreground transition-colors duration-300 hover:bg-primary-hover cursor-pointer"
+            className="import-hero-cta-primary inline-flex items-center gap-2 rounded-md bg-background px-7 py-3.5 text-lg font-semibold text-foreground transition-colors duration-300 hover:bg-background/90 cursor-pointer"
           >
             Liên hệ
           </a>
           <a
             href="/san-pham"
-            className="import-hero-cta-secondary inline-flex items-center gap-2 rounded-md border border-white/30 px-7 py-3.5 text-base font-semibold text-white transition-colors duration-300 hover:border-white hover:bg-white/10 cursor-pointer"
+            className="import-hero-cta-secondary inline-flex items-center gap-2 rounded-md border border-white/30 px-7 py-3.5 text-lg font-semibold text-white transition-colors duration-300 hover:border-white hover:bg-white/10 cursor-pointer"
           >
             Khám phá sản phẩm
           </a>

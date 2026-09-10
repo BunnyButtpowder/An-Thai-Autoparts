@@ -33,11 +33,11 @@ export default function BrandLogos() {
         <header className="brand-logos-header max-w-7xl">
           <h2
             id="brand-logos-heading"
-            className="brand-logos-title brand-logos-reveal mt-4 text-3xl font-extrabold tracking-normal text-white uppercase text-balance sm:text-4xl lg:text-5xl"
+            className="brand-logos-title brand-logos-reveal mt-4 text-4xl font-extrabold tracking-normal text-white uppercase text-balance sm:text-5xl lg:text-6xl"
           >
             Thương hiệu
           </h2>
-          <p className="brand-logos-text brand-logos-reveal mt-4 text-base leading-relaxed text-white/70 sm:text-lg">
+          <p className="brand-logos-text brand-logos-reveal mt-4 text-lg leading-relaxed text-white/70 sm:text-xl">
             Khám phá hệ thống thương hiệu với đa dạng dòng sản phẩm, cùng cam kết
             về chất lượng và độ bền trong từng chi tiết
           </p>

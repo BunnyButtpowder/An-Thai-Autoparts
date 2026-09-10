@@ -46,7 +46,7 @@ export default function JobListings() {
       id="danh-muc-viec-lam"
     >
       <div className="job-listings-container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="job-listings-heading text-2xl sm:text-3xl font-bold text-foreground mb-8 lg:mb-10">
+        <h2 className="job-listings-heading text-3xl sm:text-4xl font-bold text-foreground mb-8 lg:mb-10">
           {jobsIntro.title}
         </h2>
 
@@ -58,10 +58,10 @@ export default function JobListings() {
                 className="job-card-link group flex flex-col gap-4 rounded-xl border border-border bg-card p-5 sm:p-6 transition-shadow hover:shadow-md sm:flex-row sm:items-center sm:justify-between cursor-pointer"
               >
                 <div className="job-card-info flex flex-col gap-3">
-                  <h3 className="job-card-title text-base sm:text-lg font-semibold text-primary">
+                  <h3 className="job-card-title text-lg sm:text-xl font-semibold text-primary">
                     {job.title}
                   </h3>
-                  <div className="job-card-meta flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-muted-foreground">
+                  <div className="job-card-meta flex flex-wrap items-center gap-x-6 gap-y-2 text-base text-muted-foreground">
                     <span className="job-card-location inline-flex items-center gap-1.5">
                       <MapPinIcon className="w-4 h-4 shrink-0" />
                       {job.location}
@@ -72,7 +72,7 @@ export default function JobListings() {
                     </span>
                   </div>
                 </div>
-                <span className="job-card-apply inline-flex shrink-0 items-center gap-1.5 self-start text-sm font-semibold text-primary group-hover:text-primary-hover sm:self-auto">
+                <span className="job-card-apply inline-flex shrink-0 items-center gap-1.5 self-start text-base font-semibold text-primary group-hover:text-primary-hover sm:self-auto">
                   Ứng tuyển ngay
                   <ChevronRight className="w-4 h-4" />
                 </span>
@@ -85,7 +85,7 @@ export default function JobListings() {
           className="job-listings-pagination mt-8 flex flex-col items-center justify-between gap-4 sm:flex-row"
           aria-label="Phân trang việc làm"
         >
-          <p className="job-listings-range text-sm text-muted-foreground">
+          <p className="job-listings-range text-base text-muted-foreground">
             {rangeStart} đến {rangeEnd} trong tổng số {jobs.length} vị trí
           </p>
           <div className="job-listings-pages flex items-center gap-1">
@@ -104,7 +104,7 @@ export default function JobListings() {
                 type="button"
                 onClick={() => goToPage(page)}
                 aria-current={page === currentPage ? 'page' : undefined}
-                className={`pagination-page flex h-9 w-9 items-center justify-center rounded-md border text-sm font-medium transition-colors cursor-pointer ${
+                className={`pagination-page flex h-9 w-9 items-center justify-center rounded-md border text-base font-medium transition-colors cursor-pointer ${
                   page === currentPage
                     ? 'border-primary bg-primary text-primary-foreground'
                     : 'border-border text-foreground hover:bg-accent hover:text-primary'

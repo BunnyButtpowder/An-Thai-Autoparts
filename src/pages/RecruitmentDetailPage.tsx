@@ -39,7 +39,7 @@ export default function RecruitmentDetailPage() {
         ) : (
           <section className="job-not-found-section min-h-[60vh] flex items-center justify-center pt-32 pb-16">
             <div className="job-not-found-container max-w-md mx-auto px-4 text-center">
-              <h1 className="job-not-found-title text-2xl sm:text-3xl font-bold text-foreground mb-4">
+              <h1 className="job-not-found-title text-3xl sm:text-4xl font-bold text-foreground mb-4">
                 Không tìm thấy vị trí tuyển dụng
               </h1>
               <p className="job-not-found-text text-muted-foreground mb-8">
@@ -47,7 +47,7 @@ export default function RecruitmentDetailPage() {
               </p>
               <Link
                 to="/tuyen-dung"
-                className="job-not-found-link inline-flex items-center justify-center rounded-lg bg-primary px-6 py-3 text-base font-semibold text-primary-foreground transition-colors hover:bg-primary-hover cursor-pointer"
+                className="job-not-found-link inline-flex items-center justify-center rounded-lg bg-foreground px-6 py-3 text-lg font-semibold text-background transition-colors hover:bg-foreground/90 cursor-pointer"
               >
                 Xem tất cả vị trí
               </Link>

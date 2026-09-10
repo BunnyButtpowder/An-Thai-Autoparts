@@ -84,10 +84,10 @@ export default function ContactPopupForm({ isOpen, onClose }: ContactPopupFormPr
             aria-hidden="true"
           />
           <div className="contact-popup-header-content relative z-1">
-            <h2 id="contact-popup-title" className="contact-popup-title text-2xl font-bold uppercase leading-tight text-white sm:text-3xl">
+            <h2 id="contact-popup-title" className="contact-popup-title text-3xl font-bold uppercase leading-tight text-white sm:text-4xl">
               Nhận tư vấn từ An Thái
             </h2>
-            <p className="contact-popup-subtitle mt-2 text-sm leading-relaxed text-white/70">
+            <p className="contact-popup-subtitle mt-2 text-base leading-relaxed text-white/70">
               Để lại thông tin, đội ngũ của chúng tôi sẽ liên hệ tư vấn về sản phẩm và dịch vụ phù hợp
             </p>
           </div>
@@ -100,14 +100,14 @@ export default function ContactPopupForm({ isOpen, onClose }: ContactPopupFormPr
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
               </svg>
             </div>
-            <h3 className="contact-popup-success-title text-xl font-bold text-foreground">Cảm ơn bạn!</h3>
-            <p className="contact-popup-success-text mt-2 text-sm leading-relaxed text-muted-foreground">
+            <h3 className="contact-popup-success-title text-2xl font-bold text-foreground">Cảm ơn bạn!</h3>
+            <p className="contact-popup-success-text mt-2 text-base leading-relaxed text-muted-foreground">
               Chúng tôi đã nhận được thông tin và sẽ liên hệ với bạn trong thời gian sớm nhất.
             </p>
             <button
               type="button"
               onClick={onClose}
-              className="contact-popup-success-close mt-6 inline-flex items-center justify-center rounded-full bg-primary px-6 py-2.5 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary-hover cursor-pointer"
+              className="contact-popup-success-close mt-6 inline-flex items-center justify-center rounded-full bg-foreground px-6 py-2.5 text-base font-semibold text-background transition-colors hover:bg-foreground/90 cursor-pointer"
             >
               Đóng
             </button>
@@ -115,7 +115,7 @@ export default function ContactPopupForm({ isOpen, onClose }: ContactPopupFormPr
         ) : (
           <form className="contact-popup-form px-6 py-6 sm:px-8" onSubmit={handleSubmit}>
             <div className="contact-popup-field mb-4">
-              <label htmlFor="contact-popup-fullname" className="contact-popup-label mb-1.5 block text-sm font-semibold text-foreground">
+              <label htmlFor="contact-popup-fullname" className="contact-popup-label mb-1.5 block text-base font-semibold text-foreground">
                 Họ và tên <span className="text-primary">*</span>
               </label>
               <input
@@ -126,12 +126,12 @@ export default function ContactPopupForm({ isOpen, onClose }: ContactPopupFormPr
                 value={values.fullName}
                 onChange={updateField('fullName')}
                 placeholder="Nguyễn Văn A"
-                className="contact-popup-input w-full rounded-lg border border-input bg-background px-4 py-2.5 text-sm text-foreground outline-none transition-colors placeholder:text-muted-foreground focus:border-primary focus:ring-2 focus:ring-ring/30"
+                className="contact-popup-input w-full rounded-lg border border-input bg-background px-4 py-2.5 text-base text-foreground outline-none transition-colors placeholder:text-muted-foreground focus:border-primary focus:ring-2 focus:ring-ring/30"
               />
             </div>
 
             <div className="contact-popup-field mb-4">
-              <label htmlFor="contact-popup-phone" className="contact-popup-label mb-1.5 block text-sm font-semibold text-foreground">
+              <label htmlFor="contact-popup-phone" className="contact-popup-label mb-1.5 block text-base font-semibold text-foreground">
                 Số điện thoại <span className="text-primary">*</span>
               </label>
               <input
@@ -143,12 +143,12 @@ export default function ContactPopupForm({ isOpen, onClose }: ContactPopupFormPr
                 value={values.phone}
                 onChange={updateField('phone')}
                 placeholder="0901 234 567"
-                className="contact-popup-input w-full rounded-lg border border-input bg-background px-4 py-2.5 text-sm text-foreground outline-none transition-colors placeholder:text-muted-foreground focus:border-primary focus:ring-2 focus:ring-ring/30"
+                className="contact-popup-input w-full rounded-lg border border-input bg-background px-4 py-2.5 text-base text-foreground outline-none transition-colors placeholder:text-muted-foreground focus:border-primary focus:ring-2 focus:ring-ring/30"
               />
             </div>
 
             <div className="contact-popup-field mb-4">
-              <label htmlFor="contact-popup-email" className="contact-popup-label mb-1.5 block text-sm font-semibold text-foreground">
+              <label htmlFor="contact-popup-email" className="contact-popup-label mb-1.5 block text-base font-semibold text-foreground">
                 Email <span className="text-primary">*</span>
               </label>
               <input
@@ -158,12 +158,12 @@ export default function ContactPopupForm({ isOpen, onClose }: ContactPopupFormPr
                 value={values.email}
                 onChange={updateField('email')}
                 placeholder="email@example.com"
-                className="contact-popup-input w-full rounded-lg border border-input bg-background px-4 py-2.5 text-sm text-foreground outline-none transition-colors placeholder:text-muted-foreground focus:border-primary focus:ring-2 focus:ring-ring/30"
+                className="contact-popup-input w-full rounded-lg border border-input bg-background px-4 py-2.5 text-base text-foreground outline-none transition-colors placeholder:text-muted-foreground focus:border-primary focus:ring-2 focus:ring-ring/30"
               />
             </div>
 
             <div className="contact-popup-field mb-6">
-              <label htmlFor="contact-popup-province" className="contact-popup-label mb-1.5 block text-sm font-semibold text-foreground">
+              <label htmlFor="contact-popup-province" className="contact-popup-label mb-1.5 block text-base font-semibold text-foreground">
                 Tỉnh / Thành phố <span className="text-primary">*</span>
               </label>
               <select
@@ -171,7 +171,7 @@ export default function ContactPopupForm({ isOpen, onClose }: ContactPopupFormPr
                 required
                 value={values.province}
                 onChange={updateField('province')}
-                className="contact-popup-select w-full rounded-lg border border-input bg-background px-4 py-2.5 text-sm text-foreground outline-none transition-colors focus:border-primary focus:ring-2 focus:ring-ring/30 cursor-pointer"
+                className="contact-popup-select w-full rounded-lg border border-input bg-background px-4 py-2.5 text-base text-foreground outline-none transition-colors focus:border-primary focus:ring-2 focus:ring-ring/30 cursor-pointer"
               >
                 <option value="" disabled>
                   Chọn nơi ở của bạn
@@ -186,11 +186,11 @@ export default function ContactPopupForm({ isOpen, onClose }: ContactPopupFormPr
 
             <button
               type="submit"
-              className="contact-popup-submit w-full rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary-hover cursor-pointer"
+              className="contact-popup-submit w-full rounded-full bg-foreground px-6 py-3 text-base font-semibold text-background transition-colors hover:bg-foreground/90 cursor-pointer"
             >
               Gửi thông tin
             </button>
-            <p className="contact-popup-privacy mt-3 text-center text-xs text-muted-foreground">
+            <p className="contact-popup-privacy mt-3 text-center text-sm text-muted-foreground">
               Thông tin của bạn được bảo mật và chỉ dùng cho mục đích tư vấn.
             </p>
           </form>

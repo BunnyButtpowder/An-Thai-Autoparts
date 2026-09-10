@@ -15,7 +15,7 @@ export default function DropdownMenu({ label, items, href }: DropdownMenuProps) 
       <a href={href}>
         <button
           type="button"
-          className="nav-dropdown-trigger px-4 py-2 text-base font-medium text-white hover:text-primary transition-colors cursor-pointer rounded-md flex items-center gap-1"
+          className="nav-dropdown-trigger px-4 py-2 text-lg font-medium text-white hover:text-primary transition-colors cursor-pointer rounded-md flex items-center gap-1"
           aria-expanded="false"
           aria-haspopup="true"
         >
@@ -32,7 +32,7 @@ export default function DropdownMenu({ label, items, href }: DropdownMenuProps) 
             {item.href.startsWith('#') ? (
               <a
                 href={item.href}
-                className="block px-4 py-2 text-sm text-foreground hover:bg-accent hover:text-accent-foreground cursor-pointer"
+                className="block px-4 py-2 text-base text-foreground hover:bg-accent hover:text-accent-foreground cursor-pointer"
                 role="menuitem"
               >
                 {item.label}
@@ -40,7 +40,7 @@ export default function DropdownMenu({ label, items, href }: DropdownMenuProps) 
             ) : (
               <Link
                 to={item.href}
-                className="block px-4 py-2 text-sm text-foreground hover:bg-accent hover:text-accent-foreground cursor-pointer"
+                className="block px-4 py-2 text-base text-foreground hover:bg-accent hover:text-accent-foreground cursor-pointer"
                 role="menuitem"
               >
                 {item.label}

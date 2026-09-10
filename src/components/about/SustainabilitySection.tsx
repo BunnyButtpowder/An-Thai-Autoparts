@@ -1,12 +1,10 @@
 import { useEffect, useRef, useState } from 'react'
 import useReveal from '../../hooks/useReveal'
-import ArrowRight from '../icons/ArrowRight'
 
 interface Pillar {
   n: string
   title: string
   description: string
-  cta: { label: string; href: string }
   img: string
   alt: string
 }
@@ -18,8 +16,7 @@ const pillars: Pillar[] = [
   {
     n: '01',
     title: 'Phát triển nhân sự',
-    description: 'Xây dựng đội ngũ nhân sự giàu kinh nghiệm, vững chuyên môn và gắn kết lâu dài.',
-    cta: { label: 'Xem thêm', href: '#' },
+    description: 'An Thái chú trọng xây dựng đội ngũ vững chuyên môn, tận tâm trong công việc và gắn kết lâu dài. Chúng tôi đảm bảo quyền lợi cho người lao động, đồng thời tạo điều kiện để mỗi cá nhân phát triển thông qua các chương trình đào tạo và nâng cao chuyên môn. Bên cạnh đó, các hoạt động teambuilding, dự án cộng đồng, CLB Bóng đá, CLB Pickleball… được duy trì thường xuyên, giúp các thành viên kết nối, sẻ chia và cùng xây dựng một tập thể An Thái ngày càng gắn kết.',
     img: encodeURI('/about/Phát triển nhân viên.jpg'),
     alt: 'Phát triển nhân sự tại An Thái',
   },
@@ -27,16 +24,14 @@ const pillars: Pillar[] = [
     n: '02',
     title: 'Kiến tạo môi trường',
     description:
-      'Xây dựng môi trường làm việc công bằng, gắn kết và tạo điều kiện phát triển toàn diện cho nhân sự.',
-    cta: { label: 'Xem thêm', href: '#' },
+      'An Thái xây dựng môi trường làm việc công bằng, minh bạch và gắn kết, nơi mỗi thành viên được tôn trọng, sẻ chia và ghi nhận xứng đáng. Chúng tôi đảm bảo thu nhập và phúc lợi cạnh tranh, đồng thời tạo cơ hội phát triển với lộ trình thăng tiến rõ ràng, chương trình đào tạo bài bản và nhiều cơ hội thử sức trong công việc. Bên cạnh đó, môi trường làm việc thân thiện, nhân văn cùng cơ sở vật chất hiện đại tạo điều kiện để mỗi cá nhân phát huy năng lực, phát triển toàn diện và gắn bó lâu dài cùng An Thái.',
     img: encodeURI('/about/Phát triền môi trường.jpg'),
     alt: 'Kiến tạo môi trường làm việc tại An Thái',
   },
   {
     n: '03',
-    title: 'Phụng sự cộng đồng',
-    description: 'Chung tay vì cộng đồng thông qua các hoạt động thiện nguyện và trách nhiệm xã hội thiết thực.',
-    cta: { label: 'Xem thêm', href: '#' },
+    title: 'Trách nhiệm xã hội',
+    description: 'An Thái xem trách nhiệm với cộng đồng là một phần trong hành trình phát triển bền vững, tập trung vào giáo dục, an sinh xã hội và các hoạt động sẻ chia thiết thực. Quỹ học bổng Bean’s Foundation được thành lập dành cho con em cán bộ nhân viên, góp phần mở rộng cơ hội học tập và tiếp cận những nền giáo dục hiện đại. An Thái cũng duy trì nhiều hoạt động như xây dựng nhà tình thương, đồng hành cùng trẻ em và các gia đình có hoàn cảnh đặc biệt, hỗ trợ Trung tâm Bảo trợ xã hội tỉnh Thái Bình. Các chương trình hiến máu tình nguyện và hoạt động thiện nguyện thường niên cũng được tổ chức với sự chung tay của CBCNV, lan tỏa tinh thần sẻ chia đến cộng đồng.',
     img: encodeURI('/about/Hoạt động xã hội.jpg'),
     alt: 'Hoạt động xã hội của An Thái',
   },
@@ -102,14 +97,14 @@ export default function SustainabilitySection() {
           <div className="sustainability-grid pointer-events-none absolute inset-0" aria-hidden="true" />
           <div className="sustainability-copy-inner relative py-24 lg:py-32">
             <div className="sustainability-intro max-w-xl">
-              <p className="sustainability-eyebrow-label inline-flex items-center text-lg sm:text-xl font-semibold tracking-wide text-red-400">
-                Trách nhiệm xã hội
+              <p className="sustainability-eyebrow-label inline-flex items-center text-xl sm:text-2xl font-semibold tracking-wide text-red-400">
+                Phát triển bền vững
               </p>
               <h2
                 id="sustainability-heading"
-                className="sustainability-heading mt-4 text-3xl uppercase font-extrabold leading-tight text-white sm:text-4xl"
+                className="sustainability-heading mt-4 text-4xl uppercase font-extrabold leading-tight text-white sm:text-5xl"
               >
-                Phát triển bền vững cùng An Thái
+                Cùng An Thái Kiến tạo giá trị cho tương lai
               </h2>
             </div>
 
@@ -128,7 +123,7 @@ export default function SustainabilitySection() {
                         accent bar grows and lights red when the pillar is active. */}
                     <div className="sustainability-rail hidden flex-none flex-col items-center gap-4 lg:flex lg:w-14 lg:pt-1.5">
                       <span
-                        className={`sustainability-rail-number stat-number text-2xl font-black tabular-nums leading-none transition-colors duration-300 ${isActive ? 'text-red-400' : 'text-white/20'
+                        className={`sustainability-rail-number stat-number text-3xl font-black tabular-nums leading-none transition-colors duration-300 ${isActive ? 'text-red-400' : 'text-white/20'
                           }`}
                       >
                         {pillar.n}
@@ -152,22 +147,15 @@ export default function SustainabilitySection() {
                           className="h-full w-full object-cover"
                         />
                       </div>
-                      <span className="sustainability-pillar-number stat-number text-sm font-black tabular-nums text-red-400 lg:hidden">
+                      <span className="sustainability-pillar-number stat-number text-base font-black tabular-nums text-red-400 lg:hidden">
                         {pillar.n}
                       </span>
-                      <h3 className="sustainability-pillar-title mt-2 font-bold uppercase tracking-tight text-white lg:mt-0 text-xl lg:text-3xl lg:leading-tight">
+                      <h3 className="sustainability-pillar-title mt-2 font-bold uppercase tracking-tight text-white lg:mt-0 text-2xl lg:text-4xl lg:leading-tight">
                         {pillar.title}
                       </h3>
-                      <p className="sustainability-pillar-desc mt-4 max-w-prose text-base lg:text-lg leading-relaxed text-white/75">
+                      <p className="sustainability-pillar-desc mt-4 max-w-prose text-lg lg:text-xl leading-relaxed text-white/75 text-justify">
                         {pillar.description}
                       </p>
-                      <a
-                        href={pillar.cta.href}
-                        className="sustainability-pillar-cta group/cta mt-6 inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-widest text-red-400 cursor-pointer"
-                      >
-                        {pillar.cta.label}
-                        <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover/cta:translate-x-1" />
-                      </a>
                     </div>
                   </article>
                 )

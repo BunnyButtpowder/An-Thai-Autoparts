@@ -55,13 +55,13 @@ export default function VehicleInspectionHero() {
       >
         <motion.h1
           id="vehicle-inspection-hero-heading"
-          className="vehicle-inspection-hero-title text-4xl font-extrabold uppercase leading-normal tracking-normal text-white sm:text-6xl lg:text-7xl"
+          className="vehicle-inspection-hero-title text-5xl font-extrabold uppercase leading-normal tracking-normal text-white sm:text-7xl lg:text-8xl"
           variants={item}
         >
           Đăng kiểm xe cơ giới
         </motion.h1>
         <motion.p
-          className="vehicle-inspection-hero-subtitle max-w-250 text-lg leading-relaxed text-white sm:text-2xl"
+          className="vehicle-inspection-hero-subtitle max-w-250 text-xl leading-relaxed text-white sm:text-3xl"
           variants={item}
         >
           Kiểm định chính xác, phục vụ chuyên nghiệp

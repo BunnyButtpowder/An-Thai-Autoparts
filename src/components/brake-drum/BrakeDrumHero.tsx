@@ -49,13 +49,13 @@ export default function BrakeDrumHero() {
       >
         <motion.h1
           id="brake-hero-heading"
-          className="brake-hero-title text-4xl font-extrabold uppercase leading-normal tracking-wide text-white sm:text-6xl lg:text-7xl text-balance"
+          className="brake-hero-title text-5xl font-extrabold uppercase leading-normal tracking-wide text-white sm:text-7xl lg:text-8xl text-balance"
           variants={item}
         >
           Tăm bua An Thái
         </motion.h1>
         <motion.p
-          className="brake-hero-subtitle mb-9 text-lg sm:text-xl leading-relaxed text-white"
+          className="brake-hero-subtitle mb-9 text-xl sm:text-2xl leading-relaxed text-white"
           variants={item}
         >
           Sản xuất tại Việt Nam. Thiết kế tối ưu cho các dòng xe tải Mỹ, Nhật Bản
@@ -67,13 +67,13 @@ export default function BrakeDrumHero() {
         >
           <a
             href="/lien-he"
-            className="brake-hero-cta-primary inline-flex items-center gap-2 rounded-md bg-primary px-7 py-3.5 text-base font-semibold text-primary-foreground transition-colors duration-300 hover:bg-primary-hover cursor-pointer"
+            className="brake-hero-cta-primary inline-flex items-center gap-2 rounded-md bg-background px-7 py-3.5 text-lg font-semibold text-foreground transition-colors duration-300 hover:bg-background/90 cursor-pointer"
           >
             Liên hệ nhận báo giá
           </a>
           <a
             href="/san-xuat-phu-tung"
-            className="brake-hero-cta-secondary inline-flex items-center gap-2 rounded-md border border-white/30 px-7 py-3.5 text-base font-semibold text-white transition-colors duration-300 hover:border-white hover:bg-white/10 cursor-pointer"
+            className="brake-hero-cta-secondary inline-flex items-center gap-2 rounded-md border border-white/30 px-7 py-3.5 text-lg font-semibold text-white transition-colors duration-300 hover:border-white hover:bg-white/10 cursor-pointer"
           >
             Xem nhà máy của chúng tôi
           </a>

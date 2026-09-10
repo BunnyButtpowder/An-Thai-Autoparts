@@ -11,7 +11,7 @@ function renderBlock(block: ArticleBlock, index: number) {
       return (
         <p
           key={index}
-          className="article-block article-block-lead text-xl text-white/90 leading-relaxed font-medium"
+          className="article-block article-block-lead text-2xl text-white/90 leading-relaxed font-medium"
         >
           {block.text}
         </p>
@@ -20,7 +20,7 @@ function renderBlock(block: ArticleBlock, index: number) {
       return (
         <h2
           key={index}
-          className="article-block article-block-heading text-2xl sm:text-3xl font-bold text-white leading-snug pt-2"
+          className="article-block article-block-heading text-3xl sm:text-4xl font-bold text-white leading-snug pt-2"
         >
           {block.text}
         </h2>
@@ -29,7 +29,7 @@ function renderBlock(block: ArticleBlock, index: number) {
       return (
         <p
           key={index}
-          className="article-block article-block-paragraph text-base sm:text-lg text-white/70 leading-relaxed"
+          className="article-block article-block-paragraph text-lg sm:text-xl text-white/70 leading-relaxed"
         >
           {block.text}
         </p>
@@ -45,7 +45,7 @@ function renderBlock(block: ArticleBlock, index: number) {
             />
           </div>
           {block.caption ? (
-            <figcaption className="article-block-caption mt-3 text-sm text-white/45 italic text-center">
+            <figcaption className="article-block-caption mt-3 text-base text-white/45 italic text-center">
               {block.caption}
             </figcaption>
           ) : null}
@@ -57,7 +57,7 @@ function renderBlock(block: ArticleBlock, index: number) {
           {block.items.map((item, itemIndex) => (
             <li
               key={itemIndex}
-              className="article-block-list-item flex gap-3 text-base sm:text-lg text-white/70 leading-relaxed"
+              className="article-block-list-item flex gap-3 text-lg sm:text-xl text-white/70 leading-relaxed"
             >
               <span className="article-block-list-marker mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
               <span>{item}</span>
@@ -71,11 +71,11 @@ function renderBlock(block: ArticleBlock, index: number) {
           key={index}
           className="article-block article-block-quote border-l-4 border-primary bg-white/5 rounded-r-xl py-5 px-6"
         >
-          <p className="article-block-quote-text text-lg sm:text-xl font-medium text-white leading-relaxed">
+          <p className="article-block-quote-text text-xl sm:text-2xl font-medium text-white leading-relaxed">
             “{block.text}”
           </p>
           {block.cite ? (
-            <cite className="article-block-quote-cite mt-3 block text-sm font-semibold not-italic text-white/55">
+            <cite className="article-block-quote-cite mt-3 block text-base font-semibold not-italic text-white/55">
               — {block.cite}
             </cite>
           ) : null}
@@ -111,14 +111,14 @@ export default function ArticleDetailBody({ body }: { body: ArticleBody }) {
 
         {body.takeaways && body.takeaways.length > 0 ? (
           <div className="article-takeaways article-block rounded-2xl border border-white/10 bg-white/5 p-6 sm:p-8 mt-4">
-            <h2 className="article-takeaways-title text-xl font-bold text-white mb-4">
+            <h2 className="article-takeaways-title text-2xl font-bold text-white mb-4">
               Điểm chính
             </h2>
             <ul className="article-takeaways-list flex flex-col gap-3">
               {body.takeaways.map((item, index) => (
                 <li
                   key={index}
-                  className="article-takeaways-item flex gap-3 text-base text-white/70 leading-relaxed"
+                  className="article-takeaways-item flex gap-3 text-lg text-white/70 leading-relaxed"
                 >
                   <span className="article-takeaways-marker mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
                   <span>{item}</span>

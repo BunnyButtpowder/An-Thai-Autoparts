@@ -27,19 +27,19 @@ export default function LearnMoreSection() {
       className="learn-more-section bg-background py-20"
       id="tim-hieu-them"
     >
-      <div className="learn-more-container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-8 lg:grid lg:grid-cols-3 lg:items-center lg:gap-0">
-        <div className="learn-more-text-column contents lg:col-span-2 lg:flex lg:flex-col lg:gap-8">
-          <h2 className="learn-more-heading order-1 lg:order-0 text-center lg:text-left text-3xl sm:text-4xl font-bold text-foreground uppercase tracking-tight">
+      <div className="learn-more-container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-8 lg:grid lg:grid-cols-3 lg:items-center lg:gap-10">
+        <div className="learn-more-text-column contents lg:col-span-2 lg:flex lg:flex-col lg:gap-5">
+          <h2 className="learn-more-heading order-1 lg:order-0 text-center lg:text-left text-4xl sm:text-5xl font-bold text-foreground uppercase tracking-tight">
             Tìm hiểu thêm về chúng tôi
           </h2>
-          <p className="learn-more-text order-2 lg:order-0 text-lg text-black leading-relaxed max-w-2xl text-center lg:text-left">
+          <p className="learn-more-text order-2 lg:order-0 text-xl text-black leading-relaxed text-justify lg:text-left">
             Từ những nền tảng vững chắc đến khát vọng vươn xa, hãy cùng khám phá hành trình phát triển và những giá trị đã làm nên thương hiệu An Thái.
           </p>
           <a
             href={E_CATALOGUE_HREF}
             target="_blank"
             rel="noopener noreferrer"
-            className="learn-more-catalogue order-4 lg:order-0 inline-flex items-center justify-center gap-2 rounded-lg bg-primary px-8 py-4 text-base font-semibold text-primary-foreground transition-colors hover:bg-primary-hover cursor-pointer"
+            className="learn-more-catalogue order-4 lg:order-0 inline-flex items-center justify-center gap-2 rounded-lg bg-foreground px-8 py-4 text-lg font-semibold text-background transition-colors hover:bg-foreground/90 cursor-pointer"
           >
             E - Catalogue
             <ArrowRight className="w-5 h-5" />
@@ -49,7 +49,7 @@ export default function LearnMoreSection() {
           <div className="learn-more-qr-frame rounded-xl border border-border bg-card p-3 shadow-sm">
             <img src="/recruit/qr-catalog.png" alt="Mã QR" className="w-40 h-40 lg:w-48 lg:h-48" />
           </div>
-          <span className="learn-more-qr-label text-sm text-center font-medium text-muted-foreground">Quét mã để xem E-Catalogue</span>
+          <span className="learn-more-qr-label text-base text-center font-medium text-muted-foreground">Quét mã để xem E-Catalogue</span>
         </div>
       </div>
     </section>

@@ -31,7 +31,7 @@ export default function BrakeDrumMarkets() {
     <section ref={ref} className="brake-markets-section">
       <div className="brake-markets-inner mx-auto max-w-7xl px-6 sm:px-10">
         <h2
-          className="brake-markets-title brake-reveal m-0 mb-5 font-extrabold text-3xl sm:text-4xl lg:text-5xl uppercase leading-none tracking-[-0.015em] text-white"
+          className="brake-markets-title brake-reveal m-0 mb-5 font-extrabold text-4xl sm:text-5xl lg:text-6xl uppercase leading-none tracking-[-0.015em] text-white"
         >
           Đáp ứng nhu cầu thị trường quốc tế
         </h2>
@@ -43,7 +43,7 @@ export default function BrakeDrumMarkets() {
             land: '#26282c',
             'land-active': '#8e2020',
             edge: 'rgba(255,255,255,0.09)',
-            accent: '#f4413f',
+            accent: '#ffffff',
             'hub-label': 'AN THÁI',
             style: { display: 'block', width: '100%' },
           } as Record<string, unknown>)}

@@ -44,27 +44,27 @@ export default function HeroV2() {
           <div className="hero-v2-frame relative  px-8 py-10 sm:px-12 sm:py-14 lg:px-16 lg:py-16">
             <h1
               id="hero-v2-heading"
-              className="hero-v2-heading mt-6 font-extrabold tracking-relaxed text-white text-balance"
+              className="hero-v2-heading mt-6 font-extrabold tracking-relaxed text-white text-balance text-3xl sm:text-4xl lg:text-7xl leading-23"
             >
               <span className="block overflow-hidden pb-1">
-                <span className="hero-v2-line hero-title-fluid block">Vì chiếc xe luôn lăn bánh</span>
+                <span className="hero-v2-line block">Vì chiếc xe luôn lăn bánh</span>
               </span>
               <span className="block overflow-hidden pb-1">
-                <span className="hero-v2-line hero-title-fluid block">Vì doanh nghiệp phát triển</span>
+                <span className="hero-v2-line block">Vì doanh nghiệp phát triển</span>
               </span>
             </h1>
 
             <div className="hero-v2-cta mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
               <Link
                 to="/gioi-thieu"
-                className="hero-v2-cta-primary group inline-flex items-center justify-center gap-2 rounded-md bg-primary px-7 py-3.5 text-base font-semibold text-primary-foreground transition-colors duration-300 hover:bg-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-[#0a0b0d] cursor-pointer"
+                className="hero-v2-cta-primary group inline-flex items-center justify-center gap-2 rounded-md bg-background px-7 py-3 text-lg font-semibold text-foreground transition-colors duration-300 hover:bg-background/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-[#0a0b0d] cursor-pointer"
               >
                 Khám phá thêm
                 <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
               </Link>
               <a
                 href="/san-pham"
-                className="hero-v2-cta-secondary inline-flex items-center justify-center gap-2 rounded-md border border-white/25 px-7 py-3.5 text-base font-semibold text-white transition-colors duration-300 hover:border-white hover:bg-white/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-[#0a0b0d] cursor-pointer"
+                className="hero-v2-cta-secondary inline-flex items-center justify-center gap-2 rounded-md border border-white/25 px-7 py-3 text-lg font-semibold text-white transition-colors duration-300 hover:border-white hover:bg-white/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-[#0a0b0d] cursor-pointer"
               >
                 Xem thêm sản phẩm
               </a>

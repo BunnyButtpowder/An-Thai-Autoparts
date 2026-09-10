@@ -64,14 +64,14 @@ export const StickyScroll = ({
             <motion.h3
               initial={false}
               animate={{ opacity: activeCard === index ? 1 : 0.3 }}
-              className="text-2xl lg:text-3xl font-bold text-white"
+              className="text-3xl lg:text-4xl font-bold text-white"
             >
               {item.title}
             </motion.h3>
             <motion.p
               initial={false}
               animate={{ opacity: activeCard === index ? 1 : 0.3 }}
-              className="mt-5 max-w-md text-base lg:text-lg leading-relaxed text-white/70"
+              className="mt-5 max-w-md text-lg lg:text-xl leading-relaxed text-white/70"
             >
               {item.description}
             </motion.p>
@@ -80,7 +80,7 @@ export const StickyScroll = ({
                 href={item.cta.href}
                 initial={false}
                 animate={{ opacity: activeCard === index ? 1 : 0.3 }}
-                className="group/cta mt-6 inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-wider text-primary cursor-pointer"
+                className="group/cta mt-6 inline-flex items-center gap-2 text-base font-semibold uppercase tracking-wider text-primary cursor-pointer"
               >
                 {item.cta.label}
                 <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover/cta:translate-x-1" />

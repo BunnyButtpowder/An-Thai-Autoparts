@@ -37,14 +37,14 @@ function faceClass(variant: 'primary' | 'secondary') {
     'floating-contact-button relative flex h-12 w-12 items-center justify-center rounded-full transition-all duration-300 group-hover:-translate-y-0.5 group-hover:scale-105 [&_svg]:h-6! [&_svg]:w-6!'
   const surface =
     variant === 'primary'
-      ? 'bg-primary text-primary-foreground shadow-lg shadow-primary/25 group-hover:bg-primary-hover group-hover:shadow-primary/40'
+      ? 'bg-foreground text-background shadow-lg shadow-black/25 group-hover:bg-foreground/90 group-hover:shadow-black/40'
       : 'bg-white/90 text-primary border border-border ring-1 ring-black/5 shadow-md shadow-black/5 backdrop-blur-sm group-hover:shadow-lg group-hover:shadow-black/10'
   return `${base} ${surface}`
 }
 
 /** Label pill — slides out from behind the button on hover. Shared by every action. */
 const labelPillClass =
-  'floating-contact-label pointer-events-none absolute right-full mr-3 whitespace-nowrap rounded-full bg-foreground/90 px-3.5 py-2 text-sm font-semibold text-primary-foreground opacity-0 translate-x-3 shadow-lg backdrop-blur-sm transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100'
+  'floating-contact-label pointer-events-none absolute right-full mr-3 whitespace-nowrap rounded-full bg-foreground/90 px-3.5 py-2 text-base font-semibold text-primary-foreground opacity-0 translate-x-3 shadow-lg backdrop-blur-sm transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100'
 
 export default function FloatingContact() {
   // Deferred mount so the stack fades/rises in rather than snapping on load.
@@ -86,7 +86,7 @@ export default function FloatingContact() {
 
           <span className={faceClass(action.variant)}>
             {action.pulse && (
-              <span className="floating-contact-pulse absolute inset-0 rounded-full bg-primary opacity-60" />
+              <span className="floating-contact-pulse absolute inset-0 rounded-full bg-foreground opacity-60" />
             )}
             {/* Force every glyph fill to currentColor so the white-baked Zalo mark
                 adopts the button's red on the glass surface (harmless for the

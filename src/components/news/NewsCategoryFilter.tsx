@@ -25,7 +25,7 @@ export default function NewsCategoryFilter({ activeCategory, onCategoryChange }:
                 <button
                   type="button"
                   onClick={() => onCategoryChange(category.slug)}
-                  className={`news-category-filter-button text-sm sm:text-base font-semibold uppercase tracking-wider transition-colors cursor-pointer ${
+                  className={`news-category-filter-button text-base sm:text-lg font-semibold uppercase tracking-wider transition-colors cursor-pointer ${
                     isActive
                       ? 'text-primary'
                       : 'text-muted-foreground hover:text-foreground'

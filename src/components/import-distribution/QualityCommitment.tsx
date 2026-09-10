@@ -53,12 +53,12 @@ export default function QualityCommitment() {
       aria-labelledby="quality-commitment-heading"
     >
       <div className="quality-commitment-header mx-auto max-w-7xl px-4 pb-10 pt-24 sm:px-6 lg:px-8">
-        <div className="quality-commitment-eyebrow quality-commitment-reveal mb-3 text-lg sm:text-xl font-semibold tracking-wide text-red-400">
+        <div className="quality-commitment-eyebrow quality-commitment-reveal mb-3 text-xl sm:text-2xl font-semibold tracking-wide text-red-400">
           Cam kết
         </div>
         <h2
           id="quality-commitment-heading"
-          className="quality-commitment-title quality-commitment-reveal text-3xl font-extrabold leading-normal uppercase tracking-wide text-white sm:text-4xl"
+          className="quality-commitment-title quality-commitment-reveal text-4xl font-extrabold leading-normal uppercase tracking-wide text-white sm:text-5xl"
         >
           Chất lượng trong từng chi tiết
         </h2>
@@ -66,15 +66,22 @@ export default function QualityCommitment() {
 
       <div className="quality-commitment-list border-t border-white/10">
         {commitments.map((item) => (
-          <div key={item.number} className="quality-commitment-row border-b border-white/10">
-            <div className="quality-commitment-row-inner mx-auto grid max-w-7xl grid-cols-1 items-baseline gap-6 px-4 py-9 sm:px-6 lg:grid-cols-[120px_320px_1fr] lg:gap-10 lg:px-8">
-              <div className="quality-commitment-number font-mono text-lg sm:text-xl font-bold text-red-400">
+          <div
+            key={item.number}
+            className="quality-commitment-row group relative border-b border-white/10 transition-[background,padding] duration-300 hover:bg-primary/6"
+          >
+            <span
+              className="quality-commitment-bar absolute inset-y-0 left-0 w-0.75 origin-top scale-y-0 bg-primary transition-transform duration-300 group-hover:scale-y-100"
+              aria-hidden="true"
+            />
+            <div className="quality-commitment-row-inner mx-auto grid max-w-7xl grid-cols-1 items-baseline gap-6 px-4 py-9 transition-[padding] duration-300 group-hover:pl-6 sm:px-6 lg:grid-cols-[120px_320px_1fr] lg:gap-10 lg:px-8">
+              <div className="quality-commitment-number font-mono text-xl sm:text-2xl font-bold text-red-400">
                 {item.number}
               </div>
-              <h3 className="quality-commitment-step-title text-2xl font-bold text-white">
+              <h3 className="quality-commitment-step-title text-3xl font-bold text-white">
                 {item.title}
               </h3>
-              <p className="quality-commitment-step-text text-lg leading-[1.6] text-white/60">
+              <p className="quality-commitment-step-text text-xl leading-[1.6] text-white/60">
                 {item.description}
               </p>
             </div>

@@ -13,7 +13,7 @@ export default function MotionToggle() {
       role="switch"
       aria-checked={reduced}
       onClick={toggle}
-      className="motion-toggle inline-flex items-center gap-2 rounded-md border border-border bg-transparent px-3 py-2 text-sm text-muted-foreground transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background cursor-pointer"
+      className="motion-toggle inline-flex items-center gap-2 rounded-md border border-border bg-transparent px-3 py-2 text-base text-muted-foreground transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background cursor-pointer"
       aria-label={reduced ? 'Bật hiệu ứng chuyển động' : 'Tắt hiệu ứng chuyển động'}
       title={reduced ? 'Bật hiệu ứng chuyển động' : 'Tắt hiệu ứng chuyển động'}
     >

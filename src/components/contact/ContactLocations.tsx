@@ -46,10 +46,10 @@ export default function ContactLocations() {
     <section ref={sectionRef} className="contact-locations-section py-16 lg:py-24 bg-background " id="he-thong-lien-he">
       <div className="contact-locations-container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="contact-locations-heading-wrapper text-start mb-10 lg:mb-14">
-          <div className="contact-locations-eyebrow mb-3 text-lg sm:text-xl font-semibold tracking-wide text-primary">
+          <div className="contact-locations-eyebrow mb-3 text-xl sm:text-2xl font-semibold tracking-wide text-primary">
             Hệ thống
           </div>
-          <h2 className="contact-locations-title text-3xl sm:text-4xl font-extrabold text-foreground leading-tight uppercase tracking-normal">
+          <h2 className="contact-locations-title text-4xl sm:text-5xl font-extrabold text-foreground leading-tight uppercase tracking-normal">
             Mạng lưới dịch vụ An Thái
           </h2>
         </div>
@@ -72,8 +72,8 @@ export default function ContactLocations() {
                       : 'bg-muted text-foreground hover:bg-muted/70'
                     }`}
                 >
-                  <h3 className="contact-location-name text-lg font-bold mb-3 leading-snug">{location.name}</h3>
-                  <ul className="contact-location-details space-y-2 text-sm">
+                  <h3 className="contact-location-name text-xl font-bold mb-3 leading-snug">{location.name}</h3>
+                  <ul className="contact-location-details space-y-2 text-base">
                     <li className="contact-location-detail flex items-start gap-2.5">
                       <PhoneIcon className={`contact-location-icon w-4 h-4 mt-0.5 shrink-0 ${isActive ? 'text-primary-foreground' : 'text-primary'}`} />
                       <a

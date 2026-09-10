@@ -43,14 +43,14 @@ function SimilarProductCard({
         ) : (
           <>
             <PlaceholderBoxIcon className="h-10 w-10" />
-            <span className="text-xs font-medium uppercase tracking-wide">Ảnh sản phẩm</span>
+            <span className="text-sm font-medium uppercase tracking-wide">Ảnh sản phẩm</span>
           </>
         )}
       </div>
       <div className="product-detail-similar-body flex flex-1 flex-col p-4">
-        <span className="text-xs font-semibold uppercase tracking-wider text-red-400">{product.brand}</span>
-        <h4 className="mt-1.5 text-base font-bold leading-snug text-white line-clamp-2">{product.name}</h4>
-        <span className="product-catalog-card-cta mt-4 inline-flex items-center gap-2 self-start text-sm font-semibold text-red-400 transition-colors duration-300 group-hover:text-primary-hover">
+        <span className="text-sm font-semibold uppercase tracking-wider text-red-400">{product.brand}</span>
+        <h4 className="mt-1.5 text-lg font-bold leading-snug text-white line-clamp-2">{product.name}</h4>
+        <span className="product-catalog-card-cta mt-4 inline-flex items-center gap-2 self-start text-base font-semibold text-red-400 transition-colors duration-300 group-hover:text-primary-hover">
           Xem sản phẩm
           <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
         </span>
@@ -94,7 +94,7 @@ export default function ProductDetail({
       <button
         type="button"
         onClick={onBack}
-        className="product-detail-back mt-8 inline-flex items-center gap-2 text-sm font-semibold text-white/70 transition-colors duration-300 hover:text-white cursor-pointer"
+        className="product-detail-back mt-8 inline-flex items-center gap-2 text-base font-semibold text-white/70 transition-colors duration-300 hover:text-white cursor-pointer"
       >
         <ArrowRight className="h-4 w-4 rotate-180" />
         Quay lại danh sách
@@ -109,10 +109,10 @@ export default function ProductDetail({
             className={`product-detail-media relative flex aspect-square w-full flex-col items-center justify-center gap-3 overflow-hidden rounded-md border border-white/10 lg:aspect-auto lg:h-full ${product.image ? 'bg-white' : 'bg-white/5 text-white/30'
               }`}
           >
-            <span className="product-detail-code absolute left-4 top-4 z-30 rounded-lg bg-black/70 px-3 py-1.5 text-sm font-bold tracking-wide text-white">
+            <span className="product-detail-code absolute left-4 top-4 z-30 rounded-lg bg-black/70 px-3 py-1.5 text-base font-bold tracking-wide text-white">
               {product.code}
             </span>
-            <span className="product-detail-brand-badge absolute right-4 top-4 z-30 rounded-lg bg-primary px-3 py-1.5 text-xs font-bold uppercase tracking-wider text-white">
+            <span className="product-detail-brand-badge absolute right-4 top-4 z-30 rounded-lg bg-primary px-3 py-1.5 text-sm font-bold uppercase tracking-wider text-white">
               {product.brand}
             </span>
             {product.image ? (
@@ -126,7 +126,7 @@ export default function ProductDetail({
             ) : (
               <>
                 <PlaceholderBoxIcon className="h-20 w-20" />
-                <span className="text-sm font-medium uppercase tracking-wide">Ảnh sản phẩm</span>
+                <span className="text-base font-medium uppercase tracking-wide">Ảnh sản phẩm</span>
               </>
             )}
           </div>
@@ -134,36 +134,36 @@ export default function ProductDetail({
 
         {/* Right: identity + technical specs + product intro. */}
         <div className="product-detail-info flex flex-col">
-          <h2 className="product-detail-name mt-2 text-2xl font-extrabold leading-tight text-white sm:text-4xl">
+          <h2 className="product-detail-name mt-2 text-3xl font-extrabold leading-tight text-white sm:text-5xl">
             {product.name}
           </h2>
-          <p className="product-detail-fullname mt-2 text-base sm:text-lg leading-relaxed text-white/60">
+          <p className="product-detail-fullname mt-2 text-lg sm:text-xl leading-relaxed text-white/60">
             {product.fullName}
           </p>
 
           <dl className="product-detail-meta mt-5 grid grid-cols-1 gap-x-6 gap-y-3 sm:grid-cols-2">
             {product.unit && (
               <div className="product-detail-meta-item">
-                <dt className="text-sm font-semibold uppercase tracking-wider text-red-400">Đơn vị tính</dt>
-                <dd className="mt-0.5 text-base text-white">{product.unit}</dd>
+                <dt className="text-base font-semibold uppercase tracking-wider text-red-400">Đơn vị tính</dt>
+                <dd className="mt-0.5 text-lg text-white">{product.unit}</dd>
               </div>
             )}
             {product.vehicles && (
               <div className="product-detail-meta-item sm:col-span-2 mt-2">
-                <dt className="text-sm font-semibold uppercase tracking-wider text-red-400">Dòng xe phù hợp</dt>
-                <dd className="mt-0.5 text-base leading-relaxed text-white">{product.vehicles}</dd>
+                <dt className="text-base font-semibold uppercase tracking-wider text-red-400">Dòng xe phù hợp</dt>
+                <dd className="mt-0.5 text-lg leading-relaxed text-white">{product.vehicles}</dd>
               </div>
             )}
           </dl>
 
           {product.specs.length > 0 && (
             <div className="product-detail-specs mt-6">
-              <h3 className="product-detail-section-title text-sm font-bold uppercase tracking-wider text-red-400">
+              <h3 className="product-detail-section-title text-base font-bold uppercase tracking-wider text-red-400">
                 Thông số kỹ thuật
               </h3>
               <ul className="product-detail-specs-list mt-3 space-y-2">
                 {product.specs.map((spec, index) => (
-                  <li key={index} className="product-detail-spec-item flex gap-2.5 text-base leading-relaxed text-white">
+                  <li key={index} className="product-detail-spec-item flex gap-2.5 text-lg leading-relaxed text-white">
                     {spec}
                   </li>
                 ))}
@@ -173,12 +173,12 @@ export default function ProductDetail({
 
           {product.intro.length > 0 && (
             <div className="product-detail-intro mt-6">
-              <h3 className="product-detail-section-title text-sm font-bold uppercase tracking-wider text-red-400">
+              <h3 className="product-detail-section-title text-base font-bold uppercase tracking-wider text-red-400">
                 Giới thiệu sản phẩm
               </h3>
               <ul className="product-detail-intro-list mt-3 space-y-2">
                 {product.intro.map((line, index) => (
-                  <li key={index} className="product-detail-intro-item flex gap-2.5 text-base leading-relaxed text-white">
+                  <li key={index} className="product-detail-intro-item flex gap-2.5 text-lg leading-relaxed text-white">
                     {line}
                   </li>
                 ))}
@@ -190,7 +190,7 @@ export default function ProductDetail({
               with the base of the stretched image on large screens. */}
           <Link
             to="/lien-he"
-            className="product-detail-quote-cta mt-10 inline-flex items-center justify-center gap-2.5 rounded-md bg-primary px-7 py-4 text-sm font-bold uppercase tracking-wider text-white transition-colors duration-300 hover:bg-primary-hover cursor-pointer sm:self-start"
+            className="product-detail-quote-cta mt-10 inline-flex items-center justify-center gap-2.5 rounded-md bg-background px-7 py-4 text-base font-bold uppercase tracking-wider text-foreground transition-colors duration-300 hover:bg-background/90 cursor-pointer sm:self-start"
           >
             Liên hệ nhận báo giá
             <ArrowRight className="h-4 w-4" />
@@ -201,7 +201,7 @@ export default function ProductDetail({
       {/* Similar products */}
       {similar.length > 0 && (
         <div className="product-detail-similar mt-16">
-          <h3 className="product-detail-similar-title text-xl font-extrabold uppercase tracking-normal text-white sm:text-2xl">
+          <h3 className="product-detail-similar-title text-2xl font-extrabold uppercase tracking-normal text-white sm:text-3xl">
             Sản phẩm tương tự
           </h3>
           <div className="product-detail-similar-grid mt-6 grid grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-4">

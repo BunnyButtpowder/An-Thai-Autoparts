@@ -30,20 +30,20 @@ export default function VehicleInspectionCTA() {
       <div className="vehicle-inspection-cta-container relative mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
         <h2
           id="vehicle-inspection-cta-heading"
-          className="vehicle-inspection-cta-heading vehicle-inspection-cta-reveal mb-4 text-3xl font-black uppercase leading-[1.05] text-white sm:text-4xl lg:text-5xl"
+          className="vehicle-inspection-cta-heading vehicle-inspection-cta-reveal mb-4 text-4xl font-black uppercase leading-[1.05] text-white sm:text-5xl lg:text-6xl"
         >
           Liên hệ với chúng tôi
         </h2>
         <div className="vehicle-inspection-cta-actions vehicle-inspection-cta-reveal flex flex-wrap justify-center gap-4 mt-10">
           <Link
             to="/lien-he"
-            className="vehicle-inspection-cta-primary inline-flex items-center gap-2 rounded-lg bg-white px-9 py-4 text-base font-bold text-primary transition-colors duration-300 hover:bg-white/90 cursor-pointer"
+            className="vehicle-inspection-cta-primary inline-flex items-center gap-2 rounded-lg bg-white px-9 py-4 text-lg font-bold text-primary transition-colors duration-300 hover:bg-white/90 cursor-pointer"
           >
             Liên hệ →
           </Link>
           <Link
             to="/gioi-thieu"
-            className="vehicle-inspection-cta-secondary inline-flex items-center gap-2 rounded-lg border-[1.5px] border-white/60 px-9 py-4 text-base font-semibold text-white transition-colors duration-300 hover:border-white hover:bg-white/10 cursor-pointer"
+            className="vehicle-inspection-cta-secondary inline-flex items-center gap-2 rounded-lg border-[1.5px] border-white/60 px-9 py-4 text-lg font-semibold text-white transition-colors duration-300 hover:border-white hover:bg-white/10 cursor-pointer"
           >
             Tìm hiểu thêm về An Thái
           </Link>

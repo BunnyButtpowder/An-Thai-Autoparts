@@ -12,6 +12,71 @@
   font-display: swap;
 }
 
+/* Primary UI font — Saira Semi Condensed (self-hosted) */
+@font-face {
+  font-family: 'Saira SemiCondensed';
+  src: url('/font/Saira_Semi/SairaSemiCondensed-Thin.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Saira SemiCondensed';
+  src: url('/font/Saira_Semi/SairaSemiCondensed-ExtraLight.ttf') format('truetype');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Saira SemiCondensed';
+  src: url('/font/Saira_Semi/SairaSemiCondensed-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Saira SemiCondensed';
+  src: url('/font/Saira_Semi/SairaSemiCondensed-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Saira SemiCondensed';
+  src: url('/font/Saira_Semi/SairaSemiCondensed-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Saira SemiCondensed';
+  src: url('/font/Saira_Semi/SairaSemiCondensed-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Saira SemiCondensed';
+  src: url('/font/Saira_Semi/SairaSemiCondensed-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Saira SemiCondensed';
+  src: url('/font/Saira_Semi/SairaSemiCondensed-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Saira SemiCondensed';
+  src: url('/font/Saira_Semi/SairaSemiCondensed-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 @custom-variant dark (&:is(.dark *));
 
 /* An Thai red & white theme - shadcn-style tokens */
@@ -32,7 +97,7 @@
   --color-card-foreground: #171717;
   --color-accent: #fef2f2;
   --color-accent-foreground: #b91c1c;
-  --font-sans: 'Be Vietnam Pro', ui-sans-serif, system-ui, sans-serif, "Segoe UI", "Noto Sans", "Helvetica Neue", Arial, sans-serif;
+  --font-sans: 'Saira SemiCondensed', ui-sans-serif, system-ui, sans-serif, "Segoe UI", "Noto Sans", "Helvetica Neue", Arial, sans-serif;
 }
 
 /* Custom utilities */
@@ -57,12 +122,6 @@ body {
 
 .stat-number {
   font-variant-numeric: tabular-nums;
-}
-
-/* Home V2 — fluid hero headline (Cummins-style confident scaling) */
-.hero-title-fluid {
-  font-size: clamp(2.25rem, 4.8vw, 4rem);
-  line-height: 1.04;
 }
 
 /* Home V2 — branded hero card silhouette: rounded TL/BR + angled cuts at
@@ -210,7 +269,7 @@ body {
 
 @theme inline {
   --font-heading: var(--font-sans);
-  --font-sans: 'Geist Variable', sans-serif;
+  --font-sans: 'Saira SemiCondensed', ui-sans-serif, system-ui, sans-serif, "Segoe UI", "Noto Sans", "Helvetica Neue", Arial, sans-serif;
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);

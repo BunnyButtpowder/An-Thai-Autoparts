@@ -58,7 +58,7 @@ export default function ProductHero() {
       >
         <motion.h1
           id="product-hero-heading"
-          className="product-hero-title text-4xl font-extrabold leading-normal tracking-normal uppercase text-white sm:text-6xl lg:text-7xl mb-3"
+          className="product-hero-title text-5xl font-extrabold leading-normal tracking-normal uppercase text-white sm:text-7xl lg:text-8xl mb-3"
           variants={item}
         >
           Phụ tùng chất lượng cao <br />
@@ -70,7 +70,7 @@ export default function ProductHero() {
         >
           <a
             href="/lien-he"
-            className="product-hero-cta-primary group inline-flex items-center gap-2 rounded-md bg-primary px-7 py-3.5 text-base font-semibold text-primary-foreground transition-colors duration-300 hover:bg-primary-hover cursor-pointer"
+            className="product-hero-cta-primary group inline-flex items-center gap-2 rounded-md bg-background px-7 py-3.5 text-lg font-semibold text-foreground transition-colors duration-300 hover:bg-background/90 cursor-pointer"
           >
             Liên hệ tư vấn
             <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />

@@ -31,7 +31,7 @@ export default function BrakeDrumStandards() {
       className="brake-standards-section w-full bg-[#0b0a09] py-33 mx-auto max-w-7xl"
     >
       <div className="brake-standards-heading px-6 sm:px-10">
-        <h2 className="brake-standards-title brake-reveal m-0 font-extrabold text-3xl sm:text-4xl lg:text-5xl uppercase leading-none tracking-[-0.015em] text-white">
+        <h2 className="brake-standards-title brake-reveal m-0 font-extrabold text-4xl sm:text-5xl lg:text-6xl uppercase leading-none tracking-[-0.015em] text-white">
           Tiêu chuẩn chất lượng vượt trội
         </h2>
       </div>
@@ -42,10 +42,10 @@ export default function BrakeDrumStandards() {
             key={s.n}
             className="brake-standard-item brake-reveal group flex items-baseline gap-6 sm:gap-12 border-b border-white/10 py-8 sm:py-10 transition-colors duration-300 hover:bg-white/3"
           >
-            <span className="brake-standard-number shrink-0 font-extrabold text-2xl sm:text-3xl tabular-nums text-primary transition-transform duration-300 group-hover:translate-x-1">
+            <span className="brake-standard-number shrink-0 font-extrabold text-xl sm:text-2xl tabular-nums text-red-400 transition-transform duration-300 group-hover:translate-x-1">
               {s.n}
             </span>
-            <h3 className="brake-standard-title m-0 font-normal text-xl sm:text-2xl lg:text-3xl leading-snug text-white/90 transition-colors duration-300 group-hover:text-white">
+            <h3 className="brake-standard-title m-0 font-normal text-2xl sm:text-3xl leading-snug text-white/90 transition-colors duration-300 group-hover:text-white">
               {s.title}
             </h3>
           </li>

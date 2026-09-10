@@ -35,15 +35,15 @@ export default function JobDetailHero({ job }: { job: JobListing }) {
       <div className="job-detail-hero-container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <Link
           to="/tuyen-dung"
-          className="job-detail-breadcrumb inline-flex items-center gap-1.5 text-sm font-medium text-muted-foreground hover:text-primary transition-colors cursor-pointer mb-6"
+          className="job-detail-breadcrumb inline-flex items-center gap-1.5 text-base font-medium text-muted-foreground hover:text-primary transition-colors cursor-pointer mb-6"
         >
           <ChevronLeft className="w-4 h-4" />
           Tất cả vị trí tuyển dụng
         </Link>
-        <h1 className="job-detail-title text-3xl sm:text-4xl lg:text-5xl font-extrabold text-foreground leading-tight tracking-tight mb-6">
+        <h1 className="job-detail-title text-4xl sm:text-5xl lg:text-6xl font-extrabold text-foreground leading-tight tracking-tight mb-6">
           {job.title}
         </h1>
-        <div className="job-detail-meta flex flex-wrap items-center gap-x-6 gap-y-3 text-sm text-muted-foreground">
+        <div className="job-detail-meta flex flex-wrap items-center gap-x-6 gap-y-3 text-base text-muted-foreground">
           <span className="job-detail-meta-location inline-flex items-center gap-1.5">
             <MapPinIcon className="w-4 h-4 shrink-0 text-primary" />
             {job.location}

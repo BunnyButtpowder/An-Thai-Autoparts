@@ -55,13 +55,13 @@ export default function RepairOverhaulHero() {
       >
         <motion.h1
           id="repair-overhaul-hero-heading"
-          className="repair-overhaul-hero-title text-4xl font-extrabold uppercase leading-normal tracking-normal text-white sm:text-6xl lg:text-7xl"
+          className="repair-overhaul-hero-title text-5xl font-extrabold uppercase leading-normal tracking-normal text-white sm:text-7xl lg:text-8xl"
           variants={item}
         >
           Sửa chữa và đại tu ô tô
         </motion.h1>
         <motion.p
-          className="repair-overhaul-hero-subtitle max-w-250 text-lg leading-relaxed text-white sm:text-2xl"
+          className="repair-overhaul-hero-subtitle max-w-250 text-xl leading-relaxed text-white sm:text-3xl"
           variants={item}
         >
           Cung cấp giải pháp sửa chữa, bảo dưỡng &amp; đại tu toàn diện cho xe ô tô

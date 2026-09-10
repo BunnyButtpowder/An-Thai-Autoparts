@@ -38,7 +38,7 @@ export default function CommercialServicesHero() {
         <img
           src="/home/hotel.jpg"
           alt=""
-          className="commercial-services-hero-bg-image h-full w-full object-cover"
+          className="commercial-services-hero-bg-image object-cover h-full w-full"
         />
       </motion.div>
 
@@ -55,13 +55,13 @@ export default function CommercialServicesHero() {
       >
         <motion.h1
           id="commercial-services-hero-heading"
-          className="commercial-services-hero-title mb-6 max-w-[16ch] text-4xl font-black uppercase leading-[1.06] tracking-tight text-white sm:text-6xl lg:text-7xl"
+          className="commercial-services-hero-title mb-6 max-w-[16ch] text-5xl font-black uppercase leading-[1.06] tracking-tight text-white sm:text-7xl lg:text-8xl"
           variants={item}
         >
           Dịch vụ thương mại
         </motion.h1>
         <motion.p
-          className="commercial-services-hero-subtitle text-lg leading-relaxed text-white sm:text-xl"
+          className="commercial-services-hero-subtitle text-xl leading-relaxed text-white sm:text-2xl"
           variants={item}
         >
           Tổ hợp khách sạn, nhà hàng và hội nghị cao cấp

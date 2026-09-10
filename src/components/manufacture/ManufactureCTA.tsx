@@ -31,23 +31,23 @@ export default function ManufactureCTA() {
       <div className="manufacture-cta-container relative mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
         <h2
           id="manufacture-cta-heading"
-          className="manufacture-cta-heading manufacture-cta-reveal mb-4 text-3xl font-black uppercase leading-[1.05] text-white sm:text-4xl lg:text-5xl"
+          className="manufacture-cta-heading manufacture-cta-reveal mb-4 text-4xl font-black uppercase leading-[1.05] text-white sm:text-5xl lg:text-6xl"
         >
           Liên hệ với chúng tôi
         </h2>
-        <p className="manufacture-cta-text manufacture-cta-reveal mb-9 text-xl text-white/85">
-          An Thái đồng hành cùng doanh nghiệp của bạn với giải pháp phụ tùng toàn diện.
+        <p className="manufacture-cta-text manufacture-cta-reveal mb-9 text-2xl text-white/85">
+          An Thái đồng hành cùng doanh nghiệp của bạn với giải pháp phụ tùng toàn diện
         </p>
         <div className="manufacture-cta-actions manufacture-cta-reveal flex flex-wrap justify-center gap-4">
           <Link
             to="/lien-he"
-            className="manufacture-cta-primary inline-flex items-center gap-2 rounded-lg bg-white px-9 py-4 text-base font-bold text-primary transition-transform duration-300 hover:-translate-y-0.5 cursor-pointer"
+            className="manufacture-cta-primary inline-flex items-center gap-2 rounded-lg bg-white px-9 py-4 text-lg font-bold text-primary transition-transform duration-300 hover:-translate-y-0.5 cursor-pointer"
           >
             Liên hệ
           </Link>
           <Link
             to="/gioi-thieu"
-            className="manufacture-cta-secondary inline-flex items-center gap-2 rounded-lg border-[1.5px] border-white/70 px-9 py-4 text-base font-semibold text-white transition-colors duration-300 hover:bg-white/10 cursor-pointer"
+            className="manufacture-cta-secondary inline-flex items-center gap-2 rounded-lg border-[1.5px] border-white/70 px-9 py-4 text-lg font-semibold text-white transition-colors duration-300 hover:bg-white/10 cursor-pointer"
           >
             Tìm hiểu thêm về An Thái
           </Link>

@@ -66,6 +66,9 @@ export default function ProductCatalog() {
   const [isBrandMenuOpen, setIsBrandMenuOpen] = useState(false)
   const brandFilterRef = useRef<HTMLDivElement>(null)
   const sectionRef = useRef<HTMLElement>(null)
+  // Tracks whether the category-scroll effect has run once, so we skip the
+  // initial mount (page-load/hash scrolling is owned by ProductPage).
+  const didMountRef = useRef(false)
 
   // --- Drill-down state, derived from the URL so views are shareable ---------
   const categorySlug = searchParams.get('danh-muc') ?? ALL_CATEGORY_SLUG
@@ -126,6 +129,32 @@ export default function ProductCatalog() {
       observer.disconnect()
     }
   }, [])
+
+  // When the active category changes — e.g. the user picks a category from the
+  // header navigation dock (or a pill) while scrolled deep into the list — bring
+  // the catalog section back to the top of the viewport. The dock links carry the
+  // same #danh-muc-phu-tung hash across categories, so ProductPage's hash effect
+  // won't re-fire; scrolling here covers that case. Skip the first mount so this
+  // doesn't fight page-load/hash scrolling.
+  useEffect(() => {
+    if (!didMountRef.current) {
+      didMountRef.current = true
+      return
+    }
+    const scrollToSection = () =>
+      sectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    // Kick off immediately for responsiveness, then re-assert once the new
+    // category's grid has finished its Motion layout animation (~0.35s) and the
+    // debounced ScrollTrigger.refresh() (150ms) has run. That refresh
+    // saves/restores scroll and would otherwise cancel a mid-flight smooth
+    // scroll and yank the user back into the list — the shorter the new list,
+    // the more the shrinking document clamps scroll mid-animation, which is why
+    // the shortfall depended on category length. The re-assert lands on the
+    // (stable) section top after everything settles. No-op if already there.
+    scrollToSection()
+    const timer = setTimeout(scrollToSection, 500)
+    return () => clearTimeout(timer)
+  }, [categorySlug])
 
   function toggleBrand(brand: string) {
     setSelectedBrands((current) =>
@@ -240,15 +269,15 @@ export default function ProductCatalog() {
     <section
       ref={sectionRef}
       id="danh-muc-phu-tung"
-      className="product-catalog-section relative w-full py-20 lg:py-28"
+      className="product-catalog-section relative w-full scroll-mt-16 py-20 lg:scroll-mt-20 lg:py-28"
     >
       <div className="product-catalog-container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header + intro — brief sections 8 & 9 */}
         <header className="product-catalog-header">
-          <h2 className="product-catalog-title text-3xl font-extrabold tracking-normal text-white uppercase text-balance sm:text-4xl lg:text-5xl">
+          <h2 className="product-catalog-title text-4xl font-extrabold tracking-normal text-white uppercase text-balance sm:text-5xl lg:text-6xl">
             Danh mục phụ tùng
           </h2>
-          <p className="product-catalog-subtitle mt-4 text-base leading-relaxed text-white/70 sm:text-lg">
+          <p className="product-catalog-subtitle mt-4 text-lg leading-relaxed text-white/70 sm:text-xl">
             Khám phá danh mục phụ tùng chất lượng cao — nơi hội tụ những sản phẩm bền bỉ, ổn định và
             đáp ứng đa dạng các dòng xe thương mại từ Trung Quốc, Mỹ đến Nhật Bản.
           </p>
@@ -273,7 +302,7 @@ export default function ProductCatalog() {
                     type="button"
                     onClick={() => selectCategory(pill.slug)}
                     aria-pressed={isActive}
-                    className={`product-catalog-nav-pill shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-semibold transition-colors duration-300 cursor-pointer ${
+                    className={`product-catalog-nav-pill shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-base font-semibold transition-colors duration-300 cursor-pointer ${
                       isActive
                         ? 'bg-primary text-white'
                         : 'bg-white/10 text-white/70 hover:bg-white/20 hover:text-white'
@@ -294,7 +323,7 @@ export default function ProductCatalog() {
                   onChange={(event) => setSearchQuery(event.target.value)}
                   placeholder="Tìm sản phẩm…"
                   aria-label="Tìm sản phẩm"
-                  className="product-catalog-search-input w-full rounded-full border border-white/10 bg-white/10 py-2 pl-10 pr-9 text-sm text-white placeholder:text-white/40 transition-colors duration-300 focus:border-primary focus:bg-white/15 focus:outline-none"
+                  className="product-catalog-search-input w-full rounded-full border border-white/10 bg-white/10 py-2 pl-10 pr-9 text-base text-white placeholder:text-white/40 transition-colors duration-300 focus:border-primary focus:bg-white/15 focus:outline-none"
                 />
                 {searchQuery && (
                   <button
@@ -338,14 +367,14 @@ export default function ProductCatalog() {
                     role="menu"
                   >
                     <div className="product-catalog-brand-menu-header flex items-center justify-between px-4 pb-1 pt-3">
-                      <span className="text-xs font-semibold uppercase tracking-wider text-white/40">
+                      <span className="text-sm font-semibold uppercase tracking-wider text-white/40">
                         Thương hiệu
                       </span>
                       {selectedBrands.length > 0 && (
                         <button
                           type="button"
                           onClick={() => setSelectedBrands([])}
-                          className="product-catalog-brand-clear text-xs font-semibold text-red-400 transition-colors duration-300 hover:text-primary-hover cursor-pointer"
+                          className="product-catalog-brand-clear text-sm font-semibold text-red-400 transition-colors duration-300 hover:text-primary-hover cursor-pointer"
                         >
                           Xóa lọc
                         </button>
@@ -361,7 +390,7 @@ export default function ProductCatalog() {
                               role="menuitemcheckbox"
                               aria-checked={isChecked}
                               onClick={() => toggleBrand(brand)}
-                              className="product-catalog-brand-option flex w-full items-center gap-3 px-4 py-2 text-left text-sm text-white/80 transition-colors duration-300 hover:bg-white/10 cursor-pointer"
+                              className="product-catalog-brand-option flex w-full items-center gap-3 px-4 py-2 text-left text-base text-white/80 transition-colors duration-300 hover:bg-white/10 cursor-pointer"
                             >
                               <span
                                 className={`product-catalog-brand-checkbox flex h-4 w-4 shrink-0 items-center justify-center rounded border transition-colors duration-300 ${
@@ -391,7 +420,7 @@ export default function ProductCatalog() {
       {/* Breadcrumb — only while drilled into a group or product (not searching). */}
       {!isSearching && (activeGroup || activeProduct) && (
         <div className="product-catalog-breadcrumb-container mx-auto mt-8 max-w-7xl px-4 sm:px-6 lg:px-8">
-          <nav className="product-catalog-breadcrumb flex flex-wrap items-center gap-2 text-sm" aria-label="Đường dẫn">
+          <nav className="product-catalog-breadcrumb flex flex-wrap items-center gap-2 text-base" aria-label="Đường dẫn">
             <button
               type="button"
               onClick={backToGroups}
@@ -435,7 +464,7 @@ export default function ProductCatalog() {
           {/* SEARCH RESULTS */}
           {isSearching ? (
             <>
-              <p className="product-catalog-results-label mt-8 text-sm text-white/60">
+              <p className="product-catalog-results-label mt-8 text-base text-white/60">
                 {searchResults.length} kết quả cho “{searchQuery.trim()}”
               </p>
               <motion.ul layout className="product-catalog-grid mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -490,20 +519,20 @@ export default function ProductCatalog() {
                           ) : (
                             <>
                               <PlaceholderBoxIcon className="product-catalog-card-icon h-12 w-12" />
-                              <span className="product-catalog-card-media-label text-xs font-medium uppercase tracking-wide">
+                              <span className="product-catalog-card-media-label text-sm font-medium uppercase tracking-wide">
                                 Ảnh nhóm
                               </span>
                             </>
                           )}
                         </div>
                         <div className="product-catalog-card-body flex flex-1 flex-col p-5">
-                          {/* <span className="product-catalog-card-count text-xs font-semibold uppercase tracking-wider text-red-400">
+                          {/* <span className="product-catalog-card-count text-sm font-semibold uppercase tracking-wider text-red-400">
                             {count} sản phẩm
                           </span> */}
-                          <h3 className="product-catalog-card-name mt-1.5 text-lg font-bold leading-snug text-white line-clamp-2">
+                          <h3 className="product-catalog-card-name mt-1.5 text-xl font-bold leading-snug text-white line-clamp-2">
                             {group.name}
                           </h3>
-                          <span className="product-catalog-card-cta mt-4 inline-flex items-center gap-2 self-start text-sm font-semibold text-red-400 transition-colors duration-300 group-hover:text-primary-hover">
+                          <span className="product-catalog-card-cta mt-4 inline-flex items-center gap-2 self-start text-base font-semibold text-red-400 transition-colors duration-300 group-hover:text-primary-hover">
                             Xem sản phẩm
                             <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
                           </span>
@@ -553,20 +582,20 @@ function ProductCard({ product, onOpen }: { product: Product; onOpen: (product: 
           ) : (
             <>
               <PlaceholderBoxIcon className="product-catalog-card-icon h-12 w-12" />
-              <span className="product-catalog-card-media-label text-xs font-medium uppercase tracking-wide">
+              <span className="product-catalog-card-media-label text-sm font-medium uppercase tracking-wide">
                 Ảnh sản phẩm
               </span>
             </>
           )}
         </div>
         <div className="product-catalog-card-body flex flex-1 flex-col p-5">
-          <span className="product-catalog-card-brand text-xs font-semibold uppercase tracking-wider text-red-400">
+          <span className="product-catalog-card-brand text-sm font-semibold uppercase tracking-wider text-red-400">
             {product.brand}
           </span>
-          <h3 className="product-catalog-card-name mt-1.5 text-base font-bold leading-snug text-white line-clamp-2">
+          <h3 className="product-catalog-card-name mt-1.5 text-lg font-bold leading-snug text-white line-clamp-2">
             {product.name}
           </h3>
-          <span className="product-catalog-card-cta mt-auto pt-4 inline-flex items-center gap-2 self-start text-sm font-semibold text-red-400 transition-colors duration-300 group-hover:text-primary-hover">
+          <span className="product-catalog-card-cta mt-auto pt-4 inline-flex items-center gap-2 self-start text-base font-semibold text-red-400 transition-colors duration-300 group-hover:text-primary-hover">
             Xem chi tiết
             <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
           </span>
@@ -580,10 +609,10 @@ function EmptyState() {
   return (
     <div className="product-catalog-empty mt-10 flex flex-col items-center justify-center rounded-md border border-dashed border-white/10 bg-white/5 px-6 py-16 text-center">
       <SearchIcon className="product-catalog-empty-icon h-10 w-10 text-white/30" />
-      <p className="product-catalog-empty-title mt-4 text-lg font-bold text-white">
+      <p className="product-catalog-empty-title mt-4 text-xl font-bold text-white">
         Không tìm thấy sản phẩm phù hợp
       </p>
-      <p className="product-catalog-empty-subtitle mt-1.5 text-sm text-white/60">
+      <p className="product-catalog-empty-subtitle mt-1.5 text-base text-white/60">
         Thử điều chỉnh từ khóa tìm kiếm, danh mục hoặc thương hiệu.
       </p>
     </div>
