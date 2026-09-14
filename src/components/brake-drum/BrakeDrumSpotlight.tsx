@@ -8,7 +8,6 @@ interface SpotlightProduct {
   description: string
   vehicle: string
   weight: string
-  market: string
   img: string
   alt: string
 }
@@ -22,7 +21,6 @@ const SPOTLIGHTS: SpotlightProduct[] = [
       'Đúc và gia công đạt chuẩn tải nặng, đảm bảo tản nhiệt và độ bền cao trên mọi cung đường.',
     vehicle: 'HOWO Ben 2009',
     weight: '54.5 kg',
-    market: 'Trung Quốc',
     img: '/product/AT00012-2.png',
     alt: 'Chi tiết bề mặt gia công tăm bua ANTEK AT00012',
   },
@@ -34,7 +32,6 @@ const SPOTLIGHTS: SpotlightProduct[] = [
       'Trọng lượng tối ưu cho dòng xe tải trung, cân bằng giữa độ bền và khả năng vận hành linh hoạt.',
     vehicle: 'Đông Phong',
     weight: '30 kg',
-    market: 'Trung Quốc',
     img: '/product/AT00015-2.png',
     alt: 'Chi tiết bề mặt gia công tăm bua ANTEK AT00015',
   },
@@ -46,7 +43,6 @@ const SPOTLIGHTS: SpotlightProduct[] = [
       'Thiết kế cho trục mooc tải trọng lớn, chịu lực ổn định và duy trì hiệu suất phanh bền bỉ.',
     vehicle: 'Mooc Fuwa 13T',
     weight: '49.5 kg',
-    market: 'Trung Quốc',
     img: '/product/AT00003-2.png',
     alt: 'Chi tiết bề mặt gia công tăm bua X-POWER AT00003',
   },
@@ -58,7 +54,6 @@ const SPOTLIGHTS: SpotlightProduct[] = [
       'Gia công chính xác theo tiêu chuẩn Nhật Bản, tản nhiệt tốt và vận hành êm trên xe tải nhẹ.',
     vehicle: 'Isuzu',
     weight: '24.5 kg',
-    market: 'Nhật Bản',
     img: '/product/AT00006-2.png',
     alt: 'Chi tiết bề mặt gia công tăm bua XCBB AT00006',
   },
@@ -125,17 +120,13 @@ export default function BrakeDrumSpotlight() {
               {product?.description}
             </p>
             <dl className="brake-spotlight-specs mt-2 grid grid-cols-3 gap-6 border-t border-[#ece7e0]/14 pt-6.5">
-              <div>
+              <div className='col-span-2'>
                 <dt className="text-sm tracking-[0.2em] text-white/45">DÒNG XE</dt>
                 <dd className="mt-2 mb-0 font-['Archivo'] text-3xl font-extrabold uppercase text-[#ece7e0]">{product?.vehicle}</dd>
               </div>
-              <div>
+              <div className='col-span-1'>
                 <dt className="text-sm tracking-[0.2em] text-white/45">KHỐI LƯỢNG</dt>
                 <dd className="mt-2 mb-0 font-['Archivo'] text-3xl font-extrabold uppercase text-[#ece7e0]">{product?.weight}</dd>
-              </div>
-              <div>
-                <dt className="font-['JetBrains_Mono'] text-[10px] tracking-[0.2em] text-[#ece7e0]/45">THỊ TRƯỜNG</dt>
-                <dd className="mt-2 mb-0 font-['Archivo'] text-3xl font-extrabold uppercase text-[#ece7e0]">{product?.market}</dd>
               </div>
             </dl>
           </div>

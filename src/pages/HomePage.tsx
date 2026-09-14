@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import { useLocation } from 'react-router'
 import useMobileMenu from '../hooks/useMobileMenu'
 import useOverscrollOverlap from '../hooks/useOverscrollOverlap'
-import useDelayedPopup from '../hooks/useDelayedPopup'
+import useScrollTriggeredPopup from '../hooks/useScrollTriggeredPopup'
 import ContactPopupForm from '../components/contact/ContactPopupForm'
 import Header from '../components/header/Header'
 import HomeDesktopNav from '../components/header/HomeDesktopNav'
@@ -19,7 +19,7 @@ import NewsV2 from '../components/home-v2/NewsV2'
 import OffersEditorial from '../components/home-v2/OffersEditorial'
 export default function HomePage() {
   const { isOpen, toggle, close } = useMobileMenu()
-  const { isOpen: isContactPopupOpen, close: closeContactPopup } = useDelayedPopup('anthai-contact-popup', 5000)
+  const { isOpen: isContactPopupOpen, close: closeContactPopup } = useScrollTriggeredPopup('anthai-contact-popup', '#tam-bua')
   const location = useLocation()
 
   useOverscrollOverlap()

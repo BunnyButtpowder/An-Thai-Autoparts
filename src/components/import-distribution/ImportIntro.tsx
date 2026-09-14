@@ -16,15 +16,11 @@ export default function ImportIntro() {
           <div className="import-intro-eyebrow import-intro-reveal mb-3 text-xl sm:text-2xl text-left font-semibold tracking-wide text-red-400">
             Trung tâm phụ tùng
           </div>
-          <h2 className="import-intro-title import-intro-reveal text-left mb-8 text-4xl font-extrabold uppercase leading-normal tracking-wide text-white sm:text-5xl">
-            Giải pháp phụ tùng toàn diện cho xe thương mại
+          <h2 className="import-intro-title import-intro-reveal mb-8 text-4xl font-extrabold text-balance uppercase leading-normal tracking-wide text-white sm:text-5xl">
+            ĐƠN VỊ PHÂN PHỐI PHỤ TÙNG XE TẢI HÀNG ĐẦU VIỆT NAM
           </h2>
           <p className="import-intro-text import-intro-reveal text-xl font-normal leading-[1.55] text-white sm:text-2xl text-justify">
-            An Thái là đơn vị nhập khẩu và phân phối phụ tùng ô tô với hệ sinh thái
-            thương hiệu đa dạng, đáp ứng nhu cầu cho nhiều dòng
-            xe thương mại.
-            Với nguồn hàng ổn định cùng cam kết chất lượng, chúng tôi mang đến các giải pháp phụ tùng đáng tin cậy cho khách hàng
-            trên toàn quốc.
+          Với danh mục sản phẩm đa dạng, nhiều thương hiệu phân phối độc quyền và nguồn cung ổn định, An Thái là đối tác phụ tùng tin cậy của hệ thống đại lý trên toàn quốc, đáp ứng hiệu quả nhu cầu kinh doanh các dòng xe thương mại Trung Quốc, Mỹ và Nhật Bản.
           </p>
         </div>
         <div className="import-intro-image relative aspect-4/5 overflow-hidden rounded-lg border border-white/12 lg:aspect-auto lg:h-full">

@@ -67,13 +67,7 @@ export default function ManufactureHero() {
           variants={item}
         >
           <a
-            href="#nha-may"
-            className="manufacture-hero-cta-primary inline-flex items-center gap-2 rounded-md bg-background px-7 py-3.5 text-lg font-semibold text-foreground transition-colors duration-300 hover:bg-background/90 cursor-pointer"
-          >
-            Khám phá nhà máy →
-          </a>
-          <a
-            href="#san-pham"
+            href="/tam-bua-an-thai"
             className="manufacture-hero-cta-secondary inline-flex items-center gap-2 rounded-md border border-white/30 px-7 py-3.5 text-lg font-semibold text-white transition-colors duration-300 hover:border-white hover:bg-white/10 cursor-pointer"
           >
             Xem sản phẩm

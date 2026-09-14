@@ -8,9 +8,9 @@ interface StrategicBrand {
 
 const brands: StrategicBrand[] = [
   { name: 'ANTEK', image: '/product/Antek.png' },
-  { name: 'MAT', image: '/product/Mat.png' },
   { name: 'X-POWER.LXĐ', image: '/product/X-Power.png' },
   { name: 'XCBB.LXĐ', image: '/product/XCBB.png' },
+  { name: 'MAT', image: '/product/Mat.png' },
 ]
 
 // Two-up showcase of the exclusive strategic brands. Each card reveals with a

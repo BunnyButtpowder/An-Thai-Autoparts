@@ -16,15 +16,29 @@ export default function ProductPage() {
   const { isOpen, toggle, close } = useMobileMenu()
   const location = useLocation()
 
-  // Handle hash scrolling on page load and navigation
+  // Handle hash scrolling on page load and navigation — e.g. arriving from the
+  // header "Sản phẩm" dropdown at /san-pham?danh-muc=…#danh-muc-phu-tung, which
+  // should land on the catalog with that category preselected (the category is
+  // read from the URL by ProductCatalog itself).
   useEffect(() => {
-    if (location.hash) {
-      const el = document.querySelector(location.hash)
-      if (el) {
-        setTimeout(() => el.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100)
-      }
-    } else {
+    if (!location.hash) {
       window.scrollTo(0, 0)
+      return
+    }
+    const el = document.querySelector(location.hash)
+    if (!el) return
+    const scrollToTarget = () => el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    // Kick off after the first paint, then re-assert once the lazy-loaded images
+    // in the sections above have settled and ProductCatalog's debounced
+    // ScrollTrigger.refresh() (150ms) has run. That refresh saves/restores scroll
+    // and would otherwise cancel this mid-flight smooth scroll and leave us short
+    // of — or yanked back above — the catalog. The re-assert lands on the target
+    // once layout is stable; it's a no-op if we're already there.
+    const first = setTimeout(scrollToTarget, 100)
+    const reassert = setTimeout(scrollToTarget, 600)
+    return () => {
+      clearTimeout(first)
+      clearTimeout(reassert)
     }
   }, [location.hash])
 

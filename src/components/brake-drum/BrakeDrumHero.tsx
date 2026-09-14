@@ -66,7 +66,7 @@ export default function BrakeDrumHero() {
           variants={item}
         >
           <a
-            href="/lien-he"
+            href="/lien-he?dia-diem=nha-may-an-thai#he-thong-lien-he"
             className="brake-hero-cta-primary inline-flex items-center gap-2 rounded-md bg-background px-7 py-3.5 text-lg font-semibold text-foreground transition-colors duration-300 hover:bg-background/90 cursor-pointer"
           >
             Liên hệ nhận báo giá

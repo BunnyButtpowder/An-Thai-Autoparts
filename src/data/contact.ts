@@ -1,4 +1,6 @@
 export interface ContactLocation {
+  /** Stable URL slug so a location can be deep-linked, e.g. /lien-he?dia-diem=nha-may-an-thai */
+  slug: string
   name: string
   phone: string
   phoneHref: string
@@ -27,6 +29,7 @@ export function buildMapEmbedSrc(query: string) {
 
 export const contactLocations: ContactLocation[] = [
   {
+    slug: 'trung-tam-phu-tung-o-to',
     name: 'Trung tâm phụ tùng ô tô',
     phone: '0817 821 821',
     phoneHref: 'tel:0817821821',
@@ -35,6 +38,7 @@ export const contactLocations: ContactLocation[] = [
     mapQuery: 'Số 288 Trần Thái Tông, Thái Bình',
   },
   {
+    slug: 'nha-may-an-thai',
     name: 'Nhà máy An Thái',
     phone: '0904 086 999',
     phoneHref: 'tel:0084086999',
@@ -43,6 +47,7 @@ export const contactLocations: ContactLocation[] = [
     mapQuery: 'KCN Green iP-1, Thái Thụy, Hưng Yên',
   },
   {
+    slug: 'trung-tam-sua-chua-dai-tu-o-to',
     name: 'Trung tâm sửa chữa và đại tu ô tô',
     phone: '0943 383 383',
     phoneHref: 'tel:0943383383',
@@ -51,6 +56,7 @@ export const contactLocations: ContactLocation[] = [
     mapQuery: 'Số 288 Trần Thái Tông, Thái Bình',
   },
   {
+    slug: 'trung-tam-dang-kiem-1702d',
     name: 'Trung tâm đăng kiểm xe cơ giới 1702D',
     phone: '0836 088 282',
     phoneHref: 'tel:0836086282',
@@ -59,6 +65,7 @@ export const contactLocations: ContactLocation[] = [
     mapQuery: 'Trung tâm đăng kiểm 1702D, Thái Bình',
   },
   {
+    slug: 'khach-san-an-thai',
     name: 'Khách sạn An Thái',
     phone: '02273 840 822',
     phoneHref: 'tel:02273840822',

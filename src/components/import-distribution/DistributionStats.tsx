@@ -14,7 +14,6 @@ interface Stat {
 // de-DE grouping renders the design's "30.000" thousands separator.
 const stats: Stat[] = [
   { value: 30000, suffix: '+', label: 'Mã sản phẩm' },
-  { value: 2000, suffix: '+', label: 'Xưởng sửa chữa' },
   { value: 300, suffix: '+', label: 'Đại lý' },
   { value: 34, suffix: '', label: 'Tỉnh thành' },
 ]

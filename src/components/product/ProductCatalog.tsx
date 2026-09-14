@@ -66,14 +66,19 @@ export default function ProductCatalog() {
   const [isBrandMenuOpen, setIsBrandMenuOpen] = useState(false)
   const brandFilterRef = useRef<HTMLDivElement>(null)
   const sectionRef = useRef<HTMLElement>(null)
-  // Tracks whether the category-scroll effect has run once, so we skip the
-  // initial mount (page-load/hash scrolling is owned by ProductPage).
-  const didMountRef = useRef(false)
 
   // --- Drill-down state, derived from the URL so views are shareable ---------
   const categorySlug = searchParams.get('danh-muc') ?? ALL_CATEGORY_SLUG
   const groupSlug = searchParams.get('nhom')
   const productId = searchParams.get('sp')
+
+  // The category slug we last scrolled the section to the top for. Initialised to
+  // the mount value so the initial load never triggers a scroll (page-load/hash
+  // scrolling is owned by ProductPage). Comparing the value — rather than a
+  // "has mounted" boolean — keeps the guard correct under React StrictMode, whose
+  // double-invoked mount effect would otherwise slip past a boolean flag and yank
+  // the page down to the catalog on first load.
+  const lastScrolledCategoryRef = useRef(categorySlug)
 
   const activeCategory = useMemo(
     () => productCategories.find((category) => category.slug === categorySlug) ?? null,
@@ -137,10 +142,11 @@ export default function ProductCatalog() {
   // won't re-fire; scrolling here covers that case. Skip the first mount so this
   // doesn't fight page-load/hash scrolling.
   useEffect(() => {
-    if (!didMountRef.current) {
-      didMountRef.current = true
-      return
-    }
+    // Skip when the category hasn't actually changed — this covers the initial
+    // mount (incl. StrictMode's double-invoked mount effect, which reuses this
+    // ref) so first load doesn't scroll to the catalog.
+    if (lastScrolledCategoryRef.current === categorySlug) return
+    lastScrolledCategoryRef.current = categorySlug
     const scrollToSection = () =>
       sectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
     // Kick off immediately for responsiveness, then re-assert once the new

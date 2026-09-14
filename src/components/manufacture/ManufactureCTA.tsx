@@ -40,7 +40,7 @@ export default function ManufactureCTA() {
         </p>
         <div className="manufacture-cta-actions manufacture-cta-reveal flex flex-wrap justify-center gap-4">
           <Link
-            to="/lien-he"
+            to="/lien-he?dia-diem=nha-may-an-thai#he-thong-lien-he"
             className="manufacture-cta-primary inline-flex items-center gap-2 rounded-lg bg-white px-9 py-4 text-lg font-bold text-primary transition-transform duration-300 hover:-translate-y-0.5 cursor-pointer"
           >
             Liên hệ

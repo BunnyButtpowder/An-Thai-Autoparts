@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import { useSearchParams } from 'react-router'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import PhoneIcon from '../icons/PhoneIcon'
@@ -10,8 +11,26 @@ gsap.registerPlugin(ScrollTrigger)
 
 export default function ContactLocations() {
   const sectionRef = useRef<HTMLElement>(null)
-  const [activeIndex, setActiveIndex] = useState(0)
+  const [searchParams] = useSearchParams()
+
+  // A location can be deep-linked via ?dia-diem=<slug> — e.g. the manufacture
+  // page CTA lands here with "Nhà máy An Thái" preselected. Resolve the slug to
+  // its index (falling back to the first location) and seed the initial state
+  // with it so the right card/map show without an index-0 flash.
+  const requestedSlug = searchParams.get('dia-diem')
+  const requestedIndex = requestedSlug
+    ? contactLocations.findIndex((location) => location.slug === requestedSlug)
+    : -1
+  const [activeIndex, setActiveIndex] = useState(requestedIndex >= 0 ? requestedIndex : 0)
   const activeLocation = (contactLocations[activeIndex] ?? contactLocations[0])!
+
+  // Keep the selection in sync when the deep-link slug changes while mounted
+  // (navigating here again with a different ?dia-diem). Only overrides on an
+  // actual slug change, so hovering/clicking other cards isn't undone.
+  useEffect(() => {
+    if (requestedIndex >= 0) setActiveIndex(requestedIndex)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [requestedSlug])
 
   useEffect(() => {
     if (!sectionRef.current) return
