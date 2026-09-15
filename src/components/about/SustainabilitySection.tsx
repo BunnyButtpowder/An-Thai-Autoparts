@@ -16,7 +16,9 @@ const pillars: Pillar[] = [
   {
     n: '01',
     title: 'Phát triển nhân sự',
-    description: 'An Thái chú trọng xây dựng đội ngũ vững chuyên môn, tận tâm trong công việc và gắn kết lâu dài. Chúng tôi đảm bảo quyền lợi cho người lao động, đồng thời tạo điều kiện để mỗi cá nhân phát triển thông qua các chương trình đào tạo và nâng cao chuyên môn. Bên cạnh đó, các hoạt động teambuilding, dự án cộng đồng, CLB Bóng đá, CLB Pickleball… được duy trì thường xuyên, giúp các thành viên kết nối, sẻ chia và cùng xây dựng một tập thể An Thái ngày càng gắn kết.',
+    description: `An Thái chú trọng xây dựng đội ngũ vững chuyên môn, tận tâm trong công việc và gắn kết lâu dài. 
+                  \nChúng tôi đảm bảo quyền lợi cho người lao động, đồng thời tạo điều kiện để mỗi cá nhân phát triển thông qua các chương trình đào tạo và nâng cao chuyên môn. 
+                  \nBên cạnh đó, các hoạt động teambuilding, dự án cộng đồng, CLB Bóng đá, CLB Pickleball… được duy trì thường xuyên, giúp các thành viên kết nối, sẻ chia và cùng xây dựng một tập thể An Thái ngày càng gắn kết.`,
     img: encodeURI('/about/Phát triển nhân viên.jpg'),
     alt: 'Phát triển nhân sự tại An Thái',
   },
@@ -24,14 +26,18 @@ const pillars: Pillar[] = [
     n: '02',
     title: 'Kiến tạo môi trường',
     description:
-      'An Thái xây dựng môi trường làm việc công bằng, minh bạch và gắn kết, nơi mỗi thành viên được tôn trọng, sẻ chia và ghi nhận xứng đáng. Chúng tôi đảm bảo thu nhập và phúc lợi cạnh tranh, đồng thời tạo cơ hội phát triển với lộ trình thăng tiến rõ ràng, chương trình đào tạo bài bản và nhiều cơ hội thử sức trong công việc. Bên cạnh đó, môi trường làm việc thân thiện, nhân văn cùng cơ sở vật chất hiện đại tạo điều kiện để mỗi cá nhân phát huy năng lực, phát triển toàn diện và gắn bó lâu dài cùng An Thái.',
+      `An Thái xây dựng môi trường làm việc công bằng, minh bạch và gắn kết, nơi mỗi thành viên được tôn trọng, sẻ chia và ghi nhận xứng đáng. 
+      \nChúng tôi đảm bảo thu nhập và phúc lợi cạnh tranh, đồng thời tạo cơ hội phát triển với lộ trình thăng tiến rõ ràng, chương trình đào tạo bài bản và nhiều cơ hội thử sức trong công việc. 
+      \nBên cạnh đó, môi trường làm việc thân thiện, nhân văn cùng cơ sở vật chất hiện đại tạo điều kiện để mỗi cá nhân phát huy năng lực, phát triển toàn diện và gắn bó lâu dài cùng An Thái.`,
     img: encodeURI('/about/Phát triền môi trường.jpg'),
     alt: 'Kiến tạo môi trường làm việc tại An Thái',
   },
   {
     n: '03',
     title: 'Trách nhiệm xã hội',
-    description: 'An Thái xem trách nhiệm với cộng đồng là một phần trong hành trình phát triển bền vững, tập trung vào giáo dục, an sinh xã hội và các hoạt động sẻ chia thiết thực. Quỹ học bổng Bean’s Foundation được thành lập dành cho con em cán bộ nhân viên, góp phần mở rộng cơ hội học tập và tiếp cận những nền giáo dục hiện đại. An Thái cũng duy trì nhiều hoạt động như xây dựng nhà tình thương, đồng hành cùng trẻ em và các gia đình có hoàn cảnh đặc biệt, hỗ trợ Trung tâm Bảo trợ xã hội tỉnh Thái Bình. Các chương trình hiến máu tình nguyện và hoạt động thiện nguyện thường niên cũng được tổ chức với sự chung tay của CBCNV, lan tỏa tinh thần sẻ chia đến cộng đồng.',
+    description: `An Thái xem trách nhiệm với cộng đồng là một phần trong hành trình phát triển bền vững, tập trung vào giáo dục, an sinh xã hội và các hoạt động sẻ chia thiết thực. 
+                  \nQuỹ học bổng Bean’s Foundation được thành lập dành cho con em cán bộ nhân viên, góp phần mở rộng cơ hội học tập và tiếp cận những nền giáo dục hiện đại. An Thái cũng duy trì nhiều hoạt động như xây dựng nhà tình thương, đồng hành cùng trẻ em và các gia đình có hoàn cảnh đặc biệt, hỗ trợ Trung tâm Bảo trợ xã hội tỉnh Thái Bình. 
+                  \nCác chương trình hiến máu tình nguyện và hoạt động thiện nguyện thường niên cũng được tổ chức với sự chung tay của CBCNV, lan tỏa tinh thần sẻ chia đến cộng đồng.`,
     img: encodeURI('/about/Hoạt động xã hội.jpg'),
     alt: 'Hoạt động xã hội của An Thái',
   },
@@ -153,7 +159,7 @@ export default function SustainabilitySection() {
                       <h3 className="sustainability-pillar-title mt-2 font-bold uppercase tracking-tight text-white lg:mt-0 text-2xl lg:text-4xl lg:leading-tight">
                         {pillar.title}
                       </h3>
-                      <p className="sustainability-pillar-desc mt-4 max-w-prose text-lg lg:text-xl leading-relaxed text-white/75 text-justify">
+                      <p className="sustainability-pillar-desc mt-4 max-w-prose whitespace-pre-line text-lg lg:text-xl leading-relaxed text-white/75 text-justify">
                         {pillar.description}
                       </p>
                     </div>
