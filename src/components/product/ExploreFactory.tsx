@@ -1,7 +1,6 @@
+import { Link } from 'react-router'
 import ArrowRight from '../icons/ArrowRight'
 import useReveal from '../../hooks/useReveal'
-
-const E_CATALOGUE_HREF = 'https://anthaiautoparts.com/catalogues'
 
 export default function ExploreFactory() {
   // `useReveal` scopes a gsap.context() to this section and triggers off the
@@ -50,21 +49,27 @@ export default function ExploreFactory() {
       <div className="explore-factory-container relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-12 lg:grid lg:grid-cols-3 lg:items-center lg:gap-16">
         <div className="explore-factory-text-column contents lg:col-span-2 lg:flex lg:flex-col lg:gap-7">
           <h2 className="explore-factory-heading explore-factory-reveal order-2 lg:order-0 text-center lg:text-left text-4xl sm:text-5xl lg:text-6xl font-bold text-white uppercase tracking-normal leading-15">
-            Khám phá nhà máy sản xuất{' '}
-            <span className="explore-factory-heading-accent text-white/90">tăm bua An Thái</span>
+            Tăm bua An Thái
           </h2>
           <p className="explore-factory-text explore-factory-reveal order-3 lg:order-0 mx-auto lg:mx-0 text-xl leading-relaxed text-white/85 text-center lg:text-left">
-            Tìm hiểu quy trình sản xuất, hệ thống máy móc và năng lực tạo nên những sản phẩm bền bỉ, chất lượng của An Thái.
+            Tinh hoa cơ khí Việt - Chất lượng chuẩn quốc tế
           </p>
-          <a
-            href={E_CATALOGUE_HREF}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="explore-factory-catalogue explore-factory-reveal group order-5 lg:order-0 mx-auto lg:mx-0 inline-flex items-center justify-center gap-2.5 rounded-xl bg-white px-8 py-4 text-lg font-semibold text-primary transition-all duration-300 hover:-translate-y-0.5 cursor-pointer"
-          >
-            Khám phá thêm
-            <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
-          </a>
+          <div className="explore-factory-actions explore-factory-reveal order-5 lg:order-0 flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-4">
+            <Link
+              to="/lien-he"
+              className="explore-factory-contact group inline-flex items-center justify-center gap-2.5 rounded-xl bg-white px-8 py-4 text-lg font-semibold text-primary transition-all duration-300 hover:-translate-y-0.5 cursor-pointer"
+            >
+              Liên hệ tư vấn
+              <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
+            </Link>
+            <a
+              href="#danh-muc-san-pham"
+              className="explore-factory-explore group inline-flex items-center justify-center gap-2.5 rounded-xl border border-white/60 bg-white/10 px-8 py-4 text-lg font-semibold text-white backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:bg-white/20 cursor-pointer"
+            >
+              Khám phá sản phẩm
+              <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
+            </a>
+          </div>
         </div>
 
         <div className="explore-factory-qr order-4 lg:order-0 self-center justify-self-center flex flex-col items-center gap-4">
@@ -74,11 +79,11 @@ export default function ExploreFactory() {
             <span className="pointer-events-none absolute -top-1.5 -right-1.5 h-5 w-5 rounded-tr-lg border-t-2 border-r-2 border-white/60" aria-hidden="true" />
             <span className="pointer-events-none absolute -bottom-1.5 -left-1.5 h-5 w-5 rounded-bl-lg border-b-2 border-l-2 border-white/60" aria-hidden="true" />
             <span className="pointer-events-none absolute -bottom-1.5 -right-1.5 h-5 w-5 rounded-br-lg border-b-2 border-r-2 border-white/60" aria-hidden="true" />
-            <div className="explore-factory-qr-frame rounded-2xl bg-white p-3.5">
-              <img src="/recruit/qr-catalog.png" alt="Mã QR E-Catalogue An Thái" className="w-40 h-40 lg:w-48 lg:h-48" />
+            <div className="explore-factory-image-frame overflow-hidden rounded-2xl bg-white p-3.5">
+              <img src="/product/AT00012.png" alt="Tăm bua An Thái AT00012" className="w-40 h-40 lg:w-48 lg:h-48 object-contain" />
             </div>
           </div>
-          <span className="explore-factory-qr-label text-base font-medium tracking-wide text-white/85">Quét mã để xem E-Catalogue</span>
+          <span className="explore-factory-image-label text-base font-medium tracking-wide text-white/85">Tăm bua An Thái - Mã AT00012</span>
         </div>
       </div>
     </section>

@@ -42,7 +42,7 @@ export default function Header({
                 type="button"
                 className={`lang-vi-button cursor-pointer rounded-md px-2 py-1 text-base transition-colors ${
                   language === 'vi'
-                    ? 'font-semibold text-primary'
+                    ? 'font-semibold text-red-400'
                     : 'text-white/70 hover:text-white'
                 }`}
                 aria-label="Tiếng Việt"
@@ -58,7 +58,7 @@ export default function Header({
                 type="button"
                 className={`lang-en-button cursor-pointer rounded-md px-2 py-1 text-base transition-colors ${
                   language === 'en'
-                    ? 'font-semibold text-primary'
+                    ? 'font-semibold text-red-400'
                     : 'text-white/70 hover:text-white'
                 }`}
                 aria-label="English"

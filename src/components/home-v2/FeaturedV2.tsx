@@ -66,12 +66,12 @@ export default function FeaturedV2() {
               </a>
             </div>
 
-            <dl className="featured-v2-reveal featured-product-specs mt-10 flex flex-wrap items-start gap-x-23 gap-y-6 border-t border-white/10 pt-8">
+            <dl className="featured-v2-reveal featured-product-specs mt-10 flex flex-wrap items-start gap-x-17 gap-y-6 border-t border-white/10 pt-8">
               <div className="featured-product-spec text-left">
                 <dt className="featured-product-spec-value text-2xl font-bold leading-tight sm:text-3xl">
                   FMVSS-121
                 </dt>
-                <dd className="featured-product-spec-label mt-1 text-base font-medium uppercase tracking-wide text-white/60">
+                <dd className="featured-product-spec-label mt-1 text-sm font-medium uppercase tracking-wide text-white/60">
                   Tiêu chuẩn phanh
                 </dd>
               </div>
@@ -79,7 +79,7 @@ export default function FeaturedV2() {
                 <dt className="featured-product-spec-value text-2xl font-bold leading-tight sm:text-3xl">
                   G3500
                 </dt>
-                <dd className="featured-product-spec-label mt-1 text-base font-medium uppercase tracking-wide text-white/60">
+                <dd className="featured-product-spec-label mt-1 text-sm font-medium uppercase tracking-wide text-white/60">
                   Gang xám
                 </dd>
               </div>
@@ -87,7 +87,7 @@ export default function FeaturedV2() {
                 <dt className="featured-product-spec-value text-2xl font-bold leading-tight sm:text-3xl">
                   100%
                 </dt>
-                <dd className="featured-product-spec-label mt-1 text-base font-medium uppercase tracking-wide text-white/60">
+                <dd className="featured-product-spec-label mt-1 text-sm font-medium uppercase tracking-wide text-white/60">
                   Truy xuất nguồn gốc
                 </dd>
               </div>

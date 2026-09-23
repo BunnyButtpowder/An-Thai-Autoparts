@@ -44,7 +44,7 @@ export default function HeroV2() {
           <div className="hero-v2-frame relative  px-8 py-10 sm:px-12 sm:py-14 lg:px-16 lg:py-16">
             <h1
               id="hero-v2-heading"
-              className="hero-v2-heading mt-6 font-extrabold tracking-relaxed text-white text-balance text-3xl sm:text-4xl lg:text-7xl leading-23"
+              className="hero-v2-heading mt-6 font-extrabold tracking-wide leading-tight text-white text-balance text-3xl sm:text-4xl lg:text-7xl"
             >
               <span className="block overflow-hidden pb-1">
                 <span className="hero-v2-line block">Vì chiếc xe luôn lăn bánh</span>

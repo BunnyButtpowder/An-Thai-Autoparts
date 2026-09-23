@@ -48,8 +48,11 @@ export default function BrakeDrumCatalog() {
     })
   })
 
-  const visible =
+  const visible = (
     market === 'Tất cả' ? PRODUCTS : PRODUCTS.filter((p) => p.market === market.toUpperCase())
+  )
+    .slice()
+    .sort((a, b) => a.name.localeCompare(b.name, 'vi'))
 
   // Changing the filter grows/shrinks the grid, which shifts every section
   // below it. ScrollTrigger caches start/end positions at creation, so those
@@ -64,11 +67,11 @@ export default function BrakeDrumCatalog() {
     <section ref={ref} id="danh-muc" className="brake-catalog-section bg-[#0b0a09] pt-10">
       <div className="brake-catalog-inner mx-auto max-w-7xl px-6 sm:px-10">
         <h2
-          className="brake-catalog-title brake-reveal m-0 font-extrabold text-4xl sm:text-5xl lg:text-6xl uppercase leading-none tracking-[-0.015em] text-white"
+          className="brake-catalog-title brake-reveal m-0 font-extrabold text-4xl sm:text-5xl lg:text-6xl uppercase leading-none tracking-wide text-white"
         >
           Danh mục tăm bua
         </h2>
-        <p className="brake-catalog-lead brake-reveal mt-6 mb-16 max-w-none text-2xl leading-[1.7] text-pretty text-white/70">
+        <p className="brake-catalog-lead brake-reveal mt-6 max-w-none text-lg sm:text-xl leading-[1.7] text-pretty text-white/70">
           Khám phá danh mục phụ tùng chất lượng cao - nơi hội tụ những sản phẩm bền bỉ, ổn định và
           đáp ứng đa dạng các dòng xe thương mại từ Trung Quốc, Mỹ đến Nhật Bản.
         </p>
@@ -88,7 +91,7 @@ export default function BrakeDrumCatalog() {
                 type="button"
                 onClick={() => setMarket(label)}
                 aria-pressed={on}
-                className={`brake-catalog-filter cursor-pointer border-b-2 bg-none pb-1.5 font-medium text-xl sm:text-2xl tracking-[0.01em] transition-colors ${on ? 'border-red-400 text-red-400' : 'border-transparent text-white/45 hover:text-white/80'
+                className={`brake-catalog-filter cursor-pointer border-b-2 bg-none pb-1.5 font-medium text-xl tracking-[0.01em] transition-colors ${on ? 'border-red-400 text-red-400' : 'border-transparent text-white/45 hover:text-white/80'
                   }`}
               >
                 {label}

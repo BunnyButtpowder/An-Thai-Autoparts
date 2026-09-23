@@ -30,12 +30,12 @@ interface CoreValue {
 
 /** The six core values, ordered left→right as in the design. */
 const coreValues: CoreValue[] = [
-  { title: 'Sáng tạo', Icon: Lightbulb },
-  { title: 'Tâm huyết', Icon: Heart },
-  { title: 'Đoàn kết', Icon: Users },
   { title: 'Chính trực', Icon: ShieldCheck },
   { title: 'Uy tín', Icon: Star },
   { title: 'Tốc độ', Icon: Zap },
+  { title: 'Đoàn kết', Icon: Users },
+  { title: 'Tâm huyết', Icon: Heart },
+  { title: 'Sáng tạo', Icon: Lightbulb },
 ]
 
 /** Light globe tuned for the white page — slate continents, brand-red trade arcs

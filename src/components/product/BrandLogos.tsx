@@ -26,7 +26,7 @@ export default function BrandLogos() {
     <section
       ref={sectionRef}
       id="thuong-hieu"
-      className="brand-logos-section relative w-full py-20 lg:pb-28 bg-[#0f1113]"
+      className="brand-logos-section relative w-full py-20 lg:pb-28 "
       aria-labelledby="brand-logos-heading"
     >
       <div className="brand-logos-container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

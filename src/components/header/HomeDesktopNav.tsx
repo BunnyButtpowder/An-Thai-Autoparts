@@ -12,7 +12,7 @@ export default function HomeDesktopNav() {
           <li key={item.label}>
             <a
               href={item.href}
-              className="nav-link px-4 py-2 text-lg font-medium text-white hover:text-primary transition-colors cursor-pointer rounded-md"
+              className="nav-link px-4 py-2 text-lg font-medium text-white hover:text-red-400 transition-colors cursor-pointer rounded-md"
             >
               <CenterUnderline>{item.label}</CenterUnderline>
             </a>

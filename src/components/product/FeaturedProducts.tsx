@@ -89,20 +89,19 @@ export default function FeaturedProducts() {
   return (
     <section
       id="danh-muc-san-pham"
-      className="featured-products-section relative w-full py-20 lg:pb-28"
+      className="featured-products-section relative w-full py-20 bg-[#0f1113]"
       aria-labelledby="featured-products-heading"
     >
       <div className="featured-products-container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <header className="featured-products-header">
           <h2
             id="featured-products-heading"
-            className="featured-products-title mt-4 text-4xl font-extrabold tracking-normal text-white uppercase text-balance sm:text-5xl lg:text-6xl"
+            className="featured-products-title mt-4 text-4xl font-extrabold tracking-wide text-white uppercase text-balance sm:text-5xl lg:text-6xl"
           >
-            Tăm bua An Thái
+            Tăm bua an thái
           </h2>
           <p className="featured-products-subtitle mt-4 text-lg leading-relaxed text-white/70 sm:text-xl">
-            100% sản xuất tại Việt Nam — chọn từng dòng tăm bua để xem hình ảnh chi tiết,
-            mỗi sản phẩm được thiết kế riêng cho từng dòng xe tải.
+            Tinh hoa cơ khí Việt - Chất lượng chuẩn quốc tế
           </p>
         </header>
 
@@ -153,9 +152,8 @@ export default function FeaturedProducts() {
                       onClick={() => goToImage(dotIndex)}
                       aria-label={`Xem ảnh ${dotIndex + 1} của ${active?.name}`}
                       aria-current={isCurrent}
-                      className={`featured-products-dot h-2 rounded-full transition-all duration-300 cursor-pointer ${
-                        isCurrent ? 'w-6 bg-white' : 'w-2 bg-white/50 hover:bg-white/80'
-                      }`}
+                      className={`featured-products-dot h-2 rounded-full transition-all duration-300 cursor-pointer ${isCurrent ? 'w-6 bg-white' : 'w-2 bg-white/50 hover:bg-white/80'
+                        }`}
                     />
                   )
                 })}
@@ -190,27 +188,24 @@ export default function FeaturedProducts() {
                     className="featured-products-trigger group flex w-full items-start gap-5 py-6 text-left cursor-pointer"
                   >
                     <span
-                      className={`featured-products-number mt-1 font-mono text-lg font-semibold tabular-nums transition-colors duration-300 ${
-                        isActive ? 'text-red-400' : 'text-white/30 group-hover:text-white/50'
-                      }`}
+                      className={`featured-products-number mt-1 font-mono text-lg font-semibold tabular-nums transition-colors duration-300 ${isActive ? 'text-red-400' : 'text-white/30 group-hover:text-white/50'
+                        }`}
                     >
                       {String(index + 1).padStart(2, '0')}
                     </span>
 
                     {/* Red active indicator rail. */}
                     <span
-                      className={`featured-products-rail mt-2 h-6 w-0.5 shrink-0 rounded-full transition-all duration-300 ${
-                        isActive ? 'bg-primary' : 'bg-transparent'
-                      }`}
+                      className={`featured-products-rail mt-2 h-6 w-0.5 shrink-0 rounded-full transition-all duration-300 ${isActive ? 'bg-primary' : 'bg-transparent'
+                        }`}
                       aria-hidden="true"
                     />
 
                     <span className="featured-products-content min-w-0 flex-1">
                       <span className="featured-products-item-head flex items-baseline justify-between gap-3">
                         <span
-                          className={`featured-products-name text-2xl font-bold tracking-tight transition-colors duration-300 sm:text-3xl ${
-                            isActive ? 'text-white' : 'text-white/50 group-hover:text-white/80'
-                          }`}
+                          className={`featured-products-name text-2xl font-bold tracking-tight transition-colors duration-300 sm:text-3xl ${isActive ? 'text-white' : 'text-white/50 group-hover:text-white/80'
+                            }`}
                         >
                           {product.name}
                         </span>
@@ -250,13 +245,19 @@ export default function FeaturedProducts() {
           </ul>
         </div>
 
-        {/* Section-level CTA to the full product catalog. */}
-        <div className="featured-products-more mt-14 flex justify-center">
+        {/* Section-level CTAs — request a consultation or browse the full catalog. */}
+        <div className="featured-products-more mt-14 flex flex-col items-center justify-center gap-4 sm:flex-row">
+          <Link
+            to="/lien-he"
+            className="featured-products-contact-button inline-flex items-center gap-2 rounded-md bg-white px-8 py-3.5 text-lg font-semibold text-foreground transition-all duration-300 hover:bg-white/90 hover:-translate-y-0.5 hover:shadow-lg cursor-pointer"
+          >
+            Liên hệ tư vấn
+          </Link>
           <Link
             to="/tam-bua-an-thai"
-            className="featured-products-more-button group inline-flex items-center gap-2 rounded-md border border-white/15 px-8 py-3.5 text-lg font-semibold text-white transition-colors duration-300 hover:border-primary hover:bg-primary hover:text-primary-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 cursor-pointer"
+            className="featured-products-more-button group inline-flex items-center gap-2 rounded-md border border-white/25 px-8 py-3.5 text-lg font-semibold text-white transition-all duration-300 hover:border-white hover:bg-white hover:text-foreground hover:-translate-y-0.5 hover:shadow-lg cursor-pointer"
           >
-            Xem thêm
+            Khám phá sản phẩm
             <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
           </Link>
         </div>

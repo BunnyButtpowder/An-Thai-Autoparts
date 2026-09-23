@@ -47,8 +47,8 @@ export default function ContactCTA() {
         >
           An Thái - Hệ sinh thái phụ tùng toàn diện
         </h2>
-        <p className="contact-cta-text contact-cta-reveal mt-5 max-w-2xl text-2xl leading-relaxed text-white/85">
-          Khám phá hệ sinh thái hơn 60.000 mã hàng phụ tùng chất lượng cao
+        <p className="contact-cta-text contact-cta-reveal mt-5 text-2xl leading-relaxed text-white/85">
+          Liên hệ với chúng tôi để được tư vấn khám phá hệ sinh thái hơn 30.000 mã hàng phụ tùng chất lượng cao.
         </p>
         <div className="contact-cta-actions contact-cta-reveal flex flex-wrap justify-center gap-4 mt-5">
           <Link

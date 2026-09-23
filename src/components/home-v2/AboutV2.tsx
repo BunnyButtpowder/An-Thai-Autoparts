@@ -84,7 +84,7 @@ export default function AboutV2({ hideCta = false }: { hideCta?: boolean } = {})
           <div className="about-v2-copy">
             <div className="about-v2-intro">
               <p className="about-v2-eyebrow-label text-xl sm:text-2xl font-semibold tracking-wide text-primary">
-                Về chúng tôi
+                Về An Thái
               </p>
               <h2 id="about-v2-heading" className="mt-2 text-3xl sm:text-4xl uppercase font-extrabold leading-normal tracking-tight text-foreground">
                 Kiến tạo hành trình vạn dặm

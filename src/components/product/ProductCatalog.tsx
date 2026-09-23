@@ -248,6 +248,7 @@ export default function ProductCatalog() {
             product.fullName.toLowerCase().includes(trimmedQuery) ||
             product.code.toLowerCase().includes(trimmedQuery)),
       )
+      .sort((a, b) => a.name.localeCompare(b.name, 'vi'))
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isSearching, trimmedQuery, categorySlug, selectedBrands])
 
@@ -259,12 +260,19 @@ export default function ProductCatalog() {
       .flatMap((category) => category.groups)
       .map((group) => ({ group, count: group.products.filter(matchesBrand).length }))
       .filter((entry) => entry.count > 0)
+      .sort((a, b) => a.group.name.localeCompare(b.group.name, 'vi'))
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [activeCategory, selectedBrands])
 
   // Child products for the opened parent group, filtered by brand.
   const visibleProducts = useMemo(
-    () => (activeGroup ? activeGroup.products.filter(matchesBrand) : []),
+    () =>
+      activeGroup
+        ? activeGroup.products
+            .filter(matchesBrand)
+            .slice()
+            .sort((a, b) => a.name.localeCompare(b.name, 'vi'))
+        : [],
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [activeGroup, selectedBrands],
   )
@@ -280,11 +288,11 @@ export default function ProductCatalog() {
       <div className="product-catalog-container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header + intro — brief sections 8 & 9 */}
         <header className="product-catalog-header">
-          <h2 className="product-catalog-title text-4xl font-extrabold tracking-normal text-white uppercase text-balance sm:text-5xl lg:text-6xl">
+          <h2 className="product-catalog-title text-4xl font-extrabold tracking-wide text-white uppercase text-balance sm:text-5xl lg:text-6xl">
             Danh mục phụ tùng
           </h2>
           <p className="product-catalog-subtitle mt-4 text-lg leading-relaxed text-white/70 sm:text-xl">
-            Khám phá danh mục phụ tùng chất lượng cao — nơi hội tụ những sản phẩm bền bỉ, ổn định và
+            Khám phá danh mục phụ tùng chất lượng cao - nơi hội tụ những sản phẩm bền bỉ, ổn định và
             đáp ứng đa dạng các dòng xe thương mại từ Trung Quốc, Mỹ đến Nhật Bản.
           </p>
         </header>
@@ -373,7 +381,7 @@ export default function ProductCatalog() {
                     role="menu"
                   >
                     <div className="product-catalog-brand-menu-header flex items-center justify-between px-4 pb-1 pt-3">
-                      <span className="text-sm font-semibold uppercase tracking-wider text-white/40">
+                      <span className="text-sm font-semibold tracking-wider text-white">
                         Thương hiệu
                       </span>
                       {selectedBrands.length > 0 && (
@@ -455,6 +463,18 @@ export default function ProductCatalog() {
               </span>
             )}
           </nav>
+          <div className="product-catalog-breadcrumb-note mt-4 flex items-start gap-3 rounded-lg border border-white/10 bg-white/5 px-4 py-3 backdrop-blur-sm">
+            <p className="product-catalog-breadcrumb-note-text text-base leading-relaxed text-white">
+              Đây là các mã sản phẩm nổi bật của chúng tôi. Để nhận danh sách toàn bộ các mã sản phẩm, Quý khách vui lòng{' '}
+              <a
+                href="#lien-he"
+                className="product-catalog-breadcrumb-note-link font-semibold text-white transition-colors duration-300 hover:text-primary cursor-pointer"
+              >
+                liên hệ trực tiếp với An Thái
+              </a>
+              .
+            </p>
+          </div>
         </div>
       )}
 
@@ -473,7 +493,7 @@ export default function ProductCatalog() {
               <p className="product-catalog-results-label mt-8 text-base text-white/60">
                 {searchResults.length} kết quả cho “{searchQuery.trim()}”
               </p>
-              <motion.ul layout className="product-catalog-grid mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+              <motion.ul key="search-grid" layout className="product-catalog-grid mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
                 <AnimatePresence mode="popLayout">
                   {searchResults.map((product) => (
                     <ProductCard key={product.id} product={product} onOpen={openProduct} />
@@ -485,7 +505,7 @@ export default function ProductCatalog() {
           ) : activeGroup ? (
             /* CHILD PRODUCTS of a parent group */
             <>
-              <motion.ul layout className="product-catalog-grid mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+              <motion.ul key="products-grid" layout className="product-catalog-grid mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
                 <AnimatePresence mode="popLayout">
                   {visibleProducts.map((product) => (
                     <ProductCard key={product.id} product={product} onOpen={openProduct} />
@@ -497,7 +517,7 @@ export default function ProductCatalog() {
           ) : (
             /* PARENT GROUPS grid (default) */
             <>
-              <motion.ul layout className="product-catalog-grid mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+              <motion.ul key="groups-grid" layout className="product-catalog-grid mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
                 <AnimatePresence mode="popLayout">
                   {visibleGroups.map(({ group }) => (
                     <motion.li

@@ -7,7 +7,7 @@ import HomeMobileMenu from '../components/header/HomeMobileMenu'
 import HomeFooter from '../components/footer/Footer'
 import ProductHero from '../components/product/ProductHero'
 import FeaturedProducts from '../components/product/FeaturedProducts'
-import ExploreFactory from '../components/product/ExploreFactory'
+// import ExploreFactory from '../components/product/ExploreFactory'
 import ProductCatalog from '../components/product/ProductCatalog'
 import BrandLogos from '../components/product/BrandLogos'
 import ContactCTA from '../components/product/ContactCTA'
@@ -69,9 +69,9 @@ export default function ProductPage() {
       />
       <main className="product-main bg-[#0b0c0d]">
         <ProductHero />
-        <FeaturedProducts />
-        <ExploreFactory />
         <ProductCatalog />
+        {/* <ExploreFactory /> */}
+        <FeaturedProducts />
         <BrandLogos />
         <ContactCTA />
       </main>

@@ -58,7 +58,7 @@ export default function ProductHero() {
       >
         <motion.h1
           id="product-hero-heading"
-          className="product-hero-title text-5xl font-extrabold leading-normal tracking-normal uppercase text-white sm:text-7xl lg:text-8xl mb-3"
+          className="product-hero-title text-5xl font-extrabold leading-normal tracking-normal uppercase text-white sm:text-7xl mb-3"
           variants={item}
         >
           Phụ tùng chất lượng cao <br />

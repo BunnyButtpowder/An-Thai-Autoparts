@@ -5,12 +5,11 @@ import Header from '../components/header/Header'
 import HomeDesktopNav from '../components/header/HomeDesktopNav'
 import HomeMobileMenu from '../components/header/HomeMobileMenu'
 import AboutHero from '../components/about/AboutHero'
-// import AboutSection from '../components/about/AboutSection'
-import AboutV2 from '@/components/home-v2/AboutV2'
+import AboutSection from '../components/about/AboutSection'
 import VisionMissionSection from '../components/about/VisionMissionSection'
 import SustainabilitySection from '../components/about/SustainabilitySection'
 import Footer from '@/components/footer/Footer'
-import OffersEditorial from '@/components/home-v2/OffersEditorial'
+import OffersEditorialAbout from '@/components/about/OffersEditorialAbout'
 import LearnMoreSection from '../components/recruitment/LearnMoreSection'
 import JoinUsSection from '../components/about/JoinUsSection'
 // import AboutNewsSection from '../components/about/AboutNewsSection'
@@ -58,10 +57,9 @@ export default function AboutPage() {
       />
       <main>
         <AboutHero />
-        {/* <AboutSection /> */}
-        <AboutV2 hideCta />
+        <AboutSection />
         <VisionMissionSection />
-        <OffersEditorial />
+        <OffersEditorialAbout />
         <SustainabilitySection />
         <LearnMoreSection />
         <JoinUsSection />
