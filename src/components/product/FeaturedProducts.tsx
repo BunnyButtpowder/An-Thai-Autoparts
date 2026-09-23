@@ -204,7 +204,7 @@ export default function FeaturedProducts() {
                     <span className="featured-products-content min-w-0 flex-1">
                       <span className="featured-products-item-head flex items-baseline justify-between gap-3">
                         <span
-                          className={`featured-products-name text-2xl font-bold tracking-tight transition-colors duration-300 sm:text-3xl ${isActive ? 'text-white' : 'text-white/50 group-hover:text-white/80'
+                          className={`featured-products-name text-2xl font-bold tracking-wider transition-colors duration-300 sm:text-3xl ${isActive ? 'text-white' : 'text-white/50 group-hover:text-white/80'
                             }`}
                         >
                           {product.name}
@@ -227,7 +227,7 @@ export default function FeaturedProducts() {
                             exit={{ height: 0, opacity: 0 }}
                             transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
                           >
-                            <span className="featured-products-desc mt-3 block max-w-md text-lg leading-relaxed text-white">
+                            <span className="featured-products-desc mt-3 block max-w-md text-lg leading-relaxed tracking-normal text-white text-justify">
                               {product.description}
                             </span>
                             <span className="featured-products-cta mt-4 inline-flex items-center gap-2 text-lg font-semibold text-red-400">
@@ -248,7 +248,7 @@ export default function FeaturedProducts() {
         {/* Section-level CTAs — request a consultation or browse the full catalog. */}
         <div className="featured-products-more mt-14 flex flex-col items-center justify-center gap-4 sm:flex-row">
           <Link
-            to="/lien-he"
+            to="/lien-he?dia-diem=nha-may-an-thai#he-thong-lien-he"
             className="featured-products-contact-button inline-flex items-center gap-2 rounded-md bg-white px-8 py-3.5 text-lg font-semibold text-foreground transition-all duration-300 hover:bg-white/90 hover:-translate-y-0.5 hover:shadow-lg cursor-pointer"
           >
             Liên hệ tư vấn
