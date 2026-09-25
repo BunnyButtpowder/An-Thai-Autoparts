@@ -154,11 +154,11 @@ export default function NewsV2() {
               <p className="news-v2-eyebrow-label text-xl sm:text-2xl font-semibold tracking-wide text-primary">
                 Tin tức
               </p>
-              <h2 id="news-v2-heading" className="mt-2 text-3xl uppercase font-extrabold leading-tight tracking-tight text-foreground sm:text-4xl">CẬP NHẬT MỚI</h2>
+              <h2 id="news-v2-heading" className="mt-2 text-3xl uppercase font-extrabold leading-tight tracking-wider text-foreground sm:text-4xl">CẬP NHẬT MỚI</h2>
             </div>
             <Link
               to="/tin-tuc"
-              className="group inline-flex shrink-0 items-center gap-2 text-base font-semibold uppercase tracking-wider text-primary transition-colors hover:text-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background cursor-pointer"
+              className="group inline-flex shrink-0 items-center gap-2 text-base font-semibold uppercase tracking-normal text-primary transition-colors hover:text-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background cursor-pointer"
             >
               Xem tất cả
               <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />

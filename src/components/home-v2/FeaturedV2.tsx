@@ -46,7 +46,7 @@ export default function FeaturedV2() {
             <p className="featured-product-eyebrow featured-v2-reveal inline-flex text-red-400 text-xl sm:text-2xl font-semibold tracking-wide">
               Sản phẩm chủ lực
             </p>
-            <h2 id="featured-v2-heading" className="featured-v2-reveal mt-4 text-balance text-3xl font-extrabold uppercase leading-tight tracking-tight sm:text-4xl">
+            <h2 id="featured-v2-heading" className="featured-v2-reveal mt-4 text-balance text-3xl font-extrabold uppercase leading-snug tracking-wider sm:text-4xl">
               Trải nghiệm tăm bua chất lượng quốc tế
             </h2>
             <div className="featured-v2-reveal mt-9 featured-product-actions flex flex-col sm:flex-row gap-4">

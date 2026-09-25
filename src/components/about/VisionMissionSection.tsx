@@ -176,7 +176,7 @@ export default function VisionMissionSection() {
           <div className="vms-statements flex flex-col gap-10 lg:gap-12">
             {statements.map((s) => (
               <article key={s.label} className="vms-statement vms-reveal text-justify">
-                <h3 className="vms-statement-label text-4xl font-bold uppercase tracking-tight text-primary sm:text-5xl">
+                <h3 className="vms-statement-label text-3xl font-extrabold uppercase tracking-wide text-primary sm:text-4xl">
                   {s.label}
                 </h3>
                 <p className="vms-statement-text mt-4 text-lg sm:text-2xl leading-relaxed text-foreground text-pretty">
@@ -189,7 +189,7 @@ export default function VisionMissionSection() {
 
         {/* ── Core values — a single row of six under a hairline rule ── */}
         <div className="vms-values mt-10 border-t border-foreground pt-12 lg:mt-0">
-          <h3 className="vms-values-heading vms-reveal text-center text-4xl sm:text-5xl font-semibold uppercase text-foreground">
+          <h3 className="vms-values-heading vms-reveal text-center text-3xl sm:text-4xl font-extrabold uppercase text-foreground tracking-wide">
             Giá trị cốt lõi
           </h3>
 

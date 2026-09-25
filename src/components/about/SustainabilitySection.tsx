@@ -108,7 +108,7 @@ export default function SustainabilitySection() {
               </p>
               <h2
                 id="sustainability-heading"
-                className="sustainability-heading mt-4 text-4xl uppercase font-extrabold leading-tight text-white sm:text-5xl"
+                className="sustainability-heading mt-4 text-3xl uppercase font-extrabold leading-tight tracking-wider text-white sm:text-4xl text-balance"
               >
                 Cùng An Thái Kiến tạo giá trị cho tương lai
               </h2>
@@ -156,7 +156,7 @@ export default function SustainabilitySection() {
                       <span className="sustainability-pillar-number stat-number text-base font-black tabular-nums text-red-400 lg:hidden">
                         {pillar.n}
                       </span>
-                      <h3 className="sustainability-pillar-title mt-2 font-bold uppercase tracking-tight text-white lg:mt-0 text-2xl lg:text-4xl lg:leading-tight">
+                      <h3 className="sustainability-pillar-title mt-2 font-bold uppercase tracking-wider text-white lg:mt-0 text-2xl lg:text-3xl lg:leading-tight">
                         {pillar.title}
                       </h3>
                       <p className="sustainability-pillar-desc mt-4 max-w-prose whitespace-pre-line text-lg lg:text-xl leading-relaxed text-white/75 text-justify">

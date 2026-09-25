@@ -30,7 +30,7 @@ export default function OffersEditorialAbout() {
           <p className="offers-eyebrow-label inline-flex items-center text-xl sm:text-2xl font-semibold tracking-wide text-red-400">
             Lĩnh vực kinh doanh
           </p>
-          <h2 id="offers-heading" className="mt-2 text-3xl uppercase font-extrabold leading-tight text-white sm:text-4xl">
+          <h2 id="offers-heading" className="mt-2 text-3xl uppercase font-extrabold leading-tight tracking-wider text-white sm:text-4xl">
             HỆ SINH THÁI CHO XE THƯƠNG MẠI
           </h2>
         </div>

@@ -8,11 +8,7 @@ import Header from '../components/header/Header'
 import HomeDesktopNav from '../components/header/HomeDesktopNav'
 import HomeMobileMenu from '../components/header/HomeMobileMenu'
 import HomeFooter from '../components/footer/Footer'
-// import HeroSection from '../components/home/HeroSection'
 import AboutV2 from '../components/home-v2/AboutV2'
-// import OfferSection from '../components/home/OfferSection'
-// import FeaturedProduct from '../components/home/FeaturedProduct'
-// import NewsSection from '../components/home/NewsSection'
 import HeroV2 from '../components/home-v2/HeroV2'
 import FeaturedV2 from '../components/home-v2/FeaturedV2'
 import NewsV2 from '../components/home-v2/NewsV2'
@@ -62,14 +58,10 @@ export default function HomePage() {
       <main>
         <HeroV2 />
         <AboutV2 />
-        {/* <ProductShowcase /> */}
         <div className="overscroll-section js-overscroll-section">
           <div className="overscroll-section__sticky-content js-overscroll-section__sticky-content">
             <OffersEditorial />
           </div>
-          {/* <FactorySection /> */}
-          {/* <PressSection /> */}
-          {/* <NeedHelpCTA /> */}
           <div className="overscroll-section__scroll-content js-overscroll-section__scroll-content">
             <FeaturedV2 />
             <NewsV2 />
