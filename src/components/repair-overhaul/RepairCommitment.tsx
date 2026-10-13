@@ -6,9 +6,9 @@ interface Commitment {
 }
 
 const commitments: Commitment[] = [
-  { number: '01', title: 'Quy trình minh bạch' },
+  { number: '01', title: 'Quy trình rõ ràng' },
   { number: '02', title: 'Phụ tùng chính hãng' },
-  { number: '03', title: 'Báo giá rõ ràng' },
+  { number: '03', title: 'Báo giá minh bạch' },
   { number: '04', title: 'Bảo hành sau sửa chữa' },
 ]
 

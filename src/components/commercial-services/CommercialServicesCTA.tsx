@@ -39,7 +39,7 @@ export default function CommercialServicesCTA() {
         </p>
         <div className="commercial-services-cta-actions commercial-services-cta-reveal flex flex-wrap justify-center gap-4 mt-10">
           <Link
-            to="/lien-he"
+            to="/lien-he?dia-diem=khach-san-an-thai#he-thong-lien-he"
             className="commercial-services-cta-primary inline-flex items-center gap-2 rounded-lg bg-white px-9 py-4 text-lg font-bold text-primary transition-colors duration-300 hover:bg-white/90 cursor-pointer"
           >
             Liên hệ

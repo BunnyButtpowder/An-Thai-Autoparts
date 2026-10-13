@@ -39,7 +39,7 @@ export default function RepairOverhaulCTA() {
         </p>
         <div className="repair-overhaul-cta-actions repair-overhaul-cta-reveal flex flex-wrap justify-center gap-4">
           <Link
-            to="/lien-he"
+            to="/lien-he?dia-diem=trung-tam-sua-chua-dai-tu-o-to#he-thong-lien-he"
             className="repair-overhaul-cta-primary inline-flex items-center gap-2 rounded-lg bg-white px-9 py-4 text-lg font-bold text-primary transition-colors duration-300 hover:bg-white/90 cursor-pointer"
           >
             Liên hệ →

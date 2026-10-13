@@ -484,7 +484,7 @@ export default function ProductCatalog() {
         <ProductDetail product={activeProduct} onBack={backToProducts} onSelectProduct={(id) => {
           const next = productsById[id]
           if (next) openProduct(next)
-        }} />
+        }} onViewAll={() => selectCategory(ALL_CATEGORY_SLUG)} />
       ) : (
         <div className="product-catalog-grid-container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           {/* SEARCH RESULTS */}
@@ -521,7 +521,7 @@ export default function ProductCatalog() {
                 <AnimatePresence mode="popLayout">
                   {visibleGroups.map(({ group }) => (
                     <motion.li
-                      key={group.slug}
+                      key={`${group.categorySlug}-${group.slug}`}
                       {...tileMotion}
                       className="product-catalog-card group flex flex-col overflow-hidden rounded-md border border-white/10 bg-white/5 transition-colors duration-300 hover:border-primary"
                     >

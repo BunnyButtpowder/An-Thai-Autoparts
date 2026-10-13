@@ -61,30 +61,27 @@ const globeConfig: GlobeConfig = {
   initialPosition: { lat: 14.0583, lng: 108.2772 },
   autoRotate: true,
   autoRotateSpeed: 0.4,
+  ringColor: '#ffffff',
+  originPointColor: '#ff1a1a',
 }
 
-/** Trade routes fanning out of Hanoi/HCMC to partner hubs worldwide. */
+const HANOI = { startLat: 21.0278, startLng: 105.8342 }
+
+/** Trade routes out of Hanoi — Southeast Asia, the USA and Australia only. */
 const globeArcs = [
-  { order: 1, startLat: 21.0278, startLng: 105.8342, endLat: 35.6762, endLng: 139.6503, arcAlt: 0.2, color: '#b91c1c' },
-  { order: 1, startLat: 21.0278, startLng: 105.8342, endLat: 37.5665, endLng: 126.978, arcAlt: 0.2, color: '#dc2626' },
-  { order: 2, startLat: 10.7769, startLng: 106.7009, endLat: 1.3521, endLng: 103.8198, arcAlt: 0.15, color: '#ef4444' },
-  { order: 2, startLat: 21.0278, startLng: 105.8342, endLat: 39.9042, endLng: 116.4074, arcAlt: 0.2, color: '#b91c1c' },
-  { order: 3, startLat: 10.7769, startLng: 106.7009, endLat: 28.6139, endLng: 77.209, arcAlt: 0.3, color: '#dc2626' },
-  { order: 3, startLat: 21.0278, startLng: 105.8342, endLat: 25.2048, endLng: 55.2708, arcAlt: 0.35, color: '#ef4444' },
-  { order: 4, startLat: 10.7769, startLng: 106.7009, endLat: 52.52, endLng: 13.405, arcAlt: 0.5, color: '#b91c1c' },
-  { order: 4, startLat: 21.0278, startLng: 105.8342, endLat: 48.8566, endLng: 2.3522, arcAlt: 0.5, color: '#dc2626' },
-  { order: 5, startLat: 10.7769, startLng: 106.7009, endLat: 51.5074, endLng: -0.1278, arcAlt: 0.5, color: '#ef4444' },
-  { order: 5, startLat: 21.0278, startLng: 105.8342, endLat: 34.0522, endLng: -118.2437, arcAlt: 0.5, color: '#b91c1c' },
-  { order: 6, startLat: 10.7769, startLng: 106.7009, endLat: 40.7128, endLng: -74.006, arcAlt: 0.5, color: '#dc2626' },
-  { order: 6, startLat: 21.0278, startLng: 105.8342, endLat: -33.8688, endLng: 151.2093, arcAlt: 0.4, color: '#ef4444' },
-  { order: 7, startLat: 10.7769, startLng: 106.7009, endLat: -23.5505, endLng: -46.6333, arcAlt: 0.5, color: '#b91c1c' },
-  { order: 7, startLat: 21.0278, startLng: 105.8342, endLat: 55.7558, endLng: 37.6173, arcAlt: 0.4, color: '#dc2626' },
-  { order: 8, startLat: 35.6762, startLng: 139.6503, endLat: 37.5665, endLng: 126.978, arcAlt: 0.1, color: '#ef4444' },
-  { order: 8, startLat: 52.52, startLng: 13.405, endLat: 51.5074, endLng: -0.1278, arcAlt: 0.1, color: '#b91c1c' },
-  { order: 9, startLat: 1.3521, startLng: 103.8198, endLat: 25.2048, endLng: 55.2708, arcAlt: 0.3, color: '#dc2626' },
-  { order: 9, startLat: 34.0522, startLng: -118.2437, endLat: 40.7128, endLng: -74.006, arcAlt: 0.2, color: '#ef4444' },
-  { order: 10, startLat: 28.6139, startLng: 77.209, endLat: 52.52, endLng: 13.405, arcAlt: 0.4, color: '#b91c1c' },
-  { order: 10, startLat: 39.9042, startLng: 116.4074, endLat: 34.0522, endLng: -118.2437, arcAlt: 0.5, color: '#dc2626' },
+  // Southeast Asia
+  { order: 1, ...HANOI, endLat: 13.7563, endLng: 100.5018, arcAlt: 0.1, color: '#b91c1c' }, // Bangkok
+  { order: 1, ...HANOI, endLat: 1.3521, endLng: 103.8198, arcAlt: 0.15, color: '#dc2626' }, // Singapore
+  { order: 2, ...HANOI, endLat: 3.139, endLng: 101.6869, arcAlt: 0.15, color: '#ef4444' }, // Kuala Lumpur
+  { order: 2, ...HANOI, endLat: -6.2088, endLng: 106.8456, arcAlt: 0.2, color: '#b91c1c' }, // Jakarta
+  { order: 3, ...HANOI, endLat: 14.5995, endLng: 120.9842, arcAlt: 0.12, color: '#dc2626' }, // Manila
+  { order: 3, ...HANOI, endLat: 16.8409, endLng: 96.1735, arcAlt: 0.1, color: '#ef4444' }, // Yangon
+  // USA
+  { order: 4, ...HANOI, endLat: 34.0522, endLng: -118.2437, arcAlt: 0.4, color: '#b91c1c' }, // Los Angeles
+  { order: 5, ...HANOI, endLat: 40.7128, endLng: -74.006, arcAlt: 0.4, color: '#dc2626' }, // New York
+  // Australia
+  { order: 4, ...HANOI, endLat: -33.8688, endLng: 151.2093, arcAlt: 0.3, color: '#ef4444' }, // Sydney
+  { order: 5, ...HANOI, endLat: -37.8136, endLng: 144.9631, arcAlt: 0.3, color: '#b91c1c' }, // Melbourne
 ]
 
 export default function VisionMissionSection() {

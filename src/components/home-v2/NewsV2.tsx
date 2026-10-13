@@ -169,17 +169,17 @@ export default function NewsV2() {
         <div className="news-v2-carousel mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="news-v2-viewport -mx-3 overflow-hidden rounded-md">
             <div
-              className="news-v2-track flex transition-transform duration-500 ease-out"
+              className="news-v2-track grid grid-flow-col grid-rows-[repeat(5,auto)] transition-transform duration-500 ease-out"
               style={{
                 width: `${(carouselArticles.length / visibleCount) * 100}%`,
+                gridAutoColumns: `${100 / carouselArticles.length}%`,
                 transform: `translateX(-${page * (100 / carouselArticles.length)}%)`,
               }}
             >
               {carouselArticles.map((article) => (
                 <div
                   key={article.id}
-                  className="news-v2-slide shrink-0 px-3"
-                  style={{ width: `${100 / carouselArticles.length}%` }}
+                  className="news-v2-slide row-span-5 grid grid-rows-subgrid px-3"
                 >
                   <motion.article
                     layoutId={`news-card-${layoutBaseId}-${article.id}`}
@@ -193,7 +193,7 @@ export default function NewsV2() {
                     role="button"
                     tabIndex={0}
                     aria-label={`Mở bài viết: ${article.title}`}
-                    className="news-v2-card group/card flex w-full flex-col rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background cursor-pointer"
+                    className="news-v2-card group/card row-span-5 grid w-full grid-rows-subgrid rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background cursor-pointer"
                   >
                     <div className="aspect-16/10 w-full overflow-hidden rounded-xl bg-muted">
                       <img
@@ -209,7 +209,7 @@ export default function NewsV2() {
                       layoutId={`news-title-${layoutBaseId}-${article.id}`}
                       className="mt-2"
                     >
-                      <CenterUnderline className="text-xl font-bold leading-snug text-foreground uppercase transition-colors group-hover/card:text-primary lg:text-2xl">
+                      <CenterUnderline className="text-xl line-clamp-2 text-justify font-bold leading-snug text-foreground uppercase transition-colors group-hover/card:text-primary">
                         {article.title}
                       </CenterUnderline>
                     </motion.h3>

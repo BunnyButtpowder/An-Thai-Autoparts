@@ -5,8 +5,9 @@ import { Lens } from '../ui/lens'
 import ArrowRight from '../icons/ArrowRight'
 
 // Featured "Tăm bua An Thái" (brake drum) line-up — data taken from the product
-// brief. Selecting a row swaps the carousel on the left; each product carries
-// several illustration images that auto-rotate every 5 seconds.
+// brief. Each product carries a single illustration image. The carousel on the
+// left shows one product at a time; advancing the image (via arrows, dots, or
+// the 5s autoplay) therefore switches to another product and opens its info row.
 // NOTE: the image paths reuse existing factory photos as placeholders — swap
 // them for real tăm bua product shots (e.g. /products/at00012-1.png) when ready.
 const featuredProducts = [
@@ -17,7 +18,7 @@ const featuredProducts = [
     weight: '54.5 kg',
     description:
       'Tăm bua thương hiệu ANTEK dành cho dòng xe HOWO Ben đời 2009. Đúc và gia công đạt chuẩn tải nặng, đảm bảo tản nhiệt và độ bền cao trên mọi cung đường.',
-    images: ['/product/AT00012.png', '/product/AT00012-2.png', '/product/AT00012-3.png', '/product/AT00012-4.png'],
+    image: '/product/AT00012.png',
     alt: 'Tăm bua ANTEK AT00012 cho xe HOWO Ben',
   },
   {
@@ -27,7 +28,7 @@ const featuredProducts = [
     weight: '30 kg',
     description:
       'Phiên bản ANTEK AT00015 tương thích với xe Đông Phong. Tối ưu cho xe tải trung, cân bằng giữa khối lượng nhẹ và khả năng chịu lực phanh ổn định.',
-    images: ['/product/AT00015.png', '/product/AT00015-2.png', '/product/AT00015-3.png', '/product/AT00015-4.png'],
+    image: '/product/AT00015.png',
     alt: 'Tăm bua ANTEK AT00015 cho xe Đông Phong',
   },
   {
@@ -37,7 +38,7 @@ const featuredProducts = [
     weight: '49.5 kg',
     description:
       'Dòng cao cấp X-POWER.LXĐ dành cho xe mooc Fuwa 13T. Thiết kế cho tải trọng lớn với vật liệu chịu mài mòn, giữ hiệu suất phanh trên hành trình dài.',
-    images: ['/product/AT00003.png', '/product/AT00003-2.png', '/product/AT00003-3.png', '/product/AT00003-4.png', '/product/AT00003-5.png'],
+    image: '/product/AT00003.png',
     alt: 'Tăm bua X-POWER.LXĐ AT00003 cho xe mooc Fuwa 13T',
   },
   {
@@ -47,42 +48,37 @@ const featuredProducts = [
     weight: '24.5 kg',
     description:
       'Tăm bua XCBB.LXĐ dành cho xe Isuzu. Nhẹ và bền, phù hợp xe tải nhẹ, gia công chính xác giúp vận hành êm và an toàn.',
-    images: ['/product/AT00006.png', '/product/AT00006-2.png', '/product/AT00006-3.png', '/product/AT00006-4.png'],
+    image: '/product/AT00006.png',
     alt: 'Tăm bua XCBB.LXĐ AT00006 cho xe Isuzu',
   },
 ]
+
+const productCount = featuredProducts.length
 
 const AUTOPLAY_MS = 5000
 
 export default function FeaturedProducts() {
   const [activeIndex, setActiveIndex] = useState(0)
-  const [imageIndex, setImageIndex] = useState(0)
   const [isPaused, setIsPaused] = useState(false)
   // Bumped on manual navigation to restart the autoplay countdown from scratch.
   const [timerKey, setTimerKey] = useState(0)
 
   const active = featuredProducts[activeIndex]
-  const imageCount = active?.images.length
-  // Guard against a stale index during the render right after a product switch.
-  const currentImage = active?.images[imageIndex % (imageCount || 0)]
 
-  // Reset to the first slide whenever the product changes.
+  // Auto-advance through the products every 5s — paused on hover, restarted when
+  // timerKey changes (i.e. after a manual arrow/dot/list selection).
   useEffect(() => {
-    setImageIndex(0)
-  }, [activeIndex])
-
-  // Auto-advance every 5s — paused on hover, restarted when timerKey changes.
-  useEffect(() => {
-    if (!imageCount || imageCount <= 1 || isPaused) return
+    if (productCount <= 1 || isPaused) return
     const id = setInterval(() => {
-      setImageIndex((prev) => (prev + 1) % imageCount)
+      setActiveIndex((prev) => (prev + 1) % productCount)
     }, AUTOPLAY_MS)
     return () => clearInterval(id)
-  }, [activeIndex, imageCount, isPaused, timerKey])
+  }, [isPaused, timerKey])
 
-  // Jump to a specific slide and reset the countdown so it doesn't fire early.
-  const goToImage = (index: number) => {
-    setImageIndex(index)
+  // Jump to a specific product (with wrap-around) and reset the countdown so it
+  // doesn't fire early right after a manual switch.
+  const goToProduct = (index: number) => {
+    setActiveIndex((index + productCount) % productCount)
     setTimerKey((key) => key + 1)
   }
 
@@ -113,13 +109,13 @@ export default function FeaturedProducts() {
               onMouseEnter={() => setIsPaused(true)}
               onMouseLeave={() => setIsPaused(false)}
             >
-              {/* Lens magnifier — hover to zoom into the current slide for a closer look. */}
+              {/* Lens magnifier — hover to zoom into the current product for a closer look. */}
               <div className="featured-products-lens absolute inset-0 grid [&>div]:h-full [&>div]:rounded-none">
                 <Lens zoomFactor={1.6} lensSize={220}>
                   <AnimatePresence mode="wait">
                     <motion.img
-                      key={`${active?.code}-${imageIndex}`}
-                      src={currentImage}
+                      key={active?.code}
+                      src={active?.image}
                       alt={active?.alt}
                       loading="lazy"
                       initial={{ opacity: 0, scale: 1.05 }}
@@ -132,6 +128,24 @@ export default function FeaturedProducts() {
                 </Lens>
               </div>
 
+              {/* Prev / next arrows — stepping through products with wrap-around. */}
+              <button
+                type="button"
+                onClick={() => goToProduct(activeIndex - 1)}
+                aria-label="Sản phẩm trước"
+                className="featured-products-arrow featured-products-arrow-prev absolute left-5 top-1/2 z-60 -translate-y-1/2 grid h-11 w-11 place-items-center rounded-full bg-black/40 text-white backdrop-blur-sm transition-all duration-300 cursor-pointer hover:bg-black/60 hover:scale-105"
+              >
+                <ArrowRight className="h-5 w-5 rotate-180" />
+              </button>
+              <button
+                type="button"
+                onClick={() => goToProduct(activeIndex + 1)}
+                aria-label="Sản phẩm kế tiếp"
+                className="featured-products-arrow featured-products-arrow-next absolute right-5 top-1/2 z-60 -translate-y-1/2 grid h-11 w-11 place-items-center rounded-full bg-black/40 text-white backdrop-blur-sm transition-all duration-300 cursor-pointer hover:bg-black/60 hover:scale-105"
+              >
+                <ArrowRight className="h-5 w-5" />
+              </button>
+
               {/* Legibility scrim + overlaid metadata. */}
               <div
                 className="featured-products-scrim pointer-events-none absolute inset-0 z-55"
@@ -141,16 +155,16 @@ export default function FeaturedProducts() {
                 {String(activeIndex + 1).padStart(2, '0')} / {String(featuredProducts.length).padStart(2, '0')}
               </span>
 
-              {/* Carousel dots — reflect and control the current slide. */}
+              {/* Carousel dots — one per product; reflect and control the active product. */}
               <div className="featured-products-dots absolute left-5 top-5 z-60 flex items-center gap-2">
-                {active?.images.map((_, dotIndex) => {
-                  const isCurrent = dotIndex === imageIndex % (imageCount || 0)
+                {featuredProducts.map((product, dotIndex) => {
+                  const isCurrent = dotIndex === activeIndex
                   return (
                     <button
-                      key={dotIndex}
+                      key={product.code}
                       type="button"
-                      onClick={() => goToImage(dotIndex)}
-                      aria-label={`Xem ảnh ${dotIndex + 1} của ${active?.name}`}
+                      onClick={() => goToProduct(dotIndex)}
+                      aria-label={`Xem ${product.name} (${product.code})`}
                       aria-current={isCurrent}
                       className={`featured-products-dot h-2 rounded-full transition-all duration-300 cursor-pointer ${isCurrent ? 'w-6 bg-white' : 'w-2 bg-white/50 hover:bg-white/80'
                         }`}
@@ -183,7 +197,7 @@ export default function FeaturedProducts() {
                 <li key={product.code} className="featured-products-item border-b border-white/10">
                   <button
                     type="button"
-                    onClick={() => setActiveIndex(index)}
+                    onClick={() => goToProduct(index)}
                     aria-pressed={isActive}
                     className="featured-products-trigger group flex w-full items-start gap-5 py-6 text-left cursor-pointer"
                   >

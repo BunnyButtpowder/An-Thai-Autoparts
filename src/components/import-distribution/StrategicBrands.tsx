@@ -7,10 +7,10 @@ interface StrategicBrand {
 }
 
 const brands: StrategicBrand[] = [
-  { name: 'ANTEK', image: '/product/Antek.png' },
-  { name: 'X-POWER.LXĐ', image: '/product/X-Power.png' },
-  { name: 'XCBB.LXĐ', image: '/product/XCBB.png' },
-  { name: 'MAT', image: '/product/Mat.png' },
+  { name: 'ANTEK', image: '/about/Antek.png' },
+  { name: 'X-POWER.LXĐ', image: '/about/X-Power.png' },
+  { name: 'XCBB.LXĐ', image: '/about/XCBB.png' },
+  { name: 'MAT', image: '/about/Mat.png' },
 ]
 
 // Two-up showcase of the exclusive strategic brands. Each card reveals with a
@@ -62,7 +62,7 @@ export default function StrategicBrands() {
                 src={brand.image}
                 alt={brand.name}
                 loading="lazy"
-                className="strategic-brands-card-image max-h-24 w-full object-contain transition-transform duration-500 group-hover:scale-105 sm:max-h-28"
+                className="strategic-brands-card-image w-full object-contain transition-transform duration-500 group-hover:scale-105"
               />
             </div>
           ))}

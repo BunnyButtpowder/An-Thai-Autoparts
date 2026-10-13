@@ -10,7 +10,7 @@ const commitments: Commitment[] = [
   {
     number: '01',
     title: 'Tiêu chuẩn lắp ráp',
-    description: 'Đáp ứng yêu cầu kỹ thuật và chất lượng sau sửa chữa.',
+    description: 'Đáp ứng tiêu chuẩn xuất xưởng của các hãng xe hàng đầu thế giới.',
   },
   {
     number: '02',

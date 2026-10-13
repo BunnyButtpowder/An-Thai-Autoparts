@@ -16,8 +16,18 @@ declare module "@react-three/fiber" {
 extend({ ThreeGlobe: ThreeGlobe });
 
 const RING_PROPAGATION_SPEED = 3;
-const aspect = 1.2;
-const cameraZ = 300;
+const cameraZ = 340;
+
+/** Same lat/lng → xyz mapping three-globe uses, so the camera can face a given spot. */
+function latLngToPosition(lat: number, lng: number, radius: number): [number, number, number] {
+  const phi = ((90 - lat) * Math.PI) / 180;
+  const theta = ((90 - lng) * Math.PI) / 180;
+  return [
+    radius * Math.sin(phi) * Math.cos(theta),
+    radius * Math.cos(phi),
+    radius * Math.sin(phi) * Math.sin(theta),
+  ];
+}
 
 type Position = {
   order: number;
@@ -53,6 +63,9 @@ export type GlobeConfig = {
   };
   autoRotate?: boolean;
   autoRotateSpeed?: number;
+  ringColor?: string;
+  /** Overrides the dot colour at every arc's start point, to highlight the origin. */
+  originPointColor?: string;
 };
 
 interface WorldProps {
@@ -123,7 +136,7 @@ export function Globe({ globeConfig, data }: WorldProps) {
       points.push({
         size: defaultProps.pointSize,
         order: arc.order,
-        color: arc.color,
+        color: defaultProps.originPointColor ?? arc.color,
         lat: arc.startLat,
         lng: arc.startLng,
       });
@@ -178,7 +191,7 @@ export function Globe({ globeConfig, data }: WorldProps) {
 
     globeRef.current
       .ringsData([])
-      .ringColor(() => defaultProps.polygonColor)
+      .ringColor(() => defaultProps.ringColor ?? defaultProps.polygonColor)
       .ringMaxRadius(defaultProps.maxRings)
       .ringPropagationSpeed(RING_PROPAGATION_SPEED)
       .ringRepeatPeriod(
@@ -196,6 +209,8 @@ export function Globe({ globeConfig, data }: WorldProps) {
     defaultProps.arcTime,
     defaultProps.rings,
     defaultProps.maxRings,
+    defaultProps.ringColor,
+    defaultProps.originPointColor,
   ]);
 
   // Handle rings animation with cleanup
@@ -246,8 +261,13 @@ export function World(props: WorldProps) {
   const { globeConfig } = props;
   const scene = new Scene();
   scene.fog = new Fog(0xffffff, 400, 2000);
+  const { lat, lng } = globeConfig.initialPosition ?? { lat: 0, lng: 0 };
+  // Near plane must sit well inside the globe-to-camera gap, otherwise high arcs
+  // on the camera-facing side get clipped.
+  const camera = new PerspectiveCamera(50, 1, 1, 1800);
+  camera.position.set(...latLngToPosition(lat, lng, cameraZ));
   return (
-    <Canvas scene={scene} camera={new PerspectiveCamera(50, aspect, 180, 1800)}>
+    <Canvas scene={scene} camera={camera}>
       <WebGLRendererConfig />
       <ambientLight color={globeConfig.ambientLight} intensity={0.6} />
       <directionalLight
@@ -269,8 +289,8 @@ export function World(props: WorldProps) {
         enableZoom={false}
         minDistance={cameraZ}
         maxDistance={cameraZ}
-        autoRotateSpeed={1}
-        autoRotate={true}
+        autoRotateSpeed={globeConfig.autoRotateSpeed ?? 1}
+        autoRotate={globeConfig.autoRotate ?? true}
         minPolarAngle={Math.PI / 3.5}
         maxPolarAngle={Math.PI - Math.PI / 3}
       />

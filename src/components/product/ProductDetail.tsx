@@ -63,10 +63,12 @@ export default function ProductDetail({
   product,
   onBack,
   onSelectProduct,
+  onViewAll,
 }: {
   product: Product
   onBack: () => void
   onSelectProduct: (id: string) => void
+  onViewAll: () => void
 }) {
   const group = productCategories
     .find((category) => category.slug === product.categorySlug)
@@ -137,39 +139,6 @@ export default function ProductDetail({
           <h2 className="product-detail-name mt-2 text-3xl font-extrabold leading-tight text-white sm:text-5xl">
             {product.name}
           </h2>
-          <p className="product-detail-fullname mt-2 text-lg sm:text-xl leading-relaxed text-white/60">
-            {product.fullName}
-          </p>
-
-          <dl className="product-detail-meta mt-5 grid grid-cols-1 gap-x-6 gap-y-3 sm:grid-cols-2">
-            {product.unit && (
-              <div className="product-detail-meta-item">
-                <dt className="text-base font-semibold uppercase tracking-wider text-red-400">Đơn vị tính</dt>
-                <dd className="mt-0.5 text-lg text-white">{product.unit}</dd>
-              </div>
-            )}
-            {product.vehicles && (
-              <div className="product-detail-meta-item sm:col-span-2 mt-2">
-                <dt className="text-base font-semibold uppercase tracking-wider text-red-400">Dòng xe phù hợp</dt>
-                <dd className="mt-0.5 text-lg leading-relaxed text-white">{product.vehicles}</dd>
-              </div>
-            )}
-          </dl>
-
-          {product.specs.length > 0 && (
-            <div className="product-detail-specs mt-6">
-              <h3 className="product-detail-section-title text-base font-bold uppercase tracking-wider text-red-400">
-                Thông số kỹ thuật
-              </h3>
-              <ul className="product-detail-specs-list mt-3 space-y-2">
-                {product.specs.map((spec, index) => (
-                  <li key={index} className="product-detail-spec-item flex gap-2.5 text-lg leading-relaxed text-white">
-                    {spec}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
 
           {product.intro.length > 0 && (
             <div className="product-detail-intro mt-6">
@@ -186,15 +155,41 @@ export default function ProductDetail({
             </div>
           )}
 
-          {/* Quote CTA — anchored to the bottom of the info column so it aligns
-              with the base of the stretched image on large screens. */}
-          <Link
-            to="/lien-he"
-            className="product-detail-quote-cta mt-10 inline-flex items-center justify-center gap-2.5 rounded-md bg-background px-7 py-4 text-base font-bold uppercase tracking-wider text-foreground transition-colors duration-300 hover:bg-background/90 cursor-pointer sm:self-start"
-          >
-            Liên hệ nhận báo giá
-            <ArrowRight className="h-4 w-4" />
-          </Link>
+          {product.specs.length > 0 && (
+            <div className="product-detail-specs mt-6">
+              <h3 className="product-detail-section-title text-base font-bold uppercase tracking-wider text-red-400">
+                Thông số kỹ thuật
+              </h3>
+              <ul className="product-detail-specs-list mt-3 space-y-2">
+                {product.specs.map((spec, index) => (
+                  <li key={index} className="product-detail-spec-item flex gap-2.5 text-lg leading-relaxed text-white">
+                    {spec}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          {/* Quote CTA group — anchored to the bottom of the info column so it
+              aligns with the base of the stretched image on large screens. The
+              secondary action resets the catalog to the "Tất cả" category so the
+              visitor can browse the full product-code list. */}
+          <div className="product-detail-cta-group mt-10 flex flex-col gap-3 sm:flex-row sm:self-start">
+            <Link
+              to="/lien-he"
+              className="product-detail-quote-cta inline-flex items-center justify-center gap-2.5 rounded-md bg-background px-7 py-4 text-lg font-semibold text-foreground transition-colors duration-300 hover:bg-background/90 cursor-pointer"
+            >
+              Liên hệ nhận báo giá
+            </Link>
+            <button
+              type="button"
+              onClick={onViewAll}
+              className="product-detail-view-all-cta group inline-flex items-center justify-center gap-2.5 rounded-md border border-white/25 px-7 py-4 text-lg font-semibold text-white transition-colors duration-300 hover:border-white hover:bg-white hover:text-foreground cursor-pointer"
+            >
+              Xem tất cả mã sản phẩm
+              <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+            </button>
+          </div>
         </div>
       </div>
 

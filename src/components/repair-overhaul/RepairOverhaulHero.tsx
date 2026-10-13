@@ -55,7 +55,7 @@ export default function RepairOverhaulHero() {
       >
         <motion.h1
           id="repair-overhaul-hero-heading"
-          className="repair-overhaul-hero-title text-5xl font-extrabold uppercase leading-normal tracking-normal text-white sm:text-7xl lg:text-8xl"
+          className="repair-overhaul-hero-title text-5xl font-extrabold uppercase leading-normal tracking-normal text-white sm:text-7xl"
           variants={item}
         >
           Sửa chữa và đại tu ô tô

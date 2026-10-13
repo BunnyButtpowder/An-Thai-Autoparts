@@ -69,9 +69,9 @@ export default function ProductPage() {
       />
       <main className="product-main bg-[#0b0c0d]">
         <ProductHero />
+        <FeaturedProducts />
         <ProductCatalog />
         {/* <ExploreFactory /> */}
-        <FeaturedProducts />
         <BrandLogos />
         <ContactCTA />
       </main>

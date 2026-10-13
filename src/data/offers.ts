@@ -33,7 +33,7 @@ export const offers: OfferCard[] = [
     ctaHref: 'nhap-khau-phan-phoi',
   },
   {
-    title: 'Trung tâm sửa chữa và đại tu ô tô',
+    title: 'Sửa chữa và đại tu ô tô',
     description:
       'Cung cấp dịch vụ sửa chữa, bảo dưỡng và đại tu ô tô với hệ thống trang thiết bị hiện đại, vận hành theo tiêu chuẩn 5S.',
     image:
@@ -43,7 +43,7 @@ export const offers: OfferCard[] = [
     ctaHref: 'sua-chua-dai-tu',
   },
   {
-    title: 'Trung tâm đăng kiểm xe cơ giới',
+    title: 'Đăng kiểm xe cơ giới',
     description:
       'Thực hiện kiểm định xe cơ giới theo quy định hiện hành với năng lực phục vụ lên tới 140 lượt xe mỗi ngày.',
     image:

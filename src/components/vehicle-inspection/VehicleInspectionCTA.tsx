@@ -36,7 +36,7 @@ export default function VehicleInspectionCTA() {
         </h2>
         <div className="vehicle-inspection-cta-actions vehicle-inspection-cta-reveal flex flex-wrap justify-center gap-4 mt-10">
           <Link
-            to="/lien-he"
+            to="/lien-he?dia-diem=trung-tam-dang-kiem-1702d#he-thong-lien-he"
             className="vehicle-inspection-cta-primary inline-flex items-center gap-2 rounded-lg bg-white px-9 py-4 text-lg font-bold text-primary transition-colors duration-300 hover:bg-white/90 cursor-pointer"
           >
             Liên hệ →
