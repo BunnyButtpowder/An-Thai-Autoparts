@@ -60,7 +60,7 @@ export default function ContactCTA() {
           </Link>
           <Link
             to="/gioi-thieu"
-            className="contact-cta-secondary inline-flex items-center gap-2 rounded-lg border-[1.5px] border-white/70 px-9 py-4 text-lg font-semibold text-white transition-colors duration-300 hover:bg-white/10 hover:-translate-y-0.5 cursor-pointer"
+            className="contact-cta-secondary inline-flex items-center gap-2 rounded-lg border-[1.5px] border-white/70 px-9 py-4 text-lg font-semibold text-white transition-transform duration-300 hover:bg-white/10 hover:-translate-y-0.5 cursor-pointer"
           >
             Tìm hiểu thêm về An Thái
           </Link>
